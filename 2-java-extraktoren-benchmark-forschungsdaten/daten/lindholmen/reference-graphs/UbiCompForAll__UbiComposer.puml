@@ -1,0 +1,36 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "org.ubicompforall.simplelanguage.runtime.BuildingBlockFactory" as n0
+class "org.ubicompforall.simplelanguage.runtime.BuildingBlockInstance" as n1
+class "org.ubicompforall.simplelanguage.runtime.CompositeBuildingBlockFactory" as n2
+class "org.ubicompforall.simplelanguage.runtime.ConditionInstance" as n3
+class "org.ubicompforall.simplelanguage.runtime.MapBasedBuildingBlockFactory" as n4
+class "org.ubicompforall.simplelanguage.runtime.RuntimeEnvironment" as n5
+class "org.ubicompforall.simplelanguage.runtime.StepInstance" as n6
+class "org.ubicompforall.simplelanguage.runtime.TaskInstance" as n7
+class "org.ubicompforall.simplelanguage.runtime.TaskInvoker" as n8
+class "org.ubicompforall.simplelanguage.runtime.TriggerMonitor" as n9
+class "org.ubicompforall.ubicomposer.android.AbstractEditBuildingBlockActivity" as n10
+class "org.ubicompforall.ubicomposer.android.AbstractUbiComposerActivity" as n11
+class "org.ubicompforall.ubicomposer.android.BuildingBlockDescListAdapter" as n12
+class "org.ubicompforall.ubicomposer.android.EditStepActivity" as n13
+class "org.ubicompforall.ubicomposer.android.EditTriggerActivity" as n14
+class "org.ubicompforall.ubicomposer.android.ModelUtils" as n15
+class "org.ubicompforall.ubicomposer.android.TaskActivity" as n16
+class "org.ubicompforall.ubicomposer.android.TaskListActivity" as n17
+class "org.ubicompforall.ubicomposer.android.TaskListAdapter" as n18
+class "org.ubicompforall.ubicomposer.util.DescriptorLibraryUtils" as n19
+class "org.ubicompforall.ubicomposer.util.UserServiceUtils" as n20
+n3 --|> n1
+n3 -- n7
+n5 -- n7
+n6 --|> n1
+n6 -- n7
+n8 -- n9
+n9 --|> n1
+n10 --|> n11
+n13 --|> n10
+n14 --|> n10
+n16 --|> n11
+n17 --|> n11
+@enduml

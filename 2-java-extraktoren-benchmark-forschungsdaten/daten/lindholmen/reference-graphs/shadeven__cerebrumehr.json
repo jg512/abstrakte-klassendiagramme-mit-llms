@@ -1,0 +1,674 @@
+{
+  "repo": "shadeven/cerebrumehr",
+  "commit": "02dab5a8185d5db2c9128aa0cd2c908d09cc64f9",
+  "model_path": "src/model/model-export/model.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.oreon.cerebrum.admission.Admission",
+    "com.oreon.cerebrum.admission.BedStay",
+    "com.oreon.cerebrum.appointment.Appointment",
+    "com.oreon.cerebrum.billing.Invoice",
+    "com.oreon.cerebrum.billing.InvoiceItem",
+    "com.oreon.cerebrum.billing.Service",
+    "com.oreon.cerebrum.charts.AppliedChart",
+    "com.oreon.cerebrum.charts.Chart",
+    "com.oreon.cerebrum.charts.ChartItem",
+    "com.oreon.cerebrum.charts.ChartProcedure",
+    "com.oreon.cerebrum.charts.TimeEnumeration",
+    "com.oreon.cerebrum.codes.AbstractCode",
+    "com.oreon.cerebrum.codes.Chapter",
+    "com.oreon.cerebrum.codes.Code",
+    "com.oreon.cerebrum.codes.Section",
+    "com.oreon.cerebrum.codes.SimpleCode",
+    "com.oreon.cerebrum.ddx.ChronicCondition",
+    "com.oreon.cerebrum.ddx.ConditionCategory",
+    "com.oreon.cerebrum.ddx.ConditionFinding",
+    "com.oreon.cerebrum.ddx.DifferentialDx",
+    "com.oreon.cerebrum.ddx.Disease",
+    "com.oreon.cerebrum.ddx.DxCategory",
+    "com.oreon.cerebrum.ddx.DxTest",
+    "com.oreon.cerebrum.ddx.Finding",
+    "com.oreon.cerebrum.ddx.LabFinding",
+    "com.oreon.cerebrum.ddx.LabFindingType",
+    "com.oreon.cerebrum.ddx.PatientDiffDx",
+    "com.oreon.cerebrum.ddx.PatientFinding",
+    "com.oreon.cerebrum.ddx.PhysicalFinding",
+    "com.oreon.cerebrum.drugs.AtcDrug",
+    "com.oreon.cerebrum.drugs.Drug",
+    "com.oreon.cerebrum.drugs.DrugCategory",
+    "com.oreon.cerebrum.drugs.DrugInteraction",
+    "com.oreon.cerebrum.drugs.InteractionSeverity",
+    "com.oreon.cerebrum.employee.Clerk",
+    "com.oreon.cerebrum.employee.Department",
+    "com.oreon.cerebrum.employee.Employee",
+    "com.oreon.cerebrum.employee.Nurse",
+    "com.oreon.cerebrum.employee.NurseSpecialty",
+    "com.oreon.cerebrum.employee.Physician",
+    "com.oreon.cerebrum.employee.Specialization",
+    "com.oreon.cerebrum.employee.Technician",
+    "com.oreon.cerebrum.encounter.Differential",
+    "com.oreon.cerebrum.encounter.Encounter",
+    "com.oreon.cerebrum.encounter.PrescribedTest",
+    "com.oreon.cerebrum.encounter.Reason",
+    "com.oreon.cerebrum.encounter.TestResults",
+    "com.oreon.cerebrum.encounter.Vitals",
+    "com.oreon.cerebrum.facility.Bed",
+    "com.oreon.cerebrum.facility.Facility",
+    "com.oreon.cerebrum.facility.Room",
+    "com.oreon.cerebrum.facility.RoomType",
+    "com.oreon.cerebrum.facility.Ward",
+    "com.oreon.cerebrum.patient.Address",
+    "com.oreon.cerebrum.patient.Allergy",
+    "com.oreon.cerebrum.patient.AllergySeverity",
+    "com.oreon.cerebrum.patient.ContactDetails",
+    "com.oreon.cerebrum.patient.DischargeCode",
+    "com.oreon.cerebrum.patient.Gender",
+    "com.oreon.cerebrum.patient.History",
+    "com.oreon.cerebrum.patient.Immunization",
+    "com.oreon.cerebrum.patient.Patient",
+    "com.oreon.cerebrum.patient.PatientDocument",
+    "com.oreon.cerebrum.patient.Person",
+    "com.oreon.cerebrum.patient.Title",
+    "com.oreon.cerebrum.patient.TrackedVital",
+    "com.oreon.cerebrum.patient.Vaccine",
+    "com.oreon.cerebrum.patient.VitalValue",
+    "com.oreon.cerebrum.prescription.Frequency",
+    "com.oreon.cerebrum.prescription.Prescription",
+    "com.oreon.cerebrum.prescription.PrescriptionItem",
+    "com.oreon.cerebrum.prescription.PrescriptionItemTemplate",
+    "com.oreon.cerebrum.prescription.PrescriptionTemplate",
+    "com.oreon.cerebrum.prescription.Route",
+    "com.oreon.cerebrum.settings.Setting",
+    "com.oreon.cerebrum.settings.SettingGroup",
+    "com.oreon.cerebrum.settings.SettingName",
+    "com.oreon.cerebrum.settings.Settings",
+    "com.oreon.cerebrum.unusualoccurences.OccurenceType",
+    "com.oreon.cerebrum.unusualoccurences.Severity",
+    "com.oreon.cerebrum.unusualoccurences.TreatmentCategory",
+    "com.oreon.cerebrum.unusualoccurences.UnusualOccurence",
+    "com.oreon.cerebrum.users.AppRole",
+    "com.oreon.cerebrum.users.AppUser"
+  ],
+  "edges": [
+    [
+      "com.oreon.cerebrum.admission.Admission",
+      "com.oreon.cerebrum.admission.BedStay",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.admission.Admission",
+      "com.oreon.cerebrum.billing.Invoice",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.admission.Admission",
+      "com.oreon.cerebrum.patient.DischargeCode",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.admission.Admission",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.admission.BedStay",
+      "com.oreon.cerebrum.facility.Bed",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.appointment.Appointment",
+      "com.oreon.cerebrum.employee.Physician",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.appointment.Appointment",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.billing.Invoice",
+      "com.oreon.cerebrum.billing.InvoiceItem",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.billing.Invoice",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.billing.InvoiceItem",
+      "com.oreon.cerebrum.billing.Service",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.AppliedChart",
+      "com.oreon.cerebrum.charts.Chart",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.AppliedChart",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.Chart",
+      "com.oreon.cerebrum.charts.ChartItem",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.Chart",
+      "com.oreon.cerebrum.ddx.ChronicCondition",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.ChartItem",
+      "com.oreon.cerebrum.charts.ChartProcedure",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.ChartItem",
+      "com.oreon.cerebrum.charts.TimeEnumeration",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.ChartItem",
+      "com.oreon.cerebrum.patient.TrackedVital",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.ChartProcedure",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.charts.ChartProcedure",
+      "com.oreon.cerebrum.patient.VitalValue",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.codes.Chapter",
+      "com.oreon.cerebrum.codes.AbstractCode",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.codes.Chapter",
+      "com.oreon.cerebrum.codes.Section",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.codes.Code",
+      "com.oreon.cerebrum.codes.AbstractCode",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.codes.Code",
+      "com.oreon.cerebrum.codes.Section",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.codes.Code",
+      "com.oreon.cerebrum.encounter.Reason",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.codes.Section",
+      "com.oreon.cerebrum.codes.AbstractCode",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.codes.SimpleCode",
+      "com.oreon.cerebrum.encounter.Encounter",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.ChronicCondition",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.ConditionCategory",
+      "com.oreon.cerebrum.ddx.Disease",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.ConditionFinding",
+      "com.oreon.cerebrum.ddx.Disease",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.DifferentialDx",
+      "com.oreon.cerebrum.ddx.DxCategory",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.DifferentialDx",
+      "com.oreon.cerebrum.ddx.Finding",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.Disease",
+      "com.oreon.cerebrum.ddx.Disease",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.Disease",
+      "com.oreon.cerebrum.patient.Gender",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.DxTest",
+      "com.oreon.cerebrum.encounter.PrescribedTest",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.Finding",
+      "com.oreon.cerebrum.ddx.PatientFinding",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.LabFinding",
+      "com.oreon.cerebrum.ddx.Finding",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.PatientDiffDx",
+      "com.oreon.cerebrum.ddx.PatientFinding",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.PatientDiffDx",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.ddx.PhysicalFinding",
+      "com.oreon.cerebrum.ddx.Finding",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.AtcDrug",
+      "com.oreon.cerebrum.drugs.AtcDrug",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.AtcDrug",
+      "com.oreon.cerebrum.drugs.Drug",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.Drug",
+      "com.oreon.cerebrum.drugs.DrugCategory",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.Drug",
+      "com.oreon.cerebrum.drugs.DrugInteraction",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.Drug",
+      "com.oreon.cerebrum.patient.Allergy",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.Drug",
+      "com.oreon.cerebrum.prescription.PrescriptionItem",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.Drug",
+      "com.oreon.cerebrum.prescription.PrescriptionItemTemplate",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.drugs.DrugInteraction",
+      "com.oreon.cerebrum.drugs.InteractionSeverity",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Clerk",
+      "com.oreon.cerebrum.employee.Employee",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Department",
+      "com.oreon.cerebrum.employee.Employee",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Employee",
+      "com.oreon.cerebrum.encounter.Encounter",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Employee",
+      "com.oreon.cerebrum.facility.Facility",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Employee",
+      "com.oreon.cerebrum.patient.Person",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Employee",
+      "com.oreon.cerebrum.users.AppUser",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Nurse",
+      "com.oreon.cerebrum.employee.Employee",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Nurse",
+      "com.oreon.cerebrum.employee.NurseSpecialty",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Physician",
+      "com.oreon.cerebrum.employee.Employee",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Physician",
+      "com.oreon.cerebrum.employee.Specialization",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.employee.Technician",
+      "com.oreon.cerebrum.employee.Employee",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.encounter.Encounter",
+      "com.oreon.cerebrum.encounter.PrescribedTest",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.encounter.Encounter",
+      "com.oreon.cerebrum.encounter.Vitals",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.encounter.Encounter",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.encounter.Encounter",
+      "com.oreon.cerebrum.prescription.Prescription",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.encounter.PrescribedTest",
+      "com.oreon.cerebrum.encounter.TestResults",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.facility.Bed",
+      "com.oreon.cerebrum.facility.Room",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.facility.Bed",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.facility.Facility",
+      "com.oreon.cerebrum.facility.Ward",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.facility.Room",
+      "com.oreon.cerebrum.facility.RoomType",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.facility.Room",
+      "com.oreon.cerebrum.facility.Ward",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.facility.Ward",
+      "com.oreon.cerebrum.patient.Gender",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Address",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Allergy",
+      "com.oreon.cerebrum.patient.AllergySeverity",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Allergy",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.ContactDetails",
+      "com.oreon.cerebrum.patient.Person",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Gender",
+      "com.oreon.cerebrum.patient.Person",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.History",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Immunization",
+      "com.oreon.cerebrum.patient.Patient",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Immunization",
+      "com.oreon.cerebrum.patient.Vaccine",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Patient",
+      "com.oreon.cerebrum.patient.PatientDocument",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Patient",
+      "com.oreon.cerebrum.patient.Person",
+      "inheritance"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Patient",
+      "com.oreon.cerebrum.patient.VitalValue",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Patient",
+      "com.oreon.cerebrum.prescription.Prescription",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Patient",
+      "com.oreon.cerebrum.unusualoccurences.UnusualOccurence",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.Person",
+      "com.oreon.cerebrum.patient.Title",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.patient.TrackedVital",
+      "com.oreon.cerebrum.patient.VitalValue",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.prescription.Frequency",
+      "com.oreon.cerebrum.prescription.PrescriptionItem",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.prescription.Frequency",
+      "com.oreon.cerebrum.prescription.PrescriptionItemTemplate",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.prescription.Prescription",
+      "com.oreon.cerebrum.prescription.PrescriptionItem",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.prescription.PrescriptionItem",
+      "com.oreon.cerebrum.prescription.Route",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.prescription.PrescriptionItemTemplate",
+      "com.oreon.cerebrum.prescription.PrescriptionTemplate",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.prescription.PrescriptionItemTemplate",
+      "com.oreon.cerebrum.prescription.Route",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.settings.Setting",
+      "com.oreon.cerebrum.settings.SettingName",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.settings.SettingGroup",
+      "com.oreon.cerebrum.settings.SettingName",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.unusualoccurences.OccurenceType",
+      "com.oreon.cerebrum.unusualoccurences.UnusualOccurence",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.unusualoccurences.Severity",
+      "com.oreon.cerebrum.unusualoccurences.UnusualOccurence",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.unusualoccurences.TreatmentCategory",
+      "com.oreon.cerebrum.unusualoccurences.UnusualOccurence",
+      "association"
+    ],
+    [
+      "com.oreon.cerebrum.users.AppRole",
+      "com.oreon.cerebrum.users.AppUser",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_14_0_5f2020c_1292792401852_421426_2184": "com.oreon.cerebrum.encounter.Encounter",
+    "_14_0_8e50284_1345738679200_970992_3070": "com.oreon.cerebrum.encounter.Vitals",
+    "_14_0_5f2020c_1292793042973_800338_2415": "com.oreon.cerebrum.encounter.PrescribedTest",
+    "_14_0_8e50284_1345747719050_338725_3327": "com.oreon.cerebrum.encounter.Differential",
+    "_14_0_76b01ab_1371678071382_15242_3451": "com.oreon.cerebrum.encounter.Reason",
+    "_14_0_76b01ab_1371848263191_111595_3826": "com.oreon.cerebrum.encounter.TestResults",
+    "_14_0_5f2020c_1292372825830_839033_1738": "com.oreon.cerebrum.billing.Invoice",
+    "_14_0_5f2020c_1292372843280_606073_1758": "com.oreon.cerebrum.billing.Service",
+    "_14_0_5f2020c_1292372966513_481822_1798": "com.oreon.cerebrum.billing.InvoiceItem",
+    "_14_0_5f2020c_1290005256698_534182_836": "com.oreon.cerebrum.unusualoccurences.UnusualOccurence",
+    "_14_0_5f2020c_1290005293719_537538_856": "com.oreon.cerebrum.unusualoccurences.TreatmentCategory",
+    "_14_0_5f2020c_1290005416755_100918_886": "com.oreon.cerebrum.unusualoccurences.OccurenceType",
+    "_14_0_5f2020c_1290005884200_643413_967": "com.oreon.cerebrum.unusualoccurences.Severity",
+    "_14_0_5f2020c_1289755684575_955679_482": "com.oreon.cerebrum.patient.Patient",
+    "_14_0_5f2020c_1280583671375_696824_1246": "com.oreon.cerebrum.patient.Person",
+    "_14_0_5f2020c_1280583671377_568528_1249": "com.oreon.cerebrum.patient.ContactDetails",
+    "_14_0_5f2020c_1280583671376_983701_1247": "com.oreon.cerebrum.patient.Gender",
+    "_14_0_5f2020c_1289837036780_229830_1003": "com.oreon.cerebrum.patient.Address",
+    "_14_0_5f2020c_1290125585565_505282_1625": "com.oreon.cerebrum.patient.PatientDocument",
+    "_14_0_5f2020c_1290562729869_681836_2342": "com.oreon.cerebrum.patient.Allergy",
+    "_14_0_5f2020c_1290562906549_792285_2494": "com.oreon.cerebrum.patient.AllergySeverity",
+    "_14_0_5f2020c_1290563170348_815728_2520": "com.oreon.cerebrum.patient.Immunization",
+    "_14_0_5f2020c_1290563417949_362471_2542": "com.oreon.cerebrum.patient.Vaccine",
+    "_14_0_8e50284_1333198713145_786419_2429": "com.oreon.cerebrum.patient.TrackedVital",
+    "_14_0_8e50284_1333198949759_345329_2453": "com.oreon.cerebrum.patient.VitalValue",
+    "_14_0_8e50284_1333928983702_893599_3567": "com.oreon.cerebrum.patient.DischargeCode",
+    "_14_0_5f2020c_1292792444021_373691_2204": "com.oreon.cerebrum.patient.History",
+    "_14_0_8e50284_1345748017327_314749_3482": "com.oreon.cerebrum.patient.Title",
+    "_14_0_5f2020c_1290565409381_634029_2701": "com.oreon.cerebrum.facility.Facility",
+    "_14_0_5f2020c_1290565450287_535264_2724": "com.oreon.cerebrum.facility.Room",
+    "_14_0_5f2020c_1290565465243_837090_2744": "com.oreon.cerebrum.facility.Bed",
+    "_14_0_8e50284_1333490143822_963295_2871": "com.oreon.cerebrum.facility.Ward",
+    "_14_0_8e50284_1333490239858_144196_2919": "com.oreon.cerebrum.facility.RoomType",
+    "_14_0_8e50284_1341099337627_231510_2548": "com.oreon.cerebrum.ddx.Finding",
+    "_14_0_8e50284_1341099341887_799721_2568": "com.oreon.cerebrum.ddx.PhysicalFinding",
+    "_14_0_8e50284_1341099364977_465479_2588": "com.oreon.cerebrum.ddx.LabFinding",
+    "_14_0_8e50284_1341099400587_644064_2668": "com.oreon.cerebrum.ddx.Disease",
+    "_14_0_8e50284_1341109281371_356045_2968": "com.oreon.cerebrum.ddx.LabFindingType",
+    "_14_0_8e50284_1341109574111_201357_2998": "com.oreon.cerebrum.ddx.ConditionFinding",
+    "_14_0_8e50284_1342275094997_623545_2902": "com.oreon.cerebrum.ddx.ConditionCategory",
+    "_14_0_8e50284_1342277739950_440494_2981": "com.oreon.cerebrum.ddx.DifferentialDx",
+    "_14_0_8e50284_1342277878385_136248_3058": "com.oreon.cerebrum.ddx.DxCategory",
+    "_14_0_8e50284_1342409151032_813095_3222": "com.oreon.cerebrum.ddx.PatientFinding",
+    "_14_0_8e50284_1342409190637_838552_3242": "com.oreon.cerebrum.ddx.PatientDiffDx",
+    "_14_0_5f2020c_1292792922331_237823_2391": "com.oreon.cerebrum.ddx.DxTest",
+    "_14_0_5f2020c_1403009843986_389765_3821": "com.oreon.cerebrum.ddx.ChronicCondition",
+    "_14_0_8e50284_1356451751451_381754_2950": "com.oreon.cerebrum.prescription.PrescriptionTemplate",
+    "_14_0_5f2020c_1289755732494_854997_553": "com.oreon.cerebrum.prescription.Prescription",
+    "_14_0_5f2020c_1289755798793_793157_666": "com.oreon.cerebrum.prescription.PrescriptionItem",
+    "_14_0_8e50284_1356518841737_27899_3270": "com.oreon.cerebrum.prescription.PrescriptionItemTemplate",
+    "_14_0_5f2020c_1291908445091_520235_1892": "com.oreon.cerebrum.prescription.Frequency",
+    "_14_0_5f2020c_1291928728718_430930_1917": "com.oreon.cerebrum.prescription.Route",
+    "_14_0_5f2020c_1290565987821_974660_2977": "com.oreon.cerebrum.appointment.Appointment",
+    "_14_0_5f2020c_1290024157769_641369_1246": "com.oreon.cerebrum.employee.Employee",
+    "_14_0_5f2020c_1290024225237_468518_1317": "com.oreon.cerebrum.employee.Physician",
+    "_14_0_5f2020c_1290024233439_756693_1337": "com.oreon.cerebrum.employee.Nurse",
+    "_14_0_5f2020c_1290024241708_843675_1357": "com.oreon.cerebrum.employee.Technician",
+    "_14_0_5f2020c_1290024420607_658932_1465": "com.oreon.cerebrum.employee.Clerk",
+    "_14_0_8e50284_1333324013352_203603_2706": "com.oreon.cerebrum.employee.Specialization",
+    "_14_0_8e50284_1333324069693_904826_2783": "com.oreon.cerebrum.employee.NurseSpecialty",
+    "_14_0_76b01ab_1368650947912_214236_3487": "com.oreon.cerebrum.employee.Department",
+    "_14_0_5f2020c_1280582187534_528646_674": "com.oreon.cerebrum.drugs.AtcDrug",
+    "_14_0_5f2020c_1280582375911_724845_753": "com.oreon.cerebrum.drugs.Drug",
+    "_14_0_5f2020c_1290621253196_658583_1541": "com.oreon.cerebrum.drugs.DrugInteraction",
+    "_14_0_5f2020c_1291992690324_836007_2055": "com.oreon.cerebrum.drugs.DrugCategory",
+    "_14_0_8e50284_1315572544854_235088_2305": "com.oreon.cerebrum.drugs.InteractionSeverity",
+    "_14_0_5f2020c_1290543295258_926147_1348": "com.oreon.cerebrum.users.AppUser",
+    "_14_0_5f2020c_1290543295277_576252_1349": "com.oreon.cerebrum.users.AppRole",
+    "_14_0_76b01ab_1371215582359_327282_3089": "com.oreon.cerebrum.codes.Code",
+    "_14_0_76b01ab_1371216609186_750162_3253": "com.oreon.cerebrum.codes.Chapter",
+    "_14_0_76b01ab_1371216628882_82536_3273": "com.oreon.cerebrum.codes.Section",
+    "_14_0_76b01ab_1371218934667_693096_3407": "com.oreon.cerebrum.codes.AbstractCode",
+    "_14_0_5f2020c_1398864343041_659176_3715": "com.oreon.cerebrum.codes.SimpleCode",
+    "_14_0_76b01ab_1371252022379_264937_3241": "com.oreon.cerebrum.charts.AppliedChart",
+    "_14_0_76b01ab_1371252102192_378619_3341": "com.oreon.cerebrum.charts.Chart",
+    "_14_0_76b01ab_1371252271270_901134_3416": "com.oreon.cerebrum.charts.ChartItem",
+    "_14_0_76b01ab_1371252669326_619502_3635": "com.oreon.cerebrum.charts.TimeEnumeration",
+    "_14_0_76b01ab_1371327928826_548903_3669": "com.oreon.cerebrum.charts.ChartProcedure",
+    "_14_0_5f2020c_1401565059560_596940_3689": "com.oreon.cerebrum.settings.Settings",
+    "_14_0_5f2020c_1401565094352_411939_3709": "com.oreon.cerebrum.settings.Setting",
+    "_14_0_5f2020c_1401565483640_25601_3922": "com.oreon.cerebrum.settings.SettingName",
+    "_14_0_5f2020c_1401566387131_854991_4131": "com.oreon.cerebrum.settings.SettingGroup",
+    "_14_0_5f2020c_1289835768995_649502_549": "com.oreon.cerebrum.admission.Admission",
+    "_14_0_8e50284_1333536024019_863696_3162": "com.oreon.cerebrum.admission.BedStay"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_14_0_76b01ab_1368710185392_160466_5752",
+      "name": "EmployeesByDepartment",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_14_0_5f2020c_1291757121233_998041_1883",
+      "name": "TBed",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

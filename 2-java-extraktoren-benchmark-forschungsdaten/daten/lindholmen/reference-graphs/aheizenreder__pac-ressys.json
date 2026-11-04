@@ -1,0 +1,50 @@
+{
+  "repo": "aheizenreder/pac-ressys",
+  "commit": "78468dc1a2cab23c996359535614da660a26f25b",
+  "model_path": "pac-ressys-uml/Models/PACReservationSystem.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.prodyna.pac.ressys.aircraft.model.Aircraft",
+    "com.prodyna.pac.ressys.aircraft.model.AircraftType",
+    "com.prodyna.pac.ressys.reservation.model.Charter",
+    "com.prodyna.pac.ressys.usermgmt.model.Role",
+    "com.prodyna.pac.ressys.usermgmt.model.User"
+  ],
+  "edges": [
+    [
+      "com.prodyna.pac.ressys.aircraft.model.Aircraft",
+      "com.prodyna.pac.ressys.aircraft.model.AircraftType",
+      "association"
+    ],
+    [
+      "com.prodyna.pac.ressys.aircraft.model.Aircraft",
+      "com.prodyna.pac.ressys.reservation.model.Charter",
+      "association"
+    ],
+    [
+      "com.prodyna.pac.ressys.reservation.model.Charter",
+      "com.prodyna.pac.ressys.usermgmt.model.User",
+      "association"
+    ],
+    [
+      "com.prodyna.pac.ressys.usermgmt.model.Role",
+      "com.prodyna.pac.ressys.usermgmt.model.User",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_BVoWQBAiEeSXof7ugDA2cA": "com.prodyna.pac.ressys.aircraft.model.AircraftType",
+    "_1VgMQBAhEeSXof7ugDA2cA": "com.prodyna.pac.ressys.aircraft.model.Aircraft",
+    "_p3EkoBAiEeSXof7ugDA2cA": "com.prodyna.pac.ressys.usermgmt.model.User",
+    "_xMq2MBBDEeSXof7ugDA2cA": "com.prodyna.pac.ressys.usermgmt.model.Role",
+    "_1jLmcBAiEeSXof7ugDA2cA": "com.prodyna.pac.ressys.reservation.model.Charter"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_VNkKABAiEeSXof7ugDA2cA",
+      "name": "Licence",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

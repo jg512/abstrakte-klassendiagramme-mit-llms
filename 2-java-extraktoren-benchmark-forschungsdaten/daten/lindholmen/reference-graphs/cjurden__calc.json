@@ -1,0 +1,72 @@
+{
+  "repo": "cjurden/calc",
+  "commit": "5fe187148feadb86aecf68219830d83ff6ba824e",
+  "model_path": "calc.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "Calculator",
+    "Controller",
+    "Controller.addlistener",
+    "Controller.divlistener",
+    "Controller.multlistener",
+    "Controller.sublistener",
+    "Main",
+    "Model",
+    "View"
+  ],
+  "edges": [
+    [
+      "Controller",
+      "Model",
+      "association"
+    ],
+    [
+      "Controller",
+      "View",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_12JVYOnREeSkIPjOSiNz9A": "Calculator",
+    "_12TGYOnREeSkIPjOSiNz9A": "Controller",
+    "_12WwwOnREeSkIPjOSiNz9A": "Controller.addlistener",
+    "_12Yl8OnREeSkIPjOSiNz9A": "Controller.sublistener",
+    "_12Z0EOnREeSkIPjOSiNz9A": "Controller.multlistener",
+    "_12bpQOnREeSkIPjOSiNz9A": "Controller.divlistener",
+    "_12jlEOnREeSkIPjOSiNz9A": "Main",
+    "_12kzMOnREeSkIPjOSiNz9A": "Model",
+    "_12prsOnREeSkIPjOSiNz9A": "View"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_17E4sOnREeSkIPjOSiNz9A",
+      "name": "ActionEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_17GG0OnREeSkIPjOSiNz9A",
+      "name": "ActionListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_17g9kOnREeSkIPjOSiNz9A",
+      "name": "JFrame",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_17iLsOnREeSkIPjOSiNz9A",
+      "name": "JTextField",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_17jZ0OnREeSkIPjOSiNz9A",
+      "name": "JButton",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

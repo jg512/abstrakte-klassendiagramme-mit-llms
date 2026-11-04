@@ -1,0 +1,203 @@
+{
+  "projekt": "Orekit",
+  "umfang": "teilweise",
+  "methode": "Geprüft sind alle Vererbungen, Realisierungen, inneren Klassen und Feldbeziehungen, die gezeigten «create» und die Schleifen, die im Bild sichtbar sind. Mehrere gestrichelte Linien zu AbstractPropagator laufen im Bild übereinander und lassen sich nicht einzeln trennen. Ob AbstractPropagator eine Schleife hat, ist nicht zu erkennen.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.StoringStepHandler",
+      "bezeichnung": "ephemerisGenerators",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedMainStateEquations",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.MainStateEquations",
+      "bezeichnung": "main",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.estimation.sequential.AbstractKalmanEstimator",
+      "nach": "org.orekit.estimation.sequential.AbstractKalmanEstimator",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.Propagator",
+      "nach": "org.orekit.propagation.Propagator",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedEventDetector",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepHandler",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedMainStateEquations",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedSecondaryStateEquations",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.IntegratorResetter",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.MainStateEquations",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.StoringStepHandler",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepHandler",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepInterpolator",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedSecondaryStateEquations",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedSecondaryStateEquations",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator.StoringStepHandler",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.StoringStepHandler",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.orekit.utils.PVCoordinatesProvider",
+      "nach": "org.orekit.utils.PVCoordinatesProvider",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "org.orekit.estimation.sequential.SemiAnalyticalKalmanEstimator",
+      "nach": "org.orekit.estimation.sequential.AbstractKalmanEstimator",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "org.orekit.propagation.Propagator",
+      "nach": "org.orekit.utils.PVCoordinatesProvider",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.AbstractPropagator",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedEventDetector",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepHandler",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepInterpolator",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedMainStateEquations",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedSecondaryStateEquations",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.IntegratorResetter",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.MainStateEquations",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+      "nach": "org.orekit.propagation.integration.AbstractIntegratedPropagator.StoringStepHandler",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "realization",
+      "von": "org.orekit.propagation.AbstractPropagator",
+      "nach": "org.orekit.propagation.Propagator",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "realization",
+      "von": "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepInterpolator",
+      "nach": "org.orekit.utils.PVCoordinatesProvider",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

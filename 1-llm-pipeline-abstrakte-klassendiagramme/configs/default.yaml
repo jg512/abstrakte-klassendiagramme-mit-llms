@@ -1,0 +1,136 @@
+# Standardkonfiguration der Pipeline.
+#
+# Wenn man die Varianten eines Laufs vergleichen will, müssen diese Felder für
+# alle Varianten gleich bleiben. Ändert man eines davon, sind die Vergleiche
+# ungültig, und das fällt nirgends auf.
+#   - backend, model, temperature, num_ctx, seed
+#   - target_nodes, node_tolerance
+#   - cleanup
+#   - filters, size_caps
+#   - driver (damit alle Varianten dasselbe Budget haben)
+
+# Quellsprache
+# Legt den Parser fest. Für python werden das ast-Modul und pyreverse benutzt,
+# für java tree-sitter-java (Installation: pip install 'abstract-uml[java]').
+# Lässt sich pro Lauf mit --language überschreiben.
+language: python               # python | java
+
+# Java-Extraktion. Die Standardauflösung braucht weder Build noch Classpath.
+# Mit `source_sets: auto` werden die main-Verzeichnisse von Maven/Gradle
+# bevorzugt, damit keine veralteten generierten Kopien mitgelesen werden.
+# `all` ist für ungewöhnliche ältere Projektstrukturen gedacht. Mit
+# `symbol_solver: javac` kann zusätzlich der JDK-Compiler interne Symbole
+# ergänzen, die sonst nicht aufgelöst werden.
+java:
+  source_sets: auto            # auto | all
+  include_generated: false
+  member_profile: summary      # structure | summary | public-api | full
+  include_external_supertypes: true
+  include_method_dependencies: false
+  symbol_solver: source        # source | javac
+  classpath: []                # optionale JARs und Verzeichnisse für die Auflösung mit javac
+  # literal: nur Felder, extends und implements. intellij: Klassendiagramm wie
+  # in IntelliJ IDEA, mit Abhängigkeiten aus den Methodenrümpfen und «create».
+  relation_style: literal      # literal | intellij
+  ide_jdk: true                # nur intellij: false, wenn in IntelliJ kein JDK eingerichtet war
+  ide_same_package: true       # nur intellij: false, wenn IntelliJ Klassen aus demselben Paket nicht fand
+  diagram_classes: []          # nur intellij: voll qualifizierte Klassennamen, leer = alle
+
+# LLM-Backend
+# Normalerweise läuft die Pipeline über ein API-Backend. Für lokale Läufe
+# configs/ollama.yaml nehmen.
+backend: gemini                # gemini | openai | anthropic | ollama | ...
+model: gemini-2.5-pro
+base_url: ""
+api_key_env: GEMINI_API_KEY    # Umgebungsvariable mit dem API-Schlüssel
+temperature: 0.1
+num_ctx: 32768                 # nur für Ollama (dort ist der Standard 2048)
+seed: 42                       # die meisten API-Backends ignorieren den Seed (litellm lässt ihn weg)
+request_timeout: 0             # Sekunden pro LLM-Aufruf, 0 = Standard von litellm (600 s)
+
+# Abstraktionsziel
+# Das Diagramm zeigt das Repo in abstrahierter Form. Ein vollständiges
+# UML-Klassendiagramm ist nicht das Ziel. target_nodes ist entweder eine Zahl
+# (die angestrebte Größe) oder "open" (das Modell wählt den kleinsten Graphen,
+# der den Kern der Architektur zeigt). max_nodes ist in beiden Fällen die feste
+# Obergrenze. Zur Laufzeit wird sie außerdem auf die Zahl der Klassen im Repo
+# begrenzt.
+target_nodes: 20               # Zahl oder "open"
+max_nodes: 40
+node_tolerance: 0.2            # ±20 %, nur bei fester Zielzahl sinnvoll
+
+# Cleanup
+cleanup: true
+auto_target_nodes: false   # bei true legt das LLM target_nodes anhand von Kennzahlen des Codes fest
+
+# Kontext
+# Das ist nur eine Warnschwelle, gerechnet als Zeichen // 4. Der Wert passt zu
+# API-Modellen mit großem Kontextfenster. Konfigurationen für lokale Modelle
+# sollten ihn senken.
+context_budget: 100000
+
+# Filter für die Eingabe-Repos
+filters:
+  exclude_dirs:
+    - tests
+    - test
+    - .venv
+    - venv
+    - build
+    - dist
+    - __pycache__
+    - .tox
+    - .git
+    - docs
+    - examples
+    - benchmarks
+    # Build-Ausgaben von Java. Darin liegen übersetzte oder generierte Kopien
+    # von src/, die sonst als doppelte und oft veraltete Klassen geparst würden.
+    - target
+    - bin
+    - out
+    - .gradle
+    - .mvn
+  exclude_files:
+    # Python
+    - "test_*.py"
+    - "*_test.py"
+    - "conftest.py"
+    - "setup.py"
+    # Java (src/test ist über test und tests schon ausgeschlossen)
+    - "*Test.java"
+    - "*Tests.java"
+    - "*TestCase.java"
+    - "*IT.java"
+
+# Größengrenzen für den Preflight
+size_caps:
+  max_loc: 20000
+  max_classes: 300
+
+# Budget des Drivers, für alle Varianten gleich
+driver:
+  max_tool_calls: 40
+  max_tokens: 30000
+  read_file_max_lines: 200   # höchstens so viele Zeilen pro read_file, 0 = unbegrenzt
+  compress_every_n_turns: 0  # Verlauf alle N Tool-Calls zusammenfassen, 0 = aus
+
+# Clustering (nur für cluster und cluster-peek)
+# Das Driver-Budget oben gilt für den ganzen Lauf. Ein Teil davon bleibt für
+# die Synthese reserviert, der Rest wird nach Größe auf die Cluster verteilt.
+clustering:
+  max_cluster_size: 40       # größere Cluster werden geteilt
+  min_cluster_size: 3        # kleinere Cluster werden zusammengelegt
+  synthesis_share: 0.25      # Anteil des Budgets für die Synthese
+
+# Ausgabe
+output:
+  dir: runs
+  write_pyreverse: true        # die .puml von pyreverse mitspeichern (Eingabe für catalog und prune)
+  trace_jsonl: true            # bei false wird kein trace.jsonl geschrieben
+  trace_messages: false        # bei true kommen die vollständigen Nachrichten und Tools in den Trace (nötig für --replay)
+
+# Entwicklung
+dev:
+  cache_dir: .cache
+  verbose: false

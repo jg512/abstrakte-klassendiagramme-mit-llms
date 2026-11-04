@@ -1,0 +1,5 @@
+# v1
+The working graph starts EMPTY. Build it up: add the core nodes and their
+relations until the graph reaches the target size. Prefer adding a node
+only once you are confident it is core; remove nodes you later decide do
+not belong.

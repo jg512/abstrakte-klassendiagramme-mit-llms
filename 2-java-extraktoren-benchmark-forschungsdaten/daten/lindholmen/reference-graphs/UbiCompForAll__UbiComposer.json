@@ -1,0 +1,134 @@
+{
+  "repo": "UbiCompForAll/UbiComposer",
+  "commit": "eb2dfc62fed779f0a981a60f2465dc5e56b867f1",
+  "model_path": "org.ubicompforall.ubicomposer.android/model/ubicomposer_android.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "org.ubicompforall.simplelanguage.runtime.BuildingBlockFactory",
+    "org.ubicompforall.simplelanguage.runtime.BuildingBlockInstance",
+    "org.ubicompforall.simplelanguage.runtime.CompositeBuildingBlockFactory",
+    "org.ubicompforall.simplelanguage.runtime.ConditionInstance",
+    "org.ubicompforall.simplelanguage.runtime.MapBasedBuildingBlockFactory",
+    "org.ubicompforall.simplelanguage.runtime.RuntimeEnvironment",
+    "org.ubicompforall.simplelanguage.runtime.StepInstance",
+    "org.ubicompforall.simplelanguage.runtime.TaskInstance",
+    "org.ubicompforall.simplelanguage.runtime.TaskInvoker",
+    "org.ubicompforall.simplelanguage.runtime.TriggerMonitor",
+    "org.ubicompforall.ubicomposer.android.AbstractEditBuildingBlockActivity",
+    "org.ubicompforall.ubicomposer.android.AbstractUbiComposerActivity",
+    "org.ubicompforall.ubicomposer.android.BuildingBlockDescListAdapter",
+    "org.ubicompforall.ubicomposer.android.EditStepActivity",
+    "org.ubicompforall.ubicomposer.android.EditTriggerActivity",
+    "org.ubicompforall.ubicomposer.android.ModelUtils",
+    "org.ubicompforall.ubicomposer.android.TaskActivity",
+    "org.ubicompforall.ubicomposer.android.TaskListActivity",
+    "org.ubicompforall.ubicomposer.android.TaskListAdapter",
+    "org.ubicompforall.ubicomposer.util.DescriptorLibraryUtils",
+    "org.ubicompforall.ubicomposer.util.UserServiceUtils"
+  ],
+  "edges": [
+    [
+      "org.ubicompforall.simplelanguage.runtime.ConditionInstance",
+      "org.ubicompforall.simplelanguage.runtime.BuildingBlockInstance",
+      "inheritance"
+    ],
+    [
+      "org.ubicompforall.simplelanguage.runtime.ConditionInstance",
+      "org.ubicompforall.simplelanguage.runtime.TaskInstance",
+      "association"
+    ],
+    [
+      "org.ubicompforall.simplelanguage.runtime.RuntimeEnvironment",
+      "org.ubicompforall.simplelanguage.runtime.TaskInstance",
+      "association"
+    ],
+    [
+      "org.ubicompforall.simplelanguage.runtime.StepInstance",
+      "org.ubicompforall.simplelanguage.runtime.BuildingBlockInstance",
+      "inheritance"
+    ],
+    [
+      "org.ubicompforall.simplelanguage.runtime.StepInstance",
+      "org.ubicompforall.simplelanguage.runtime.TaskInstance",
+      "association"
+    ],
+    [
+      "org.ubicompforall.simplelanguage.runtime.TaskInvoker",
+      "org.ubicompforall.simplelanguage.runtime.TriggerMonitor",
+      "association"
+    ],
+    [
+      "org.ubicompforall.simplelanguage.runtime.TriggerMonitor",
+      "org.ubicompforall.simplelanguage.runtime.BuildingBlockInstance",
+      "inheritance"
+    ],
+    [
+      "org.ubicompforall.ubicomposer.android.AbstractEditBuildingBlockActivity",
+      "org.ubicompforall.ubicomposer.android.AbstractUbiComposerActivity",
+      "inheritance"
+    ],
+    [
+      "org.ubicompforall.ubicomposer.android.EditStepActivity",
+      "org.ubicompforall.ubicomposer.android.AbstractEditBuildingBlockActivity",
+      "inheritance"
+    ],
+    [
+      "org.ubicompforall.ubicomposer.android.EditTriggerActivity",
+      "org.ubicompforall.ubicomposer.android.AbstractEditBuildingBlockActivity",
+      "inheritance"
+    ],
+    [
+      "org.ubicompforall.ubicomposer.android.TaskActivity",
+      "org.ubicompforall.ubicomposer.android.AbstractUbiComposerActivity",
+      "inheritance"
+    ],
+    [
+      "org.ubicompforall.ubicomposer.android.TaskListActivity",
+      "org.ubicompforall.ubicomposer.android.AbstractUbiComposerActivity",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_yholsPNQEeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.AbstractUbiComposerActivity",
+    "_07DUIPNQEeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.AbstractEditBuildingBlockActivity",
+    "_40SPgPNQEeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.EditStepActivity",
+    "_7tXVcPNQEeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.EditTriggerActivity",
+    "_Ex5RAPNREeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.ModelUtils",
+    "_GmhQUPNREeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.TaskActivity",
+    "_H2_ZsPNREeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.TaskListActivity",
+    "_MlphMPNREeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.TaskListAdapter",
+    "_NeFlEPNREeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.android.BuildingBlockDescListAdapter",
+    "_Xal1APNSEeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.util.DescriptorLibraryUtils",
+    "_Ypc00PNSEeGRNYKT0cNofw": "org.ubicompforall.ubicomposer.util.UserServiceUtils",
+    "_8umbEPNzEeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.BuildingBlockFactory",
+    "_x-5sQPN1EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.BuildingBlockInstance",
+    "_zlyxkPN1EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.CompositeBuildingBlockFactory",
+    "_3Gdb8PN1EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.ConditionInstance",
+    "_44uDwPN1EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.MapBasedBuildingBlockFactory",
+    "_9K8t8PN1EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.RuntimeEnvironment",
+    "_-VnxUPN1EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.StepInstance",
+    "_ADzKYPN2EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.TaskInstance",
+    "_BCdyEPN2EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.TaskInvoker",
+    "_CmgXsPN2EeGRNYKT0cNofw": "org.ubicompforall.simplelanguage.runtime.TriggerMonitor"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_xjxPQPNQEeGRNYKT0cNofw",
+      "name": "Activity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_RhS70PNREeGRNYKT0cNofw",
+      "name": "ArrayAdapter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wJNV8PN1EeGRNYKT0cNofw",
+      "name": "AbstractStepIntstance",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

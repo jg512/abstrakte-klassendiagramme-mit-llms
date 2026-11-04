@@ -1,0 +1,119 @@
+{
+  "projekt": "NeurophChanges",
+  "umfang": "teilweise",
+  "methode": "Feldbeziehungen, deren Rollenname im Bild lesbar ist, und zwei «create», die eindeutig zuzuordnen sind. Das Bild hat rund 100 Linien, die sich stark überlagern. Der Rest ist nicht geprüft.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Connection",
+      "nach": "org.neuroph.core.Neuron",
+      "bezeichnung": "fromNeuron",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Connection",
+      "nach": "org.neuroph.core.Weight",
+      "bezeichnung": "weight",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Layer",
+      "nach": "org.neuroph.core.NeuralNetwork",
+      "bezeichnung": "parentNetwork",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Layer",
+      "nach": "org.neuroph.core.Neuron",
+      "bezeichnung": "neurons",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.NeuralNetwork",
+      "nach": "org.neuroph.core.Layer",
+      "bezeichnung": "layers",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.NeuralNetwork",
+      "nach": "org.neuroph.core.Neuron",
+      "bezeichnung": "inputNeurons",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Neuron",
+      "nach": "org.neuroph.core.Connection",
+      "bezeichnung": "inputConnections",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Neuron",
+      "nach": "org.neuroph.core.Layer",
+      "bezeichnung": "parentLayer",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Neuron",
+      "nach": "org.neuroph.core.input.InputFunction",
+      "bezeichnung": "inputFunction",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.Neuron",
+      "nach": "org.neuroph.core.transfer.TransferFunction",
+      "bezeichnung": "transferFunction",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.data.BufferedDataSet",
+      "nach": "org.neuroph.core.data.DataSetRow",
+      "bezeichnung": "bufferedRows",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.data.DataSet",
+      "nach": "org.neuroph.core.data.DataSetRow",
+      "bezeichnung": "rows",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.learning.LearningRule",
+      "nach": "org.neuroph.core.NeuralNetwork",
+      "bezeichnung": "neuralNetwork",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "org.neuroph.core.learning.LearningRule",
+      "nach": "org.neuroph.core.data.DataSet",
+      "bezeichnung": "trainingSet",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "dependency",
+      "von": "org.neuroph.core.Neuron",
+      "nach": "org.neuroph.core.transfer.Step",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "org.neuroph.nnet.learning.KohonenLearning",
+      "nach": "org.neuroph.core.Neuron",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

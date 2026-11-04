@@ -1,0 +1,289 @@
+{
+  "repo": "juli1/rdalte",
+  "commit": "79090e3ae766c162c1dff65432fd52612e704de6",
+  "model_path": "fr.openpeople.rdal.model/model/metamodel/rdal.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "fr.openpeople.rdal.model.core.AbstractRequirement",
+    "fr.openpeople.rdal.model.core.Actor",
+    "fr.openpeople.rdal.model.core.AgregationType",
+    "fr.openpeople.rdal.model.core.Assumption",
+    "fr.openpeople.rdal.model.core.Conflict",
+    "fr.openpeople.rdal.model.core.ContractualElement",
+    "fr.openpeople.rdal.model.core.Direction",
+    "fr.openpeople.rdal.model.core.EnumAssumptionType",
+    "fr.openpeople.rdal.model.core.EnumRiskKind",
+    "fr.openpeople.rdal.model.core.EnumVerificationMethod",
+    "fr.openpeople.rdal.model.core.Goal",
+    "fr.openpeople.rdal.model.core.Interaction",
+    "fr.openpeople.rdal.model.core.ModelElementReference",
+    "fr.openpeople.rdal.model.core.RefExpressionCollectedModelElements",
+    "fr.openpeople.rdal.model.core.RefUserSelectedModelElements",
+    "fr.openpeople.rdal.model.core.ReferencedModelElements",
+    "fr.openpeople.rdal.model.core.Requirement",
+    "fr.openpeople.rdal.model.core.RequirementsCoverageData",
+    "fr.openpeople.rdal.model.core.RequirementsGroup",
+    "fr.openpeople.rdal.model.core.Specification",
+    "fr.openpeople.rdal.model.core.StakeHolder",
+    "fr.openpeople.rdal.model.core.SystemContext",
+    "fr.openpeople.rdal.model.core.SystemOverview",
+    "fr.openpeople.rdal.model.core.Trace",
+    "fr.openpeople.rdal.model.core.TraceModelElementReference",
+    "fr.openpeople.rdal.model.core.Uncertainty",
+    "fr.openpeople.rdal.model.core.Variable",
+    "fr.openpeople.rdal.model.core.VariableType",
+    "fr.openpeople.rdal.model.core.VerifiableElement",
+    "fr.openpeople.rdal.model.core.VerificationActivity"
+  ],
+  "edges": [
+    [
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "fr.openpeople.rdal.model.core.EnumRiskKind",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "fr.openpeople.rdal.model.core.RequirementsGroup",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "fr.openpeople.rdal.model.core.VerifiableElement",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "fr.openpeople.rdal.model.core.VerificationActivity",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Actor",
+      "fr.openpeople.rdal.model.core.Interaction",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Actor",
+      "fr.openpeople.rdal.model.core.Specification",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Actor",
+      "fr.openpeople.rdal.model.core.SystemContext",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.AgregationType",
+      "fr.openpeople.rdal.model.core.ReferencedModelElements",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Assumption",
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Assumption",
+      "fr.openpeople.rdal.model.core.EnumAssumptionType",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Assumption",
+      "fr.openpeople.rdal.model.core.Requirement",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Conflict",
+      "fr.openpeople.rdal.model.core.Goal",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Conflict",
+      "fr.openpeople.rdal.model.core.Specification",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.ContractualElement",
+      "fr.openpeople.rdal.model.core.ContractualElement",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.ContractualElement",
+      "fr.openpeople.rdal.model.core.ReferencedModelElements",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.ContractualElement",
+      "fr.openpeople.rdal.model.core.StakeHolder",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.ContractualElement",
+      "fr.openpeople.rdal.model.core.Uncertainty",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Direction",
+      "fr.openpeople.rdal.model.core.Interaction",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.EnumVerificationMethod",
+      "fr.openpeople.rdal.model.core.VerificationActivity",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Goal",
+      "fr.openpeople.rdal.model.core.ContractualElement",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Goal",
+      "fr.openpeople.rdal.model.core.SystemOverview",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.ModelElementReference",
+      "fr.openpeople.rdal.model.core.ReferencedModelElements",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.RefExpressionCollectedModelElements",
+      "fr.openpeople.rdal.model.core.ReferencedModelElements",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.RefUserSelectedModelElements",
+      "fr.openpeople.rdal.model.core.ReferencedModelElements",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Requirement",
+      "fr.openpeople.rdal.model.core.AbstractRequirement",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Requirement",
+      "fr.openpeople.rdal.model.core.Requirement",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.RequirementsGroup",
+      "fr.openpeople.rdal.model.core.RequirementsGroup",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.RequirementsGroup",
+      "fr.openpeople.rdal.model.core.Specification",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.RequirementsGroup",
+      "fr.openpeople.rdal.model.core.VerifiableElement",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Specification",
+      "fr.openpeople.rdal.model.core.SystemOverview",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Specification",
+      "fr.openpeople.rdal.model.core.Trace",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Specification",
+      "fr.openpeople.rdal.model.core.VerifiableElement",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Specification",
+      "fr.openpeople.rdal.model.core.VerificationActivity",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.StakeHolder",
+      "fr.openpeople.rdal.model.core.Actor",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.SystemContext",
+      "fr.openpeople.rdal.model.core.SystemOverview",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Trace",
+      "fr.openpeople.rdal.model.core.ReferencedModelElements",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.TraceModelElementReference",
+      "fr.openpeople.rdal.model.core.ModelElementReference",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.TraceModelElementReference",
+      "fr.openpeople.rdal.model.core.RequirementsCoverageData",
+      "inheritance"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.Variable",
+      "fr.openpeople.rdal.model.core.VariableType",
+      "association"
+    ],
+    [
+      "fr.openpeople.rdal.model.core.VerifiableElement",
+      "fr.openpeople.rdal.model.core.ContractualElement",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_HkC5V0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.ContractualElement",
+    "_HkC5dUUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Uncertainty",
+    "_HkC5h0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.StakeHolder",
+    "_HkC5i0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Actor",
+    "_HkC5lEUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Interaction",
+    "_HkC5mkUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Direction",
+    "_HkC5p0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.ReferencedModelElements",
+    "_HkC5rUUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.ModelElementReference",
+    "_HkC5ukUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.AgregationType",
+    "_HkC5v0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.VerifiableElement",
+    "_HkC5w0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Specification",
+    "_HkC510UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.SystemOverview",
+    "_HkC540UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Goal",
+    "_HkC56kUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Conflict",
+    "_HkC590UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.SystemContext",
+    "_HkC6B0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.RequirementsGroup",
+    "_HkC6EUUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.AbstractRequirement",
+    "_HkC6I0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.EnumRiskKind",
+    "_HkC6J0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.VerificationActivity",
+    "_HkC6MUUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.EnumVerificationMethod",
+    "_HkC6Q0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Requirement",
+    "_HkC6VEUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Assumption",
+    "_HkC6W0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.EnumAssumptionType",
+    "_HkC6X0UaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.RefExpressionCollectedModelElements",
+    "_HkC6ZEUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.RefUserSelectedModelElements",
+    "_HkC6ZkUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.Trace",
+    "_HkC6cEUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.TraceModelElementReference",
+    "_HkC6eUUaEeGxFuN_nsITDA": "fr.openpeople.rdal.model.core.RequirementsCoverageData",
+    "_j-8cIEWoEeGLg_npHKDodQ": "fr.openpeople.rdal.model.core.VariableType",
+    "_3FzYQEWoEeGLg_npHKDodQ": "fr.openpeople.rdal.model.core.Variable"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_HkC5UUUaEeGxFuN_nsITDA",
+      "name": "IdentifiedElement",
+      "source_candidates": [
+        "fr.labsticc.framework.constraints.model.constraints.IdentifiedElement",
+        "fr.labsticc.framework.settings.model.settings.IdentifiedElement",
+        "fr.openpeople.rdal.model.core.IdentifiedElement"
+      ],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "repo": "BGCX262/zyw-bank-management-svn-to-git",
+  "commit": "c24ac18259d08c06022e1ca0adb2fc649acb93f1",
+  "model_path": "trunk/Design Class Diagram.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.bank.entity.Account",
+    "com.bank.entity.CustLogInfo",
+    "com.bank.entity.Customer",
+    "com.bank.entity.EnterpriseAcc",
+    "com.bank.entity.IndividualAcc",
+    "com.bank.entity.RegularAcc",
+    "com.bank.entity.VIPAcc"
+  ],
+  "edges": [
+    [
+      "com.bank.entity.CustLogInfo",
+      "com.bank.entity.Customer",
+      "association"
+    ],
+    [
+      "com.bank.entity.CustLogInfo",
+      "com.bank.entity.IndividualAcc",
+      "association"
+    ],
+    [
+      "com.bank.entity.EnterpriseAcc",
+      "com.bank.entity.Account",
+      "inheritance"
+    ],
+    [
+      "com.bank.entity.IndividualAcc",
+      "com.bank.entity.Account",
+      "inheritance"
+    ],
+    [
+      "com.bank.entity.RegularAcc",
+      "com.bank.entity.IndividualAcc",
+      "inheritance"
+    ],
+    [
+      "com.bank.entity.VIPAcc",
+      "com.bank.entity.IndividualAcc",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_LKJ90AeLEeCcLcBTQte9EA": "com.bank.entity.Customer",
+    "_LKYAQAeLEeCcLcBTQte9EA": "com.bank.entity.Account",
+    "_LKYnUAeLEeCcLcBTQte9EA": "com.bank.entity.EnterpriseAcc",
+    "_LKZ1cAeLEeCcLcBTQte9EA": "com.bank.entity.IndividualAcc",
+    "_LKacgAeLEeCcLcBTQte9EA": "com.bank.entity.CustLogInfo",
+    "_LKbqoAeLEeCcLcBTQte9EA": "com.bank.entity.VIPAcc",
+    "_LKcRsAeLEeCcLcBTQte9EA": "com.bank.entity.RegularAcc"
+  },
+  "unmapped_model_nodes": []
+}

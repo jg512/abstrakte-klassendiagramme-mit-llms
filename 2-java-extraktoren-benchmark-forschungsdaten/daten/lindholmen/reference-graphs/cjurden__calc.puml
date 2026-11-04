@@ -1,0 +1,14 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "Calculator" as n0
+class "Controller" as n1
+class "Controller.addlistener" as n2
+class "Controller.divlistener" as n3
+class "Controller.multlistener" as n4
+class "Controller.sublistener" as n5
+class "Main" as n6
+class "Model" as n7
+class "View" as n8
+n1 -- n7
+n1 -- n8
+@enduml

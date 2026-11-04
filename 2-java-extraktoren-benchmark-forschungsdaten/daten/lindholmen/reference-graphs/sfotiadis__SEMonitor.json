@@ -1,0 +1,65 @@
+{
+  "repo": "sfotiadis/SEMonitor",
+  "commit": "bff188fb74b3c1cc4351c1826fb2da1421fe45b9",
+  "model_path": "documents/papyrus/SEMonitor.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "IO.RHParser",
+    "IO.ReportGenerator",
+    "Models.ChangeRecord",
+    "Models.LehmanLawsRecord",
+    "Models.MetricsRecord",
+    "Models.ReleaseHistory",
+    "Presenter.Presenter",
+    "Views.LawView",
+    "Views.MainView",
+    "Views.View"
+  ],
+  "edges": [
+    [
+      "Models.ChangeRecord",
+      "Models.MetricsRecord",
+      "association"
+    ],
+    [
+      "Models.LehmanLawsRecord",
+      "Models.ReleaseHistory",
+      "association"
+    ],
+    [
+      "Models.ReleaseHistory",
+      "Presenter.Presenter",
+      "association"
+    ],
+    [
+      "Views.LawView",
+      "Views.View",
+      "inheritance"
+    ],
+    [
+      "Views.MainView",
+      "Views.View",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_Y1GQAHjeEeSf9YqWLgmh7g": "Views.View",
+    "_AkcTEHjfEeSf9YqWLgmh7g": "Views.MainView",
+    "_A6CIkHjfEeSf9YqWLgmh7g": "Views.LawView",
+    "_1ehT4HikEeSf9YqWLgmh7g": "IO.RHParser",
+    "_HiGtwHioEeSf9YqWLgmh7g": "IO.ReportGenerator",
+    "_Ib0WgHgEEeSl29K4eMFkXQ": "Models.ReleaseHistory",
+    "_uatCMHf8EeSl29K4eMFkXQ": "Models.ChangeRecord",
+    "_LZ64oHf_EeSl29K4eMFkXQ": "Models.MetricsRecord",
+    "_OHjcMHgCEeSl29K4eMFkXQ": "Models.LehmanLawsRecord",
+    "_kRfEgHjCEeSf9YqWLgmh7g": "Presenter.Presenter"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_jpI9EHf8EeSl29K4eMFkXQ",
+      "name": "ReleaseInformation",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

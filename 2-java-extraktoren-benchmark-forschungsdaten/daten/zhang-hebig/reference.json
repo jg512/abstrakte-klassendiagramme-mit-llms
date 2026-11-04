@@ -1,0 +1,192 @@
+[
+  {
+    "project": "ZooTypers",
+    "source_dir": "1_ZooTypers-7591f15",
+    "source_roots": ["ZooTypers/src"],
+    "model_commit": "7591f15",
+    "source_commit": "7591f15",
+    "reported_model_relations": 6,
+    "nodes": ["TitlePage", "PreGameSelection", "SinglePlayer", "SinglePlayerModel", "GameTimer", "PostGameScreen"],
+    "aliases": {},
+    "edges": [
+      ["TitlePage", "PreGameSelection", "association"],
+      ["PreGameSelection", "SinglePlayer", "association"],
+      ["SinglePlayer", "PostGameScreen", "association"],
+      ["SinglePlayer", "GameTimer", "association"],
+      ["SinglePlayer", "SinglePlayerModel", "association"]
+    ],
+    "normalization_note": "The diagram has two oppositely directed associations between SinglePlayer and SinglePlayerModel; the common metric collapses them to one undirected association."
+  },
+  {
+    "project": "RaiseMeUp",
+    "source_dir": "2_RaiseMeUp-f3796c5",
+    "source_roots": ["project/RaiseMeUp/src"],
+    "model_commit": "d32e2f6",
+    "source_commit": "f3796c5",
+    "reported_model_relations": 22,
+    "nodes": ["PetBuilder", "Pet", "User", "UserBuilder", "Job", "Control", "DAO", "Dog", "Cat", "Fish", "Penguin", "PetObserver", "Item", "ItemVisitor", "Food", "Upgrade", "ItemDecorator"],
+    "aliases": {"Control": "RaiseMeUp"},
+    "edges": [
+      ["PetBuilder", "Pet", "association"],
+      ["Pet", "User", "association"],
+      ["UserBuilder", "User", "association"],
+      ["Pet", "Job", "association"],
+      ["Pet", "Item", "association"],
+      ["Pet", "Food", "association"],
+      ["Pet", "PetObserver", "association"],
+      ["Control", "User", "association"],
+      ["Control", "Pet", "association"],
+      ["Control", "Job", "association"],
+      ["Control", "Item", "association"],
+      ["Control", "ItemVisitor", "association"],
+      ["Control", "DAO", "association"],
+      ["DAO", "DAO", "association"],
+      ["ItemDecorator", "Upgrade", "association"],
+      ["Dog", "Pet", "inheritance"],
+      ["Cat", "Pet", "inheritance"],
+      ["Fish", "Pet", "inheritance"],
+      ["Penguin", "Pet", "inheritance"],
+      ["Food", "Item", "inheritance"],
+      ["Upgrade", "Item", "inheritance"],
+      ["ItemDecorator", "Upgrade", "realization"]
+    ]
+  },
+  {
+    "project": "EAPLI_PL_2NB",
+    "source_dir": "3_EAPLI_PL_2NB-facb2e8",
+    "source_roots": ["eapli.expensemanager/src"],
+    "model_commit": "35d280a",
+    "source_commit": "facb2e8",
+    "reported_model_relations": 7,
+    "nodes": ["BaseUi", "BaseController", "IncomeRegisterUI", "RegisterIncomeController", "IncomeTypeRepository", "CheckingAccount", "Income", "IncomeRepository"],
+    "aliases": {"BaseUi": "BaseUI", "IncomeRegisterUI": "RegisterIncomeUI"},
+    "edges": [
+      ["IncomeRegisterUI", "BaseUi", "inheritance"],
+      ["RegisterIncomeController", "BaseController", "inheritance"],
+      ["RegisterIncomeController", "IncomeTypeRepository", "association"],
+      ["RegisterIncomeController", "CheckingAccount", "association"],
+      ["CheckingAccount", "Income", "association"],
+      ["CheckingAccount", "IncomeRepository", "association"],
+      ["IncomeRepository", "Income", "association"]
+    ]
+  },
+  {
+    "project": "FreeDaysIntern",
+    "source_dir": "4_FreeDaysIntern-b306738",
+    "source_roots": ["Sts/freeday/src/main/java"],
+    "model_commit": "b306738",
+    "source_commit": "b306738",
+    "reported_model_relations": 7,
+    "nodes": ["Project", "Phase", "POIGenerator", "Employee", "LaborBilling", "PhaseLabor", "Pattern", "Schedule"],
+    "aliases": {},
+    "edges": [
+      ["Project", "Phase", "association"],
+      ["Phase", "PhaseLabor", "association"],
+      ["PhaseLabor", "LaborBilling", "association"],
+      ["PhaseLabor", "Pattern", "association"],
+      ["Pattern", "Schedule", "association"],
+      ["Schedule", "Employee", "association"],
+      ["POIGenerator", "Employee", "association"]
+    ]
+  },
+  {
+    "project": "NeurophChanges",
+    "source_dir": "5_NeurophChanges-848a3aa",
+    "source_roots": ["neuroph-2.8/Core/src/main/java"],
+    "model_commit": "848a3aa",
+    "source_commit": "848a3aa",
+    "reported_model_relations": 9,
+    "nodes": ["Layer", "NeuralNetwork", "LearningRule", "Neuron", "Connection", "TrainingSet", "InputFunction", "TransferFunction", "Weight", "TrainingElement"],
+    "aliases": {"TrainingSet": "DataSet", "TrainingElement": "DataSetRow"},
+    "edges": [
+      ["Layer", "NeuralNetwork", "association"],
+      ["NeuralNetwork", "LearningRule", "association"],
+      ["Layer", "Neuron", "association"],
+      ["Neuron", "Connection", "association"],
+      ["Neuron", "InputFunction", "association"],
+      ["Neuron", "TransferFunction", "association"],
+      ["Connection", "Weight", "association"],
+      ["LearningRule", "TrainingSet", "association"],
+      ["TrainingSet", "TrainingElement", "association"]
+    ]
+  },
+  {
+    "project": "PatrickFromTheMOOC",
+    "source_dir": "6_PatrickFromTheMOOC-5846aa2",
+    "source_roots": ["avis"],
+    "model_commit": "e2b99c7",
+    "source_commit": "5846aa2",
+    "reported_model_relations": 9,
+    "nodes": ["SocialNetwork", "Item", "Member", "Review", "EvaluationReview", "Film", "Book"],
+    "aliases": {},
+    "edges": [
+      ["SocialNetwork", "Member", "association"],
+      ["SocialNetwork", "Item", "association"],
+      ["Member", "EvaluationReview", "association"],
+      ["Member", "Review", "association"],
+      ["Item", "Review", "association"],
+      ["Review", "EvaluationReview", "association"],
+      ["Film", "Item", "inheritance"],
+      ["Book", "Item", "inheritance"]
+    ],
+    "normalization_note": "The diagram reports two directed relationships between Member and Review; the common metric collapses them to one undirected association."
+  },
+  {
+    "project": "myblog",
+    "source_dir": "7_myblog-6494eaf",
+    "source_roots": ["myblog-domain/src/main/java"],
+    "model_commit": "6494eaf",
+    "source_commit": "6494eaf",
+    "reported_model_relations": 11,
+    "nodes": ["User", "Account", "Tag", "Blog", "Entry", "Category", "Link", "Comment"],
+    "aliases": {},
+    "edges": [
+      ["User", "Account", "association"],
+      ["User", "Entry", "association"],
+      ["Tag", "Entry", "association"],
+      ["Blog", "Tag", "association"],
+      ["Blog", "Entry", "association"],
+      ["Blog", "Category", "association"],
+      ["Blog", "Link", "association"],
+      ["Entry", "Comment", "association"],
+      ["Entry", "Category", "association"],
+      ["Category", "Link", "association"]
+    ],
+    "normalization_note": "The authors report 11 relationships; the visible diagram yields 10 distinct classifier pairs under the common undirected-association normalization."
+  },
+  {
+    "project": "Orekit",
+    "source_dir": "8_Orekit-4314309",
+    "source_roots": ["src/main/java"],
+    "model_commit": "4314309",
+    "source_commit": "4314309",
+    "reported_model_relations": 5,
+    "nodes": ["DSSTHarvester", "DSSTStateTransitionMatrixGenerator", "DSSTPropagator", "SemiAnalyticalMeasurementHandler", "SemiAnalyticalKalmanModel", "SemiAnalyticalKalmanEstimator", "SemiAnalyticalKalmanEstimatorBuilder"],
+    "aliases": {},
+    "edges": [
+      ["DSSTPropagator", "DSSTHarvester", "association"],
+      ["DSSTPropagator", "DSSTStateTransitionMatrixGenerator", "association"],
+      ["SemiAnalyticalKalmanModel", "SemiAnalyticalMeasurementHandler", "association"],
+      ["SemiAnalyticalKalmanEstimator", "SemiAnalyticalKalmanModel", "association"],
+      ["SemiAnalyticalKalmanEstimatorBuilder", "SemiAnalyticalKalmanEstimator", "association"]
+    ]
+  },
+  {
+    "project": "Artemis",
+    "source_dir": "9_Artemis-8885e22",
+    "source_roots": ["src/main/java"],
+    "model_commit": "8885e22",
+    "source_commit": "8885e22",
+    "reported_model_relations": 6,
+    "nodes": ["SharedQueueProcessingService", "BuildJobManagementService", "BuildJobExecutionService", "LocalCIQueueWebsocketService", "SharedQueueManagementService", "LocalCIWebsocketMessagingService", "BuildJobQueueResource", "AdminBuildJobQueueResource"],
+    "aliases": {},
+    "edges": [
+      ["SharedQueueProcessingService", "BuildJobManagementService", "association"],
+      ["BuildJobManagementService", "BuildJobExecutionService", "association"],
+      ["LocalCIQueueWebsocketService", "SharedQueueManagementService", "association"],
+      ["LocalCIQueueWebsocketService", "LocalCIWebsocketMessagingService", "association"],
+      ["SharedQueueManagementService", "BuildJobQueueResource", "association"],
+      ["SharedQueueManagementService", "AdminBuildJobQueueResource", "association"]
+    ]
+  }
+]

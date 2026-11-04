@@ -1,0 +1,446 @@
+{
+  "repo": "SofiaReis/mfes-green-way",
+  "commit": "8558ac8bda63a77d1faea8531daf7e122f6fe89e",
+  "model_path": "generated/GreenWay.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "greenWay.Date",
+    "greenWay.Device",
+    "greenWay.GreenWay",
+    "greenWay.Invoice",
+    "greenWay.MyTestCase",
+    "greenWay.ReadPoint",
+    "greenWay.ServiceProvider",
+    "greenWay.TestGreenWay",
+    "greenWay.Warning"
+  ],
+  "edges": [
+    [
+      "greenWay.Date",
+      "greenWay.ReadPoint",
+      "association"
+    ],
+    [
+      "greenWay.Device",
+      "greenWay.Invoice",
+      "association"
+    ],
+    [
+      "greenWay.Device",
+      "greenWay.ReadPoint",
+      "association"
+    ],
+    [
+      "greenWay.ReadPoint",
+      "greenWay.ServiceProvider",
+      "association"
+    ],
+    [
+      "greenWay.ReadPoint",
+      "greenWay.Warning",
+      "association"
+    ],
+    [
+      "greenWay.TestGreenWay",
+      "greenWay.MyTestCase",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_hIdtAaK7EeWEepDeQerbjw": "greenWay.Device",
+    "_hIdtTaK7EeWEepDeQerbjw": "greenWay.GreenWay",
+    "_hIdteqK7EeWEepDeQerbjw": "greenWay.Invoice",
+    "_hIdtoqK7EeWEepDeQerbjw": "greenWay.MyTestCase",
+    "_hIdtraK7EeWEepDeQerbjw": "greenWay.ServiceProvider",
+    "_hIdt0KK7EeWEepDeQerbjw": "greenWay.TestGreenWay",
+    "_hIduG6K7EeWEepDeQerbjw": "greenWay.ReadPoint",
+    "_hIeUG6K7EeWEepDeQerbjw": "greenWay.Date",
+    "_hIeUSKK7EeWEepDeQerbjw": "greenWay.Warning"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_hIdtOqK7EeWEepDeQerbjw",
+      "name": "vecPlate",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtPKK7EeWEepDeQerbjw",
+      "name": "Status",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtPqK7EeWEepDeQerbjw",
+      "name": "Status_AbleDisable_1416109707",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtQaK7EeWEepDeQerbjw",
+      "name": "NumCard",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtQ6K7EeWEepDeQerbjw",
+      "name": "moneyDeposit",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtRaK7EeWEepDeQerbjw",
+      "name": "monthTopay",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtR6K7EeWEepDeQerbjw",
+      "name": "bill",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtSaK7EeWEepDeQerbjw",
+      "name": "warnings",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtS6K7EeWEepDeQerbjw",
+      "name": "warCount",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtbqK7EeWEepDeQerbjw",
+      "name": "gwDevices",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtcKK7EeWEepDeQerbjw",
+      "name": "gwServices",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtcqK7EeWEepDeQerbjw",
+      "name": "devCount",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtdKK7EeWEepDeQerbjw",
+      "name": "sevCount",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtdqK7EeWEepDeQerbjw",
+      "name": "totalMoney",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdteKK7EeWEepDeQerbjw",
+      "name": "Month",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtmqK7EeWEepDeQerbjw",
+      "name": "ReadPoints",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtnKK7EeWEepDeQerbjw",
+      "name": "rpCount",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtnqK7EeWEepDeQerbjw",
+      "name": "Month",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtoKK7EeWEepDeQerbjw",
+      "name": "totalMonth",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtv6K7EeWEepDeQerbjw",
+      "name": "Month",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtwaK7EeWEepDeQerbjw",
+      "name": "Type",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtw6K7EeWEepDeQerbjw",
+      "name": "Type_FerriesFuelHighWayMcDriveNoneParkingLot_132988041",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtyqK7EeWEepDeQerbjw",
+      "name": "totalBill",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtzKK7EeWEepDeQerbjw",
+      "name": "X",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdtzqK7EeWEepDeQerbjw",
+      "name": "Y",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIdt7KK7EeWEepDeQerbjw",
+      "name": "IO",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIduFaK7EeWEepDeQerbjw",
+      "name": "filedirective",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIduF6K7EeWEepDeQerbjw",
+      "name": "filedirective_appendstart__1004785595",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIduGqK7EeWEepDeQerbjw",
+      "name": "p",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIduT6K7EeWEepDeQerbjw",
+      "name": "Quota",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUEaK7EeWEepDeQerbjw",
+      "name": "X",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUE6K7EeWEepDeQerbjw",
+      "name": "Y",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUFaK7EeWEepDeQerbjw",
+      "name": "warnType",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUF6K7EeWEepDeQerbjw",
+      "name": "Plate",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUGaK7EeWEepDeQerbjw",
+      "name": "OK",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUPKK7EeWEepDeQerbjw",
+      "name": "Day",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUPqK7EeWEepDeQerbjw",
+      "name": "Month",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUQKK7EeWEepDeQerbjw",
+      "name": "Year",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUQqK7EeWEepDeQerbjw",
+      "name": "Hour",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeURKK7EeWEepDeQerbjw",
+      "name": "Minutes",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeURqK7EeWEepDeQerbjw",
+      "name": "Seconds",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUUKK7EeWEepDeQerbjw",
+      "name": "Type",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUU6K7EeWEepDeQerbjw",
+      "name": "Seq<T>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUVqK7EeWEepDeQerbjw",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUV6K7EeWEepDeQerbjw",
+      "name": "Set<T>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUWqK7EeWEepDeQerbjw",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUW6K7EeWEepDeQerbjw",
+      "name": "Map<D,R>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUXqK7EeWEepDeQerbjw",
+      "name": "D",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUYKK7EeWEepDeQerbjw",
+      "name": "R",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUYaK7EeWEepDeQerbjw",
+      "name": "Product<A,B>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUZKK7EeWEepDeQerbjw",
+      "name": "A",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUZqK7EeWEepDeQerbjw",
+      "name": "B",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUZ6K7EeWEepDeQerbjw",
+      "name": "Optional<T>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUaqK7EeWEepDeQerbjw",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUbKK7EeWEepDeQerbjw",
+      "name": "Seq<char>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUb6K7EeWEepDeQerbjw",
+      "name": "Set<Warning>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUcqK7EeWEepDeQerbjw",
+      "name": "Set<Device>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUdaK7EeWEepDeQerbjw",
+      "name": "Set<ServiceProvider>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUeKK7EeWEepDeQerbjw",
+      "name": "Set<ReadPoint>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUe6K7EeWEepDeQerbjw",
+      "name": "Map<Device::monthTopay,Device::bill>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUf6K7EeWEepDeQerbjw",
+      "name": "Product<bool,Optional<p>>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUg6K7EeWEepDeQerbjw",
+      "name": "Optional<p>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUhqK7EeWEepDeQerbjw",
+      "name": "Optional<IO::filedirective>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_hIeUiaK7EeWEepDeQerbjw",
+      "name": "Seq<Any>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

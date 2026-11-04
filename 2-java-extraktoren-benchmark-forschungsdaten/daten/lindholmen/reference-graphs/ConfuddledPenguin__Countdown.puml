@@ -1,0 +1,43 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "Game.Buzzer" as n0
+class "Game.ConundrumRound" as n1
+class "Game.Countdown" as n2
+class "Game.Dictionary" as n3
+class "Game.GameObjects" as n4
+class "Game.GenerateSolution" as n5
+class "Game.GenerateSolution.mathString" as n6
+class "Game.Launcher" as n7
+class "Game.LeaderBoard" as n8
+class "Game.LeaderBoard.Score" as n9
+class "Game.Monitor" as n10
+class "Game.NumberRound" as n11
+class "Game.NumberRound.returnValues" as n12
+class "Game.Player" as n13
+class "Game.Round" as n14
+class "Game.TheTimer" as n15
+class "Game.UserIO" as n16
+class "Game.WordRound" as n17
+n0 -- n10
+n0 -- n16
+n1 --|> n14
+n2 -- n4
+n2 -- n13
+n2 -- n14
+n2 -- n16
+n3 -- n4
+n3 -- n7
+n3 -- n14
+n4 -- n7
+n4 -- n8
+n4 -- n13
+n7 -- n8
+n7 -- n13
+n7 -- n16
+n8 -- n14
+n10 -- n15
+n11 --|> n14
+n13 -- n14
+n14 -- n16
+n17 --|> n14
+@enduml

@@ -1,0 +1,74 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "fr.openpeople.rdal.model.core.AbstractRequirement" as n0
+class "fr.openpeople.rdal.model.core.Actor" as n1
+class "fr.openpeople.rdal.model.core.AgregationType" as n2
+class "fr.openpeople.rdal.model.core.Assumption" as n3
+class "fr.openpeople.rdal.model.core.Conflict" as n4
+class "fr.openpeople.rdal.model.core.ContractualElement" as n5
+class "fr.openpeople.rdal.model.core.Direction" as n6
+class "fr.openpeople.rdal.model.core.EnumAssumptionType" as n7
+class "fr.openpeople.rdal.model.core.EnumRiskKind" as n8
+class "fr.openpeople.rdal.model.core.EnumVerificationMethod" as n9
+class "fr.openpeople.rdal.model.core.Goal" as n10
+class "fr.openpeople.rdal.model.core.Interaction" as n11
+class "fr.openpeople.rdal.model.core.ModelElementReference" as n12
+class "fr.openpeople.rdal.model.core.RefExpressionCollectedModelElements" as n13
+class "fr.openpeople.rdal.model.core.RefUserSelectedModelElements" as n14
+class "fr.openpeople.rdal.model.core.ReferencedModelElements" as n15
+class "fr.openpeople.rdal.model.core.Requirement" as n16
+class "fr.openpeople.rdal.model.core.RequirementsCoverageData" as n17
+class "fr.openpeople.rdal.model.core.RequirementsGroup" as n18
+class "fr.openpeople.rdal.model.core.Specification" as n19
+class "fr.openpeople.rdal.model.core.StakeHolder" as n20
+class "fr.openpeople.rdal.model.core.SystemContext" as n21
+class "fr.openpeople.rdal.model.core.SystemOverview" as n22
+class "fr.openpeople.rdal.model.core.Trace" as n23
+class "fr.openpeople.rdal.model.core.TraceModelElementReference" as n24
+class "fr.openpeople.rdal.model.core.Uncertainty" as n25
+class "fr.openpeople.rdal.model.core.Variable" as n26
+class "fr.openpeople.rdal.model.core.VariableType" as n27
+class "fr.openpeople.rdal.model.core.VerifiableElement" as n28
+class "fr.openpeople.rdal.model.core.VerificationActivity" as n29
+n0 -- n0
+n0 -- n8
+n0 -- n18
+n0 --|> n28
+n0 -- n29
+n1 -- n11
+n1 -- n19
+n1 -- n21
+n2 -- n15
+n3 --|> n0
+n3 -- n7
+n3 -- n16
+n4 -- n10
+n4 -- n19
+n5 -- n5
+n5 -- n15
+n5 -- n20
+n5 -- n25
+n6 -- n11
+n9 -- n29
+n10 --|> n5
+n10 -- n22
+n12 -- n15
+n13 --|> n15
+n14 --|> n15
+n16 --|> n0
+n16 -- n16
+n18 -- n18
+n18 -- n19
+n18 --|> n28
+n19 -- n22
+n19 -- n23
+n19 --|> n28
+n19 -- n29
+n20 --|> n1
+n21 -- n22
+n23 --|> n15
+n24 --|> n12
+n24 --|> n17
+n26 -- n27
+n28 --|> n5
+@enduml

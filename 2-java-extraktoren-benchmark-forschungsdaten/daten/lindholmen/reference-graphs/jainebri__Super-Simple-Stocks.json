@@ -1,0 +1,92 @@
+{
+  "repo": "jainebri/Super-Simple-Stocks",
+  "commit": "fef3b126e4b384e71e2662f0be3d07a8c2dd4b7c",
+  "model_path": "super-simple-stock/src/main/resources/diagrams/super-simple-stocks-model.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.jpmorgan.stocks.simple.arch.SimpleStockServicesFactory",
+    "com.jpmorgan.stocks.simple.arch.SpringService",
+    "com.jpmorgan.stocks.simple.arch.impl.SimpleStockServicesFactoryImpl",
+    "com.jpmorgan.stocks.simple.arch.impl.SpringServiceImpl",
+    "com.jpmorgan.stocks.simple.backend.StocksEntityManager",
+    "com.jpmorgan.stocks.simple.backend.impl.StocksEntityManagerImpl",
+    "com.jpmorgan.stocks.simple.model.Stock",
+    "com.jpmorgan.stocks.simple.model.StockType",
+    "com.jpmorgan.stocks.simple.model.Trade",
+    "com.jpmorgan.stocks.simple.model.TradeIndicator",
+    "com.jpmorgan.stocks.simple.services.SimpleStockService",
+    "com.jpmorgan.stocks.simple.services.impl.SimpleStockServiceImpl"
+  ],
+  "edges": [
+    [
+      "com.jpmorgan.stocks.simple.arch.SimpleStockServicesFactory",
+      "com.jpmorgan.stocks.simple.arch.SimpleStockServicesFactory",
+      "association"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.arch.impl.SimpleStockServicesFactoryImpl",
+      "com.jpmorgan.stocks.simple.arch.SimpleStockServicesFactory",
+      "realization"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.arch.impl.SpringServiceImpl",
+      "com.jpmorgan.stocks.simple.arch.SpringService",
+      "realization"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.backend.StocksEntityManager",
+      "com.jpmorgan.stocks.simple.services.impl.SimpleStockServiceImpl",
+      "association"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.backend.impl.StocksEntityManagerImpl",
+      "com.jpmorgan.stocks.simple.backend.StocksEntityManager",
+      "realization"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.backend.impl.StocksEntityManagerImpl",
+      "com.jpmorgan.stocks.simple.model.Stock",
+      "association"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.backend.impl.StocksEntityManagerImpl",
+      "com.jpmorgan.stocks.simple.model.Trade",
+      "association"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.model.Stock",
+      "com.jpmorgan.stocks.simple.model.StockType",
+      "association"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.model.Stock",
+      "com.jpmorgan.stocks.simple.model.Trade",
+      "association"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.model.Trade",
+      "com.jpmorgan.stocks.simple.model.TradeIndicator",
+      "association"
+    ],
+    [
+      "com.jpmorgan.stocks.simple.services.impl.SimpleStockServiceImpl",
+      "com.jpmorgan.stocks.simple.services.SimpleStockService",
+      "realization"
+    ]
+  ],
+  "mapping": {
+    "_8MpkkDGHEeWib-BT278QbQ": "com.jpmorgan.stocks.simple.arch.impl.SimpleStockServicesFactoryImpl",
+    "_xXNSwDGMEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.arch.impl.SpringServiceImpl",
+    "_6BX_0DGHEeWib-BT278QbQ": "com.jpmorgan.stocks.simple.arch.SimpleStockServicesFactory",
+    "_5E9MIDGNEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.backend.StocksEntityManager",
+    "_kxjH4DGOEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.backend.impl.StocksEntityManagerImpl",
+    "_2ydvoDGOEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.model.Stock",
+    "_3HLbYDGOEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.model.Trade",
+    "_3atbYDGOEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.services.impl.SimpleStockServiceImpl",
+    "_7o9kgDGOEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.services.SimpleStockService",
+    "_W5CqgDGPEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.model.StockType",
+    "_fE1AMDGPEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.model.TradeIndicator",
+    "_BGsSUDGsEeWSk5bCHsjzqA": "com.jpmorgan.stocks.simple.arch.SpringService"
+  },
+  "unmapped_model_nodes": []
+}

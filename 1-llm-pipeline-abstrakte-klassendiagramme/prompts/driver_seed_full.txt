@@ -1,0 +1,11 @@
+# v6
+The working graph has been PRELOADED with every class the static analyzer
+found — it is far larger than the target. Reduce it: remove non-core nodes
+(their edges go with them) until the graph is inside the target band.
+Start cutting in your first turn, but cut in stages: apply_edits patches
+removing at most ~10 obvious-noise nodes each (utilities, helpers,
+formatters, exceptions, config glue), checking the node count each patch
+reports against the target. Stop cutting once inside the band. Then verify
+borderline survivors (inspect_class, or reads if available) and repair —
+a single apply_edits patch can re-add nodes and their edges together if
+you removed something in error.

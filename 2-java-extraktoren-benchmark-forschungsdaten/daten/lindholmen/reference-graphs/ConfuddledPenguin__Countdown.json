@@ -1,0 +1,340 @@
+{
+  "repo": "ConfuddledPenguin/Countdown",
+  "commit": "47cee83485e24b291ae077dc7f4d769ac919e483",
+  "model_path": "Countdown.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "Game.Buzzer",
+    "Game.ConundrumRound",
+    "Game.Countdown",
+    "Game.Dictionary",
+    "Game.GameObjects",
+    "Game.GenerateSolution",
+    "Game.GenerateSolution.mathString",
+    "Game.Launcher",
+    "Game.LeaderBoard",
+    "Game.LeaderBoard.Score",
+    "Game.Monitor",
+    "Game.NumberRound",
+    "Game.NumberRound.returnValues",
+    "Game.Player",
+    "Game.Round",
+    "Game.TheTimer",
+    "Game.UserIO",
+    "Game.WordRound"
+  ],
+  "edges": [
+    [
+      "Game.Buzzer",
+      "Game.Monitor",
+      "association"
+    ],
+    [
+      "Game.Buzzer",
+      "Game.UserIO",
+      "association"
+    ],
+    [
+      "Game.ConundrumRound",
+      "Game.Round",
+      "inheritance"
+    ],
+    [
+      "Game.Countdown",
+      "Game.GameObjects",
+      "association"
+    ],
+    [
+      "Game.Countdown",
+      "Game.Player",
+      "association"
+    ],
+    [
+      "Game.Countdown",
+      "Game.Round",
+      "association"
+    ],
+    [
+      "Game.Countdown",
+      "Game.UserIO",
+      "association"
+    ],
+    [
+      "Game.Dictionary",
+      "Game.GameObjects",
+      "association"
+    ],
+    [
+      "Game.Dictionary",
+      "Game.Launcher",
+      "association"
+    ],
+    [
+      "Game.Dictionary",
+      "Game.Round",
+      "association"
+    ],
+    [
+      "Game.GameObjects",
+      "Game.Launcher",
+      "association"
+    ],
+    [
+      "Game.GameObjects",
+      "Game.LeaderBoard",
+      "association"
+    ],
+    [
+      "Game.GameObjects",
+      "Game.Player",
+      "association"
+    ],
+    [
+      "Game.Launcher",
+      "Game.LeaderBoard",
+      "association"
+    ],
+    [
+      "Game.Launcher",
+      "Game.Player",
+      "association"
+    ],
+    [
+      "Game.Launcher",
+      "Game.UserIO",
+      "association"
+    ],
+    [
+      "Game.LeaderBoard",
+      "Game.Round",
+      "association"
+    ],
+    [
+      "Game.Monitor",
+      "Game.TheTimer",
+      "association"
+    ],
+    [
+      "Game.NumberRound",
+      "Game.Round",
+      "inheritance"
+    ],
+    [
+      "Game.Player",
+      "Game.Round",
+      "association"
+    ],
+    [
+      "Game.Round",
+      "Game.UserIO",
+      "association"
+    ],
+    [
+      "Game.WordRound",
+      "Game.Round",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_5cfgcMn8EeOEaMUy0wTQ0A": "Game.Buzzer",
+    "_5ch8sMn8EeOEaMUy0wTQ0A": "Game.ConundrumRound",
+    "_5coDUMn8EeOEaMUy0wTQ0A": "Game.Countdown",
+    "_5cwmMMn8EeOEaMUy0wTQ0A": "Game.Dictionary",
+    "_5c2s0Mn8EeOEaMUy0wTQ0A": "Game.GameObjects",
+    "_5c5wIMn8EeOEaMUy0wTQ0A": "Game.GenerateSolution",
+    "_5c6XMMn8EeOEaMUy0wTQ0A": "Game.GenerateSolution.mathString",
+    "_5c_PsMn8EeOEaMUy0wTQ0A": "Game.Launcher",
+    "_5dC6EMn8EeOEaMUy0wTQ0A": "Game.TheTimer",
+    "_5dEvQMn8EeOEaMUy0wTQ0A": "Game.Monitor",
+    "_5dFWUMn8EeOEaMUy0wTQ0A": "Game.Round",
+    "_5dJnwMn8EeOEaMUy0wTQ0A": "Game.Player",
+    "_5dLc8Mn8EeOEaMUy0wTQ0A": "Game.NumberRound",
+    "_5dMEAMn8EeOEaMUy0wTQ0A": "Game.NumberRound.returnValues",
+    "_5dTYwMn8EeOEaMUy0wTQ0A": "Game.LeaderBoard",
+    "_5dUm4Mn8EeOEaMUy0wTQ0A": "Game.LeaderBoard.Score",
+    "_5dfmAMn8EeOEaMUy0wTQ0A": "Game.UserIO",
+    "_5diCQMn8EeOEaMUy0wTQ0A": "Game.WordRound"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_5fwP0Mn8EeOEaMUy0wTQ0A",
+      "name": "Executors",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fw24cn8EeOEaMUy0wTQ0A",
+      "name": "ScheduledExecutorService",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fxd8cn8EeOEaMUy0wTQ0A",
+      "name": "TimeUnit",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5faRkMn8EeOEaMUy0wTQ0A",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fejA8n8EeOEaMUy0wTQ0A",
+      "name": "HashMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fns8Mn8EeOEaMUy0wTQ0A",
+      "name": "Collections",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5foUAMn8EeOEaMUy0wTQ0A",
+      "name": "Random",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fzTIMn8EeOEaMUy0wTQ0A",
+      "name": "StringTokenizer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5f9EIMn8EeOEaMUy0wTQ0A",
+      "name": "InputMismatchException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5f9EIsn8EeOEaMUy0wTQ0A",
+      "name": "Scanner",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fd78Mn8EeOEaMUy0wTQ0A",
+      "name": "File",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fejAcn8EeOEaMUy0wTQ0A",
+      "name": "FileNotFoundException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5gGOEcn8EeOEaMUy0wTQ0A",
+      "name": "Runnable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5gPYAcn8EeOEaMUy0wTQ0A",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5gSbUMn8EeOEaMUy0wTQ0A",
+      "name": "Comparable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5gXT0Mn8EeOEaMUy0wTQ0A",
+      "name": "IllegalArgumentException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5ffKEcn8EeOEaMUy0wTQ0A",
+      "name": "DocumentBuilder",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5ffxIcn8EeOEaMUy0wTQ0A",
+      "name": "DocumentBuilderFactory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fg_Qcn8EeOEaMUy0wTQ0A",
+      "name": "DOMSource",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fhmUcn8EeOEaMUy0wTQ0A",
+      "name": "StreamResult",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5ffxI8n8EeOEaMUy0wTQ0A",
+      "name": "OutputKeys",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fgYMcn8EeOEaMUy0wTQ0A",
+      "name": "Transformer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fgYM8n8EeOEaMUy0wTQ0A",
+      "name": "TransformerFactory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fr-YMn8EeOEaMUy0wTQ0A",
+      "name": "ScriptEngine",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fslccn8EeOEaMUy0wTQ0A",
+      "name": "ScriptEngineManager",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fslc8n8EeOEaMUy0wTQ0A",
+      "name": "ScriptException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fhmU8n8EeOEaMUy0wTQ0A",
+      "name": "Document",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fiNYcn8EeOEaMUy0wTQ0A",
+      "name": "Element",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fi0ccn8EeOEaMUy0wTQ0A",
+      "name": "Node",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5fi0c8n8EeOEaMUy0wTQ0A",
+      "name": "NodeList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.cache/
+build/
+dist/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Docker: Daten und Ausgaben auf dem Host
+docker-daten/
+
+# 1: LLM-Pipeline – Laufergebnisse
+1-llm-pipeline-abstrakte-klassendiagramme/runs/
+
+# 2: Datensätze bleiben draußen, die eigenen Metadaten (Auswahl, Prüfsummen,
+# Abschriften, Referenzgraphen) kommen ins Repo
+2-java-extraktoren-benchmark-forschungsdaten/daten/*
+!2-java-extraktoren-benchmark-forschungsdaten/daten/intellij/
+!2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/
+2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/*
+!2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/*.json
+!2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/reference-graphs/
+!2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/
+2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/*
+!2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/README.md
+!2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/reference.json
+!2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/manifest.json
+
+# 2: erzeugte Ergebnisse und Fremdwerkzeuge
+2-java-extraktoren-benchmark-forschungsdaten/ergebnisse/
+2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/*
+!2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/TOOLS.json
+!2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/requirements.lock.txt
+!2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/pug/
+!2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/extra/
+2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/extra/jars/
+
+# Logs / Ausgaben
+*.log
+*.jar
+*.class
+uml-ausgabe/

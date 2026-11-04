@@ -1,0 +1,140 @@
+{
+  "projekt": "Artemis",
+  "umfang": "vollständig",
+  "methode": "Jede Kante einzeln im Bild nachverfolgt.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.web.websocket.localci.LocalCIWebsocketMessagingService",
+      "bezeichnung": "localCIWebsocketMessagingService",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "de.tum.in.www1.artemis.web.rest.admin.AdminBuildJobQueueResource",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.SharedQueueManagementService",
+      "bezeichnung": "localCIBuildJobQueueService",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "de.tum.in.www1.artemis.web.rest.localci.BuildJobQueueResource",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.SharedQueueManagementService",
+      "bezeichnung": "localCIBuildJobQueueService",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.BuildAgentListener",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.ProcessingBuildJobItemListener",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.QueuedBuildJobItemListener",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.SharedQueueManagementService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.SharedQueueManagementService",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.BuildJobExecutionService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.BuildJobExecutionService",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.BuildJobManagementService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.BuildJobManagementService",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService.QueuedBuildJobItemListener",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.web.rest.admin.AdminBuildJobQueueResource",
+      "nach": "de.tum.in.www1.artemis.web.rest.admin.AdminBuildJobQueueResource",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.web.rest.localci.BuildJobQueueResource",
+      "nach": "de.tum.in.www1.artemis.web.rest.localci.BuildJobQueueResource",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "de.tum.in.www1.artemis.web.websocket.localci.LocalCIWebsocketMessagingService",
+      "nach": "de.tum.in.www1.artemis.web.websocket.localci.LocalCIWebsocketMessagingService",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.BuildAgentListener",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.ProcessingBuildJobItemListener",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.QueuedBuildJobItemListener",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService",
+      "nach": "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService.QueuedBuildJobItemListener",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

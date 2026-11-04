@@ -1,0 +1,87 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "fr.iessa.app.Application" as n0
+class "fr.iessa.controleur.Controleur" as n1
+class "fr.iessa.controleur.LibereMemoire" as n2
+class "fr.iessa.controleur.ModeleEvent" as n3
+class "fr.iessa.dao.core.DAO" as n4
+class "fr.iessa.dao.infra.AeroportDAO" as n5
+class "fr.iessa.dao.infra.LigneDAO" as n6
+class "fr.iessa.dao.infra.PlateformeDAO.Lookup" as n7
+class "fr.iessa.dao.infra.PointDAO" as n8
+class "fr.iessa.dao.infra.PushbackDAO" as n9
+class "fr.iessa.dao.infra.RunwayDAO" as n10
+class "fr.iessa.dao.infra.TaxiwayDAO" as n11
+class "fr.iessa.dao.trafic.TraficDao" as n12
+class "fr.iessa.metier.Horloge" as n13
+class "fr.iessa.metier.infra.Aeroport" as n14
+class "fr.iessa.metier.infra.Ligne" as n15
+class "fr.iessa.metier.infra.Pushback" as n16
+class "fr.iessa.metier.infra.QFU" as n17
+class "fr.iessa.metier.infra.Runway" as n18
+class "fr.iessa.metier.infra.Taxiway" as n19
+class "fr.iessa.metier.trafic.PointFabrique" as n20
+class "fr.iessa.metier.trafic.Trafic" as n21
+class "fr.iessa.metier.type.Categorie" as n22
+class "fr.iessa.metier.type.Direction" as n23
+class "fr.iessa.metier.type.TypePoint" as n24
+class "fr.iessa.metier.type.TypeQFU" as n25
+class "fr.iessa.metier.type.TypeVol" as n26
+class "fr.iessa.vue.ChargeEnCoursLayerUI" as n27
+class "fr.iessa.vue.Echelle" as n28
+class "fr.iessa.vue.FramePrincipale" as n29
+class "fr.iessa.vue.FramePrincipale.ActionChargerPlateForme" as n30
+class "fr.iessa.vue.FramePrincipale.ActionChargerTrafic" as n31
+class "fr.iessa.vue.FramePrincipale.ActionQuitter" as n32
+class "fr.iessa.vue.LabelHorloge" as n33
+class "fr.iessa.vue.PanelAffichageVol" as n34
+class "fr.iessa.vue.PanelDesControles" as n35
+class "fr.iessa.vue.PanelLecture" as n36
+class "fr.iessa.vue.PanelPrincipalMultiCouches" as n37
+class "fr.iessa.vue.PanelTableauDeBord" as n38
+class "fr.iessa.vue.PanelVisualisationEtLecture" as n39
+class "fr.iessa.vue.Ressources" as n40
+class "fr.iessa.vue.infra.LignesDrawer" as n41
+class "fr.iessa.vue.infra.PanelPlateforme.DessineCarteWorker" as n42
+class "fr.iessa.vue.infra.PointsDrawer" as n43
+class "fr.iessa.vue.infra.RunwayDrawer" as n44
+class "fr.iessa.vue.trafic.ComponentVol" as n45
+class "fr.iessa.vue.trafic.PanelTrafic" as n46
+class "fr.iessa.vue.trafic.PanelTrafic.InitializeComponentVols" as n47
+class "fr.iessa.vue.trafic.ShapeAvionFactory" as n48
+n1 -- n13
+n1 -- n21
+n1 -- n29
+n1 -- n36
+n1 -- n37
+n1 -- n46
+n4 -- n7
+n5 ..|> n4
+n6 ..|> n4
+n6 -- n9
+n6 -- n11
+n8 ..|> n4
+n9 ..|> n4
+n10 ..|> n4
+n11 ..|> n4
+n14 -- n15
+n14 -- n16
+n14 -- n18
+n14 -- n19
+n15 -- n22
+n15 -- n23
+n16 --|> n15
+n17 -- n18
+n17 -- n25
+n19 --|> n15
+n21 -- n46
+n24 -- n24
+n28 -- n45
+n28 -- n46
+n34 -- n38
+n35 -- n38
+n35 -- n39
+n36 -- n39
+n45 -- n46
+n45 -- n48
+@enduml

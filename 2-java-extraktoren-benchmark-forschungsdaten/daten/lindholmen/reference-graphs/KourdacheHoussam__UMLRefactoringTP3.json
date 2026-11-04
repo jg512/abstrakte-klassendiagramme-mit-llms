@@ -1,0 +1,28 @@
+{
+  "repo": "KourdacheHoussam/UMLRefactoringTP3",
+  "commit": "130edb7ad533207c0c5207b8eaacfa6bc18ec246",
+  "model_path": "UMLRefactoringTP3/model/tp3.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "ModeleTp3.pack1.A",
+    "ModeleTp3.pack1.B",
+    "ModeleTp3.pack2.C",
+    "ModeleTp3.pack2.D",
+    "ModeleTp3.pack2.E"
+  ],
+  "edges": [
+    [
+      "ModeleTp3.pack2.D",
+      "ModeleTp3.pack2.C",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_b-zHgF3lEeSQ2MxWsiqfQA": "ModeleTp3.pack1.B",
+    "_dB144F3lEeSQ2MxWsiqfQA": "ModeleTp3.pack1.A",
+    "_cbgRoF3lEeSQ2MxWsiqfQA": "ModeleTp3.pack2.C",
+    "_aIcGwF59EeSzc-3F4i1PYA": "ModeleTp3.pack2.D",
+    "_krrxIF5_EeSzc-3F4i1PYA": "ModeleTp3.pack2.E"
+  },
+  "unmapped_model_nodes": []
+}

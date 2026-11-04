@@ -1,0 +1,463 @@
+{
+  "cases": 20,
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "name": "direct-field",
+      "ok": true,
+      "expected": [
+        [
+          "A",
+          "B",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "A",
+          "B",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "list-element",
+      "ok": true,
+      "expected": [
+        [
+          "A",
+          "B",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "actual": [
+        [
+          "A",
+          "B",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "array-element",
+      "ok": true,
+      "expected": [
+        [
+          "A",
+          "B",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "actual": [
+        [
+          "A",
+          "B",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "optional-element",
+      "ok": true,
+      "expected": [
+        [
+          "A",
+          "B",
+          "association",
+          "0..1"
+        ]
+      ],
+      "actual": [
+        [
+          "A",
+          "B",
+          "association",
+          "0..1"
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "inheritance",
+      "ok": true,
+      "expected": [
+        [
+          "A",
+          "B",
+          "inheritance",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "A",
+          "B",
+          "inheritance",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "realization",
+      "ok": true,
+      "expected": [
+        [
+          "A",
+          "B",
+          "realization",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "A",
+          "B",
+          "realization",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "interface-generalization",
+      "ok": true,
+      "expected": [
+        [
+          "A",
+          "B",
+          "inheritance",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "A",
+          "B",
+          "inheritance",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "nested-type",
+      "ok": true,
+      "expected": [
+        [
+          "Outer",
+          "Outer.Part",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "Outer",
+          "Outer.Part",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "qualified-import",
+      "ok": true,
+      "expected": [
+        [
+          "c.Box",
+          "b.Item",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "c.Box",
+          "b.Item",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "wildcard-import",
+      "ok": true,
+      "expected": [
+        [
+          "b.Box",
+          "a.Item",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "b.Box",
+          "a.Item",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "custom-generic-wrapper",
+      "ok": true,
+      "expected": [
+        [
+          "Box",
+          "Item",
+          "association",
+          null
+        ],
+        [
+          "Box",
+          "SpecialList",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "Box",
+          "Item",
+          "association",
+          null
+        ],
+        [
+          "Box",
+          "SpecialList",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "record-component",
+      "ok": true,
+      "expected": [
+        [
+          "Point",
+          "Coordinate",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "Point",
+          "Coordinate",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "enum-field",
+      "ok": true,
+      "expected": [
+        [
+          "Kind",
+          "Item",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "Kind",
+          "Item",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "self-association",
+      "ok": true,
+      "expected": [
+        [
+          "Node",
+          "Node",
+          "association",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "Node",
+          "Node",
+          "association",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "map-key-value",
+      "ok": true,
+      "expected": [
+        [
+          "Index",
+          "Key",
+          "aggregation",
+          "0..*"
+        ],
+        [
+          "Index",
+          "Value",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "actual": [
+        [
+          "Index",
+          "Key",
+          "aggregation",
+          "0..*"
+        ],
+        [
+          "Index",
+          "Value",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "owned-final",
+      "ok": true,
+      "expected": [
+        [
+          "Whole",
+          "Part",
+          "composition",
+          "1"
+        ]
+      ],
+      "actual": [
+        [
+          "Whole",
+          "Part",
+          "composition",
+          "1"
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "method-dependency",
+      "ok": true,
+      "expected": [
+        [
+          "Service",
+          "Command",
+          "dependency",
+          null
+        ],
+        [
+          "Service",
+          "Result",
+          "dependency",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "Service",
+          "Command",
+          "dependency",
+          null
+        ],
+        [
+          "Service",
+          "Result",
+          "dependency",
+          null
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "jpa-one-to-many",
+      "ok": true,
+      "expected": [
+        [
+          "Parent",
+          "Child",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "actual": [
+        [
+          "Parent",
+          "Child",
+          "aggregation",
+          "0..*"
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "jpa-embedded",
+      "ok": true,
+      "expected": [
+        [
+          "Owner",
+          "Value",
+          "composition",
+          "1"
+        ]
+      ],
+      "actual": [
+        [
+          "Owner",
+          "Value",
+          "composition",
+          "1"
+        ]
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "sealed-record",
+      "ok": true,
+      "expected": [
+        [
+          "Circle",
+          "Shape",
+          "realization",
+          null
+        ]
+      ],
+      "actual": [
+        [
+          "Circle",
+          "Shape",
+          "realization",
+          null
+        ]
+      ],
+      "diagnostics": []
+    }
+  ]
+}

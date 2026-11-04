@@ -1,0 +1,16 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "com.bank.entity.Account" as n0
+class "com.bank.entity.CustLogInfo" as n1
+class "com.bank.entity.Customer" as n2
+class "com.bank.entity.EnterpriseAcc" as n3
+class "com.bank.entity.IndividualAcc" as n4
+class "com.bank.entity.RegularAcc" as n5
+class "com.bank.entity.VIPAcc" as n6
+n1 -- n2
+n1 -- n4
+n3 --|> n0
+n4 --|> n0
+n5 --|> n4
+n6 --|> n4
+@enduml

@@ -1,0 +1,50 @@
+{
+  "repo": "brunotriggolabs/testepoo",
+  "commit": "e9ad647daabfdacb1c6dde6fe31670b995a6f362",
+  "model_path": " poo-tp1/TP2/uml/tp1.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "modelo.Cliente",
+    "modelo.Funcionario",
+    "modelo.Motorista",
+    "modelo.Veiculo"
+  ],
+  "edges": [
+    [
+      "modelo.Cliente",
+      "modelo.Motorista",
+      "association"
+    ],
+    [
+      "modelo.Motorista",
+      "modelo.Veiculo",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_WCDDYNsAEeCOVo8HeXx7CQ": "modelo.Cliente",
+    "_XyGEsNsAEeCOVo8HeXx7CQ": "modelo.Motorista",
+    "_Y2_QMNsAEeCOVo8HeXx7CQ": "modelo.Veiculo",
+    "_4-3LkNsAEeCOVo8HeXx7CQ": "modelo.Funcionario"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_ESifQNsBEeCOVo8HeXx7CQ",
+      "name": "Loca\u00e7\u00f5es",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_S3BcYNsBEeCOVo8HeXx7CQ",
+      "name": "TipoLoca\u00e7\u00f5es",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_1Mr0MNvhEeCJMI2M3wZDzA",
+      "name": "TipoLoca\u00e7\u00f5es",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "projekt": "ZooTypers",
+  "umfang": "vollständig",
+  "methode": "Jede Kante einzeln im Bild nachverfolgt.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.SinglePlayer.GameTimer",
+      "bezeichnung": "gameTimer",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.SinglePlayerModel",
+      "bezeichnung": "model",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.PostGameScreen",
+      "nach": "com.example.zootypers.PreGameSelection",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.PostGameScreen",
+      "nach": "com.example.zootypers.TitlePage",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.PreGameSelection",
+      "nach": "com.example.zootypers.PreGameSelection",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.PreGameSelection",
+      "nach": "com.example.zootypers.SinglePlayer",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.PreGameSelection",
+      "nach": "com.example.zootypers.TitlePage",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.PostGameScreen",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.PreGameSelection",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.SinglePlayer",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.SinglePlayer.GameTimer",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.SinglePlayerModel",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.TitlePage",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.SinglePlayerModel",
+      "nach": "com.example.zootypers.SinglePlayerModel",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "com.example.zootypers.TitlePage",
+      "nach": "com.example.zootypers.PreGameSelection",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "nesting",
+      "von": "com.example.zootypers.SinglePlayer",
+      "nach": "com.example.zootypers.SinglePlayer.GameTimer",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

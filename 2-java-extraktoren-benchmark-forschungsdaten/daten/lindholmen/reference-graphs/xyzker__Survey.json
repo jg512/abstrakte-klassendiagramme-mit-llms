@@ -1,0 +1,73 @@
+{
+  "repo": "xyzker/Survey",
+  "commit": "cecebc67a75985121eb0fe45d90312fc501fd0f1",
+  "model_path": "survey.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "survey.model.Page",
+    "survey.model.Question",
+    "survey.model.Survey",
+    "survey.model.User"
+  ],
+  "edges": [
+    [
+      "survey.model.Page",
+      "survey.model.Question",
+      "association"
+    ],
+    [
+      "survey.model.Page",
+      "survey.model.Survey",
+      "association"
+    ],
+    [
+      "survey.model.Survey",
+      "survey.model.User",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_aJL-4CneEeSsEpOj-9mkoQ": "survey.model.User",
+    "_bAmIACneEeSsEpOj-9mkoQ": "survey.model.Survey",
+    "_WYamgCnfEeSsEpOj-9mkoQ": "survey.model.Page",
+    "_qEo5gCnfEeSsEpOj-9mkoQ": "survey.model.Question"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_vtQiUCn0EeSsEpOj-9mkoQ",
+      "name": "BaseDao<T>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_m5hmYCn1EeSsEpOj-9mkoQ",
+      "name": "BaseDaoImpl<T>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_AyvnICn2EeSsEpOj-9mkoQ",
+      "name": "UserDaoImpl",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_gKtIgCn2EeSsEpOj-9mkoQ",
+      "name": "QuestionDaoImpl",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_gpxqICn2EeSsEpOj-9mkoQ",
+      "name": "PageDaoImpl",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_h8AuECn2EeSsEpOj-9mkoQ",
+      "name": "SurveyDaoImpl",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

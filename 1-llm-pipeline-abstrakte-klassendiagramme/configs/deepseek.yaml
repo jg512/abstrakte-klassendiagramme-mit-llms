@@ -1,0 +1,20 @@
+# Konfiguration für DeepSeek. Überschreibt default.yaml, verschachtelte
+# Abschnitte werden dabei zusammengeführt.
+# Aufruf: python -m src /pfad/zum/repo --config configs/deepseek.yaml
+#
+# deepseek-chat (V3) unterstützt die Tool-Calls, die der Driver braucht.
+# deepseek-reasoner (R1) kann das nicht und ist hier deshalb nicht geeignet.
+
+backend: deepseek
+model: deepseek-chat
+base_url: ""
+api_key_env: DEEPSEEK_API_KEY
+context_budget: 48000          # DeepSeek hat etwa 64K Token Kontext, also vorher warnen
+
+driver:
+  # deepseek-chat liest erst die ganze Codebasis, bevor es etwas ändert. Das
+  # kostet etwa 1,5k Token pro Klasse, weil jedes Mal der ganze Verlauf
+  # mitgeschickt wird (siehe runs/old/20260706T180206). Mit den 30k aus
+  # default.yaml reicht das Budget bei den Varianten, die leer starten, deshalb
+  # ab etwa 20 Klassen nicht mehr.
+  max_tokens: 60000

@@ -1,0 +1,25 @@
+# Ins Image kommt nur, was auch im Git-Repo liegt.
+.git
+**/.venv
+**/__pycache__
+**/*.egg-info
+**/.pytest_cache
+**/.cache
+**/uml-ausgabe
+docker-daten
+
+1-llm-pipeline-abstrakte-klassendiagramme/runs
+
+2-java-extraktoren-benchmark-forschungsdaten/ergebnisse
+2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/*
+!2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/TOOLS.json
+!2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/requirements.lock.txt
+2-java-extraktoren-benchmark-forschungsdaten/daten/recherche
+2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/corpus
+2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/model-probes
+2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/*.csv
+2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/*.html
+2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/Version*
+2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/models
+2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/downloads
+2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/comparisons

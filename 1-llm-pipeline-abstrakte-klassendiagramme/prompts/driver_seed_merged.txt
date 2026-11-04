@@ -1,0 +1,4 @@
+# v1
+The working graph has been PRELOADED with the merged per-cluster diagrams
+produced earlier. Refine it: deduplicate overlapping nodes, adjust relations,
+and prune (or add back) until the graph reaches the target size.

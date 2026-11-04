@@ -1,0 +1,110 @@
+[
+  {
+    "repo": "ToostInc/mprog-apps",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "berlotti/geobim",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 4,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "boon-code/loco",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "mvalle/model-generator",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 9,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "tiagorg/unifei-cco712",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 2,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "zizih/InteractivityAppServerFrameworkTry",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "jujulal/MPP",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 1,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "mnaylor/CMPUT301as1",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "mautematico/java.ciencias",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "dapaulid/JCoAP",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "dynastywind/iTouchable",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 3,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "olein/POS",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "orderingqa/medicalbackendcode",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 5,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "imie-source/CDPN-N-03_G1",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 3,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "ppiotr/PDFPlotsExtractor",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "Mickeyrourkeske/rlrc",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "htyuan/SwitchTabsDemo",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  },
+  {
+    "repo": "Rom1deTroyes/Afpa2015",
+    "reason": "fewer than 3 unambiguous mapped nodes or no mapped relation",
+    "mapped_nodes": 0,
+    "mapped_edges": 0
+  }
+]

@@ -1,0 +1,18 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "IO.RHParser" as n0
+class "IO.ReportGenerator" as n1
+class "Models.ChangeRecord" as n2
+class "Models.LehmanLawsRecord" as n3
+class "Models.MetricsRecord" as n4
+class "Models.ReleaseHistory" as n5
+class "Presenter.Presenter" as n6
+class "Views.LawView" as n7
+class "Views.MainView" as n8
+class "Views.View" as n9
+n2 -- n4
+n3 -- n5
+n5 -- n6
+n7 --|> n9
+n8 --|> n9
+@enduml

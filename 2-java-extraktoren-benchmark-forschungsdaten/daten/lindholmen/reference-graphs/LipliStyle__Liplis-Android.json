@@ -1,0 +1,1125 @@
+{
+  "repo": "LipliStyle/Liplis-Android",
+  "commit": "b3c27c53ad7faa206f6aabddcd4a32fc4dc6b92c",
+  "model_path": "LiplisAndroid.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "little.cute.renew.Activity.LiplisWidgetConfiguration",
+    "little.cute.renew.Activity.LiplisWidgetIntroduction",
+    "little.cute.renew.Activity.LiplisWidgetLog",
+    "little.cute.renew.Common.LiplisUtil",
+    "little.cute.renew.Fct.FctLiplisMsg",
+    "little.cute.renew.Msg.MsgShortNews",
+    "little.cute.renew.Obj.ObjBattery",
+    "little.cute.renew.Obj.ObjBody",
+    "little.cute.renew.Obj.ObjClock",
+    "little.cute.renew.Obj.ObjLiplisBody",
+    "little.cute.renew.Obj.ObjLiplisChat",
+    "little.cute.renew.Obj.ObjLiplisLog",
+    "little.cute.renew.Obj.ObjLiplisLogList",
+    "little.cute.renew.Obj.ObjPreference",
+    "little.cute.renew.Obj.ObjR",
+    "little.cute.renew.View.LiplisLogListView.LiplisArrayAdapter",
+    "little.cute.renew.Web.LiplisApi",
+    "little.cute.renew.Web.LiplisHttpPost",
+    "little.cute.renew.Widget.LiplisWidget",
+    "little.cute.renew.Widget.LiplisWidgetLarge",
+    "little.cute.renew.Widget.LiplisWidgetNormal",
+    "little.cute.renew.Xml.LiplisChatSetting",
+    "little.cute.renew.Xml.LiplisShortNews.LiplisShortNewsIn",
+    "little.cute.renew.Xml.LiplisShortNews.LiplisShortNewsJp"
+  ],
+  "edges": [
+    [
+      "little.cute.renew.Activity.LiplisWidgetLog",
+      "little.cute.renew.Obj.ObjLiplisLog",
+      "association"
+    ],
+    [
+      "little.cute.renew.Activity.LiplisWidgetLog",
+      "little.cute.renew.Obj.ObjLiplisLogList",
+      "association"
+    ],
+    [
+      "little.cute.renew.Msg.MsgShortNews",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjBattery",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjBody",
+      "little.cute.renew.Obj.ObjLiplisBody",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjBody",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjClock",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjLiplisBody",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjLiplisChat",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjLiplisLog",
+      "little.cute.renew.Obj.ObjLiplisLogList",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjLiplisLogList",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjPreference",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Obj.ObjR",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Web.LiplisApi",
+      "little.cute.renew.Web.LiplisHttpPost",
+      "inheritance"
+    ],
+    [
+      "little.cute.renew.Web.LiplisApi",
+      "little.cute.renew.Widget.LiplisWidget",
+      "association"
+    ],
+    [
+      "little.cute.renew.Widget.LiplisWidgetLarge",
+      "little.cute.renew.Widget.LiplisWidget",
+      "inheritance"
+    ],
+    [
+      "little.cute.renew.Widget.LiplisWidgetNormal",
+      "little.cute.renew.Widget.LiplisWidget",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_sgj1wH9tEeGffqdUVmAgBQ": "little.cute.renew.Activity.LiplisWidgetConfiguration",
+    "_spaPwH9tEeGffqdUVmAgBQ": "little.cute.renew.Activity.LiplisWidgetIntroduction",
+    "_spzRUH9tEeGffqdUVmAgBQ": "little.cute.renew.Activity.LiplisWidgetLog",
+    "_8Aa2An9tEeGffqdUVmAgBQ": "little.cute.renew.Fct.FctLiplisMsg",
+    "_sqM58H9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjLiplisLog",
+    "_sqNhAX9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjLiplisLogList",
+    "_7-rwoX9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjLiplisBody",
+    "_7-sXsX9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjLiplisChat",
+    "_7-uM4H9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjBattery",
+    "_7-uz8H9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjClock",
+    "_7-wpIH9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjBody",
+    "_7-2IsH9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjPreference",
+    "_7-2vwn9tEeGffqdUVmAgBQ": "little.cute.renew.Obj.ObjR",
+    "_sqZuQn9tEeGffqdUVmAgBQ": "little.cute.renew.View.LiplisLogListView.LiplisArrayAdapter",
+    "_790N8H9tEeGffqdUVmAgBQ": "little.cute.renew.Widget.LiplisWidget",
+    "_7901AH9tEeGffqdUVmAgBQ": "little.cute.renew.Widget.LiplisWidgetNormal",
+    "_7901An9tEeGffqdUVmAgBQ": "little.cute.renew.Widget.LiplisWidgetLarge",
+    "_7-vbAX9tEeGffqdUVmAgBQ": "little.cute.renew.Web.LiplisApi",
+    "_Dgmp8H9uEeGffqdUVmAgBQ": "little.cute.renew.Web.LiplisHttpPost",
+    "_7-1hoX9tEeGffqdUVmAgBQ": "little.cute.renew.Msg.MsgShortNews",
+    "_8AZA0X9tEeGffqdUVmAgBQ": "little.cute.renew.Xml.LiplisChatSetting",
+    "_Dh974X9uEeGffqdUVmAgBQ": "little.cute.renew.Xml.LiplisShortNews.LiplisShortNewsIn",
+    "_Dh-i8H9uEeGffqdUVmAgBQ": "little.cute.renew.Xml.LiplisShortNews.LiplisShortNewsJp",
+    "_8AegYX9tEeGffqdUVmAgBQ": "little.cute.renew.Common.LiplisUtil"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_so8VsH9tEeGffqdUVmAgBQ",
+      "name": "LiplisWidgetController",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siUJQH9tEeGffqdUVmAgBQ",
+      "name": "FctGUIDCreater",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sg3-0H9tEeGffqdUVmAgBQ",
+      "name": "Activity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4HaIH9tEeGffqdUVmAgBQ",
+      "name": "Dialog",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s5EcYH9tEeGffqdUVmAgBQ",
+      "name": "PendingIntent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s5hvYH9tEeGffqdUVmAgBQ",
+      "name": "Application",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8AcEIH9tEeGffqdUVmAgBQ",
+      "name": "AlarmManager",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_shx9wH9tEeGffqdUVmAgBQ",
+      "name": "Bundle",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8AYZwH9tEeGffqdUVmAgBQ",
+      "name": "SystemClock",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siS7IX9tEeGffqdUVmAgBQ",
+      "name": "CheckBox",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siYasH9tEeGffqdUVmAgBQ",
+      "name": "Button",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siZBwH9tEeGffqdUVmAgBQ",
+      "name": "RadioButton",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siaP4H9tEeGffqdUVmAgBQ",
+      "name": "Spinner",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sqZHMH9tEeGffqdUVmAgBQ",
+      "name": "ListView",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_7-8PUX9tEeGffqdUVmAgBQ",
+      "name": "RemoteViews",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siXzoH9tEeGffqdUVmAgBQ",
+      "name": "SharedPreferences",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siXzo39tEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8AcrMX9tEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8jV84H9tEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8n6T0H9tEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_DRblgH9uEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MvRY8H9uEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_bcrBgH9uEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_HHxvgH9vEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_HahFUH9vEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Vzeu8H9vEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_u6PYAH9vEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_u-F9QH9vEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wdwZMH9vEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wkIuAH9vEeGffqdUVmAgBQ",
+      "name": "Editor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siZBwn9tEeGffqdUVmAgBQ",
+      "name": "Intent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2x9Yn9tEeGffqdUVmAgBQ",
+      "name": "ComponentCallbacks",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s3vmsH9tEeGffqdUVmAgBQ",
+      "name": "ComponentName",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4z9sX9tEeGffqdUVmAgBQ",
+      "name": "Resources",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s40kwX9tEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s8EGAH9tEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s9aw4H9tEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s_a8AH9tEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wyHfoH9vEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wzXc0H9vEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w1EtAH9vEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w3d5sH9vEeGffqdUVmAgBQ",
+      "name": "Theme",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s6FJAH9tEeGffqdUVmAgBQ",
+      "name": "Configuration",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s442Mn9tEeGffqdUVmAgBQ",
+      "name": "Context",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8AdSQH9tEeGffqdUVmAgBQ",
+      "name": "IntentFilter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8hKLkH9tEeGffqdUVmAgBQ",
+      "name": "BroadcastReceiver",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2rPsH9tEeGffqdUVmAgBQ",
+      "name": "ContextThemeWrapper",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2sd0H9tEeGffqdUVmAgBQ",
+      "name": "LayoutInflater",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2sd0n9tEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s6agMH9tEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s8oGsH9tEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s_MSgH9tEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wwxb0H9vEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wyX-UH9vEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w0CyQH9vEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w2AhIH9vEeGffqdUVmAgBQ",
+      "name": "Factory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2u6EH9tEeGffqdUVmAgBQ",
+      "name": "Window",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2u6En9tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s6bHQX9tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s8pU0H9tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s_M5kn9tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wwyC4H9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wyYlYX9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w0DZUH9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w2BvQH9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2wIMH9tEeGffqdUVmAgBQ",
+      "name": "KeyEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2wIMn9tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s6buUH9tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s8pU039tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s_NgoH9tEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wwyp8H9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wyZMcH9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w0EAYH9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w2CWUH9vEeGffqdUVmAgBQ",
+      "name": "Callback",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2xWUH9tEeGffqdUVmAgBQ",
+      "name": "View",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s2xWUn9tEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s6cVYH9tEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s8p74n9tEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s_OHsH9tEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wwzRAH9vEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wyZzgH9vEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w0EncH9vEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w2C9YH9vEeGffqdUVmAgBQ",
+      "name": "OnCreateContextMenuListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s3sjYH9tEeGffqdUVmAgBQ",
+      "name": "MenuItem",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s39CEH9tEeGffqdUVmAgBQ",
+      "name": "ViewGroup",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s39CEn9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s5U7EH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s7VGMH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s7gsYH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s86akH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s91AkH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_tAONQH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_tAer8H9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wxWDkH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wx9uoH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wzG-IH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wzgmwH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w1JlgH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w1MBwH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w2trwH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w3Mz8H9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4AFYH9tEeGffqdUVmAgBQ",
+      "name": "WindowManager",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4AscH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s7rrgH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s-RsgH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_tAmAsH9tEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wxgboH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wy3GgH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w0yZIH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w23cwH9vEeGffqdUVmAgBQ",
+      "name": "LayoutParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4EW0H9tEeGffqdUVmAgBQ",
+      "name": "Menu",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4f0oX9tEeGffqdUVmAgBQ",
+      "name": "AccessibilityEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4nJYH9tEeGffqdUVmAgBQ",
+      "name": "MenuInflater",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s5Se0H9tEeGffqdUVmAgBQ",
+      "name": "MotionEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s5nO8H9tEeGffqdUVmAgBQ",
+      "name": "ContextMenu",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s5odEH9tEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s7AWEH9tEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s9m-IH9tEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_tATs0H9tEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wxChkH9vEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_wzv3UH9vEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w0VtMH9vEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_w3GtUH9vEeGffqdUVmAgBQ",
+      "name": "ContextMenuInfo",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s3qHIX9tEeGffqdUVmAgBQ",
+      "name": "Cursor",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4PV8H9tEeGffqdUVmAgBQ",
+      "name": "Bitmap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4QkEH9tEeGffqdUVmAgBQ",
+      "name": "Canvas",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s5HfsH9tEeGffqdUVmAgBQ",
+      "name": "Drawable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4lUMn9tEeGffqdUVmAgBQ",
+      "name": "Uri",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s46EUH9tEeGffqdUVmAgBQ",
+      "name": "AttributeSet",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_792DIX9tEeGffqdUVmAgBQ",
+      "name": "AppWidgetProvider",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_7_MuAH9tEeGffqdUVmAgBQ",
+      "name": "AppWidgetManager",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siUwUn9tEeGffqdUVmAgBQ",
+      "name": "String",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_siZo0X9tEeGffqdUVmAgBQ",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s32UYH9tEeGffqdUVmAgBQ",
+      "name": "CharSequence",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4XRwH9tEeGffqdUVmAgBQ",
+      "name": "Throwable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4kGEH9tEeGffqdUVmAgBQ",
+      "name": "Object",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_s4vsQH9tEeGffqdUVmAgBQ",
+      "name": "Runnable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_7-xQMX9tEeGffqdUVmAgBQ",
+      "name": "Thread",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_7_IckH9tEeGffqdUVmAgBQ",
+      "name": "Class",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8AaO8H9tEeGffqdUVmAgBQ",
+      "name": "StringBuilder",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8AcEIn9tEeGffqdUVmAgBQ",
+      "name": "Integer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_DgxpEH9uEeGffqdUVmAgBQ",
+      "name": "System",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_HR3foH9vEeGffqdUVmAgBQ",
+      "name": "Math",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sqLEwX9tEeGffqdUVmAgBQ",
+      "name": "List",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sqXSAH9tEeGffqdUVmAgBQ",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sqX5EH9tEeGffqdUVmAgBQ",
+      "name": "Iterator",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_8AaO8n9tEeGffqdUVmAgBQ",
+      "name": "Random",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_HTf3UH9vEeGffqdUVmAgBQ",
+      "name": "Calendar",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_HahsYH9vEeGffqdUVmAgBQ",
+      "name": "UUID",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dgvz4X9uEeGffqdUVmAgBQ",
+      "name": "MalformedURLException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_DgxCAX9uEeGffqdUVmAgBQ",
+      "name": "PrintStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dgy3M39uEeGffqdUVmAgBQ",
+      "name": "IOException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_HU928H9vEeGffqdUVmAgBQ",
+      "name": "Serializable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_DgqUUH9uEeGffqdUVmAgBQ",
+      "name": "HttpResponse",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_DgswkH9uEeGffqdUVmAgBQ",
+      "name": "NameValuePair",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_DgvM0H9uEeGffqdUVmAgBQ",
+      "name": "HttpClient",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dg1TcH9uEeGffqdUVmAgBQ",
+      "name": "HttpPost",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dg16gH9uEeGffqdUVmAgBQ",
+      "name": "HttpGet",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dgy3MH9uEeGffqdUVmAgBQ",
+      "name": "HttpParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dg1Tc39uEeGffqdUVmAgBQ",
+      "name": "HttpConnectionParams",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dg0FUn9uEeGffqdUVmAgBQ",
+      "name": "DefaultHttpClient",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dh5qcH9uEeGffqdUVmAgBQ",
+      "name": "BasicNameValuePair",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Dh8twH9uEeGffqdUVmAgBQ",
+      "name": "HttpEntity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

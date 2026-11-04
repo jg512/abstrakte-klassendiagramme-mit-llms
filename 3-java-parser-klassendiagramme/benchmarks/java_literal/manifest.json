@@ -1,0 +1,22 @@
+[
+  {"name":"direct-field","sources":{"A.java":"class A { B value; }","B.java":"class B {}"},"edges":[["A","B","association",null]]},
+  {"name":"list-element","sources":{"A.java":"import java.util.List; class A { List<B> values; }","B.java":"class B {}"},"edges":[["A","B","aggregation","0..*"]]},
+  {"name":"array-element","sources":{"A.java":"class A { B[] values; }","B.java":"class B {}"},"edges":[["A","B","aggregation","0..*"]]},
+  {"name":"optional-element","sources":{"A.java":"import java.util.Optional; class A { Optional<B> value; }","B.java":"class B {}"},"edges":[["A","B","association","0..1"]]},
+  {"name":"inheritance","sources":{"A.java":"class A extends B {}","B.java":"class B {}"},"edges":[["A","B","inheritance",null]]},
+  {"name":"realization","sources":{"A.java":"class A implements B {}","B.java":"interface B {}"},"edges":[["A","B","realization",null]]},
+  {"name":"interface-generalization","sources":{"A.java":"interface A extends B {}","B.java":"interface B {}"},"edges":[["A","B","inheritance",null]]},
+  {"name":"nested-type","sources":{"Outer.java":"class Outer { static class Part {} Part value; }"},"edges":[["Outer","Outer.Part","association",null]]},
+  {"name":"qualified-import","sources":{"a/Item.java":"package a; public class Item {}","b/Item.java":"package b; public class Item {}","c/Box.java":"package c; import b.Item; public class Box { Item value; }"},"edges":[["c.Box","b.Item","association",null]]},
+  {"name":"wildcard-import","sources":{"a/Item.java":"package a; public class Item {}","b/Box.java":"package b; import a.*; public class Box { Item value; }"},"edges":[["b.Box","a.Item","association",null]]},
+  {"name":"custom-generic-wrapper","sources":{"Box.java":"class Box { SpecialList<Item> values; }","SpecialList.java":"class SpecialList<T> {}","Item.java":"class Item {}"},"edges":[["Box","Item","association",null],["Box","SpecialList","association",null]]},
+  {"name":"record-component","sources":{"Point.java":"record Point(Coordinate coordinate) {}","Coordinate.java":"class Coordinate {}"},"edges":[["Point","Coordinate","association",null]]},
+  {"name":"enum-field","sources":{"Kind.java":"enum Kind { ONE; Item value; }","Item.java":"class Item {}"},"edges":[["Kind","Item","association",null]]},
+  {"name":"self-association","sources":{"Node.java":"class Node { Node parent; }"},"edges":[["Node","Node","association",null]]},
+  {"name":"map-key-value","sources":{"Index.java":"import java.util.Map; class Index { Map<Key,Value> values; }","Key.java":"class Key {}","Value.java":"class Value {}"},"edges":[["Index","Key","aggregation","0..*"],["Index","Value","aggregation","0..*"]]},
+  {"name":"owned-final","sources":{"Whole.java":"class Whole { final Part part = new Part(); }","Part.java":"class Part {}"},"edges":[["Whole","Part","composition","1"]]},
+  {"name":"method-dependency","options":{"include_method_dependencies":true},"sources":{"Service.java":"class Service { Result execute(Command command) { return null; } }","Command.java":"class Command {}","Result.java":"class Result {}"},"edges":[["Service","Command","dependency",null],["Service","Result","dependency",null]]},
+  {"name":"jpa-one-to-many","sources":{"OneToMany.java":"@interface OneToMany {}","Parent.java":"import java.util.List; class Parent { @OneToMany List<Child> children; }","Child.java":"class Child {}"},"edges":[["Parent","Child","aggregation","0..*"]]},
+  {"name":"jpa-embedded","sources":{"Embedded.java":"@interface Embedded {}","Owner.java":"class Owner { @Embedded Value value; }","Value.java":"class Value {}"},"edges":[["Owner","Value","composition","1"]]},
+  {"name":"sealed-record","sources":{"Shape.java":"sealed interface Shape permits Circle {}","Circle.java":"record Circle(double radius) implements Shape {}"},"edges":[["Circle","Shape","realization",null]]}
+]

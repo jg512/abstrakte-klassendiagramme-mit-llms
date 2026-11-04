@@ -1,0 +1,11 @@
+# Wie ollama.yaml, aber für die Pipeline im Docker-Container: Ollama läuft auf
+# dem Rechner selbst und ist aus dem Container unter host.docker.internal
+# erreichbar.
+# Aufruf: docker compose run --rm app pipeline /repos/projekt --config configs/ollama_docker.yaml
+
+backend: ollama
+model: qwen2.5:14b
+base_url: http://host.docker.internal:11434
+api_key_env: ""
+num_ctx: 32768
+context_budget: 24000

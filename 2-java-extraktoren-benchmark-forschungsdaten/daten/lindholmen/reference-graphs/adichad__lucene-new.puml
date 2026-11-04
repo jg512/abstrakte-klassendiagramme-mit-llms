@@ -1,0 +1,63 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "org.apache.lucene.gdata.gom.GOMAttribute" as n0
+class "org.apache.lucene.gdata.gom.GOMAuthor" as n1
+class "org.apache.lucene.gdata.gom.GOMCategory" as n2
+class "org.apache.lucene.gdata.gom.GOMContributor" as n3
+class "org.apache.lucene.gdata.gom.GOMDocument" as n4
+class "org.apache.lucene.gdata.gom.GOMElement" as n5
+class "org.apache.lucene.gdata.gom.GOMEntry" as n6
+class "org.apache.lucene.gdata.gom.GOMFeed" as n7
+class "org.apache.lucene.gdata.gom.GOMGenerator" as n8
+class "org.apache.lucene.gdata.gom.GOMIcon" as n9
+class "org.apache.lucene.gdata.gom.GOMId" as n10
+class "org.apache.lucene.gdata.gom.GOMLink" as n11
+class "org.apache.lucene.gdata.gom.GOMLogo" as n12
+class "org.apache.lucene.gdata.gom.GOMNamespace" as n13
+class "org.apache.lucene.gdata.gom.GOMRights" as n14
+class "org.apache.lucene.gdata.gom.GOMSubtitle" as n15
+class "org.apache.lucene.gdata.gom.GOMTime" as n16
+class "org.apache.lucene.gdata.gom.GOMTitle" as n17
+class "org.apache.lucene.gdata.gom.GOMXmlEntity" as n18
+class "org.apache.lucene.gdata.gom.core.AbstractGOMElement" as n19
+class "org.apache.lucene.gdata.gom.core.AtomParser" as n20
+class "org.apache.lucene.gdata.gom.core.GDataParseException" as n21
+class "org.apache.lucene.gdata.gom.core.GOMAttributeImpl" as n22
+class "org.apache.lucene.gdata.gom.core.GOMBuilder" as n23
+class "org.apache.lucene.gdata.gom.core.GOMDocumentImpl" as n24
+class "org.apache.lucene.gdata.gom.core.GOMFactory" as n25
+class "org.apache.lucene.gdata.gom.core.GOMFeedImpl" as n26
+class "org.apache.lucene.gdata.gom.core.GOMIdImpl" as n27
+n0 --|> n18
+n0 -- n19
+n1 --|> n5
+n1 -- n26
+n2 --|> n5
+n2 -- n26
+n3 --|> n5
+n3 -- n26
+n5 -- n19
+n6 --|> n5
+n6 --|> n18
+n6 -- n26
+n7 --|> n5
+n7 --|> n18
+n8 -- n26
+n9 -- n26
+n10 -- n26
+n11 --|> n5
+n11 -- n26
+n12 -- n26
+n13 -- n26
+n14 -- n26
+n15 -- n26
+n16 -- n26
+n17 -- n26
+n19 --|> n5
+n20 -- n23
+n22 --|> n0
+n23 -- n25
+n24 --|> n4
+n26 --|> n7
+n26 --|> n19
+@enduml

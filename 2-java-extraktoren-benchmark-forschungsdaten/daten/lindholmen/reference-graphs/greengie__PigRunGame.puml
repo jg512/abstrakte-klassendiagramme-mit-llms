@@ -1,0 +1,19 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "pigrun.Background" as n0
+class "pigrun.BottomObstacle" as n1
+class "pigrun.CollisionDetector" as n2
+class "pigrun.MediumObstacle" as n3
+class "pigrun.Pig" as n4
+class "pigrun.PigRunGame" as n5
+class "pigrun.SlidingTopObstacleDownward" as n6
+class "pigrun.SlidingTopObstacleUpWard" as n7
+class "pigrun.TopObstacle" as n8
+n0 -- n5
+n1 -- n5
+n3 --|> n1
+n4 -- n5
+n5 -- n8
+n6 --|> n8
+n7 --|> n8
+@enduml

@@ -1,0 +1,133 @@
+{
+  "projekt": "PatrickFromTheMOOC",
+  "umfang": "vollständig",
+  "methode": "Jede Kante einzeln im Bild nachverfolgt.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "avis.EvaluationReview",
+      "nach": "avis.Member",
+      "bezeichnung": "member",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "avis.Review",
+      "nach": "avis.Member",
+      "bezeichnung": "member",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Book",
+      "nach": "avis.Book",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Film",
+      "nach": "avis.Film",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Item",
+      "nach": "avis.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Item",
+      "nach": "avis.Member",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Item",
+      "nach": "avis.Review",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Member",
+      "nach": "avis.Member",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Member",
+      "nach": "avis.Review",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Review",
+      "nach": "avis.EvaluationReview",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.Review",
+      "nach": "avis.Review",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.SocialNetwork",
+      "nach": "avis.Book",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.SocialNetwork",
+      "nach": "avis.Film",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.SocialNetwork",
+      "nach": "avis.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.SocialNetwork",
+      "nach": "avis.Member",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "avis.SocialNetwork",
+      "nach": "avis.SocialNetwork",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "avis.Book",
+      "nach": "avis.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "avis.Film",
+      "nach": "avis.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

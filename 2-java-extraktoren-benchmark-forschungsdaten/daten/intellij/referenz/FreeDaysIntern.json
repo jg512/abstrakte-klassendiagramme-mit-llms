@@ -1,0 +1,14 @@
+{
+  "projekt": "FreeDaysIntern",
+  "umfang": "vollständig",
+  "methode": "Jede Kante einzeln im Bild nachverfolgt (das Bild enthält nur die Schleife an POIGenerator).",
+  "kanten": [
+    {
+      "art": "dependency",
+      "von": "freedays.timesheet.POIGenerator",
+      "nach": "freedays.timesheet.POIGenerator",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

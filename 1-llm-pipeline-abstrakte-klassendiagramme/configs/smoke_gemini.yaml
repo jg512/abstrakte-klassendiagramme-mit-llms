@@ -1,0 +1,57 @@
+# Konfiguration für einen kurzen Funktionstest mit Gemini
+
+backend: gemini
+model: gemini-2.5-pro
+base_url: ""
+api_key_env: GEMINI_API_KEY     # Name der Umgebungsvariable mit dem API-Schlüssel
+temperature: 0
+num_ctx: 32768                  # wirkt nur bei Ollama
+seed: 42
+request_timeout: 60
+
+target_nodes: 10
+node_tolerance: 0.3
+
+cleanup: false                 
+
+filters:
+  exclude_dirs:
+    - tests
+    - test
+    - .venv
+    - venv
+    - build
+    - dist
+    - __pycache__
+    - .tox
+    - .git
+    - docs
+    - examples
+    - benchmarks
+  exclude_files:
+    - "test_*.py"
+    - "*_test.py"
+    - "conftest.py"
+    - "setup.py"
+
+size_caps:
+  max_loc: 20000
+  max_classes: 300
+
+driver:
+  max_tool_calls: 20
+  max_tokens: 20000
+  read_file_max_lines: 150
+
+clustering:
+  max_cluster_size: 30
+  min_cluster_size: 3
+
+output:
+  dir: runs
+  write_pyreverse: true
+  trace_jsonl: true
+
+dev:
+  cache_dir: .cache
+  verbose: false

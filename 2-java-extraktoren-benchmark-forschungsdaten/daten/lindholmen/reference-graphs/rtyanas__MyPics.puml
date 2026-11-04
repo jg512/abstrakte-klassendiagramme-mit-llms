@@ -1,0 +1,17 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "com.yanas.mobileapp.mypic.BackgroundActivity" as n0
+class "com.yanas.mobileapp.mypic.BackgroundActivity.ButtonClickListener" as n1
+class "com.yanas.mobileapp.mypic.BackgroundLayoutGenerator" as n2
+class "com.yanas.mobileapp.mypic.GlobalSettings" as n3
+class "com.yanas.mobileapp.mypic.MainActivity" as n4
+class "com.yanas.mobileapp.mypic.MessageData" as n5
+class "com.yanas.mobileapp.mypic.SettingsActivity" as n6
+class "com.yanas.mobileapp.mypic.SettingsActivity.ColorOnItemSelectedListener" as n7
+class "com.yanas.mobileapp.mypic.SettingsActivity.FontOnItemSelectedListener" as n8
+class "com.yanas.mobileapp.mypic.SettingsActivity.RotateOnItemSelectedListener" as n9
+class "com.yanas.mobileapp.mypic.SettingsActivity.SizeOnItemSelectedListener" as n10
+class "com.yanas.mobileapp.mypic.SettingsActivity.StyleOnItemSelectedListener" as n11
+n0 -- n2
+n4 -- n5
+@enduml

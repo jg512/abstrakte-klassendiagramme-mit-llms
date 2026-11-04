@@ -1,0 +1,18 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "greenWay.Date" as n0
+class "greenWay.Device" as n1
+class "greenWay.GreenWay" as n2
+class "greenWay.Invoice" as n3
+class "greenWay.MyTestCase" as n4
+class "greenWay.ReadPoint" as n5
+class "greenWay.ServiceProvider" as n6
+class "greenWay.TestGreenWay" as n7
+class "greenWay.Warning" as n8
+n0 -- n5
+n1 -- n3
+n1 -- n5
+n5 -- n6
+n5 -- n8
+n7 --|> n4
+@enduml

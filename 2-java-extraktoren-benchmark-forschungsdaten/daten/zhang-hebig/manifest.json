@@ -1,0 +1,1054 @@
+[
+  {
+    "project": "ZooTypers",
+    "source_dir": "1_ZooTypers-7591f15",
+    "source_roots": [
+      "ZooTypers/src"
+    ],
+    "model_commit": "7591f15",
+    "source_commit": "7591f15",
+    "reported_model_relations": 6,
+    "nodes": [
+      "TitlePage",
+      "PreGameSelection",
+      "SinglePlayer",
+      "SinglePlayerModel",
+      "GameTimer",
+      "PostGameScreen"
+    ],
+    "aliases": {},
+    "edges": [
+      [
+        "TitlePage",
+        "PreGameSelection",
+        "association"
+      ],
+      [
+        "PreGameSelection",
+        "SinglePlayer",
+        "association"
+      ],
+      [
+        "SinglePlayer",
+        "PostGameScreen",
+        "association"
+      ],
+      [
+        "SinglePlayer",
+        "GameTimer",
+        "association"
+      ],
+      [
+        "SinglePlayer",
+        "SinglePlayerModel",
+        "association"
+      ]
+    ],
+    "normalization_note": "The diagram has two oppositely directed associations between SinglePlayer and SinglePlayerModel; the common metric collapses them to one undirected association.",
+    "selected_files": [
+      "ZooTypers/src/com/example/zootypers/PostGameScreen.java",
+      "ZooTypers/src/com/example/zootypers/PreGameSelection.java",
+      "ZooTypers/src/com/example/zootypers/SinglePlayer.java",
+      "ZooTypers/src/com/example/zootypers/SinglePlayerModel.java",
+      "ZooTypers/src/com/example/zootypers/TitlePage.java"
+    ],
+    "selected_file_sha256": {
+      "ZooTypers/src/com/example/zootypers/PostGameScreen.java": "16c8d88a53017265080a06285cdb40bfb56866bfce55966654bff3f71bc4cda6",
+      "ZooTypers/src/com/example/zootypers/PreGameSelection.java": "78d23787f31041ac3a33a390399e8dd040a7ca483be93b0f8b0c537dd20aaa13",
+      "ZooTypers/src/com/example/zootypers/SinglePlayer.java": "8c22531ad2213214c8c4fdac7aecda3de62caa3f9b0520959e75df757e303313",
+      "ZooTypers/src/com/example/zootypers/SinglePlayerModel.java": "f2ce4121bdc4f8a305b45ab38f18b64f5c73ca5dc346e4a74cb41f5feacafe72",
+      "ZooTypers/src/com/example/zootypers/TitlePage.java": "b60393003ee7fdf68d85793e9ec2990b05383f16d3443acd2b7e3a3a11fad701"
+    },
+    "source_hits": {
+      "TitlePage": [
+        "ZooTypers/src/com/example/zootypers/TitlePage.java"
+      ],
+      "PreGameSelection": [
+        "ZooTypers/src/com/example/zootypers/PreGameSelection.java"
+      ],
+      "SinglePlayer": [
+        "ZooTypers/src/com/example/zootypers/SinglePlayer.java"
+      ],
+      "SinglePlayerModel": [
+        "ZooTypers/src/com/example/zootypers/SinglePlayerModel.java"
+      ],
+      "GameTimer": [
+        "ZooTypers/src/com/example/zootypers/SinglePlayer.java"
+      ],
+      "PostGameScreen": [
+        "ZooTypers/src/com/example/zootypers/PostGameScreen.java"
+      ]
+    },
+    "normalized_model_relations": 5
+  },
+  {
+    "project": "RaiseMeUp",
+    "source_dir": "2_RaiseMeUp-f3796c5",
+    "source_roots": [
+      "project/RaiseMeUp/src"
+    ],
+    "model_commit": "d32e2f6",
+    "source_commit": "f3796c5",
+    "reported_model_relations": 22,
+    "nodes": [
+      "PetBuilder",
+      "Pet",
+      "User",
+      "UserBuilder",
+      "Job",
+      "Control",
+      "DAO",
+      "Dog",
+      "Cat",
+      "Fish",
+      "Penguin",
+      "PetObserver",
+      "Item",
+      "ItemVisitor",
+      "Food",
+      "Upgrade",
+      "ItemDecorator"
+    ],
+    "aliases": {
+      "Control": "RaiseMeUp"
+    },
+    "edges": [
+      [
+        "PetBuilder",
+        "Pet",
+        "association"
+      ],
+      [
+        "Pet",
+        "User",
+        "association"
+      ],
+      [
+        "UserBuilder",
+        "User",
+        "association"
+      ],
+      [
+        "Pet",
+        "Job",
+        "association"
+      ],
+      [
+        "Pet",
+        "Item",
+        "association"
+      ],
+      [
+        "Pet",
+        "Food",
+        "association"
+      ],
+      [
+        "Pet",
+        "PetObserver",
+        "association"
+      ],
+      [
+        "Control",
+        "User",
+        "association"
+      ],
+      [
+        "Control",
+        "Pet",
+        "association"
+      ],
+      [
+        "Control",
+        "Job",
+        "association"
+      ],
+      [
+        "Control",
+        "Item",
+        "association"
+      ],
+      [
+        "Control",
+        "ItemVisitor",
+        "association"
+      ],
+      [
+        "Control",
+        "DAO",
+        "association"
+      ],
+      [
+        "DAO",
+        "DAO",
+        "association"
+      ],
+      [
+        "ItemDecorator",
+        "Upgrade",
+        "association"
+      ],
+      [
+        "Dog",
+        "Pet",
+        "inheritance"
+      ],
+      [
+        "Cat",
+        "Pet",
+        "inheritance"
+      ],
+      [
+        "Fish",
+        "Pet",
+        "inheritance"
+      ],
+      [
+        "Penguin",
+        "Pet",
+        "inheritance"
+      ],
+      [
+        "Food",
+        "Item",
+        "inheritance"
+      ],
+      [
+        "Upgrade",
+        "Item",
+        "inheritance"
+      ],
+      [
+        "ItemDecorator",
+        "Upgrade",
+        "realization"
+      ]
+    ],
+    "selected_files": [
+      "project/RaiseMeUp/src/raisemeup/control/RaiseMeUp.java",
+      "project/RaiseMeUp/src/raisemeup/model/DAO.java",
+      "project/RaiseMeUp/src/raisemeup/model/ItemVisitor.java",
+      "project/RaiseMeUp/src/raisemeup/model/PetObserver.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Food.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Item.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Job.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Pet.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/PetBuilder.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Upgrade.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/User.java",
+      "project/RaiseMeUp/src/raisemeup/model/beans/UserBuilder.java"
+    ],
+    "selected_file_sha256": {
+      "project/RaiseMeUp/src/raisemeup/control/RaiseMeUp.java": "869cdc4c3e29b06448ca34593f0b66cebc538dcdf5c66db6be13ee020527f53d",
+      "project/RaiseMeUp/src/raisemeup/model/DAO.java": "20e22d0976bd77e952a74f8ec65eb1ce8a7d2c199271539cbc5faaa4cf9b70db",
+      "project/RaiseMeUp/src/raisemeup/model/ItemVisitor.java": "967e3dd2984b6fc0d4a519014acd8e06a724d3a7d5d607daafc3b133e462781b",
+      "project/RaiseMeUp/src/raisemeup/model/PetObserver.java": "878e57e1c3d81e36ca387bc6b774af9db0b524b97ad2ed133345e8be4e9c930c",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Food.java": "6b016148111a2b567d921a376dfe27d6bc9aa218839b9a3c709ee3fbd311f020",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Item.java": "65ee73d4b9ca97f890483b3672de276830ce0aedfe5cbd39cd1b0c30042f752a",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Job.java": "b795571126ce1e2c10ef21045a221b33a51636a2528853785c87ecc45a9c9278",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Pet.java": "74d67336b3e8d75086d650deb5a508e8ca7f0deb3ca244a1159bf4827712c83a",
+      "project/RaiseMeUp/src/raisemeup/model/beans/PetBuilder.java": "760bf1f2aa1fe34c2082ab5a9a55190aaabd7730e6d6f57d84b02ab9d6220f32",
+      "project/RaiseMeUp/src/raisemeup/model/beans/Upgrade.java": "2efbde5596932c2dd0e15812b136225cfd7833cde0dc39f6a8d2947a047a6468",
+      "project/RaiseMeUp/src/raisemeup/model/beans/User.java": "9e840fc000f3e30e59b6fbe52ae8f35020aa9742271ee632e487bc0598f96f8b",
+      "project/RaiseMeUp/src/raisemeup/model/beans/UserBuilder.java": "47fd2e579f24677574f91699db803153f6160388706f3622b14c8a94cdeb61c3"
+    },
+    "source_hits": {
+      "PetBuilder": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/PetBuilder.java"
+      ],
+      "Pet": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/Pet.java"
+      ],
+      "User": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/User.java"
+      ],
+      "UserBuilder": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/UserBuilder.java"
+      ],
+      "Job": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/Job.java"
+      ],
+      "Control": [
+        "project/RaiseMeUp/src/raisemeup/control/RaiseMeUp.java"
+      ],
+      "DAO": [
+        "project/RaiseMeUp/src/raisemeup/model/DAO.java"
+      ],
+      "Dog": [],
+      "Cat": [],
+      "Fish": [],
+      "Penguin": [],
+      "PetObserver": [
+        "project/RaiseMeUp/src/raisemeup/model/PetObserver.java"
+      ],
+      "Item": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/Item.java"
+      ],
+      "ItemVisitor": [
+        "project/RaiseMeUp/src/raisemeup/model/ItemVisitor.java"
+      ],
+      "Food": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/Food.java"
+      ],
+      "Upgrade": [
+        "project/RaiseMeUp/src/raisemeup/model/beans/Upgrade.java"
+      ],
+      "ItemDecorator": []
+    },
+    "normalized_model_relations": 22
+  },
+  {
+    "project": "EAPLI_PL_2NB",
+    "source_dir": "3_EAPLI_PL_2NB-facb2e8",
+    "source_roots": [
+      "eapli.expensemanager/src"
+    ],
+    "model_commit": "35d280a",
+    "source_commit": "facb2e8",
+    "reported_model_relations": 7,
+    "nodes": [
+      "BaseUi",
+      "BaseController",
+      "IncomeRegisterUI",
+      "RegisterIncomeController",
+      "IncomeTypeRepository",
+      "CheckingAccount",
+      "Income",
+      "IncomeRepository"
+    ],
+    "aliases": {
+      "BaseUi": "BaseUI",
+      "IncomeRegisterUI": "RegisterIncomeUI"
+    },
+    "edges": [
+      [
+        "IncomeRegisterUI",
+        "BaseUi",
+        "inheritance"
+      ],
+      [
+        "RegisterIncomeController",
+        "BaseController",
+        "inheritance"
+      ],
+      [
+        "RegisterIncomeController",
+        "IncomeTypeRepository",
+        "association"
+      ],
+      [
+        "RegisterIncomeController",
+        "CheckingAccount",
+        "association"
+      ],
+      [
+        "CheckingAccount",
+        "Income",
+        "association"
+      ],
+      [
+        "CheckingAccount",
+        "IncomeRepository",
+        "association"
+      ],
+      [
+        "IncomeRepository",
+        "Income",
+        "association"
+      ]
+    ],
+    "selected_files": [
+      "eapli.expensemanager/src/Controllers/BaseController.java",
+      "eapli.expensemanager/src/Controllers/RegisterIncomeController.java",
+      "eapli.expensemanager/src/Model/CheckingAccount.java",
+      "eapli.expensemanager/src/Model/Income.java",
+      "eapli.expensemanager/src/Persistence/IncomeRepository.java",
+      "eapli.expensemanager/src/Persistence/IncomeTypeRepository.java",
+      "eapli.expensemanager/src/Presentation/BaseUI.java",
+      "eapli.expensemanager/src/Presentation/RegisterIncomeUI.java"
+    ],
+    "selected_file_sha256": {
+      "eapli.expensemanager/src/Controllers/BaseController.java": "cbc3f4db296ae630e5c2172b9d3e8a4c037114bec71b951e5984ba4472dfee8c",
+      "eapli.expensemanager/src/Controllers/RegisterIncomeController.java": "1bbfedb431aff3731a6ce5fdd3dde7818e9372e874003087ed43fef1fb75f0cc",
+      "eapli.expensemanager/src/Model/CheckingAccount.java": "efb4f98c80c66fe7015bba81516bddba10719027903eccc2c318be5746f5a13b",
+      "eapli.expensemanager/src/Model/Income.java": "e112fb8a4133dc1d7b181511f37bef40e5fd7045011ce9fa27de599e15e9c843",
+      "eapli.expensemanager/src/Persistence/IncomeRepository.java": "043be0ba94b23ae062a76d1e0ab2972ea36e7c32af5eb7ee752144c50397308b",
+      "eapli.expensemanager/src/Persistence/IncomeTypeRepository.java": "08daaaa2a30de59ba08a22d2796f3cdf01f70978c67bab22694a802bd75e3d84",
+      "eapli.expensemanager/src/Presentation/BaseUI.java": "3cea41e32d6e3617199c4233a040733705b507c58195d9f65c2f4683b82b9dac",
+      "eapli.expensemanager/src/Presentation/RegisterIncomeUI.java": "7f369cbc2269affee4732116a273c64c79e32dce77a49522982fe7d681e4ed65"
+    },
+    "source_hits": {
+      "BaseUi": [
+        "eapli.expensemanager/src/Presentation/BaseUI.java"
+      ],
+      "BaseController": [
+        "eapli.expensemanager/src/Controllers/BaseController.java"
+      ],
+      "IncomeRegisterUI": [
+        "eapli.expensemanager/src/Presentation/RegisterIncomeUI.java"
+      ],
+      "RegisterIncomeController": [
+        "eapli.expensemanager/src/Controllers/RegisterIncomeController.java"
+      ],
+      "IncomeTypeRepository": [
+        "eapli.expensemanager/src/Persistence/IncomeTypeRepository.java"
+      ],
+      "CheckingAccount": [
+        "eapli.expensemanager/src/Model/CheckingAccount.java"
+      ],
+      "Income": [
+        "eapli.expensemanager/src/Model/Income.java"
+      ],
+      "IncomeRepository": [
+        "eapli.expensemanager/src/Persistence/IncomeRepository.java"
+      ]
+    },
+    "normalized_model_relations": 7
+  },
+  {
+    "project": "FreeDaysIntern",
+    "source_dir": "4_FreeDaysIntern-b306738",
+    "source_roots": [
+      "Sts/freeday/src/main/java"
+    ],
+    "model_commit": "b306738",
+    "source_commit": "b306738",
+    "reported_model_relations": 7,
+    "nodes": [
+      "Project",
+      "Phase",
+      "POIGenerator",
+      "Employee",
+      "LaborBilling",
+      "PhaseLabor",
+      "Pattern",
+      "Schedule"
+    ],
+    "aliases": {},
+    "edges": [
+      [
+        "Project",
+        "Phase",
+        "association"
+      ],
+      [
+        "Phase",
+        "PhaseLabor",
+        "association"
+      ],
+      [
+        "PhaseLabor",
+        "LaborBilling",
+        "association"
+      ],
+      [
+        "PhaseLabor",
+        "Pattern",
+        "association"
+      ],
+      [
+        "Pattern",
+        "Schedule",
+        "association"
+      ],
+      [
+        "Schedule",
+        "Employee",
+        "association"
+      ],
+      [
+        "POIGenerator",
+        "Employee",
+        "association"
+      ]
+    ],
+    "selected_files": [
+      "Sts/freeday/src/main/java/freedays/timesheet/Employee.java",
+      "Sts/freeday/src/main/java/freedays/timesheet/LaborBilling.java",
+      "Sts/freeday/src/main/java/freedays/timesheet/POIGenerator.java",
+      "Sts/freeday/src/main/java/freedays/timesheet/Pattern.java",
+      "Sts/freeday/src/main/java/freedays/timesheet/Phase.java",
+      "Sts/freeday/src/main/java/freedays/timesheet/PhaseLabor.java",
+      "Sts/freeday/src/main/java/freedays/timesheet/Project.java",
+      "Sts/freeday/src/main/java/freedays/timesheet/Schedule.java"
+    ],
+    "selected_file_sha256": {
+      "Sts/freeday/src/main/java/freedays/timesheet/Employee.java": "c9c9296ece786544a7451b76cd29059421cc0b459f738584a37f693e91b1d639",
+      "Sts/freeday/src/main/java/freedays/timesheet/LaborBilling.java": "16d754a5ea1365165d28c98dfc21ffca2839d0a61dd5771e28d8807fac67e706",
+      "Sts/freeday/src/main/java/freedays/timesheet/POIGenerator.java": "a7b4d0ae03c5f0e5e2fbe258431f7aad5bb4136b4fd7e0e522b60be795558eda",
+      "Sts/freeday/src/main/java/freedays/timesheet/Pattern.java": "42e65b29a09653800b441ed94aaebe8e868b4e8d53a689c043ecf7b2d20c5b28",
+      "Sts/freeday/src/main/java/freedays/timesheet/Phase.java": "26ad1e5db60314d1206e0d96b573865273e0047bf5b854860e4441ee2bd7d540",
+      "Sts/freeday/src/main/java/freedays/timesheet/PhaseLabor.java": "93e1d87b4146a339d1f85c96ae8f5f7a02fa119c6e14598d139ebbb268e4a9e5",
+      "Sts/freeday/src/main/java/freedays/timesheet/Project.java": "dab9a3f4f876d8c0500212d41455c589654f5e55eb81b916568b33a6d0686f3b",
+      "Sts/freeday/src/main/java/freedays/timesheet/Schedule.java": "f714dd48db425af7102c9bf26b13465624b79d9f8c9331704174264130f76c77"
+    },
+    "source_hits": {
+      "Project": [
+        "Sts/freeday/src/main/java/freedays/timesheet/Project.java"
+      ],
+      "Phase": [
+        "Sts/freeday/src/main/java/freedays/timesheet/Phase.java"
+      ],
+      "POIGenerator": [
+        "Sts/freeday/src/main/java/freedays/timesheet/POIGenerator.java"
+      ],
+      "Employee": [
+        "Sts/freeday/src/main/java/freedays/timesheet/Employee.java"
+      ],
+      "LaborBilling": [
+        "Sts/freeday/src/main/java/freedays/timesheet/LaborBilling.java"
+      ],
+      "PhaseLabor": [
+        "Sts/freeday/src/main/java/freedays/timesheet/PhaseLabor.java"
+      ],
+      "Pattern": [
+        "Sts/freeday/src/main/java/freedays/timesheet/Pattern.java"
+      ],
+      "Schedule": [
+        "Sts/freeday/src/main/java/freedays/timesheet/Schedule.java"
+      ]
+    },
+    "normalized_model_relations": 7
+  },
+  {
+    "project": "NeurophChanges",
+    "source_dir": "5_NeurophChanges-848a3aa",
+    "source_roots": [
+      "neuroph-2.8/Core/src/main/java"
+    ],
+    "model_commit": "848a3aa",
+    "source_commit": "848a3aa",
+    "reported_model_relations": 9,
+    "nodes": [
+      "Layer",
+      "NeuralNetwork",
+      "LearningRule",
+      "Neuron",
+      "Connection",
+      "TrainingSet",
+      "InputFunction",
+      "TransferFunction",
+      "Weight",
+      "TrainingElement"
+    ],
+    "aliases": {
+      "TrainingSet": "DataSet",
+      "TrainingElement": "DataSetRow"
+    },
+    "edges": [
+      [
+        "Layer",
+        "NeuralNetwork",
+        "association"
+      ],
+      [
+        "NeuralNetwork",
+        "LearningRule",
+        "association"
+      ],
+      [
+        "Layer",
+        "Neuron",
+        "association"
+      ],
+      [
+        "Neuron",
+        "Connection",
+        "association"
+      ],
+      [
+        "Neuron",
+        "InputFunction",
+        "association"
+      ],
+      [
+        "Neuron",
+        "TransferFunction",
+        "association"
+      ],
+      [
+        "Connection",
+        "Weight",
+        "association"
+      ],
+      [
+        "LearningRule",
+        "TrainingSet",
+        "association"
+      ],
+      [
+        "TrainingSet",
+        "TrainingElement",
+        "association"
+      ]
+    ],
+    "selected_files": [
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Connection.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Layer.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/NeuralNetwork.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Neuron.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Weight.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/data/DataSet.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/data/DataSetRow.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/input/InputFunction.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/learning/LearningRule.java",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/transfer/TransferFunction.java"
+    ],
+    "selected_file_sha256": {
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Connection.java": "7834ad590d706c753bd3af653fabdd549cf3ebe22d487076b6ebc526a8bdba89",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Layer.java": "598dfdc088bf1a8cedda87b785cbf2b4f821ea8517a6d22be150d986a129b5cd",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/NeuralNetwork.java": "b8614d44c0fe13b07fa3b63f1e0cc0fd9cb4528baa6d53b4fdf4b6dccf892568",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Neuron.java": "5e85367aaf69fba70a58530b391151c4c67940cf6922c277745f8d2c472b9d7d",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/Weight.java": "37a0b6ffd4d7d0755762ca20ce393167c5a4e1577cbcd7e7c460750150394d94",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/data/DataSet.java": "bb981240f1de57c2cc7ac23a88aa3c742badbaf049ee57bed9db2db8b60b548c",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/data/DataSetRow.java": "bac27d980bb57eaa36e17967459735958b4cfa8f641356c3b768efde73e5592f",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/input/InputFunction.java": "dd96c4d7ea42f2e51d4d9c4dc37a20bfc2ff93a7ea9cd7840a02c2225a583dc3",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/learning/LearningRule.java": "14e2945a2327b769c77db027de319256f172fc42258a7a1d7c30e0cfb7c9a31e",
+      "neuroph-2.8/Core/src/main/java/org/neuroph/core/transfer/TransferFunction.java": "e423b06c26d3c69ce6b2ec819e0b930ab896a89162985209757f6243f8e5c669"
+    },
+    "source_hits": {
+      "Layer": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/Layer.java"
+      ],
+      "NeuralNetwork": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/NeuralNetwork.java"
+      ],
+      "LearningRule": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/learning/LearningRule.java"
+      ],
+      "Neuron": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/Neuron.java"
+      ],
+      "Connection": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/Connection.java"
+      ],
+      "TrainingSet": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/data/DataSet.java"
+      ],
+      "InputFunction": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/input/InputFunction.java"
+      ],
+      "TransferFunction": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/transfer/TransferFunction.java"
+      ],
+      "Weight": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/Weight.java"
+      ],
+      "TrainingElement": [
+        "neuroph-2.8/Core/src/main/java/org/neuroph/core/data/DataSetRow.java"
+      ]
+    },
+    "normalized_model_relations": 9
+  },
+  {
+    "project": "PatrickFromTheMOOC",
+    "source_dir": "6_PatrickFromTheMOOC-5846aa2",
+    "source_roots": [
+      "avis"
+    ],
+    "model_commit": "e2b99c7",
+    "source_commit": "5846aa2",
+    "reported_model_relations": 9,
+    "nodes": [
+      "SocialNetwork",
+      "Item",
+      "Member",
+      "Review",
+      "EvaluationReview",
+      "Film",
+      "Book"
+    ],
+    "aliases": {},
+    "edges": [
+      [
+        "SocialNetwork",
+        "Member",
+        "association"
+      ],
+      [
+        "SocialNetwork",
+        "Item",
+        "association"
+      ],
+      [
+        "Member",
+        "EvaluationReview",
+        "association"
+      ],
+      [
+        "Member",
+        "Review",
+        "association"
+      ],
+      [
+        "Item",
+        "Review",
+        "association"
+      ],
+      [
+        "Review",
+        "EvaluationReview",
+        "association"
+      ],
+      [
+        "Film",
+        "Item",
+        "inheritance"
+      ],
+      [
+        "Book",
+        "Item",
+        "inheritance"
+      ]
+    ],
+    "normalization_note": "The diagram reports two directed relationships between Member and Review; the common metric collapses them to one undirected association.",
+    "selected_files": [
+      "avis/Book.java",
+      "avis/EvaluationReview.java",
+      "avis/Film.java",
+      "avis/Item.java",
+      "avis/Member.java",
+      "avis/Review.java",
+      "avis/SocialNetwork.java"
+    ],
+    "selected_file_sha256": {
+      "avis/Book.java": "0e2f095512e36d7aa6241848f292136af7f178be17d581dccec994298b68babe",
+      "avis/EvaluationReview.java": "81617d361568d645181fb5f4a694b734190fb0179cf5e4f84592428fe8d86bc6",
+      "avis/Film.java": "7dae810e2553689bd711b91f8370c914aca57ce1a861c381bf75b2440b0f8c95",
+      "avis/Item.java": "65d9838088b9d7e0c2449397f2a6a7935c82fc735a17445692e747e322a40635",
+      "avis/Member.java": "aeeecb7ec043f1560c423bc4d9699677b20019be4dfd8f7d8b33f5e281b66118",
+      "avis/Review.java": "d9527118a1cd02eca427856f470e5bf26c049ff99f6ecdea2c5dc9847e658f61",
+      "avis/SocialNetwork.java": "ccd5df5047ba41c2c91a2ecd2f5d7a014045c02bd84f3d8c27439db3992faa3a"
+    },
+    "source_hits": {
+      "SocialNetwork": [
+        "avis/SocialNetwork.java"
+      ],
+      "Item": [
+        "avis/Item.java"
+      ],
+      "Member": [
+        "avis/Member.java"
+      ],
+      "Review": [
+        "avis/Review.java"
+      ],
+      "EvaluationReview": [
+        "avis/EvaluationReview.java"
+      ],
+      "Film": [
+        "avis/Film.java"
+      ],
+      "Book": [
+        "avis/Book.java"
+      ]
+    },
+    "normalized_model_relations": 8
+  },
+  {
+    "project": "myblog",
+    "source_dir": "7_myblog-6494eaf",
+    "source_roots": [
+      "myblog-domain/src/main/java"
+    ],
+    "model_commit": "6494eaf",
+    "source_commit": "6494eaf",
+    "reported_model_relations": 11,
+    "nodes": [
+      "User",
+      "Account",
+      "Tag",
+      "Blog",
+      "Entry",
+      "Category",
+      "Link",
+      "Comment"
+    ],
+    "aliases": {},
+    "edges": [
+      [
+        "User",
+        "Account",
+        "association"
+      ],
+      [
+        "User",
+        "Entry",
+        "association"
+      ],
+      [
+        "Tag",
+        "Entry",
+        "association"
+      ],
+      [
+        "Blog",
+        "Tag",
+        "association"
+      ],
+      [
+        "Blog",
+        "Entry",
+        "association"
+      ],
+      [
+        "Blog",
+        "Category",
+        "association"
+      ],
+      [
+        "Blog",
+        "Link",
+        "association"
+      ],
+      [
+        "Entry",
+        "Comment",
+        "association"
+      ],
+      [
+        "Entry",
+        "Category",
+        "association"
+      ],
+      [
+        "Category",
+        "Link",
+        "association"
+      ]
+    ],
+    "normalization_note": "The authors report 11 relationships; the visible diagram yields 10 distinct classifier pairs under the common undirected-association normalization.",
+    "selected_files": [
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Account.java",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Blog.java",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Category.java",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Comment.java",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Entry.java",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Tag.java",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/User.java"
+    ],
+    "selected_file_sha256": {
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Account.java": "9bfd35d130da0d44f5d238fa22ef841a438523bdb81dcbb0ae14bbf8530c55ec",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Blog.java": "9aec8fd10f898bb5c23a959a3591b29ca926e0e1e205c251756bc06930210f89",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Category.java": "2ee653f18e1977fe73b0eeb68877276be0177739dfd63ecfdd894cd69b47796c",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Comment.java": "b8cd3cd3dc5e39aeaf686036915c5a7b0a1402a4f88217c15d470a2850750c76",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Entry.java": "ade48f507d6ee313bfd3b0a381166ea3ab0593a2590baefa4a15f6c7c1dee6dd",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Tag.java": "1d7d16910109b86f7633e94bf8d45a81e1eb7862690ac8c85845147af4466a7c",
+      "myblog-domain/src/main/java/com/jdkcn/myblog/domain/User.java": "2178072dfa9c4b118efffab8d4e5dd7262973c97efd413db4f452e8d8da1449c"
+    },
+    "source_hits": {
+      "User": [
+        "myblog-domain/src/main/java/com/jdkcn/myblog/domain/User.java"
+      ],
+      "Account": [
+        "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Account.java"
+      ],
+      "Tag": [
+        "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Tag.java"
+      ],
+      "Blog": [
+        "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Blog.java"
+      ],
+      "Entry": [
+        "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Entry.java"
+      ],
+      "Category": [
+        "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Category.java"
+      ],
+      "Link": [],
+      "Comment": [
+        "myblog-domain/src/main/java/com/jdkcn/myblog/domain/Comment.java"
+      ]
+    },
+    "normalized_model_relations": 10
+  },
+  {
+    "project": "Orekit",
+    "source_dir": "8_Orekit-4314309",
+    "source_roots": [
+      "src/main/java"
+    ],
+    "model_commit": "4314309",
+    "source_commit": "4314309",
+    "reported_model_relations": 5,
+    "nodes": [
+      "DSSTHarvester",
+      "DSSTStateTransitionMatrixGenerator",
+      "DSSTPropagator",
+      "SemiAnalyticalMeasurementHandler",
+      "SemiAnalyticalKalmanModel",
+      "SemiAnalyticalKalmanEstimator",
+      "SemiAnalyticalKalmanEstimatorBuilder"
+    ],
+    "aliases": {},
+    "edges": [
+      [
+        "DSSTPropagator",
+        "DSSTHarvester",
+        "association"
+      ],
+      [
+        "DSSTPropagator",
+        "DSSTStateTransitionMatrixGenerator",
+        "association"
+      ],
+      [
+        "SemiAnalyticalKalmanModel",
+        "SemiAnalyticalMeasurementHandler",
+        "association"
+      ],
+      [
+        "SemiAnalyticalKalmanEstimator",
+        "SemiAnalyticalKalmanModel",
+        "association"
+      ],
+      [
+        "SemiAnalyticalKalmanEstimatorBuilder",
+        "SemiAnalyticalKalmanEstimator",
+        "association"
+      ]
+    ],
+    "selected_files": [
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanEstimator.java",
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanEstimatorBuilder.java",
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanModel.java",
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalMeasurementHandler.java",
+      "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTHarvester.java",
+      "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTPropagator.java",
+      "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTStateTransitionMatrixGenerator.java"
+    ],
+    "selected_file_sha256": {
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanEstimator.java": "91330a48dc740d851dc1247b694516152aa93aed46f2275bf7dc2c202c75a8f4",
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanEstimatorBuilder.java": "55482ae485950f0bf18c6933ac121ffd2ce5ab83347a1d6eae668ebd749d594f",
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanModel.java": "4ccb56f78b07711700ae61107ea0026859d086711c112bde331c5b3a28d1d7fd",
+      "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalMeasurementHandler.java": "ebd132e7052e30e8d72ab4bad43ed6da7e68620bbdf5f494a45132b77eca80ca",
+      "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTHarvester.java": "a72855e0a2f32c2d74b3d72e908a37f5afbc207e660f1b1eef93b76b176e7e46",
+      "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTPropagator.java": "457d182c9f0410bce63bb4604d3d87be136b7e1bbe2869a64adbb0a8a4da6b18",
+      "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTStateTransitionMatrixGenerator.java": "043c773d0930a82bc57cfd209411c83aabf2315e08edd9e8b0751ac48754ea05"
+    },
+    "source_hits": {
+      "DSSTHarvester": [
+        "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTHarvester.java"
+      ],
+      "DSSTStateTransitionMatrixGenerator": [
+        "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTStateTransitionMatrixGenerator.java"
+      ],
+      "DSSTPropagator": [
+        "src/main/java/org/orekit/propagation/semianalytical/dsst/DSSTPropagator.java"
+      ],
+      "SemiAnalyticalMeasurementHandler": [
+        "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalMeasurementHandler.java"
+      ],
+      "SemiAnalyticalKalmanModel": [
+        "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanModel.java"
+      ],
+      "SemiAnalyticalKalmanEstimator": [
+        "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanEstimator.java"
+      ],
+      "SemiAnalyticalKalmanEstimatorBuilder": [
+        "src/main/java/org/orekit/estimation/sequential/SemiAnalyticalKalmanEstimatorBuilder.java"
+      ]
+    },
+    "normalized_model_relations": 5
+  },
+  {
+    "project": "Artemis",
+    "source_dir": "9_Artemis-8885e22",
+    "source_roots": [
+      "src/main/java"
+    ],
+    "model_commit": "8885e22",
+    "source_commit": "8885e22",
+    "reported_model_relations": 6,
+    "nodes": [
+      "SharedQueueProcessingService",
+      "BuildJobManagementService",
+      "BuildJobExecutionService",
+      "LocalCIQueueWebsocketService",
+      "SharedQueueManagementService",
+      "LocalCIWebsocketMessagingService",
+      "BuildJobQueueResource",
+      "AdminBuildJobQueueResource"
+    ],
+    "aliases": {},
+    "edges": [
+      [
+        "SharedQueueProcessingService",
+        "BuildJobManagementService",
+        "association"
+      ],
+      [
+        "BuildJobManagementService",
+        "BuildJobExecutionService",
+        "association"
+      ],
+      [
+        "LocalCIQueueWebsocketService",
+        "SharedQueueManagementService",
+        "association"
+      ],
+      [
+        "LocalCIQueueWebsocketService",
+        "LocalCIWebsocketMessagingService",
+        "association"
+      ],
+      [
+        "SharedQueueManagementService",
+        "BuildJobQueueResource",
+        "association"
+      ],
+      [
+        "SharedQueueManagementService",
+        "AdminBuildJobQueueResource",
+        "association"
+      ]
+    ],
+    "selected_files": [
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/LocalCIQueueWebsocketService.java",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/SharedQueueManagementService.java",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/BuildJobExecutionService.java",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/BuildJobManagementService.java",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/SharedQueueProcessingService.java",
+      "src/main/java/de/tum/in/www1/artemis/web/rest/admin/AdminBuildJobQueueResource.java",
+      "src/main/java/de/tum/in/www1/artemis/web/rest/localci/BuildJobQueueResource.java",
+      "src/main/java/de/tum/in/www1/artemis/web/websocket/localci/LocalCIWebsocketMessagingService.java"
+    ],
+    "selected_file_sha256": {
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/LocalCIQueueWebsocketService.java": "a0004dac684a437e9b1c5b8a940f80a495fbf4ccef909593c6e205c165d423bb",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/SharedQueueManagementService.java": "f6dffb5ef86b3e84fe5dadd0ee19c5fd4628f5c01fd2508c59b8007dcc59f581",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/BuildJobExecutionService.java": "e15071b652ec9e9ab626d4e07b2fb18521410ae4afe0e04ea61558ddd31871e2",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/BuildJobManagementService.java": "a28c2979edf5de06ef00bcb5f56b8a67be2e6f3735755ff3bfda43d1893a3dd5",
+      "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/SharedQueueProcessingService.java": "9ad52c92026055095eb773a037af1fcacfa5f03b9b6f1302804812a779718f77",
+      "src/main/java/de/tum/in/www1/artemis/web/rest/admin/AdminBuildJobQueueResource.java": "5005c8b062ba487e32eb385edeb88711f8819a68eb9bf8c7cba7fa24f345cbc3",
+      "src/main/java/de/tum/in/www1/artemis/web/rest/localci/BuildJobQueueResource.java": "59b3e1b307db95a850bf428658a7d8c39b274ab9880f724f6fa813b5f862e60f",
+      "src/main/java/de/tum/in/www1/artemis/web/websocket/localci/LocalCIWebsocketMessagingService.java": "265a7118e2a79e3a788394180c8b6b83e56b9c584a010973313f254510baefc7"
+    },
+    "source_hits": {
+      "SharedQueueProcessingService": [
+        "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/SharedQueueProcessingService.java"
+      ],
+      "BuildJobManagementService": [
+        "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/BuildJobManagementService.java"
+      ],
+      "BuildJobExecutionService": [
+        "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/buildagent/BuildJobExecutionService.java"
+      ],
+      "LocalCIQueueWebsocketService": [
+        "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/LocalCIQueueWebsocketService.java"
+      ],
+      "SharedQueueManagementService": [
+        "src/main/java/de/tum/in/www1/artemis/service/connectors/localci/SharedQueueManagementService.java"
+      ],
+      "LocalCIWebsocketMessagingService": [
+        "src/main/java/de/tum/in/www1/artemis/web/websocket/localci/LocalCIWebsocketMessagingService.java"
+      ],
+      "BuildJobQueueResource": [
+        "src/main/java/de/tum/in/www1/artemis/web/rest/localci/BuildJobQueueResource.java"
+      ],
+      "AdminBuildJobQueueResource": [
+        "src/main/java/de/tum/in/www1/artemis/web/rest/admin/AdminBuildJobQueueResource.java"
+      ]
+    },
+    "normalized_model_relations": 6
+  }
+]

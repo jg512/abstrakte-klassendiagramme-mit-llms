@@ -1,0 +1,139 @@
+{
+  "repo": "TristanFAURE/pickerExplorer",
+  "commit": "6145e466f1aa6065761fa3ea8e95c5d352fde002",
+  "model_path": "plugins/org.topcased.pickerexplorer.ui/model1.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "org.eclipse.wb.swt.ResourceManager",
+    "org.eclipse.wb.swt.ResourceManager.PluginResourceProvider",
+    "org.eclipse.wb.swt.SWTResourceManager",
+    "org.topcased.pickerexplorer.ui.Messages",
+    "org.topcased.pickerexplorer.ui.actions.DisableAllPickersAction",
+    "org.topcased.pickerexplorer.ui.actions.DisablePickerElementAction",
+    "org.topcased.pickerexplorer.ui.actions.EnableAllPickersAction",
+    "org.topcased.pickerexplorer.ui.actions.RefreshElementAction",
+    "org.topcased.pickerexplorer.ui.actions.RemoveAllElementsAction",
+    "org.topcased.pickerexplorer.ui.actions.RemoveElementsAction",
+    "org.topcased.pickerexplorer.ui.actions.ToggleGroupElementsAction",
+    "org.topcased.pickerexplorer.ui.builder.IPickerRunnable",
+    "org.topcased.pickerexplorer.ui.builder.PickerExplorerBuilder",
+    "org.topcased.pickerexplorer.ui.elements.AbstractPickerExplorerElement",
+    "org.topcased.pickerexplorer.ui.elements.ConfigurablePicker",
+    "org.topcased.pickerexplorer.ui.elements.ObjectElement",
+    "org.topcased.pickerexplorer.ui.elements.PickerElement",
+    "org.topcased.pickerexplorer.ui.elements.PickerEplorerElementListener",
+    "org.topcased.pickerexplorer.ui.elements.PickerParameter",
+    "org.topcased.pickerexplorer.ui.elements.RootElement",
+    "org.topcased.pickerexplorer.ui.handlers.AddToPickerExplorerHandler",
+    "org.topcased.pickerexplorer.ui.javaqueries.ContentsQuery",
+    "org.topcased.pickerexplorer.ui.pickers.javaqueries.InverseReferencesQuery",
+    "org.topcased.pickerexplorer.ui.pickers.javaqueries.OCLQuery",
+    "org.topcased.pickerexplorer.ui.pickers.javaqueries.OutgoingReferencesQuery",
+    "org.topcased.pickerexplorer.ui.util.AdaptableToEObjectPropertyTester",
+    "org.topcased.pickerexplorer.ui.util.EMFProviderUtil",
+    "org.topcased.pickerexplorer.ui.util.PickerExplorerUtils",
+    "org.topcased.pickerexplorer.ui.util.UnEditablePropertyDescriptor",
+    "org.topcased.pickerexplorer.ui.util.UnEditablePropertySource",
+    "org.topcased.pickerexplorer.ui.views.InViewPickerExplorerComposite",
+    "org.topcased.pickerexplorer.ui.views.PickerExplorerComposite",
+    "org.topcased.pickerexplorer.ui.views.PickerExplorerView",
+    "org.topcased.pickerexplorer.ui.views.paramlist.ParamListComposite",
+    "org.topcased.pickerexplorer.ui.views.pickerlist.PickerListComposite",
+    "org.topcased.pickerexplorer.ui.views.pickertree.PickerTreeComposite",
+    "org.topcased.pickerexplorer.ui.views.pickertree.TreeElementLabelProvider"
+  ],
+  "edges": [
+    [
+      "org.eclipse.wb.swt.ResourceManager",
+      "org.eclipse.wb.swt.SWTResourceManager",
+      "inheritance"
+    ],
+    [
+      "org.topcased.pickerexplorer.ui.elements.AbstractPickerExplorerElement",
+      "org.topcased.pickerexplorer.ui.elements.ConfigurablePicker",
+      "association"
+    ],
+    [
+      "org.topcased.pickerexplorer.ui.elements.ConfigurablePicker",
+      "org.topcased.pickerexplorer.ui.elements.PickerParameter",
+      "association"
+    ],
+    [
+      "org.topcased.pickerexplorer.ui.elements.ObjectElement",
+      "org.topcased.pickerexplorer.ui.elements.AbstractPickerExplorerElement",
+      "inheritance"
+    ],
+    [
+      "org.topcased.pickerexplorer.ui.elements.PickerElement",
+      "org.topcased.pickerexplorer.ui.elements.AbstractPickerExplorerElement",
+      "inheritance"
+    ],
+    [
+      "org.topcased.pickerexplorer.ui.elements.RootElement",
+      "org.topcased.pickerexplorer.ui.elements.AbstractPickerExplorerElement",
+      "inheritance"
+    ],
+    [
+      "org.topcased.pickerexplorer.ui.views.InViewPickerExplorerComposite",
+      "org.topcased.pickerexplorer.ui.views.PickerExplorerComposite",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_86EWoP5oEeGTodCm17ibVw": "org.eclipse.wb.swt.SWTResourceManager",
+    "_86E9sP5oEeGTodCm17ibVw": "org.eclipse.wb.swt.ResourceManager",
+    "_86FkwP5oEeGTodCm17ibVw": "org.eclipse.wb.swt.ResourceManager.PluginResourceProvider",
+    "_86GL0f5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.Messages",
+    "_86TAIP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.actions.DisablePickerElementAction",
+    "_86hCkP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.actions.DisableAllPickersAction",
+    "_86hpoP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.actions.ToggleGroupElementsAction",
+    "_86tP0P5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.actions.RemoveElementsAction",
+    "_864O8P5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.actions.EnableAllPickersAction",
+    "_864O8f5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.actions.RefreshElementAction",
+    "_86_jsP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.actions.RemoveAllElementsAction",
+    "_87PbUP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.builder.IPickerRunnable",
+    "_87QCYP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.builder.PickerExplorerBuilder",
+    "_87QpcP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.elements.AbstractPickerExplorerElement",
+    "_87c2sP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.elements.PickerEplorerElementListener",
+    "_87ddwP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.elements.PickerElement",
+    "_87ddwf5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.elements.ObjectElement",
+    "_87ddwv5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.elements.RootElement",
+    "_87eE0P5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.elements.PickerParameter",
+    "_87vKkP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.elements.ConfigurablePicker",
+    "_88L2gP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.pickers.javaqueries.InverseReferencesQuery",
+    "_88Z48P5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.pickers.javaqueries.OutgoingReferencesQuery",
+    "_88jC4P5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.javaqueries.ContentsQuery",
+    "_88q-sP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.pickers.javaqueries.OCLQuery",
+    "_89L8EP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.handlers.AddToPickerExplorerHandler",
+    "_89VGAP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.util.PickerExplorerUtils",
+    "_89gsMP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.util.AdaptableToEObjectPropertyTester",
+    "_89ooAP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.util.UnEditablePropertyDescriptor",
+    "_89ooAf5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.util.EMFProviderUtil",
+    "_89pPEP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.util.UnEditablePropertySource",
+    "_89pPEv5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.views.PickerExplorerView",
+    "_89p2IP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.views.InViewPickerExplorerComposite",
+    "_89p2I_5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.views.PickerExplorerComposite",
+    "_8-CQoP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.views.paramlist.ParamListComposite",
+    "_8-HwMf5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.views.pickerlist.PickerListComposite",
+    "_8_WfQP5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.views.pickertree.PickerTreeComposite",
+    "_8_WfQf5oEeGTodCm17ibVw": "org.topcased.pickerexplorer.ui.views.pickertree.TreeElementLabelProvider"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_86Gy4P5oEeGTodCm17ibVw",
+      "name": "Activator",
+      "source_candidates": [
+        "org.topcased.pickerexplorer.batch.Activator",
+        "org.topcased.pickerexplorer.ui.Activator",
+        "org.topcased.pickerexplorer.ui.pickers.Activator"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_88R9IP5oEeGTodCm17ibVw",
+      "name": "InheritingEClassIPicker",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

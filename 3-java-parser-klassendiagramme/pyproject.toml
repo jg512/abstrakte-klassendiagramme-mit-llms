@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "javauml"
+version = "0.1.0"
+description = "Klassendiagramme (PlantUML, JSON) aus dem Quelltext von Java-Repos, ohne Build"
+requires-python = ">=3.11"
+dependencies = [
+    "tree-sitter>=0.21",
+    "tree-sitter-java>=0.21",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+javauml = "javauml.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["javauml*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,10 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "survey.model.Page" as n0
+class "survey.model.Question" as n1
+class "survey.model.Survey" as n2
+class "survey.model.User" as n3
+n0 -- n1
+n0 -- n2
+n2 -- n3
+@enduml

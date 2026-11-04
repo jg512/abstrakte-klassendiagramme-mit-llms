@@ -1,0 +1,6 @@
+# v1
+The working graph is a merge of per-cluster diagrams produced earlier; the
+static context contains that merged graph and the import edges that cross
+cluster boundaries. Deduplicate overlapping nodes, add the cross-cluster
+relations the import edges warrant, and prune the least significant nodes
+until the graph reaches the target size.

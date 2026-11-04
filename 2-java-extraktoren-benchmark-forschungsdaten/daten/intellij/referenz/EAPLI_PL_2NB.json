@@ -1,0 +1,161 @@
+{
+  "projekt": "EAPLI_PL_2NB",
+  "umfang": "vollständig",
+  "methode": "Jede Kante einzeln im Bild nachverfolgt.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "Controllers.RegisterIncomeController",
+      "nach": "Persistence.IncomeTypeRepository",
+      "bezeichnung": "incomeTypeRepository",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "Model.CheckingAccount",
+      "nach": "Persistence.IncomeRepository",
+      "bezeichnung": "incomeRepo",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "Persistence.IncomeRepository",
+      "nach": "Persistence.IncomeRepository",
+      "bezeichnung": "instance",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "Persistence.IncomeTypeRepository",
+      "nach": "Persistence.IncomeTypeRepository",
+      "bezeichnung": "instance",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "Presentation.RegisterIncomeUI",
+      "nach": "Controllers.RegisterIncomeController",
+      "bezeichnung": "controller",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "dependency",
+      "von": "Controllers.BaseController",
+      "nach": "Controllers.BaseController",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Controllers.BaseController",
+      "nach": "Model.CheckingAccount",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Controllers.RegisterIncomeController",
+      "nach": "Model.CheckingAccount",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Controllers.RegisterIncomeController",
+      "nach": "Model.Income",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Model.CheckingAccount",
+      "nach": "Model.CheckingAccount",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Model.CheckingAccount",
+      "nach": "Model.Income",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Model.CheckingAccount",
+      "nach": "Persistence.IncomeRepository",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Persistence.IncomeRepository",
+      "nach": "Model.Income",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Persistence.IncomeRepository",
+      "nach": "Persistence.IncomeRepository",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Persistence.IncomeTypeRepository",
+      "nach": "Persistence.IncomeTypeRepository",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Presentation.BaseUI",
+      "nach": "Controllers.BaseController",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Presentation.BaseUI",
+      "nach": "Presentation.BaseUI",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Presentation.RegisterIncomeUI",
+      "nach": "Controllers.BaseController",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Presentation.RegisterIncomeUI",
+      "nach": "Controllers.RegisterIncomeController",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "Presentation.RegisterIncomeUI",
+      "nach": "Presentation.RegisterIncomeUI",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "Controllers.RegisterIncomeController",
+      "nach": "Controllers.BaseController",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "Presentation.RegisterIncomeUI",
+      "nach": "Presentation.BaseUI",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

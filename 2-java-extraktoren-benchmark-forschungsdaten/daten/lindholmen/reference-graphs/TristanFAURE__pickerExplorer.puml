@@ -1,0 +1,47 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "org.eclipse.wb.swt.ResourceManager" as n0
+class "org.eclipse.wb.swt.ResourceManager.PluginResourceProvider" as n1
+class "org.eclipse.wb.swt.SWTResourceManager" as n2
+class "org.topcased.pickerexplorer.ui.Messages" as n3
+class "org.topcased.pickerexplorer.ui.actions.DisableAllPickersAction" as n4
+class "org.topcased.pickerexplorer.ui.actions.DisablePickerElementAction" as n5
+class "org.topcased.pickerexplorer.ui.actions.EnableAllPickersAction" as n6
+class "org.topcased.pickerexplorer.ui.actions.RefreshElementAction" as n7
+class "org.topcased.pickerexplorer.ui.actions.RemoveAllElementsAction" as n8
+class "org.topcased.pickerexplorer.ui.actions.RemoveElementsAction" as n9
+class "org.topcased.pickerexplorer.ui.actions.ToggleGroupElementsAction" as n10
+class "org.topcased.pickerexplorer.ui.builder.IPickerRunnable" as n11
+class "org.topcased.pickerexplorer.ui.builder.PickerExplorerBuilder" as n12
+class "org.topcased.pickerexplorer.ui.elements.AbstractPickerExplorerElement" as n13
+class "org.topcased.pickerexplorer.ui.elements.ConfigurablePicker" as n14
+class "org.topcased.pickerexplorer.ui.elements.ObjectElement" as n15
+class "org.topcased.pickerexplorer.ui.elements.PickerElement" as n16
+class "org.topcased.pickerexplorer.ui.elements.PickerEplorerElementListener" as n17
+class "org.topcased.pickerexplorer.ui.elements.PickerParameter" as n18
+class "org.topcased.pickerexplorer.ui.elements.RootElement" as n19
+class "org.topcased.pickerexplorer.ui.handlers.AddToPickerExplorerHandler" as n20
+class "org.topcased.pickerexplorer.ui.javaqueries.ContentsQuery" as n21
+class "org.topcased.pickerexplorer.ui.pickers.javaqueries.InverseReferencesQuery" as n22
+class "org.topcased.pickerexplorer.ui.pickers.javaqueries.OCLQuery" as n23
+class "org.topcased.pickerexplorer.ui.pickers.javaqueries.OutgoingReferencesQuery" as n24
+class "org.topcased.pickerexplorer.ui.util.AdaptableToEObjectPropertyTester" as n25
+class "org.topcased.pickerexplorer.ui.util.EMFProviderUtil" as n26
+class "org.topcased.pickerexplorer.ui.util.PickerExplorerUtils" as n27
+class "org.topcased.pickerexplorer.ui.util.UnEditablePropertyDescriptor" as n28
+class "org.topcased.pickerexplorer.ui.util.UnEditablePropertySource" as n29
+class "org.topcased.pickerexplorer.ui.views.InViewPickerExplorerComposite" as n30
+class "org.topcased.pickerexplorer.ui.views.PickerExplorerComposite" as n31
+class "org.topcased.pickerexplorer.ui.views.PickerExplorerView" as n32
+class "org.topcased.pickerexplorer.ui.views.paramlist.ParamListComposite" as n33
+class "org.topcased.pickerexplorer.ui.views.pickerlist.PickerListComposite" as n34
+class "org.topcased.pickerexplorer.ui.views.pickertree.PickerTreeComposite" as n35
+class "org.topcased.pickerexplorer.ui.views.pickertree.TreeElementLabelProvider" as n36
+n0 --|> n2
+n13 -- n14
+n14 -- n18
+n15 --|> n13
+n16 --|> n13
+n19 --|> n13
+n30 --|> n31
+@enduml

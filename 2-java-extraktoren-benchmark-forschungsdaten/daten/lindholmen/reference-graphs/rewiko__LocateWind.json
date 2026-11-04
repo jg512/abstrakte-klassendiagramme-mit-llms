@@ -1,0 +1,496 @@
+{
+  "repo": "rewiko/LocateWind",
+  "commit": "4c7b7140088ee27979a1fba3dfa7f426ffd31f83",
+  "model_path": "Locate_Wind/Locate_Wind.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "LocateWind.Comtois.LastLocation",
+    "LocateWind.Comtois.Locate_Recep",
+    "LocateWind.Comtois.Locate_WindActivity",
+    "LocateWind.Comtois.MapWind",
+    "LocateWind.Comtois.RecupService",
+    "LocateWind.Comtois.RecupTimerTask",
+    "LocateWind.Comtois.Wind",
+    "LocateWind.Comtois.WindItem",
+    "LocateWind.Comtois.WindLocate"
+  ],
+  "edges": [
+    [
+      "LocateWind.Comtois.LastLocation",
+      "LocateWind.Comtois.Locate_Recep",
+      "association"
+    ],
+    [
+      "LocateWind.Comtois.Locate_Recep",
+      "LocateWind.Comtois.MapWind",
+      "association"
+    ],
+    [
+      "LocateWind.Comtois.RecupService",
+      "LocateWind.Comtois.RecupTimerTask",
+      "association"
+    ],
+    [
+      "LocateWind.Comtois.RecupService",
+      "LocateWind.Comtois.Wind",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_Gaw04HsDEeGLD-JBXTKHXA": "LocateWind.Comtois.LastLocation",
+    "_Ga-3UHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.Locate_Recep",
+    "_GbIBQHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.Locate_WindActivity",
+    "_Gbt3IHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.MapWind",
+    "_GcZzoHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.RecupService",
+    "_GcpEMHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.RecupTimerTask",
+    "_GctVoHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.Wind",
+    "_Gc0DUHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.WindItem",
+    "_GdFJEHsDEeGLD-JBXTKHXA": "LocateWind.Comtois.WindLocate"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_GjmAwHsDEeGLD-JBXTKHXA",
+      "name": "Builder",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gha2gHsDEeGLD-JBXTKHXA",
+      "name": "Activity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhbdkXsDEeGLD-JBXTKHXA",
+      "name": "AlertDialog",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gh4wkHsDEeGLD-JBXTKHXA",
+      "name": "TabActivity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gi_j0HsDEeGLD-JBXTKHXA",
+      "name": "Service",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiX4wHsDEeGLD-JBXTKHXA",
+      "name": "Resources",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhcrsXsDEeGLD-JBXTKHXA",
+      "name": "Context",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Ghd50HsDEeGLD-JBXTKHXA",
+      "name": "Intent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Ghyp8HsDEeGLD-JBXTKHXA",
+      "name": "BroadcastReceiver",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gh5-sXsDEeGLD-JBXTKHXA",
+      "name": "DialogInterface",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiWDkHsDEeGLD-JBXTKHXA",
+      "name": "IntentFilter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gheg4XsDEeGLD-JBXTKHXA",
+      "name": "Bundle",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjCnIXsDEeGLD-JBXTKHXA",
+      "name": "IBinder",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjEcUXsDEeGLD-JBXTKHXA",
+      "name": "Looper",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gh-QIXsDEeGLD-JBXTKHXA",
+      "name": "OnGestureListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjyOAHsDEeGLD-JBXTKHXA",
+      "name": "OnClickListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhfvAXsDEeGLD-JBXTKHXA",
+      "name": "Menu",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhgWEXsDEeGLD-JBXTKHXA",
+      "name": "MenuInflater",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhhkMXsDEeGLD-JBXTKHXA",
+      "name": "MenuItem",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhiLQXsDEeGLD-JBXTKHXA",
+      "name": "View",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gh9CAXsDEeGLD-JBXTKHXA",
+      "name": "GestureDetector",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiAFUHsDEeGLD-JBXTKHXA",
+      "name": "LayoutInflater",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiBTcXsDEeGLD-JBXTKHXA",
+      "name": "MotionEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhkAcXsDEeGLD-JBXTKHXA",
+      "name": "OnItemClickListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiDIoHsDEeGLD-JBXTKHXA",
+      "name": "TabSpec",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhjZYHsDEeGLD-JBXTKHXA",
+      "name": "AdapterView",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhlOkHsDEeGLD-JBXTKHXA",
+      "name": "ListView",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Ghl1oXsDEeGLD-JBXTKHXA",
+      "name": "SimpleAdapter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhnDwHsDEeGLD-JBXTKHXA",
+      "name": "TabHost",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiEWwHsDEeGLD-JBXTKHXA",
+      "name": "TextView",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GihCsHsDEeGLD-JBXTKHXA",
+      "name": "EditText",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiiQ0XsDEeGLD-JBXTKHXA",
+      "name": "Toast",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjzcIXsDEeGLD-JBXTKHXA",
+      "name": "ArrayAdapter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gj0qQXsDEeGLD-JBXTKHXA",
+      "name": "Button",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gj2fcHsDEeGLD-JBXTKHXA",
+      "name": "Spinner",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gh7z4HsDEeGLD-JBXTKHXA",
+      "name": "LocationManager",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GibjIHsDEeGLD-JBXTKHXA",
+      "name": "Location",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GicxQXsDEeGLD-JBXTKHXA",
+      "name": "LocationListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiZt8HsDEeGLD-JBXTKHXA",
+      "name": "Drawable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiemcXsDEeGLD-JBXTKHXA",
+      "name": "Log",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjBZAHsDEeGLD-JBXTKHXA",
+      "name": "ParseException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjwY0HsDEeGLD-JBXTKHXA",
+      "name": "Editable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Ghnq0XsDEeGLD-JBXTKHXA",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhoR4XsDEeGLD-JBXTKHXA",
+      "name": "HashMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhpgAXsDEeGLD-JBXTKHXA",
+      "name": "Iterator",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhqHEXsDEeGLD-JBXTKHXA",
+      "name": "List",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjJ74XsDEeGLD-JBXTKHXA",
+      "name": "Timer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjghMHsDEeGLD-JBXTKHXA",
+      "name": "TimerTask",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gj6J0HsDEeGLD-JBXTKHXA",
+      "name": "Date",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GisB0HsDEeGLD-JBXTKHXA",
+      "name": "BufferedReader",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Git3AHsDEeGLD-JBXTKHXA",
+      "name": "FileReader",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjG4kHsDEeGLD-JBXTKHXA",
+      "name": "InputStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjItwHsDEeGLD-JBXTKHXA",
+      "name": "InputStreamReader",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gj4UoHsDEeGLD-JBXTKHXA",
+      "name": "SimpleDateFormat",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GlCLMHsDEeGLD-JBXTKHXA",
+      "name": "Runnable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhrVMXsDEeGLD-JBXTKHXA",
+      "name": "GeoPoint",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GhsjUHsDEeGLD-JBXTKHXA",
+      "name": "OverlayItem",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GikGAHsDEeGLD-JBXTKHXA",
+      "name": "MapActivity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gil7MHsDEeGLD-JBXTKHXA",
+      "name": "MapController",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GinJUXsDEeGLD-JBXTKHXA",
+      "name": "MapView",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gio-gHsDEeGLD-JBXTKHXA",
+      "name": "MyLocationOverlay",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GiqMoXsDEeGLD-JBXTKHXA",
+      "name": "Overlay",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gjn18HsDEeGLD-JBXTKHXA",
+      "name": "ItemizedOverlay",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GbJPYHsDEeGLD-JBXTKHXA",
+      "name": "OnGestureListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjRQoHsDEeGLD-JBXTKHXA",
+      "name": "HttpPost",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gj7X8XsDEeGLD-JBXTKHXA",
+      "name": "UrlEncodedFormEntity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjPbcHsDEeGLD-JBXTKHXA",
+      "name": "HttpClient",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjTF0HsDEeGLD-JBXTKHXA",
+      "name": "DefaultHttpClient",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Gj9NIXsDEeGLD-JBXTKHXA",
+      "name": "BasicNameValuePair",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjLxEHsDEeGLD-JBXTKHXA",
+      "name": "HttpEntity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjNmQHsDEeGLD-JBXTKHXA",
+      "name": "HttpResponse",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjUT8XsDEeGLD-JBXTKHXA",
+      "name": "JSONArray",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjWJIHsDEeGLD-JBXTKHXA",
+      "name": "JSONException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GjX-UHsDEeGLD-JBXTKHXA",
+      "name": "JSONObject",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

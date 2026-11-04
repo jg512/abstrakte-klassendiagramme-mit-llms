@@ -1,0 +1,13 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "com.easyview.ebook.reader.engine.core.EREngine" as n0
+class "com.easyview.ebook.reader.engine.core.IActionCall" as n1
+class "com.easyview.ebook.reader.engine.module.comments.CommentView" as n2
+class "com.easyview.ebook.reader.engine.module.comments.ICommentHandlerCall" as n3
+class "com.easyview.ebook.reader.engine.util.EngineConfig" as n4
+class "com.easyview.ebook.reader.ui.controller.EasyViewer" as n5
+n0 -- n5
+n1 -- n5
+n2 -- n5
+n3 -- n5
+@enduml

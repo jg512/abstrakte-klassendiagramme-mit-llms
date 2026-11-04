@@ -1,0 +1,312 @@
+{
+  "repo": "dearsalisa/HappyWhale",
+  "commit": "2b4fe24e2e71aada6d7afb09a793c3c8d3020ab6",
+  "model_path": "HappyWhale.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "Background",
+    "MainGame",
+    "Plate",
+    "Whale"
+  ],
+  "edges": [
+    [
+      "Background",
+      "MainGame",
+      "association"
+    ],
+    [
+      "MainGame",
+      "Plate",
+      "association"
+    ],
+    [
+      "MainGame",
+      "Whale",
+      "association"
+    ],
+    [
+      "Plate",
+      "Whale",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_L0GGc1gyEeSbuaUR_yNkXg": "Whale",
+    "_L0Gtr1gyEeSbuaUR_yNkXg": "Background",
+    "_L0Gtx1gyEeSbuaUR_yNkXg": "MainGame",
+    "_L0GuG1gyEeSbuaUR_yNkXg": "Plate"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_L0HU7VgyEeSbuaUR_yNkXg",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HU8FgyEeSbuaUR_yNkXg",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVAFgyEeSbuaUR_yNkXg",
+      "name": "AbstractList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVA1gyEeSbuaUR_yNkXg",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVBlgyEeSbuaUR_yNkXg",
+      "name": "AbstractCollection",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVCVgyEeSbuaUR_yNkXg",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVC1gyEeSbuaUR_yNkXg",
+      "name": "Collection",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVDlgyEeSbuaUR_yNkXg",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVEFgyEeSbuaUR_yNkXg",
+      "name": "List",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVE1gyEeSbuaUR_yNkXg",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVFVgyEeSbuaUR_yNkXg",
+      "name": "RandomAccess",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVFlgyEeSbuaUR_yNkXg",
+      "name": "java.util.ArrayList<Plate>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0HVGlgyEeSbuaUR_yNkXg",
+      "name": "Iterable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7oVgyEeSbuaUR_yNkXg",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7olgyEeSbuaUR_yNkXg",
+      "name": "Cloneable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7o1gyEeSbuaUR_yNkXg",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7pVgyEeSbuaUR_yNkXg",
+      "name": "Throwable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7qFgyEeSbuaUR_yNkXg",
+      "name": "String",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7rFgyEeSbuaUR_yNkXg",
+      "name": "Comparable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7r1gyEeSbuaUR_yNkXg",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7sFgyEeSbuaUR_yNkXg",
+      "name": "CharSequence",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7sVgyEeSbuaUR_yNkXg",
+      "name": "System",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7tVgyEeSbuaUR_yNkXg",
+      "name": "AutoCloseable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7tlgyEeSbuaUR_yNkXg",
+      "name": "Appendable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7t1gyEeSbuaUR_yNkXg",
+      "name": "Override",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7uFgyEeSbuaUR_yNkXg",
+      "name": "Object",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7ulgyEeSbuaUR_yNkXg",
+      "name": "Serializable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7u1gyEeSbuaUR_yNkXg",
+      "name": "PrintStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7w1gyEeSbuaUR_yNkXg",
+      "name": "FilterOutputStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7xVgyEeSbuaUR_yNkXg",
+      "name": "OutputStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7yFgyEeSbuaUR_yNkXg",
+      "name": "Closeable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7ylgyEeSbuaUR_yNkXg",
+      "name": "Flushable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H7z1gyEeSbuaUR_yNkXg",
+      "name": "GUIContext",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H771gyEeSbuaUR_yNkXg",
+      "name": "Renderable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H78FgyEeSbuaUR_yNkXg",
+      "name": "SlickException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H78lgyEeSbuaUR_yNkXg",
+      "name": "AppGameContainer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8A1gyEeSbuaUR_yNkXg",
+      "name": "GameContainer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8ClgyEeSbuaUR_yNkXg",
+      "name": "BasicGame",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8EVgyEeSbuaUR_yNkXg",
+      "name": "Game",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8ElgyEeSbuaUR_yNkXg",
+      "name": "InputListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8FlgyEeSbuaUR_yNkXg",
+      "name": "MouseListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8GFgyEeSbuaUR_yNkXg",
+      "name": "ControlledInputReciever",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8GVgyEeSbuaUR_yNkXg",
+      "name": "KeyListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8G1gyEeSbuaUR_yNkXg",
+      "name": "ControllerListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_L0H8HVgyEeSbuaUR_yNkXg",
+      "name": "Color",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

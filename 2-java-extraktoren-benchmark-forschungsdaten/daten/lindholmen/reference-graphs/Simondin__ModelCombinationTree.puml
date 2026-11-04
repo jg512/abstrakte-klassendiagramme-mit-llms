@@ -1,0 +1,47 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "model.Behavior" as n0
+class "model.Connection" as n1
+class "model.DedicatedModeSwitchPort" as n2
+class "model.FunctionalPort" as n3
+class "model.MDP" as n4
+class "model.MIP" as n5
+class "model.MSRM" as n6
+class "model.ModeInformation" as n7
+class "model.ModeInformationCompositeModel" as n8
+class "model.ModeInformationPrimitiveModel" as n9
+class "model.ModeMapping" as n10
+class "model.MultiModeComponent" as n11
+class "model.MultiModeCompositeComponent" as n12
+class "model.MultiModePrimitiveComponent" as n13
+class "model.Port" as n14
+class "model.Property" as n15
+class "model.SubComponent" as n16
+class "model.SupportedModes" as n17
+n0 -- n13
+n0 -- n17
+n1 -- n3
+n1 -- n12
+n1 -- n17
+n2 --|> n14
+n3 --|> n14
+n4 --|> n15
+n4 -- n17
+n5 --|> n15
+n5 -- n17
+n6 -- n11
+n8 --|> n7
+n8 -- n10
+n8 -- n12
+n8 -- n17
+n9 --|> n7
+n9 -- n13
+n9 -- n17
+n11 -- n14
+n11 -- n15
+n11 -- n16
+n12 --|> n11
+n12 -- n16
+n13 --|> n11
+n16 -- n17
+@enduml

@@ -1,0 +1,265 @@
+{
+  "repo": "greengie/PigRunGame",
+  "commit": "385315d553d498e3482f5ca3e4440c7078703f86",
+  "model_path": "pigrun.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "pigrun.Background",
+    "pigrun.BottomObstacle",
+    "pigrun.CollisionDetector",
+    "pigrun.MediumObstacle",
+    "pigrun.Pig",
+    "pigrun.PigRunGame",
+    "pigrun.SlidingTopObstacleDownward",
+    "pigrun.SlidingTopObstacleUpWard",
+    "pigrun.TopObstacle"
+  ],
+  "edges": [
+    [
+      "pigrun.Background",
+      "pigrun.PigRunGame",
+      "association"
+    ],
+    [
+      "pigrun.BottomObstacle",
+      "pigrun.PigRunGame",
+      "association"
+    ],
+    [
+      "pigrun.MediumObstacle",
+      "pigrun.BottomObstacle",
+      "inheritance"
+    ],
+    [
+      "pigrun.Pig",
+      "pigrun.PigRunGame",
+      "association"
+    ],
+    [
+      "pigrun.PigRunGame",
+      "pigrun.TopObstacle",
+      "association"
+    ],
+    [
+      "pigrun.SlidingTopObstacleDownward",
+      "pigrun.TopObstacle",
+      "inheritance"
+    ],
+    [
+      "pigrun.SlidingTopObstacleUpWard",
+      "pigrun.TopObstacle",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_5d6V81gIEeSbdvQg7-HXmw": "pigrun.Pig",
+    "_5d69HVgIEeSbdvQg7-HXmw": "pigrun.PigRunGame",
+    "_5d69tVgIEeSbdvQg7-HXmw": "pigrun.SlidingTopObstacleDownward",
+    "_5d69yFgIEeSbdvQg7-HXmw": "pigrun.SlidingTopObstacleUpWard",
+    "_5d7kGVgIEeSbdvQg7-HXmw": "pigrun.Background",
+    "_5d7kSVgIEeSbdvQg7-HXmw": "pigrun.BottomObstacle",
+    "_5d7ktlgIEeSbdvQg7-HXmw": "pigrun.TopObstacle",
+    "_5d8LfVgIEeSbdvQg7-HXmw": "pigrun.CollisionDetector",
+    "_5d8LrlgIEeSbdvQg7-HXmw": "pigrun.MediumObstacle"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_5d8yRFgIEeSbdvQg7-HXmw",
+      "name": "GUIContext",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yRVgIEeSbdvQg7-HXmw",
+      "name": "Image",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yUlgIEeSbdvQg7-HXmw",
+      "name": "Renderable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yU1gIEeSbdvQg7-HXmw",
+      "name": "SlickException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yVVgIEeSbdvQg7-HXmw",
+      "name": "AppGameContainer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yZlgIEeSbdvQg7-HXmw",
+      "name": "GameContainer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8ybFgIEeSbdvQg7-HXmw",
+      "name": "BasicGame",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yc1gIEeSbdvQg7-HXmw",
+      "name": "Game",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8ydFgIEeSbdvQg7-HXmw",
+      "name": "InputListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yeFgIEeSbdvQg7-HXmw",
+      "name": "MouseListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yelgIEeSbdvQg7-HXmw",
+      "name": "ControlledInputReciever",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8ye1gIEeSbdvQg7-HXmw",
+      "name": "KeyListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yfVgIEeSbdvQg7-HXmw",
+      "name": "ControllerListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yf1gIEeSbdvQg7-HXmw",
+      "name": "Graphics",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yilgIEeSbdvQg7-HXmw",
+      "name": "Input",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yk1gIEeSbdvQg7-HXmw",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8ylVgIEeSbdvQg7-HXmw",
+      "name": "Throwable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8ymFgIEeSbdvQg7-HXmw",
+      "name": "String",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8ynFgIEeSbdvQg7-HXmw",
+      "name": "Comparable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yn1gIEeSbdvQg7-HXmw",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yoFgIEeSbdvQg7-HXmw",
+      "name": "CharSequence",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yoVgIEeSbdvQg7-HXmw",
+      "name": "Override",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yolgIEeSbdvQg7-HXmw",
+      "name": "System",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yplgIEeSbdvQg7-HXmw",
+      "name": "AutoCloseable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yp1gIEeSbdvQg7-HXmw",
+      "name": "Appendable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yqFgIEeSbdvQg7-HXmw",
+      "name": "Math",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yrlgIEeSbdvQg7-HXmw",
+      "name": "Serializable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yr1gIEeSbdvQg7-HXmw",
+      "name": "PrintStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yt1gIEeSbdvQg7-HXmw",
+      "name": "FilterOutputStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yuVgIEeSbdvQg7-HXmw",
+      "name": "OutputStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d8yvFgIEeSbdvQg7-HXmw",
+      "name": "Closeable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d9ZQFgIEeSbdvQg7-HXmw",
+      "name": "Flushable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_5d9ZQlgIEeSbdvQg7-HXmw",
+      "name": "Random",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

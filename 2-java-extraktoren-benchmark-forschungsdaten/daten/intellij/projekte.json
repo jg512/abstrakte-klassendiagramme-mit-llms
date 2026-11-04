@@ -1,0 +1,217 @@
+{
+  "beschreibung": "Klassenauswahl und IntelliJ-Umgebung pro Projekt, abgelesen aus den IntelliJ-Diagrammen im Replikationspaket (zhang-hebig/models/reverse/). Bei jdk=false kannte IntelliJ die JDK-Collections nicht. Felder vom Typ List oder Set bekommen dann keine Linie mit *. Bei same_package=false fand IntelliJ Klassen aus demselben Paket ohne import nicht, vermutlich wegen eines falsch gesetzten Source-Roots.",
+  "projekte": [
+    {
+      "name": "ZooTypers",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/1_ZooTypers-7591f15/ZooTypers/src",
+      "bild": "zhang-hebig/models/reverse/1_ZooTypers_RE Model.png",
+      "umgebung": {
+        "jdk": true,
+        "same_package": true
+      },
+      "klassen": [
+        "com.example.zootypers.PreGameSelection",
+        "com.example.zootypers.TitlePage",
+        "com.example.zootypers.PostGameScreen",
+        "com.example.zootypers.SinglePlayer",
+        "com.example.zootypers.SinglePlayer.GameTimer",
+        "com.example.zootypers.SinglePlayerModel"
+      ]
+    },
+    {
+      "name": "RaiseMeUp",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/2_RaiseMeUp-f3796c5/project/RaiseMeUp/src",
+      "bild": "zhang-hebig/models/reverse/2_RaiseMeUp_RE Model.png",
+      "umgebung": {
+        "jdk": true,
+        "same_package": true
+      },
+      "klassen": [
+        "raisemeup.model.beans.Pet",
+        "raisemeup.view.decorator.RightUpgradeSlot",
+        "raisemeup.view.decorator.LeftUpgradeSlot",
+        "raisemeup.view.decorator.Slot",
+        "raisemeup.model.ItemVisitor",
+        "raisemeup.view.decorator.Icon",
+        "raisemeup.model.PetObserver",
+        "raisemeup.model.beans.Job",
+        "raisemeup.model.beans.PetBuilder",
+        "raisemeup.model.beans.User",
+        "raisemeup.control.RaiseMeUp",
+        "raisemeup.model.beans.Food",
+        "raisemeup.model.beans.Item",
+        "raisemeup.model.beans.Upgrade",
+        "raisemeup.model.beans.UserBuilder",
+        "raisemeup.model.DAO"
+      ]
+    },
+    {
+      "name": "EAPLI_PL_2NB",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/3_EAPLI_PL_2NB-facb2e8/eapli.expensemanager/src",
+      "bild": "zhang-hebig/models/reverse/3_EAPLI_PL_2NB_RE Model.png",
+      "umgebung": {
+        "jdk": false,
+        "same_package": true
+      },
+      "klassen": [
+        "Model.Income",
+        "Persistence.IncomeRepository",
+        "Model.CheckingAccount",
+        "Controllers.BaseController",
+        "Persistence.IncomeTypeRepository",
+        "Presentation.BaseUI",
+        "Controllers.RegisterIncomeController",
+        "Presentation.RegisterIncomeUI"
+      ]
+    },
+    {
+      "name": "FreeDaysIntern",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/4_FreeDaysIntern-b306738/Sts/freeday/src/main/java",
+      "bild": "zhang-hebig/models/reverse/4_FreeDaysIntern_RE Model.png",
+      "umgebung": {
+        "jdk": true,
+        "same_package": false
+      },
+      "klassen": [
+        "freedays.timesheet.POIGenerator",
+        "freedays.timesheet.Schedule",
+        "freedays.timesheet.Pattern",
+        "freedays.timesheet.PhaseLabor",
+        "freedays.timesheet.Phase",
+        "freedays.timesheet.Project",
+        "freedays.timesheet.Employee",
+        "freedays.timesheet.LaborBilling"
+      ]
+    },
+    {
+      "name": "NeurophChanges",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/5_NeurophChanges-848a3aa/neuroph-2.8/Core/src/main/java",
+      "bild": "zhang-hebig/models/reverse/5_NeurophChanges_RE Model.png",
+      "umgebung": {
+        "jdk": true,
+        "same_package": true
+      },
+      "klassen": [
+        "org.neuroph.core.transfer.Trapezoid",
+        "org.neuroph.core.transfer.Tanh",
+        "org.neuroph.core.transfer.Sin",
+        "org.neuroph.core.transfer.Sigmoid",
+        "org.neuroph.core.transfer.Linear",
+        "org.neuroph.core.transfer.Step",
+        "org.neuroph.core.transfer.Gaussian",
+        "org.neuroph.core.transfer.Log",
+        "org.neuroph.core.transfer.Ramp",
+        "org.neuroph.core.transfer.Sgn",
+        "org.neuroph.core.transfer.TransferFunction",
+        "org.neuroph.core.input.Product",
+        "org.neuroph.nnet.learning.KohonenLearning",
+        "org.neuroph.core.input.SumSqr",
+        "org.neuroph.core.input.Or",
+        "org.neuroph.core.input.Sum",
+        "org.neuroph.core.input.Max",
+        "org.neuroph.core.input.WeightedSum",
+        "org.neuroph.core.input.Min",
+        "org.neuroph.core.input.InputFunction",
+        "org.neuroph.core.input.And",
+        "org.neuroph.core.NeuralNetwork",
+        "org.neuroph.core.learning.UnsupervisedLearning",
+        "org.neuroph.core.learning.IterativeLearning",
+        "org.neuroph.core.learning.LearningRule",
+        "org.neuroph.core.data.DataSetRow",
+        "org.neuroph.core.Layer",
+        "org.neuroph.core.Connection",
+        "org.neuroph.core.Neuron",
+        "org.neuroph.core.input.Difference",
+        "org.neuroph.core.data.DataSet",
+        "org.neuroph.core.data.BufferedDataSet",
+        "org.neuroph.nnet.learning.HopfieldLearning",
+        "org.neuroph.core.Weight",
+        "org.neuroph.core.learning.SupervisedLearning"
+      ]
+    },
+    {
+      "name": "PatrickFromTheMOOC",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/6_PatrickFromTheMOOC-5846aa2/avis",
+      "bild": "zhang-hebig/models/reverse/6_PatrickFromTheMOOC_RE Model.png",
+      "umgebung": {
+        "jdk": false,
+        "same_package": true
+      },
+      "klassen": [
+        "avis.EvaluationReview",
+        "avis.Review",
+        "avis.Member",
+        "avis.Item",
+        "avis.Film",
+        "avis.Book",
+        "avis.SocialNetwork"
+      ]
+    },
+    {
+      "name": "myblog",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/7_myblog-6494eaf",
+      "bild": "zhang-hebig/models/reverse/7_myblog_RE Model.png",
+      "umgebung": {
+        "jdk": true,
+        "same_package": true
+      },
+      "klassen": [
+        "com.jdkcn.myblog.domain.Blog",
+        "com.jdkcn.myblog.domain.User",
+        "com.jdkcn.myblog.domain.Entry",
+        "com.jdkcn.myblog.domain.Account",
+        "com.jdkcn.myblog.domain.Tag",
+        "com.jdkcn.myblog.domain.Category",
+        "com.jdkcn.myblog.domain.Comment"
+      ]
+    },
+    {
+      "name": "Orekit",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/8_Orekit-4314309/src/main/java",
+      "bild": "zhang-hebig/models/reverse/8_Orekit_RE Model.png",
+      "umgebung": {
+        "jdk": true,
+        "same_package": true
+      },
+      "klassen": [
+        "org.orekit.utils.PVCoordinatesProvider",
+        "org.orekit.propagation.Propagator",
+        "org.orekit.propagation.AbstractPropagator",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepInterpolator",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.MainStateEquations",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedEventDetector",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.AdaptedStepHandler",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.StoringStepHandler",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedSecondaryStateEquations",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.IntegratorResetter",
+        "org.orekit.propagation.integration.AbstractIntegratedPropagator.ConvertedMainStateEquations",
+        "org.orekit.estimation.sequential.AbstractKalmanEstimator",
+        "org.orekit.estimation.sequential.SemiAnalyticalKalmanEstimator"
+      ]
+    },
+    {
+      "name": "Artemis",
+      "quelle": "zhang-hebig/Version(s) of Source Code Used/9_Artemis-8885e22/src/main/java",
+      "bild": "zhang-hebig/models/reverse/9_Artemis_RE Model.png",
+      "umgebung": {
+        "jdk": true,
+        "same_package": false
+      },
+      "klassen": [
+        "de.tum.in.www1.artemis.service.connectors.localci.SharedQueueManagementService",
+        "de.tum.in.www1.artemis.web.rest.localci.BuildJobQueueResource",
+        "de.tum.in.www1.artemis.web.rest.admin.AdminBuildJobQueueResource",
+        "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService",
+        "de.tum.in.www1.artemis.service.connectors.localci.buildagent.SharedQueueProcessingService.QueuedBuildJobItemListener",
+        "de.tum.in.www1.artemis.service.connectors.localci.buildagent.BuildJobManagementService",
+        "de.tum.in.www1.artemis.service.connectors.localci.buildagent.BuildJobExecutionService",
+        "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService",
+        "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.BuildAgentListener",
+        "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.QueuedBuildJobItemListener",
+        "de.tum.in.www1.artemis.service.connectors.localci.LocalCIQueueWebsocketService.ProcessingBuildJobItemListener",
+        "de.tum.in.www1.artemis.web.websocket.localci.LocalCIWebsocketMessagingService"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1119 @@
+{
+  "repo": "hodiqual/projet2015",
+  "commit": "95f605e54b6435c75d211f4c41d4d7ab249c9d7f",
+  "model_path": "rapport/projet2015.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "fr.iessa.app.Application",
+    "fr.iessa.controleur.Controleur",
+    "fr.iessa.controleur.LibereMemoire",
+    "fr.iessa.controleur.ModeleEvent",
+    "fr.iessa.dao.core.DAO",
+    "fr.iessa.dao.infra.AeroportDAO",
+    "fr.iessa.dao.infra.LigneDAO",
+    "fr.iessa.dao.infra.PlateformeDAO.Lookup",
+    "fr.iessa.dao.infra.PointDAO",
+    "fr.iessa.dao.infra.PushbackDAO",
+    "fr.iessa.dao.infra.RunwayDAO",
+    "fr.iessa.dao.infra.TaxiwayDAO",
+    "fr.iessa.dao.trafic.TraficDao",
+    "fr.iessa.metier.Horloge",
+    "fr.iessa.metier.infra.Aeroport",
+    "fr.iessa.metier.infra.Ligne",
+    "fr.iessa.metier.infra.Pushback",
+    "fr.iessa.metier.infra.QFU",
+    "fr.iessa.metier.infra.Runway",
+    "fr.iessa.metier.infra.Taxiway",
+    "fr.iessa.metier.trafic.PointFabrique",
+    "fr.iessa.metier.trafic.Trafic",
+    "fr.iessa.metier.type.Categorie",
+    "fr.iessa.metier.type.Direction",
+    "fr.iessa.metier.type.TypePoint",
+    "fr.iessa.metier.type.TypeQFU",
+    "fr.iessa.metier.type.TypeVol",
+    "fr.iessa.vue.ChargeEnCoursLayerUI",
+    "fr.iessa.vue.Echelle",
+    "fr.iessa.vue.FramePrincipale",
+    "fr.iessa.vue.FramePrincipale.ActionChargerPlateForme",
+    "fr.iessa.vue.FramePrincipale.ActionChargerTrafic",
+    "fr.iessa.vue.FramePrincipale.ActionQuitter",
+    "fr.iessa.vue.LabelHorloge",
+    "fr.iessa.vue.PanelAffichageVol",
+    "fr.iessa.vue.PanelDesControles",
+    "fr.iessa.vue.PanelLecture",
+    "fr.iessa.vue.PanelPrincipalMultiCouches",
+    "fr.iessa.vue.PanelTableauDeBord",
+    "fr.iessa.vue.PanelVisualisationEtLecture",
+    "fr.iessa.vue.Ressources",
+    "fr.iessa.vue.infra.LignesDrawer",
+    "fr.iessa.vue.infra.PanelPlateforme.DessineCarteWorker",
+    "fr.iessa.vue.infra.PointsDrawer",
+    "fr.iessa.vue.infra.RunwayDrawer",
+    "fr.iessa.vue.trafic.ComponentVol",
+    "fr.iessa.vue.trafic.PanelTrafic",
+    "fr.iessa.vue.trafic.PanelTrafic.InitializeComponentVols",
+    "fr.iessa.vue.trafic.ShapeAvionFactory"
+  ],
+  "edges": [
+    [
+      "fr.iessa.controleur.Controleur",
+      "fr.iessa.metier.Horloge",
+      "association"
+    ],
+    [
+      "fr.iessa.controleur.Controleur",
+      "fr.iessa.metier.trafic.Trafic",
+      "association"
+    ],
+    [
+      "fr.iessa.controleur.Controleur",
+      "fr.iessa.vue.FramePrincipale",
+      "association"
+    ],
+    [
+      "fr.iessa.controleur.Controleur",
+      "fr.iessa.vue.PanelLecture",
+      "association"
+    ],
+    [
+      "fr.iessa.controleur.Controleur",
+      "fr.iessa.vue.PanelPrincipalMultiCouches",
+      "association"
+    ],
+    [
+      "fr.iessa.controleur.Controleur",
+      "fr.iessa.vue.trafic.PanelTrafic",
+      "association"
+    ],
+    [
+      "fr.iessa.dao.core.DAO",
+      "fr.iessa.dao.infra.PlateformeDAO.Lookup",
+      "association"
+    ],
+    [
+      "fr.iessa.dao.infra.AeroportDAO",
+      "fr.iessa.dao.core.DAO",
+      "realization"
+    ],
+    [
+      "fr.iessa.dao.infra.LigneDAO",
+      "fr.iessa.dao.core.DAO",
+      "realization"
+    ],
+    [
+      "fr.iessa.dao.infra.LigneDAO",
+      "fr.iessa.dao.infra.PushbackDAO",
+      "association"
+    ],
+    [
+      "fr.iessa.dao.infra.LigneDAO",
+      "fr.iessa.dao.infra.TaxiwayDAO",
+      "association"
+    ],
+    [
+      "fr.iessa.dao.infra.PointDAO",
+      "fr.iessa.dao.core.DAO",
+      "realization"
+    ],
+    [
+      "fr.iessa.dao.infra.PushbackDAO",
+      "fr.iessa.dao.core.DAO",
+      "realization"
+    ],
+    [
+      "fr.iessa.dao.infra.RunwayDAO",
+      "fr.iessa.dao.core.DAO",
+      "realization"
+    ],
+    [
+      "fr.iessa.dao.infra.TaxiwayDAO",
+      "fr.iessa.dao.core.DAO",
+      "realization"
+    ],
+    [
+      "fr.iessa.metier.infra.Aeroport",
+      "fr.iessa.metier.infra.Ligne",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.Aeroport",
+      "fr.iessa.metier.infra.Pushback",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.Aeroport",
+      "fr.iessa.metier.infra.Runway",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.Aeroport",
+      "fr.iessa.metier.infra.Taxiway",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.Ligne",
+      "fr.iessa.metier.type.Categorie",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.Ligne",
+      "fr.iessa.metier.type.Direction",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.Pushback",
+      "fr.iessa.metier.infra.Ligne",
+      "inheritance"
+    ],
+    [
+      "fr.iessa.metier.infra.QFU",
+      "fr.iessa.metier.infra.Runway",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.QFU",
+      "fr.iessa.metier.type.TypeQFU",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.infra.Taxiway",
+      "fr.iessa.metier.infra.Ligne",
+      "inheritance"
+    ],
+    [
+      "fr.iessa.metier.trafic.Trafic",
+      "fr.iessa.vue.trafic.PanelTrafic",
+      "association"
+    ],
+    [
+      "fr.iessa.metier.type.TypePoint",
+      "fr.iessa.metier.type.TypePoint",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.Echelle",
+      "fr.iessa.vue.trafic.ComponentVol",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.Echelle",
+      "fr.iessa.vue.trafic.PanelTrafic",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.PanelAffichageVol",
+      "fr.iessa.vue.PanelTableauDeBord",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.PanelDesControles",
+      "fr.iessa.vue.PanelTableauDeBord",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.PanelDesControles",
+      "fr.iessa.vue.PanelVisualisationEtLecture",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.PanelLecture",
+      "fr.iessa.vue.PanelVisualisationEtLecture",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.trafic.ComponentVol",
+      "fr.iessa.vue.trafic.PanelTrafic",
+      "association"
+    ],
+    [
+      "fr.iessa.vue.trafic.ComponentVol",
+      "fr.iessa.vue.trafic.ShapeAvionFactory",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_LvX_4K3kEeS64PhZ7ksZkQ": "fr.iessa.vue.infra.LignesDrawer",
+    "_LvacIK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.infra.PointsDrawer",
+    "_LvbqQK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.infra.RunwayDrawer",
+    "_LveGgK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.trafic.ComponentVol",
+    "_Lvn3gK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.trafic.ShapeAvionFactory",
+    "_LtTjUK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.ChargeEnCoursLayerUI",
+    "_LtaRAK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.Echelle",
+    "_LtkpEK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.FramePrincipale",
+    "_LtnsYK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.FramePrincipale.ActionChargerPlateForme",
+    "_LtphkK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.FramePrincipale.ActionChargerTrafic",
+    "_LtqvsK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.FramePrincipale.ActionQuitter",
+    "_LtyrgK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.LabelHorloge",
+    "_Lt1HwK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.PanelAffichageVol",
+    "_Lt5ZMK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.PanelDesControles",
+    "_LuEYUK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.infra.PanelPlateforme.DessineCarteWorker",
+    "_LujggK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.PanelLecture",
+    "_LuqOMK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.PanelPrincipalMultiCouches",
+    "_LuvtwK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.PanelTableauDeBord",
+    "_Lu0mQK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.trafic.PanelTrafic",
+    "_Lu3CgK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.trafic.PanelTrafic.InitializeComponentVols",
+    "_Lu9wMK3kEeS64PhZ7ksZkQ": "fr.iessa.vue.PanelVisualisationEtLecture",
+    "_LvD20K3kEeS64PhZ7ksZkQ": "fr.iessa.vue.Ressources",
+    "_Lo8AsK3kEeS64PhZ7ksZkQ": "fr.iessa.app.Application",
+    "_LpidoK3kEeS64PhZ7ksZkQ": "fr.iessa.dao.infra.AeroportDAO",
+    "_Lps1sK3kEeS64PhZ7ksZkQ": "fr.iessa.dao.infra.PlateformeDAO.Lookup",
+    "_LqCM4K3kEeS64PhZ7ksZkQ": "fr.iessa.dao.infra.LigneDAO",
+    "_LqL94K3kEeS64PhZ7ksZkQ": "fr.iessa.dao.infra.PointDAO",
+    "_LqQ2YK3kEeS64PhZ7ksZkQ": "fr.iessa.dao.infra.PushbackDAO",
+    "_LqYLIK3kEeS64PhZ7ksZkQ": "fr.iessa.dao.infra.RunwayDAO",
+    "_LqdDoK3kEeS64PhZ7ksZkQ": "fr.iessa.dao.infra.TaxiwayDAO",
+    "_LqjxUK3kEeS64PhZ7ksZkQ": "fr.iessa.dao.trafic.TraficDao",
+    "_Lpc-EK3kEeS64PhZ7ksZkQ": "fr.iessa.dao.core.DAO",
+    "_LrK1UK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.infra.Aeroport",
+    "_Lrb7EK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.infra.Ligne",
+    "_LrqkkK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.infra.Pushback",
+    "_LruO8K3kEeS64PhZ7ksZkQ": "fr.iessa.metier.infra.QFU",
+    "_LrygYK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.infra.Runway",
+    "_Lr_7wK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.infra.Taxiway",
+    "_LsIeoK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.trafic.PointFabrique",
+    "_LsNXIK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.trafic.Trafic",
+    "_LstGYK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.type.Categorie",
+    "_Ls1pQK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.type.Direction",
+    "_LtAoYK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.type.TypePoint",
+    "_LtH9IK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.type.TypeQFU",
+    "_LtJLQq3kEeS64PhZ7ksZkQ": "fr.iessa.metier.type.TypeVol",
+    "_LqrtIK3kEeS64PhZ7ksZkQ": "fr.iessa.metier.Horloge",
+    "_LpCuYa3kEeS64PhZ7ksZkQ": "fr.iessa.controleur.Controleur",
+    "_LpR-8K3kEeS64PhZ7ksZkQ": "fr.iessa.controleur.LibereMemoire",
+    "_LpVpUK3kEeS64PhZ7ksZkQ": "fr.iessa.controleur.ModeleEvent"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_LvLyoK3kEeS64PhZ7ksZkQ",
+      "name": "InfraStd",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LvUVgK3kEeS64PhZ7ksZkQ",
+      "name": "InfrastructureDrawer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LtLAcK3kEeS64PhZ7ksZkQ",
+      "name": "Avion",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Lt-4wK3kEeS64PhZ7ksZkQ",
+      "name": "PanelInfrastructure",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MZUUwa3kEeS64PhZ7ksZkQ",
+      "name": "Vol",
+      "source_candidates": [
+        "fr.iessa.metier.trafic.Vol"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LprAgK3kEeS64PhZ7ksZkQ",
+      "name": "InfrastructureDAO",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MU5u0K3kEeS64PhZ7ksZkQ",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQfv8K3kEeS64PhZ7ksZkQ",
+      "name": "InstantFabrique",
+      "source_candidates": [
+        "fr.iessa.metier.Instant.InstantFabrique"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LrlFAK3kEeS64PhZ7ksZkQ",
+      "name": "Point",
+      "source_candidates": [
+        "fr.iessa.metier.infra.Point"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LsaLcK3kEeS64PhZ7ksZkQ",
+      "name": "Vol",
+      "source_candidates": [
+        "fr.iessa.metier.trafic.Vol"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MYPWsa3kEeS64PhZ7ksZkQ",
+      "name": "Instant",
+      "source_candidates": [
+        "fr.iessa.metier.Instant"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LqoCwK3kEeS64PhZ7ksZkQ",
+      "name": "Avion",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LqrGEK3kEeS64PhZ7ksZkQ",
+      "name": "Compagnie",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Lqzo8K3kEeS64PhZ7ksZkQ",
+      "name": "Instant",
+      "source_candidates": [
+        "fr.iessa.metier.Instant"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Lq5IgK3kEeS64PhZ7ksZkQ",
+      "name": "InstantFabrique",
+      "source_candidates": [
+        "fr.iessa.metier.Instant.InstantFabrique"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LpYFka3kEeS64PhZ7ksZkQ",
+      "name": "TraficConteneur",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQeh0K3kEeS64PhZ7ksZkQ",
+      "name": "SwingPropertyChangeSupport",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSkMga3kEeS64PhZ7ksZkQ",
+      "name": "LayerUI",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQYbMK3kEeS64PhZ7ksZkQ",
+      "name": "UIManager",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQdTsa3kEeS64PhZ7ksZkQ",
+      "name": "SwingWorker",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSYmUa3kEeS64PhZ7ksZkQ",
+      "name": "JComponent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MShJMa3kEeS64PhZ7ksZkQ",
+      "name": "JLayer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSiXUa3kEeS64PhZ7ksZkQ",
+      "name": "JPanel",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSi-Ya3kEeS64PhZ7ksZkQ",
+      "name": "Timer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MS0EIa3kEeS64PhZ7ksZkQ",
+      "name": "JFileChooser",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MS1SQK3kEeS64PhZ7ksZkQ",
+      "name": "JFrame",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MS15Ua3kEeS64PhZ7ksZkQ",
+      "name": "JMenu",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MS3HcK3kEeS64PhZ7ksZkQ",
+      "name": "JMenuBar",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MS3uga3kEeS64PhZ7ksZkQ",
+      "name": "JMenuItem",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MS4Vka3kEeS64PhZ7ksZkQ",
+      "name": "JOptionPane",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MS_qUK3kEeS64PhZ7ksZkQ",
+      "name": "JLabel",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTCtoK3kEeS64PhZ7ksZkQ",
+      "name": "BoxLayout",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTGYAK3kEeS64PhZ7ksZkQ",
+      "name": "JButton",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTYE0K3kEeS64PhZ7ksZkQ",
+      "name": "Icon",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTYr4a3kEeS64PhZ7ksZkQ",
+      "name": "ImageIcon",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTq_wK3kEeS64PhZ7ksZkQ",
+      "name": "BorderFactory",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTrm0a3kEeS64PhZ7ksZkQ",
+      "name": "JLayeredPane",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTsN4a3kEeS64PhZ7ksZkQ",
+      "name": "OverlayLayout",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTvRMK3kEeS64PhZ7ksZkQ",
+      "name": "SwingConstants",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MWsekK3kEeS64PhZ7ksZkQ",
+      "name": "JSlider",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MUYxcK3kEeS64PhZ7ksZkQ",
+      "name": "ImageIO",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQZpUK3kEeS64PhZ7ksZkQ",
+      "name": "SLAnimator",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTG_Ea3kEeS64PhZ7ksZkQ",
+      "name": "SLConfig",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTHmIK3kEeS64PhZ7ksZkQ",
+      "name": "SLKeyframe",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTHmIq3kEeS64PhZ7ksZkQ",
+      "name": "SLPanel",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTINMa3kEeS64PhZ7ksZkQ",
+      "name": "SLSide",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQa3cK3kEeS64PhZ7ksZkQ",
+      "name": "PropertyChangeEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQbega3kEeS64PhZ7ksZkQ",
+      "name": "PropertyChangeListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQcsoK3kEeS64PhZ7ksZkQ",
+      "name": "ExecutionException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MR43EK3kEeS64PhZ7ksZkQ",
+      "name": "ConcurrentHashMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MR5eIa3kEeS64PhZ7ksZkQ",
+      "name": "ConcurrentMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTW2sa3kEeS64PhZ7ksZkQ",
+      "name": "CancellationException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRLFYK3kEeS64PhZ7ksZkQ",
+      "name": "Pattern",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRLsca3kEeS64PhZ7ksZkQ",
+      "name": "Collectors",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRMTga3kEeS64PhZ7ksZkQ",
+      "name": "Stream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MR76YK3kEeS64PhZ7ksZkQ",
+      "name": "Collector",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRTBMa3kEeS64PhZ7ksZkQ",
+      "name": "Entry",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MR6FMa3kEeS64PhZ7ksZkQ",
+      "name": "Function",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MR6sQa3kEeS64PhZ7ksZkQ",
+      "name": "Predicate",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQtyYa3kEeS64PhZ7ksZkQ",
+      "name": "NoSuchElementException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQuZca3kEeS64PhZ7ksZkQ",
+      "name": "Scanner",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQ1HIK3kEeS64PhZ7ksZkQ",
+      "name": "LinkedList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQ1uMa3kEeS64PhZ7ksZkQ",
+      "name": "Queue",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRAGQK3kEeS64PhZ7ksZkQ",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRJ3Qa3kEeS64PhZ7ksZkQ",
+      "name": "Set",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRNhoK3kEeS64PhZ7ksZkQ",
+      "name": "Arrays",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MROIsa3kEeS64PhZ7ksZkQ",
+      "name": "Observable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MROvwa3kEeS64PhZ7ksZkQ",
+      "name": "TreeSet",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRUPUa3kEeS64PhZ7ksZkQ",
+      "name": "TreeMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRcLIK3kEeS64PhZ7ksZkQ",
+      "name": "Deque",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRcyMa3kEeS64PhZ7ksZkQ",
+      "name": "Hashtable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MReAUK3kEeS64PhZ7ksZkQ",
+      "name": "List",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRfOcK3kEeS64PhZ7ksZkQ",
+      "name": "Map",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRf1ga3kEeS64PhZ7ksZkQ",
+      "name": "OptionalDouble",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MR3B4K3kEeS64PhZ7ksZkQ",
+      "name": "HashMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MR3o8a3kEeS64PhZ7ksZkQ",
+      "name": "Observer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTmuUa3kEeS64PhZ7ksZkQ",
+      "name": "Vector",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTxtcK3kEeS64PhZ7ksZkQ",
+      "name": "HashSet",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQskQa3kEeS64PhZ7ksZkQ",
+      "name": "FileNotFoundException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MQtLUa3kEeS64PhZ7ksZkQ",
+      "name": "FileReader",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRGz8K3kEeS64PhZ7ksZkQ",
+      "name": "IOException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSzdEK3kEeS64PhZ7ksZkQ",
+      "name": "File",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSpsEa3kEeS64PhZ7ksZkQ",
+      "name": "Double",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRa9AK3kEeS64PhZ7ksZkQ",
+      "name": "GeneralPath",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRywcK3kEeS64PhZ7ksZkQ",
+      "name": "Point2D",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSX_QK3kEeS64PhZ7ksZkQ",
+      "name": "AffineTransform",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSpFAK3kEeS64PhZ7ksZkQ",
+      "name": "NoninvertibleTransformException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSWKEK3kEeS64PhZ7ksZkQ",
+      "name": "MouseAdapter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSWxIa3kEeS64PhZ7ksZkQ",
+      "name": "MouseEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSf7EK3kEeS64PhZ7ksZkQ",
+      "name": "ActionEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSgiIa3kEeS64PhZ7ksZkQ",
+      "name": "ActionListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTQJAa3kEeS64PhZ7ksZkQ",
+      "name": "ComponentAdapter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTQwEa3kEeS64PhZ7ksZkQ",
+      "name": "ComponentEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTRXIa3kEeS64PhZ7ksZkQ",
+      "name": "ComponentListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTR-MK3kEeS64PhZ7ksZkQ",
+      "name": "KeyEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTR-Mq3kEeS64PhZ7ksZkQ",
+      "name": "KeyListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTSlQa3kEeS64PhZ7ksZkQ",
+      "name": "MouseListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTTMUa3kEeS64PhZ7ksZkQ",
+      "name": "MouseWheelEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTUacK3kEeS64PhZ7ksZkQ",
+      "name": "MouseWheelListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTlgMK3kEeS64PhZ7ksZkQ",
+      "name": "ItemEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTmHQa3kEeS64PhZ7ksZkQ",
+      "name": "ItemListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MT4bIK3kEeS64PhZ7ksZkQ",
+      "name": "MouseMotionListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTVBga3kEeS64PhZ7ksZkQ",
+      "name": "BufferedImage",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTWPoK3kEeS64PhZ7ksZkQ",
+      "name": "VolatileImage",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MUHrsK3kEeS64PhZ7ksZkQ",
+      "name": "GlyphVector",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LroIUK3kEeS64PhZ7ksZkQ",
+      "name": "Point",
+      "source_candidates": [
+        "fr.iessa.metier.infra.Point"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRsp0K3kEeS64PhZ7ksZkQ",
+      "name": "Shape",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSR4oK3kEeS64PhZ7ksZkQ",
+      "name": "Color",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSSfsa3kEeS64PhZ7ksZkQ",
+      "name": "Dimension",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSTGwa3kEeS64PhZ7ksZkQ",
+      "name": "Graphics",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSUU4a3kEeS64PhZ7ksZkQ",
+      "name": "Graphics2D",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSU78a3kEeS64PhZ7ksZkQ",
+      "name": "Rectangle",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MScQsK3kEeS64PhZ7ksZkQ",
+      "name": "AlphaComposite",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSc3wa3kEeS64PhZ7ksZkQ",
+      "name": "BasicStroke",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSeF4K3kEeS64PhZ7ksZkQ",
+      "name": "Composite",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSes8a3kEeS64PhZ7ksZkQ",
+      "name": "RenderingHints",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTNFsK3kEeS64PhZ7ksZkQ",
+      "name": "GridLayout",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTOT0K3kEeS64PhZ7ksZkQ",
+      "name": "Image",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTOT0q3kEeS64PhZ7ksZkQ",
+      "name": "Paint",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTO64a3kEeS64PhZ7ksZkQ",
+      "name": "TexturePaint",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTPh8a3kEeS64PhZ7ksZkQ",
+      "name": "Toolkit",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MTuqIK3kEeS64PhZ7ksZkQ",
+      "name": "Font",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MT3NAK3kEeS64PhZ7ksZkQ",
+      "name": "FlowLayout",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MUEoYK3kEeS64PhZ7ksZkQ",
+      "name": "Stroke",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRIpIa3kEeS64PhZ7ksZkQ",
+      "name": "Files",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRJQMa3kEeS64PhZ7ksZkQ",
+      "name": "Paths",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRRzEK3kEeS64PhZ7ksZkQ",
+      "name": "DecimalFormat",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MT8skK3kEeS64PhZ7ksZkQ",
+      "name": "URL",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MU3SkK3kEeS64PhZ7ksZkQ",
+      "name": "Thread",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MVF8EK3kEeS64PhZ7ksZkQ",
+      "name": "Comparable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MVpVsK3kEeS64PhZ7ksZkQ",
+      "name": "Object",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MWNWYK3kEeS64PhZ7ksZkQ",
+      "name": "Runnable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MWY8kK3kEeS64PhZ7ksZkQ",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MRnxUK3kEeS64PhZ7ksZkQ",
+      "name": "Path2D",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSq6MK3kEeS64PhZ7ksZkQ",
+      "name": "GetLongAction",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_MSsIUK3kEeS64PhZ7ksZkQ",
+      "name": "Double",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

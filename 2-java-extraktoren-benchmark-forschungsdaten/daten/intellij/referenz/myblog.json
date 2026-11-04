@@ -1,0 +1,91 @@
+{
+  "projekt": "myblog",
+  "umfang": "vollständig",
+  "methode": "Jede Kante einzeln im Bild nachverfolgt.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Account",
+      "nach": "com.jdkcn.myblog.domain.User",
+      "bezeichnung": "user",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Blog",
+      "nach": "com.jdkcn.myblog.domain.User",
+      "bezeichnung": "owner",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Category",
+      "nach": "com.jdkcn.myblog.domain.Blog",
+      "bezeichnung": "blog",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Category",
+      "nach": "com.jdkcn.myblog.domain.Category",
+      "bezeichnung": "children",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Category",
+      "nach": "com.jdkcn.myblog.domain.Category",
+      "bezeichnung": "parent",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Comment",
+      "nach": "com.jdkcn.myblog.domain.Entry",
+      "bezeichnung": "entry",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Comment",
+      "nach": "com.jdkcn.myblog.domain.User",
+      "bezeichnung": "author",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Entry",
+      "nach": "com.jdkcn.myblog.domain.Blog",
+      "bezeichnung": "blog",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Entry",
+      "nach": "com.jdkcn.myblog.domain.Category",
+      "bezeichnung": "categories",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.Entry",
+      "nach": "com.jdkcn.myblog.domain.User",
+      "bezeichnung": "author",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "com.jdkcn.myblog.domain.User",
+      "nach": "com.jdkcn.myblog.domain.Account",
+      "bezeichnung": "accounts",
+      "ziel_kardinalitaet": "*"
+    },
+    {
+      "art": "dependency",
+      "von": "com.jdkcn.myblog.domain.Blog",
+      "nach": "com.jdkcn.myblog.domain.Blog",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

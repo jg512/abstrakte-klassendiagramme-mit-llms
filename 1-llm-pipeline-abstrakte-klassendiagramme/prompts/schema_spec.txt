@@ -1,0 +1,44 @@
+# v2
+Return graph data as JSON matching this schema:
+
+{
+  "nodes": [
+    {
+      "id": "<fully.qualified.ClassName>",
+      "name": "<ClassName>",
+      "package": "<dotted.package.path>",
+      "stereotype": "abstract" | "interface" | "dataclass" | "enum" | "exception" | null,
+      "attributes": ["name: type", ...],
+      "methods": ["methodname(args)", ...]
+    }
+  ],
+  "edges": [
+    {
+      "source": "<id>",
+      "target": "<id>",
+      "type": "inheritance" | "realization" | "composition" | "aggregation"
+              | "association" | "dependency",
+      "source_card": "<multiplicity, optional>",
+      "target_card": "<multiplicity, optional>",
+      "label": "<relationship role/member name, optional>"
+    }
+  ]
+}
+
+Rules:
+- id is fully qualified and repo-relative (package.ClassName, or
+  package.module.ClassName); name is just the class name.
+- attributes and methods: include the architecturally relevant members;
+  skip trivial getters/setters, private helpers, and dunder methods
+  unless they carry semantic meaning. UML visibility markers (+, -, #)
+  and {static}/{abstract} modifiers may prefix member strings.
+- source_card / target_card are optional multiplicities for the source
+  and target ends of the edge. Use UML range notation with explicit
+  bounds and optionality: "1", "0..1", "1..*", "0..*", or concrete
+  ranges like "2..4". Never vague words like "many".
+- label is an optional short role or member name. Static Java graphs may also
+  contain source evidence and diagnostics; preserve those fields when editing
+  an existing edge and never invent source locations.
+- Choose relations sparingly; use the most specific type that the code
+  justifies.
+- Every edge endpoint must reference an id that exists in nodes.

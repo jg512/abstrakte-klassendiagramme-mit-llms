@@ -1,0 +1,60 @@
+{
+  "repo": "rtyanas/MyPics",
+  "commit": "a88c0dbb0ac87f74245c158fe4ebaa7e1f5e8567",
+  "model_path": "documentation/MyPicModel.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.yanas.mobileapp.mypic.BackgroundActivity",
+    "com.yanas.mobileapp.mypic.BackgroundActivity.ButtonClickListener",
+    "com.yanas.mobileapp.mypic.BackgroundLayoutGenerator",
+    "com.yanas.mobileapp.mypic.GlobalSettings",
+    "com.yanas.mobileapp.mypic.MainActivity",
+    "com.yanas.mobileapp.mypic.MessageData",
+    "com.yanas.mobileapp.mypic.SettingsActivity",
+    "com.yanas.mobileapp.mypic.SettingsActivity.ColorOnItemSelectedListener",
+    "com.yanas.mobileapp.mypic.SettingsActivity.FontOnItemSelectedListener",
+    "com.yanas.mobileapp.mypic.SettingsActivity.RotateOnItemSelectedListener",
+    "com.yanas.mobileapp.mypic.SettingsActivity.SizeOnItemSelectedListener",
+    "com.yanas.mobileapp.mypic.SettingsActivity.StyleOnItemSelectedListener"
+  ],
+  "edges": [
+    [
+      "com.yanas.mobileapp.mypic.BackgroundActivity",
+      "com.yanas.mobileapp.mypic.BackgroundLayoutGenerator",
+      "association"
+    ],
+    [
+      "com.yanas.mobileapp.mypic.MainActivity",
+      "com.yanas.mobileapp.mypic.MessageData",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_lJ0uYJ2PEeO7TeLUrukWTQ": "com.yanas.mobileapp.mypic.MainActivity",
+    "_fG_TIJ2YEeO7TeLUrukWTQ": "com.yanas.mobileapp.mypic.SettingsActivity",
+    "_dpn14J2bEeO7TeLUrukWTQ": "com.yanas.mobileapp.mypic.SettingsActivity.FontOnItemSelectedListener",
+    "_gsETMJ2bEeO7TeLUrukWTQ": "com.yanas.mobileapp.mypic.SettingsActivity.StyleOnItemSelectedListener",
+    "_i4HUAJ2bEeO7TeLUrukWTQ": "com.yanas.mobileapp.mypic.SettingsActivity.ColorOnItemSelectedListener",
+    "_lWmIoJ2bEeO7TeLUrukWTQ": "com.yanas.mobileapp.mypic.SettingsActivity.SizeOnItemSelectedListener",
+    "_oLt7oJ2bEeO7TeLUrukWTQ": "com.yanas.mobileapp.mypic.SettingsActivity.RotateOnItemSelectedListener",
+    "_G5dE8J5EEeOVucdCGm9gFw": "com.yanas.mobileapp.mypic.MessageData",
+    "_5u6coJ5LEeOVucdCGm9gFw": "com.yanas.mobileapp.mypic.BackgroundActivity",
+    "_oTGQkJ5MEeOVucdCGm9gFw": "com.yanas.mobileapp.mypic.BackgroundActivity.ButtonClickListener",
+    "_1NS2IJ5MEeOVucdCGm9gFw": "com.yanas.mobileapp.mypic.BackgroundLayoutGenerator",
+    "_tOohAJ5NEeOVucdCGm9gFw": "com.yanas.mobileapp.mypic.GlobalSettings"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_U_FcwJ2dEeO7TeLUrukWTQ",
+      "name": "MyDragEventListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_YAVnQJ2dEeO7TeLUrukWTQ",
+      "name": "MyDragShadowBuilder",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

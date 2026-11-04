@@ -1,0 +1,11 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "Administrator" as n0
+class "AdvertType" as n1
+class "Client" as n2
+class "Manager" as n3
+class "Project" as n4
+class "Staff" as n5
+n0 --|> n5
+n3 --|> n5
+@enduml

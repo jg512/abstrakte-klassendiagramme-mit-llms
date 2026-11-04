@@ -1,0 +1,152 @@
+{
+  "repo": "CMCDelhiQuasar/Quasar-3-June",
+  "commit": "e0be833b1f20db5798111e67b40157875e262338",
+  "model_path": "QuasarTilesLayout/src/com/cmcdelhi/quasar/paymentDetails/QuasarPaymentApp.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.cmcdelhi.quasar.exceptions.DateException",
+    "com.cmcdelhi.quasar.payMode.PaymentMode",
+    "com.cmcdelhi.quasar.paymentDetails.FullFeePayment",
+    "com.cmcdelhi.quasar.paymentDetails.InstallmentPayment",
+    "com.cmcdelhi.quasar.paymentDetails.InstallmentType",
+    "com.cmcdelhi.quasar.paymentDetails.Payment",
+    "com.cmcdelhi.quasar.paymentDetails.PaymentDetails",
+    "com.cmcdelhi.quasar.paymentDetails.PaymentStatus",
+    "com.cmcdelhi.quasar.paymentDetails.RegistrationPayment",
+    "com.cmcdelhi.quasar.student.Student"
+  ],
+  "edges": [
+    [
+      "com.cmcdelhi.quasar.payMode.PaymentMode",
+      "com.cmcdelhi.quasar.paymentDetails.Payment",
+      "association"
+    ],
+    [
+      "com.cmcdelhi.quasar.paymentDetails.FullFeePayment",
+      "com.cmcdelhi.quasar.paymentDetails.Payment",
+      "inheritance"
+    ],
+    [
+      "com.cmcdelhi.quasar.paymentDetails.InstallmentPayment",
+      "com.cmcdelhi.quasar.paymentDetails.InstallmentType",
+      "association"
+    ],
+    [
+      "com.cmcdelhi.quasar.paymentDetails.InstallmentPayment",
+      "com.cmcdelhi.quasar.paymentDetails.Payment",
+      "inheritance"
+    ],
+    [
+      "com.cmcdelhi.quasar.paymentDetails.Payment",
+      "com.cmcdelhi.quasar.paymentDetails.PaymentDetails",
+      "association"
+    ],
+    [
+      "com.cmcdelhi.quasar.paymentDetails.Payment",
+      "com.cmcdelhi.quasar.paymentDetails.PaymentStatus",
+      "association"
+    ],
+    [
+      "com.cmcdelhi.quasar.paymentDetails.Payment",
+      "com.cmcdelhi.quasar.student.Student",
+      "association"
+    ],
+    [
+      "com.cmcdelhi.quasar.paymentDetails.RegistrationPayment",
+      "com.cmcdelhi.quasar.paymentDetails.Payment",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_4jPDIKrBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.paymentDetails.FullFeePayment",
+    "_4jQ4UarBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.paymentDetails.InstallmentPayment",
+    "_4jStgKrBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.paymentDetails.InstallmentType",
+    "_4jdsoKrBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.paymentDetails.Payment",
+    "_4jhXAKrBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.paymentDetails.PaymentDetails",
+    "_4jpS0KrBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.paymentDetails.PaymentStatus",
+    "_4jqg9arBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.paymentDetails.RegistrationPayment",
+    "_4kxUMarBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.payMode.PaymentMode",
+    "_4k0-karBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.student.Student",
+    "_4lIgkarBEeOf1O9AMTn6UA": "com.cmcdelhi.quasar.exceptions.DateException"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_6bgMUKrBEeOf1O9AMTn6UA",
+      "name": "NewClass1",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4kK3QKrBEeOf1O9AMTn6UA",
+      "name": "Entity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4kPIsKrBEeOf1O9AMTn6UA",
+      "name": "EnumType",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4kSzEarBEeOf1O9AMTn6UA",
+      "name": "Enumerated",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4kau4KrBEeOf1O9AMTn6UA",
+      "name": "Embedded",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4keZQarBEeOf1O9AMTn6UA",
+      "name": "GeneratedValue",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4kiDoarBEeOf1O9AMTn6UA",
+      "name": "GenerationType",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4km8IarBEeOf1O9AMTn6UA",
+      "name": "Id",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4kqmgarBEeOf1O9AMTn6UA",
+      "name": "ManyToOne",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4kuQ4arBEeOf1O9AMTn6UA",
+      "name": "OneToOne",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4k-IgKrBEeOf1O9AMTn6UA",
+      "name": "Embeddable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4lBL0arBEeOf1O9AMTn6UA",
+      "name": "Temporal",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_4lE2MarBEeOf1O9AMTn6UA",
+      "name": "TemporalType",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

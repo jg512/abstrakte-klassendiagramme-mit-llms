@@ -1,0 +1,218 @@
+{
+  "repo": "Neseek77/gwt-ent",
+  "commit": "c623f538e192b0e63793c20042bf859c73237e61",
+  "model_path": "gwtent/src/main/java/com/gwtent/reflection/client/ClassType-i.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.gwtent.reflection.client.ArrayType",
+    "com.gwtent.reflection.client.ClassType",
+    "com.gwtent.reflection.client.Constructor",
+    "com.gwtent.reflection.client.Field",
+    "com.gwtent.reflection.client.Method",
+    "com.gwtent.reflection.client.NotFoundException",
+    "com.gwtent.reflection.client.Package",
+    "com.gwtent.reflection.client.PrimitiveType",
+    "com.gwtent.reflection.client.Type"
+  ],
+  "edges": [
+    [
+      "com.gwtent.reflection.client.ArrayType",
+      "com.gwtent.reflection.client.Type",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.ArrayType",
+      "com.gwtent.reflection.client.Type",
+      "inheritance"
+    ],
+    [
+      "com.gwtent.reflection.client.ClassType",
+      "com.gwtent.reflection.client.ClassType",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.ClassType",
+      "com.gwtent.reflection.client.Constructor",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.ClassType",
+      "com.gwtent.reflection.client.Field",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.ClassType",
+      "com.gwtent.reflection.client.Method",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.ClassType",
+      "com.gwtent.reflection.client.Package",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.ClassType",
+      "com.gwtent.reflection.client.Type",
+      "inheritance"
+    ],
+    [
+      "com.gwtent.reflection.client.Field",
+      "com.gwtent.reflection.client.Type",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.Method",
+      "com.gwtent.reflection.client.Type",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.PrimitiveType",
+      "com.gwtent.reflection.client.PrimitiveType",
+      "association"
+    ],
+    [
+      "com.gwtent.reflection.client.PrimitiveType",
+      "com.gwtent.reflection.client.Type",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_O4YaMLmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.ClassType",
+    "_PZnfALmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.Type",
+    "_PkMXUbmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.Method",
+    "_Ous5wLmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.Package",
+    "_PlrlEbmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.Field",
+    "_Pky0Q7msEdyGseRhu5X4cA": "com.gwtent.reflection.client.ArrayType",
+    "_PpHTkrmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.PrimitiveType",
+    "_PlYqILmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.NotFoundException",
+    "_PmbL8LmsEdyGseRhu5X4cA": "com.gwtent.reflection.client.Constructor"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_RkMgMLmsEdyGseRhu5X4cA",
+      "name": "Date",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_kC_bNbQkEdylRbmnqgkdMg",
+      "name": "String",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_PkWIU7msEdyGseRhu5X4cA",
+      "name": "Set",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Pj5cYrmsEdyGseRhu5X4cA",
+      "name": "List",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_O3fpYbmsEdyGseRhu5X4cA",
+      "name": "Map",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_PaqA0bmsEdyGseRhu5X4cA",
+      "name": "HasMetaData",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_7hatILQnEdyaqIy-xpQBVQ",
+      "name": "Object",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_QVXVkbmsEdyGseRhu5X4cA",
+      "name": "IllegalArgumentException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_0ucJA7QdEdyIld67ZmhTFg",
+      "name": "Iterator",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_O_ZBIbmsEdyGseRhu5X4cA",
+      "name": "HashMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_O_r8ELmsEdyGseRhu5X4cA",
+      "name": "Collection",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_PtSB4bmsEdyGseRhu5X4cA",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Ptk80bmsEdyGseRhu5X4cA",
+      "name": "HashSet",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Q665sLmsEdyGseRhu5X4cA",
+      "name": "Arrays",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Fbd7cLQoEdyaqIy-xpQBVQ",
+      "name": "RuntimeException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GehT4LQoEdyaqIy-xpQBVQ",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_GgKSpLQoEdyaqIy-xpQBVQ",
+      "name": "Throwable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_O_ZBILmsEdyGseRhu5X4cA",
+      "name": "StringBuilder",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_PtI38LmsEdyGseRhu5X4cA",
+      "name": "Class",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_PtSB4LmsEdyGseRhu5X4cA",
+      "name": "AssertionError",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_Ptk80LmsEdyGseRhu5X4cA",
+      "name": "StringBuffer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

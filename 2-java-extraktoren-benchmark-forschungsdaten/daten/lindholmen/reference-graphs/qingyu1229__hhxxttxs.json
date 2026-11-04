@@ -1,0 +1,46 @@
+{
+  "repo": "qingyu1229/hhxxttxs",
+  "commit": "fc72e129a8142ff5b221e6902926b4bb3b5b3404",
+  "model_path": "hhxxttxs/src/main/java/com/design/pattern/p1.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.design.pattern.User",
+    "com.design.pattern.UserDao",
+    "com.design.pattern.UserDaoImpl"
+  ],
+  "edges": [
+    [
+      "com.design.pattern.User",
+      "com.design.pattern.UserDaoImpl",
+      "association"
+    ],
+    [
+      "com.design.pattern.User",
+      "com.design.pattern.UserDaoImpl",
+      "inheritance"
+    ],
+    [
+      "com.design.pattern.UserDaoImpl",
+      "com.design.pattern.UserDao",
+      "realization"
+    ]
+  ],
+  "mapping": {
+    "_62tl0ItWEeS1mvMVJ8XTvg": "com.design.pattern.UserDaoImpl",
+    "_63TbsItWEeS1mvMVJ8XTvg": "com.design.pattern.User",
+    "_63TbsotWEeS1mvMVJ8XTvg": "com.design.pattern.UserDao"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_63TbsYtWEeS1mvMVJ8XTvg",
+      "name": "Test",
+      "source_candidates": [
+        "com.design.pattern.Test",
+        "com.httpclient.Test",
+        "com.ipangu.Test",
+        "com.mianshi.Test"
+      ],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

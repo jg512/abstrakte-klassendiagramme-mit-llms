@@ -1,0 +1,32 @@
+# v4
+The diagram is a PlantUML class diagram with packages.
+
+Stereotypes (use exactly one or omit):
+- abstract: classes marked with ABC or @abstractmethod
+- interface: Protocol subclasses or pure-abstract bases
+- dataclass: @dataclass / attrs / pydantic models
+- enum: Enum subclasses
+- exception: Exception subclasses
+
+Relations (use exactly one of, most specific that the code justifies):
+- inheritance: subclass extends a concrete/abstract parent class
+- realization: a class implements an interface (Protocol / pure-abstract base)
+- composition: a class owns instances of another as part of its identity;
+  the part does not outlive the whole
+- aggregation: a class holds a collection of others that exist
+  independently of it
+- association: a class holds a durable reference to another (no ownership)
+- dependency: a class uses another transiently (creates, calls, returns)
+  without holding a reference
+
+The edge source is the owning/using/subclassing side. Multiplicities
+(source_card/target_card) are optional — add them where the code makes
+the cardinality clear. Use UML range notation with explicit bounds and
+optionality: "1", "0..1", "1..*", "0..*", or concrete ranges like
+"2..4". A possibly-empty list attribute is "0..*"; an Optional
+reference is "0..1". Never vague words like "many".
+
+Size: the caller provides either a target node count with tolerance
+(stay within that range unless you have strong justification) or an
+open size with a hard cap (smaller is better, as long as the core
+architecture is captured; never exceed the cap).

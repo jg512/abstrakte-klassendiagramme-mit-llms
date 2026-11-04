@@ -1,0 +1,30 @@
+# Aufruf: docker compose run --rm app <kurzbefehl> [argumente]
+# Die Kurzbefehle stehen in docker/start.sh, die Erklärung in INSTALLATION.md.
+#
+# Alles, was der Container erzeugt oder herunterlädt, landet auf dem Rechner
+# unter docker-daten/. Das Zhang/Hebig-Paket wird von Hand nach
+# docker-daten/zhang-hebig/ entpackt.
+
+services:
+  app:
+    build: .
+    image: abstrakte-klassendiagramme
+    environment:
+      # werden vom Rechner übernommen, falls gesetzt
+      - DEEPSEEK_API_KEY
+      - GEMINI_API_KEY
+    volumes:
+      - ./docker-daten/ausgabe:/ausgabe
+      - ./docker-daten/repos:/repos
+      - ./docker-daten/runs:/app/1-llm-pipeline-abstrakte-klassendiagramme/runs
+      - ./docker-daten/ergebnisse:/app/2-java-extraktoren-benchmark-forschungsdaten/ergebnisse
+      - ./docker-daten/lindholmen-corpus:/app/2-java-extraktoren-benchmark-forschungsdaten/daten/lindholmen/corpus
+      - type: bind
+        source: "./docker-daten/zhang-hebig/Version(s) of Source Code Used"
+        target: "/app/2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/Version(s) of Source Code Used"
+        bind:
+          create_host_path: true
+      - ./docker-daten/zhang-hebig/models:/app/2-java-extraktoren-benchmark-forschungsdaten/daten/zhang-hebig/models
+    extra_hosts:
+      # damit ein Ollama auf dem Rechner aus dem Container erreichbar ist
+      - "host.docker.internal:host-gateway"

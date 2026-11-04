@@ -1,0 +1,54 @@
+{
+  "repo": "lorandszakacs/UPT-Projects",
+  "commit": "9398bc0c81a225d10492a94bf2b436fe4f1abd48",
+  "model_path": "PASSC/BlackBoard/BlackBoard Class_Diagram.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "blackboard.BlackBoard",
+    "blackboard.Doctor",
+    "blackboard.Doctor.House",
+    "blackboard.Inspector",
+    "blackboard.PatientFile",
+    "blackboard.PatientRepository",
+    "myReflection.Operation"
+  ],
+  "edges": [
+    [
+      "blackboard.Doctor",
+      "blackboard.Doctor.House",
+      "association"
+    ],
+    [
+      "blackboard.Doctor.House",
+      "blackboard.Inspector",
+      "realization"
+    ]
+  ],
+  "mapping": {
+    "_GGckgFTIEeC_BYlN_b5jqg": "blackboard.BlackBoard",
+    "_bxNn0FTIEeC_BYlN_b5jqg": "blackboard.PatientRepository",
+    "_1VGRwFTIEeC_BYlN_b5jqg": "blackboard.PatientFile",
+    "_PE_ggFVPEeCAbNSyTdm2ew": "myReflection.Operation",
+    "_EIHkUFliEeC3qttQbhCnSA": "blackboard.Inspector",
+    "_KZdmkFliEeC3qttQbhCnSA": "blackboard.Doctor",
+    "_N38zwFlvEeC3qttQbhCnSA": "blackboard.Doctor.House"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_j3eFYFVZEeCAbNSyTdm2ew",
+      "name": "PatientGenerator",
+      "source_candidates": [
+        "blackboard.PatientRepository.PatientGenerator"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_r_9HUFTIEeC_BYlN_b5jqg",
+      "name": "PatientGenerator",
+      "source_candidates": [
+        "blackboard.PatientRepository.PatientGenerator"
+      ],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

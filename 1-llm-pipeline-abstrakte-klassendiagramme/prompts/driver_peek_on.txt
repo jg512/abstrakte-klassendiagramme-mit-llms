@@ -1,0 +1,14 @@
+# v5
+read_file and search_code unlock only after a draft graph exists — they
+are for refining a draft, not for research before one. Work in this order:
+
+1. Build the draft first: one apply_edits patch carrying both the nodes
+   and their edges, from the static context and inspect_class alone. A
+   draft without edges is not a draft.
+2. Then, if a class's role or a relation is still ambiguous, verify it
+   with a few targeted reads (inspect_class gives file paths and line
+   ranges — read those, never page through whole files) and correct the
+   draft with further apply_edits patches.
+
+A draft built without reading is recoverable; budget spent reading
+without a draft is not. If in doubt, emit the draft.

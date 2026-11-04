@@ -1,0 +1,8 @@
+# v2
+You are analysing ONE cluster of modules from the repository. The static
+context contains a repo-wide overview (so you can judge this cluster's
+role in the whole system) plus the detailed view of your cluster's modules
+and classes. Restrict your diagram to classes from this cluster — a later
+pass merges the cluster diagrams and adds cross-cluster relations. Use the
+repo-wide overview only to decide which of your cluster's classes matter
+architecturally.

@@ -1,0 +1,259 @@
+{
+  "projekt": "RaiseMeUp",
+  "umfang": "vollständig",
+  "methode": "An jedem Kasten Anzahl und Art der ein- und ausgehenden Linien gezählt (gestrichelt, durchgezogen mit Raute, Vererbung, Schleife) und mit Beschriftungen abgeglichen. Bei den gestrichelten Linien ist nicht jede einzeln von Ende zu Ende nachverfolgt, weil sie sich im Bild überlagern.",
+  "kanten": [
+    {
+      "art": "composition",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.DAO",
+      "bezeichnung": "dao",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.beans.Job",
+      "bezeichnung": "currentJob",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.beans.Pet",
+      "bezeichnung": "currentPet",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "composition",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.beans.User",
+      "bezeichnung": "currentUser",
+      "ziel_kardinalitaet": "1"
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.control.RaiseMeUp",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.DAO",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.beans.Food",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.beans.PetBuilder",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.beans.Upgrade",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.control.RaiseMeUp",
+      "nach": "raisemeup.model.beans.UserBuilder",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.DAO",
+      "nach": "raisemeup.model.DAO",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.DAO",
+      "nach": "raisemeup.model.beans.Food",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.DAO",
+      "nach": "raisemeup.model.beans.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.DAO",
+      "nach": "raisemeup.model.beans.Job",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.DAO",
+      "nach": "raisemeup.model.beans.Pet",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.DAO",
+      "nach": "raisemeup.model.beans.Upgrade",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.DAO",
+      "nach": "raisemeup.model.beans.User",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.ItemVisitor",
+      "nach": "raisemeup.model.beans.Food",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.ItemVisitor",
+      "nach": "raisemeup.model.beans.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.ItemVisitor",
+      "nach": "raisemeup.model.beans.Upgrade",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.PetObserver",
+      "nach": "raisemeup.control.RaiseMeUp",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.PetObserver",
+      "nach": "raisemeup.model.PetObserver",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.PetObserver",
+      "nach": "raisemeup.model.beans.Job",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.PetObserver",
+      "nach": "raisemeup.model.beans.Pet",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.beans.Pet",
+      "nach": "raisemeup.model.beans.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.beans.Pet",
+      "nach": "raisemeup.model.beans.Job",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.beans.PetBuilder",
+      "nach": "raisemeup.model.beans.Pet",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.beans.PetBuilder",
+      "nach": "raisemeup.model.beans.PetBuilder",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.beans.UserBuilder",
+      "nach": "raisemeup.model.beans.User",
+      "bezeichnung": "«create»",
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.model.beans.UserBuilder",
+      "nach": "raisemeup.model.beans.UserBuilder",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "dependency",
+      "von": "raisemeup.view.decorator.Slot",
+      "nach": "raisemeup.view.decorator.Slot",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "raisemeup.model.beans.Food",
+      "nach": "raisemeup.model.beans.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "raisemeup.model.beans.Upgrade",
+      "nach": "raisemeup.model.beans.Item",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "raisemeup.view.decorator.LeftUpgradeSlot",
+      "nach": "raisemeup.view.decorator.Slot",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "inheritance",
+      "von": "raisemeup.view.decorator.RightUpgradeSlot",
+      "nach": "raisemeup.view.decorator.Slot",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    },
+    {
+      "art": "realization",
+      "von": "raisemeup.view.decorator.Slot",
+      "nach": "raisemeup.view.decorator.Icon",
+      "bezeichnung": null,
+      "ziel_kardinalitaet": null
+    }
+  ]
+}

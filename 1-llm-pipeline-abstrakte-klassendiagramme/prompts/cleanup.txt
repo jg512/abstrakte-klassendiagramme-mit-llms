@@ -1,0 +1,24 @@
+# v2
+Clean up the abstract graph you receive. The graph may have duplicates,
+conflicting relations, unjustified orphans, or mixed abstraction levels.
+
+<insert: core_definition.txt>
+<insert: schema_spec.txt>
+<insert: diagram_rules.txt>
+
+Return a cleaned graph as JSON. Specifically:
+1. Deduplicate nodes — collapse near-duplicates (same concept, slightly
+   different names) into one representative node.
+2. Resolve conflicting relations between the same pair — keep the strongest
+   relation supported by the structure: inheritance > composition > dependency.
+3. Drop nodes whose presence is not justified by the core definition above.
+   When in doubt, drop.
+4. Ensure abstraction is consistent — do not mix a class and one of its
+   methods as separate nodes; pick the level that best represents the concept.
+5. Respect the size constraint given after the graph: adjust toward the
+   target node count if one is given and the graph is outside tolerance;
+   under an open size, never pad — only remove what is unjustified. Never
+   exceed a stated hard cap.
+
+Return the full cleaned graph JSON — all nodes, edges, and packages — using
+the schema described above.

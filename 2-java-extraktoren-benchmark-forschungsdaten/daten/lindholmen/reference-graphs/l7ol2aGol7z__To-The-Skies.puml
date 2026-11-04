@@ -1,0 +1,34 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "totheskies.AsteroidLeft" as n0
+class "totheskies.AsteroidRight" as n1
+class "totheskies.Bullet" as n2
+class "totheskies.BulletAI" as n3
+class "totheskies.Entity" as n4
+class "totheskies.HP" as n5
+class "totheskies.HPAI" as n6
+class "totheskies.HPbar" as n7
+class "totheskies.HPbarAI" as n8
+class "totheskies.Spaceship" as n9
+class "totheskies.SpaceshipAI" as n10
+class "totheskies.ToTheSkies" as n11
+n0 -- n11
+n1 -- n11
+n2 ..|> n4
+n2 -- n11
+n3 ..|> n4
+n3 -- n11
+n4 -- n11
+n5 ..|> n4
+n5 -- n11
+n6 ..|> n4
+n6 -- n11
+n7 ..|> n4
+n7 -- n11
+n8 ..|> n4
+n8 -- n11
+n9 ..|> n4
+n9 -- n11
+n10 ..|> n4
+n10 -- n11
+@enduml

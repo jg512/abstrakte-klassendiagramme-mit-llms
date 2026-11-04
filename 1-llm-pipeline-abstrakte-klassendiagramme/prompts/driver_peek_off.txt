@@ -1,0 +1,3 @@
+# v1
+You cannot read source code. Base every decision on the static context in
+the first user message and on inspect_class summaries.

@@ -1,0 +1,60 @@
+{
+  "repo": "21268879/University",
+  "commit": "6d8fbefd1f7e08823a2a40f7305569af8d5ff365",
+  "model_path": "OOSD/OOSDAssignment1/src/OOSDAssignment1.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "Administrator",
+    "AdvertType",
+    "Client",
+    "Manager",
+    "Project",
+    "Staff"
+  ],
+  "edges": [
+    [
+      "Administrator",
+      "Staff",
+      "inheritance"
+    ],
+    [
+      "Manager",
+      "Staff",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_LqzVgIh4EeW2JIfoHPa3NA": "Administrator",
+    "_Lqz8kIh4EeW2JIfoHPa3NA": "AdvertType",
+    "_Lq0joIh4EeW2JIfoHPa3NA": "Client",
+    "_Lq1Ks4h4EeW2JIfoHPa3NA": "Manager",
+    "_Lq2Y0Ih4EeW2JIfoHPa3NA": "Project",
+    "_Lq4OAIh4EeW2JIfoHPa3NA": "Staff"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_LrAJ0Yh4EeW2JIfoHPa3NA",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LrBX8Yh4EeW2JIfoHPa3NA",
+      "name": "Scanner",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LrBX84h4EeW2JIfoHPa3NA",
+      "name": "ParseException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_LrB_AIh4EeW2JIfoHPa3NA",
+      "name": "SimpleDateFormat",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "repo": "Simondin/ModelCombinationTree",
+  "commit": "43623cf9ee97b65b355a1a4edb04c84bde0e755d",
+  "model_path": "uml/model.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "model.Behavior",
+    "model.Connection",
+    "model.DedicatedModeSwitchPort",
+    "model.FunctionalPort",
+    "model.MDP",
+    "model.MIP",
+    "model.MSRM",
+    "model.ModeInformation",
+    "model.ModeInformationCompositeModel",
+    "model.ModeInformationPrimitiveModel",
+    "model.ModeMapping",
+    "model.MultiModeComponent",
+    "model.MultiModeCompositeComponent",
+    "model.MultiModePrimitiveComponent",
+    "model.Port",
+    "model.Property",
+    "model.SubComponent",
+    "model.SupportedModes"
+  ],
+  "edges": [
+    [
+      "model.Behavior",
+      "model.MultiModePrimitiveComponent",
+      "association"
+    ],
+    [
+      "model.Behavior",
+      "model.SupportedModes",
+      "association"
+    ],
+    [
+      "model.Connection",
+      "model.FunctionalPort",
+      "association"
+    ],
+    [
+      "model.Connection",
+      "model.MultiModeCompositeComponent",
+      "association"
+    ],
+    [
+      "model.Connection",
+      "model.SupportedModes",
+      "association"
+    ],
+    [
+      "model.DedicatedModeSwitchPort",
+      "model.Port",
+      "inheritance"
+    ],
+    [
+      "model.FunctionalPort",
+      "model.Port",
+      "inheritance"
+    ],
+    [
+      "model.MDP",
+      "model.Property",
+      "inheritance"
+    ],
+    [
+      "model.MDP",
+      "model.SupportedModes",
+      "association"
+    ],
+    [
+      "model.MIP",
+      "model.Property",
+      "inheritance"
+    ],
+    [
+      "model.MIP",
+      "model.SupportedModes",
+      "association"
+    ],
+    [
+      "model.MSRM",
+      "model.MultiModeComponent",
+      "association"
+    ],
+    [
+      "model.ModeInformationCompositeModel",
+      "model.ModeInformation",
+      "inheritance"
+    ],
+    [
+      "model.ModeInformationCompositeModel",
+      "model.ModeMapping",
+      "association"
+    ],
+    [
+      "model.ModeInformationCompositeModel",
+      "model.MultiModeCompositeComponent",
+      "association"
+    ],
+    [
+      "model.ModeInformationCompositeModel",
+      "model.SupportedModes",
+      "association"
+    ],
+    [
+      "model.ModeInformationPrimitiveModel",
+      "model.ModeInformation",
+      "inheritance"
+    ],
+    [
+      "model.ModeInformationPrimitiveModel",
+      "model.MultiModePrimitiveComponent",
+      "association"
+    ],
+    [
+      "model.ModeInformationPrimitiveModel",
+      "model.SupportedModes",
+      "association"
+    ],
+    [
+      "model.MultiModeComponent",
+      "model.Port",
+      "association"
+    ],
+    [
+      "model.MultiModeComponent",
+      "model.Property",
+      "association"
+    ],
+    [
+      "model.MultiModeComponent",
+      "model.SubComponent",
+      "association"
+    ],
+    [
+      "model.MultiModeCompositeComponent",
+      "model.MultiModeComponent",
+      "inheritance"
+    ],
+    [
+      "model.MultiModeCompositeComponent",
+      "model.SubComponent",
+      "association"
+    ],
+    [
+      "model.MultiModePrimitiveComponent",
+      "model.MultiModeComponent",
+      "inheritance"
+    ],
+    [
+      "model.SubComponent",
+      "model.SupportedModes",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_iVtBYHF8EeS_0vD5ROX1CQ": "model.MultiModeComponent",
+    "_yFde0HF8EeS_0vD5ROX1CQ": "model.MultiModePrimitiveComponent",
+    "_yZ5dwHF8EeS_0vD5ROX1CQ": "model.MultiModeCompositeComponent",
+    "_K3M6IHF9EeS_0vD5ROX1CQ": "model.ModeInformationPrimitiveModel",
+    "_LuHUAHF9EeS_0vD5ROX1CQ": "model.Behavior",
+    "_QQuuIHF-EeS_0vD5ROX1CQ": "model.SupportedModes",
+    "_fAHo0HGAEeS_0vD5ROX1CQ": "model.Property",
+    "_me35YHGAEeS_0vD5ROX1CQ": "model.MDP",
+    "_mp5doHGAEeS_0vD5ROX1CQ": "model.MIP",
+    "_LkjykHGBEeS_0vD5ROX1CQ": "model.MSRM",
+    "_qAmeQHGBEeS_0vD5ROX1CQ": "model.Port",
+    "_2YavgHGBEeS_0vD5ROX1CQ": "model.DedicatedModeSwitchPort",
+    "_2dqb4HGBEeS_0vD5ROX1CQ": "model.FunctionalPort",
+    "_2g6nYHGFEeS_0vD5ROX1CQ": "model.Connection",
+    "_2mfq8HGFEeS_0vD5ROX1CQ": "model.SubComponent",
+    "_tWB9cHGLEeS_0vD5ROX1CQ": "model.ModeInformationCompositeModel",
+    "_Rc2aoHGMEeS_0vD5ROX1CQ": "model.ModeMapping",
+    "_rVbswHGNEeS_0vD5ROX1CQ": "model.ModeInformation"
+  },
+  "unmapped_model_nodes": []
+}

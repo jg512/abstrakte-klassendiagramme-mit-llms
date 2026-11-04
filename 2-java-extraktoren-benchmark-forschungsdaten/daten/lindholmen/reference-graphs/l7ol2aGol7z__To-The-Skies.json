@@ -1,0 +1,505 @@
+{
+  "repo": "l7ol2aGol7z/To-The-Skies",
+  "commit": "d5df0d46a7a04f268179fb1f1833dcf7e0d6441a",
+  "model_path": "totheskies.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "totheskies.AsteroidLeft",
+    "totheskies.AsteroidRight",
+    "totheskies.Bullet",
+    "totheskies.BulletAI",
+    "totheskies.Entity",
+    "totheskies.HP",
+    "totheskies.HPAI",
+    "totheskies.HPbar",
+    "totheskies.HPbarAI",
+    "totheskies.Spaceship",
+    "totheskies.SpaceshipAI",
+    "totheskies.ToTheSkies"
+  ],
+  "edges": [
+    [
+      "totheskies.AsteroidLeft",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.AsteroidRight",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.Bullet",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.Bullet",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.BulletAI",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.BulletAI",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.Entity",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.HP",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.HP",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.HPAI",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.HPAI",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.HPbar",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.HPbar",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.HPbarAI",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.HPbarAI",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.Spaceship",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.Spaceship",
+      "totheskies.ToTheSkies",
+      "association"
+    ],
+    [
+      "totheskies.SpaceshipAI",
+      "totheskies.Entity",
+      "realization"
+    ],
+    [
+      "totheskies.SpaceshipAI",
+      "totheskies.ToTheSkies",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_qep5o1gOEeSUuqi5GdbLkw": "totheskies.Entity",
+    "_qep5slgOEeSUuqi5GdbLkw": "totheskies.AsteroidRight",
+    "_qep56FgOEeSUuqi5GdbLkw": "totheskies.HPAI",
+    "_qep6C1gOEeSUuqi5GdbLkw": "totheskies.ToTheSkies",
+    "_qeqhLFgOEeSUuqi5GdbLkw": "totheskies.HP",
+    "_qeqhT1gOEeSUuqi5GdbLkw": "totheskies.HPbar",
+    "_qeqhjVgOEeSUuqi5GdbLkw": "totheskies.Spaceship",
+    "_qerH7VgOEeSUuqi5GdbLkw": "totheskies.SpaceshipAI",
+    "_qerIMlgOEeSUuqi5GdbLkw": "totheskies.AsteroidLeft",
+    "_qerIc1gOEeSUuqi5GdbLkw": "totheskies.BulletAI",
+    "_qeru0lgOEeSUuqi5GdbLkw": "totheskies.HPbarAI",
+    "_qervEFgOEeSUuqi5GdbLkw": "totheskies.Bullet"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_qesWFVgOEeSUuqi5GdbLkw",
+      "name": "GUIContext",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWFlgOEeSUuqi5GdbLkw",
+      "name": "GameContainer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWHVgOEeSUuqi5GdbLkw",
+      "name": "Image",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWKlgOEeSUuqi5GdbLkw",
+      "name": "Renderable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWK1gOEeSUuqi5GdbLkw",
+      "name": "SlickException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWLVgOEeSUuqi5GdbLkw",
+      "name": "AppGameContainer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWPlgOEeSUuqi5GdbLkw",
+      "name": "BasicGame",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWRVgOEeSUuqi5GdbLkw",
+      "name": "Game",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWRlgOEeSUuqi5GdbLkw",
+      "name": "InputListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWSlgOEeSUuqi5GdbLkw",
+      "name": "MouseListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWTFgOEeSUuqi5GdbLkw",
+      "name": "ControlledInputReciever",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWTVgOEeSUuqi5GdbLkw",
+      "name": "KeyListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWT1gOEeSUuqi5GdbLkw",
+      "name": "ControllerListener",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWUVgOEeSUuqi5GdbLkw",
+      "name": "Graphics",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qesWUlgOEeSUuqi5GdbLkw",
+      "name": "Input",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes891gOEeSUuqi5GdbLkw",
+      "name": "Music",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9AVgOEeSUuqi5GdbLkw",
+      "name": "Sound",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9CVgOEeSUuqi5GdbLkw",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9C1gOEeSUuqi5GdbLkw",
+      "name": "Throwable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9DlgOEeSUuqi5GdbLkw",
+      "name": "String",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9ElgOEeSUuqi5GdbLkw",
+      "name": "Comparable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9FVgOEeSUuqi5GdbLkw",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9FlgOEeSUuqi5GdbLkw",
+      "name": "CharSequence",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9F1gOEeSUuqi5GdbLkw",
+      "name": "Math",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9HFgOEeSUuqi5GdbLkw",
+      "name": "Override",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9HVgOEeSUuqi5GdbLkw",
+      "name": "Iterable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9IFgOEeSUuqi5GdbLkw",
+      "name": "T",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9IVgOEeSUuqi5GdbLkw",
+      "name": "Cloneable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9IlgOEeSUuqi5GdbLkw",
+      "name": "Object",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9I1gOEeSUuqi5GdbLkw",
+      "name": "System",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9J1gOEeSUuqi5GdbLkw",
+      "name": "AutoCloseable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9KFgOEeSUuqi5GdbLkw",
+      "name": "Appendable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9KlgOEeSUuqi5GdbLkw",
+      "name": "Serializable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9K1gOEeSUuqi5GdbLkw",
+      "name": "PrintStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9M1gOEeSUuqi5GdbLkw",
+      "name": "FilterOutputStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9NVgOEeSUuqi5GdbLkw",
+      "name": "OutputStream",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9OFgOEeSUuqi5GdbLkw",
+      "name": "Closeable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9OlgOEeSUuqi5GdbLkw",
+      "name": "Flushable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9PFgOEeSUuqi5GdbLkw",
+      "name": "ArrayList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9P1gOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9U1gOEeSUuqi5GdbLkw",
+      "name": "AbstractList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9VlgOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9WVgOEeSUuqi5GdbLkw",
+      "name": "AbstractCollection",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9XFgOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9XlgOEeSUuqi5GdbLkw",
+      "name": "Collection",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9YVgOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9Y1gOEeSUuqi5GdbLkw",
+      "name": "List",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9ZlgOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9aFgOEeSUuqi5GdbLkw",
+      "name": "RandomAccess",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9aVgOEeSUuqi5GdbLkw",
+      "name": "LinkedList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9bFgOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9d1gOEeSUuqi5GdbLkw",
+      "name": "AbstractSequentialList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9elgOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9fFgOEeSUuqi5GdbLkw",
+      "name": "Deque",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9f1gOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qes9gVgOEeSUuqi5GdbLkw",
+      "name": "Queue",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qetkAFgOEeSUuqi5GdbLkw",
+      "name": "E",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qetkAlgOEeSUuqi5GdbLkw",
+      "name": "Random",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qetkCVgOEeSUuqi5GdbLkw",
+      "name": "Timer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qetkClgOEeSUuqi5GdbLkw",
+      "name": "java.util.ArrayList<totheskies.Bullet>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qetkDVgOEeSUuqi5GdbLkw",
+      "name": "java.util.ArrayList<totheskies.BulletAI>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_qetkEFgOEeSUuqi5GdbLkw",
+      "name": "java.util.LinkedList<totheskies.Entity>",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

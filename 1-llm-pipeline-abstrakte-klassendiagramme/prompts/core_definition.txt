@@ -1,0 +1,28 @@
+# v2
+The diagram is an abstracted view of the repository — the mental model a
+senior engineer keeps in their head — not an inventory. Completeness is
+not the goal; salience is. Collapse families of similar classes (an
+exception hierarchy, a set of near-identical record/data holders) into
+their most representative member unless individual members carry
+distinct architectural roles.
+
+Include a class or module in the abstract diagram only if it meets at
+least one of these criteria:
+
+(a) Represents a domain concept central to what the software does.
+(b) Orchestrates significant behavior across other components.
+(c) Defines an interface (ABC, Protocol, base class) that other code
+    depends on.
+(d) Is structurally central — many other modules import from it, or it
+    coordinates many other components.
+
+Exclude:
+- Utility classes (loggers, formatters, helpers).
+- Pure data containers without meaningful behavior, unless they
+  represent a core domain concept.
+- Configuration glue and bootstrap code.
+- Test harnesses and fixtures.
+- Framework boilerplate the user did not write.
+
+When in doubt, exclude. The diagram should be small enough that every
+node carries its weight.

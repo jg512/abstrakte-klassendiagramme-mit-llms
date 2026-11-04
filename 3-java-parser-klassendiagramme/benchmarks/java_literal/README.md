@@ -1,0 +1,23 @@
+# Benchmark: Klassengraphen aus modernem Java
+
+Diese Suite prüft, ob der Java-Parser die Klassen und Beziehungen innerhalb
+eines Projekts genau so ausliest, wie sie im Code stehen. Im Unterschied zum
+Benchmark in Ordner 2 wird hier also nicht mit einem abstrahierten Diagramm
+verglichen.
+
+Die Suite besteht aus 20 kleinen, voneinander unabhängigen Projekten. Abgedeckt
+sind direkte Felder, Arrays, Standard- und eigene Generics, `Optional`, Maps,
+Records, Sealed-Typen, verschachtelte Typen, Imports, Vererbung zwischen
+Interfaces, Realisierung, Selbstbeziehungen, Komposition, Kardinalitäten aus
+JPA-Annotationen und die optionalen Methodenabhängigkeiten.
+
+Die erwarteten Graphen in `manifest.json` wurden von Hand anhand der
+Codebeispiele geprüft. Die Suite läuft als Teil der normalen Tests mit und lässt
+sich auch einzeln starten:
+
+```bash
+.venv/bin/python -m benchmarks.java_literal.run --output benchmarks/java_literal/results.json
+```
+
+Aktuell bestehen alle 20 Fälle (`results.json`). Die Suite braucht keinen
+Build und liefert bei jedem Lauf dasselbe Ergebnis.

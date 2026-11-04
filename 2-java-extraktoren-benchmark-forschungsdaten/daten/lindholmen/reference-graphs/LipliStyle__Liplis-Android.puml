@@ -1,0 +1,44 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "little.cute.renew.Activity.LiplisWidgetConfiguration" as n0
+class "little.cute.renew.Activity.LiplisWidgetIntroduction" as n1
+class "little.cute.renew.Activity.LiplisWidgetLog" as n2
+class "little.cute.renew.Common.LiplisUtil" as n3
+class "little.cute.renew.Fct.FctLiplisMsg" as n4
+class "little.cute.renew.Msg.MsgShortNews" as n5
+class "little.cute.renew.Obj.ObjBattery" as n6
+class "little.cute.renew.Obj.ObjBody" as n7
+class "little.cute.renew.Obj.ObjClock" as n8
+class "little.cute.renew.Obj.ObjLiplisBody" as n9
+class "little.cute.renew.Obj.ObjLiplisChat" as n10
+class "little.cute.renew.Obj.ObjLiplisLog" as n11
+class "little.cute.renew.Obj.ObjLiplisLogList" as n12
+class "little.cute.renew.Obj.ObjPreference" as n13
+class "little.cute.renew.Obj.ObjR" as n14
+class "little.cute.renew.View.LiplisLogListView.LiplisArrayAdapter" as n15
+class "little.cute.renew.Web.LiplisApi" as n16
+class "little.cute.renew.Web.LiplisHttpPost" as n17
+class "little.cute.renew.Widget.LiplisWidget" as n18
+class "little.cute.renew.Widget.LiplisWidgetLarge" as n19
+class "little.cute.renew.Widget.LiplisWidgetNormal" as n20
+class "little.cute.renew.Xml.LiplisChatSetting" as n21
+class "little.cute.renew.Xml.LiplisShortNews.LiplisShortNewsIn" as n22
+class "little.cute.renew.Xml.LiplisShortNews.LiplisShortNewsJp" as n23
+n2 -- n11
+n2 -- n12
+n5 -- n18
+n6 -- n18
+n7 -- n9
+n7 -- n18
+n8 -- n18
+n9 -- n18
+n10 -- n18
+n11 -- n12
+n12 -- n18
+n13 -- n18
+n14 -- n18
+n16 --|> n17
+n16 -- n18
+n19 --|> n18
+n20 --|> n18
+@enduml

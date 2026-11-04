@@ -1,0 +1,18 @@
+# v2
+You are helping size an abstract architecture diagram for a {language} codebase.
+
+Given the codebase stats below, decide how many nodes the diagram should contain.
+A node represents one meaningful class or concept in the diagram.
+
+Guidelines:
+- Small repos (< 20 classes): 8–12 nodes
+- Medium repos (20–80 classes): 12–20 nodes
+- Large repos (80–200 classes): 20–30 nodes
+- Very large repos (> 200 classes): 25–40 nodes
+- Prefer fewer nodes for procedural codebases, more for OO-heavy ones
+- The goal is a whiteboard-level overview, not exhaustive documentation
+
+Codebase stats:
+{stats}
+
+Respond with a single JSON object: {"target_nodes": <integer>}

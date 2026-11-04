@@ -1,0 +1,314 @@
+{
+  "repo": "adichad/lucene-new",
+  "commit": "ddfd6f2b12c34d97e70b1a92de69d138ee1b666d",
+  "model_path": "contrib/gdata-server/src/gom/src/java/org/apache/lucene/gdata/gom/core/core-aid.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "org.apache.lucene.gdata.gom.GOMAttribute",
+    "org.apache.lucene.gdata.gom.GOMAuthor",
+    "org.apache.lucene.gdata.gom.GOMCategory",
+    "org.apache.lucene.gdata.gom.GOMContributor",
+    "org.apache.lucene.gdata.gom.GOMDocument",
+    "org.apache.lucene.gdata.gom.GOMElement",
+    "org.apache.lucene.gdata.gom.GOMEntry",
+    "org.apache.lucene.gdata.gom.GOMFeed",
+    "org.apache.lucene.gdata.gom.GOMGenerator",
+    "org.apache.lucene.gdata.gom.GOMIcon",
+    "org.apache.lucene.gdata.gom.GOMId",
+    "org.apache.lucene.gdata.gom.GOMLink",
+    "org.apache.lucene.gdata.gom.GOMLogo",
+    "org.apache.lucene.gdata.gom.GOMNamespace",
+    "org.apache.lucene.gdata.gom.GOMRights",
+    "org.apache.lucene.gdata.gom.GOMSubtitle",
+    "org.apache.lucene.gdata.gom.GOMTime",
+    "org.apache.lucene.gdata.gom.GOMTitle",
+    "org.apache.lucene.gdata.gom.GOMXmlEntity",
+    "org.apache.lucene.gdata.gom.core.AbstractGOMElement",
+    "org.apache.lucene.gdata.gom.core.AtomParser",
+    "org.apache.lucene.gdata.gom.core.GDataParseException",
+    "org.apache.lucene.gdata.gom.core.GOMAttributeImpl",
+    "org.apache.lucene.gdata.gom.core.GOMBuilder",
+    "org.apache.lucene.gdata.gom.core.GOMDocumentImpl",
+    "org.apache.lucene.gdata.gom.core.GOMFactory",
+    "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+    "org.apache.lucene.gdata.gom.core.GOMIdImpl"
+  ],
+  "edges": [
+    [
+      "org.apache.lucene.gdata.gom.GOMAttribute",
+      "org.apache.lucene.gdata.gom.GOMXmlEntity",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMAttribute",
+      "org.apache.lucene.gdata.gom.core.AbstractGOMElement",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMAuthor",
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMAuthor",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMCategory",
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMCategory",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMContributor",
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMContributor",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "org.apache.lucene.gdata.gom.core.AbstractGOMElement",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMEntry",
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMEntry",
+      "org.apache.lucene.gdata.gom.GOMXmlEntity",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMEntry",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMFeed",
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMFeed",
+      "org.apache.lucene.gdata.gom.GOMXmlEntity",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMGenerator",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMIcon",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMId",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMLink",
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMLink",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMLogo",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMNamespace",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMRights",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMSubtitle",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMTime",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.GOMTitle",
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.core.AbstractGOMElement",
+      "org.apache.lucene.gdata.gom.GOMElement",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.core.AtomParser",
+      "org.apache.lucene.gdata.gom.core.GOMBuilder",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.core.GOMAttributeImpl",
+      "org.apache.lucene.gdata.gom.GOMAttribute",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.core.GOMBuilder",
+      "org.apache.lucene.gdata.gom.core.GOMFactory",
+      "association"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.core.GOMDocumentImpl",
+      "org.apache.lucene.gdata.gom.GOMDocument",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "org.apache.lucene.gdata.gom.GOMFeed",
+      "inheritance"
+    ],
+    [
+      "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+      "org.apache.lucene.gdata.gom.core.AbstractGOMElement",
+      "inheritance"
+    ]
+  ],
+  "mapping": {
+    "_r7Q00H5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.AtomParser",
+    "_r8CQ4H5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMNamespace",
+    "_r8824H5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.GDataParseException",
+    "_r9WfgH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.GOMAttributeImpl",
+    "_r9XtoH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMAttribute",
+    "_r-JwwH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.GOMFactory",
+    "_r-P3YH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMFeed",
+    "_r-RFgH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.GOMFeedImpl",
+    "_r-kngH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMElement",
+    "_r-yp8H5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.GOMDocumentImpl",
+    "_r-0fIH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMDocument",
+    "_sAJ74H5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.GOMBuilder",
+    "_sA-bQH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMEntry",
+    "_sHIGkH5eEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMXmlEntity",
+    "_iHkQsH5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.AbstractGOMElement",
+    "_iJxQIH5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMTitle",
+    "_iJx3MX5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMRights",
+    "_iJ06gH5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMTime",
+    "_iJ1hkH5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMId",
+    "_iJ2vsH5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMLogo",
+    "_iJ390H5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMIcon",
+    "_iJ4k4H5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMGenerator",
+    "_iJ5L8X5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMSubtitle",
+    "_iKC88X5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMContributor",
+    "_iKVQ0H5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMCategory",
+    "_iKeawH5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMAuthor",
+    "_iLjY0H5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.GOMLink",
+    "_iLu_AH5fEdujQd6ed5A7Ug": "org.apache.lucene.gdata.gom.core.GOMIdImpl"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_r7h6kH5eEdujQd6ed5A7Ug",
+      "name": "QName",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_r_MSkH5eEdujQd6ed5A7Ug",
+      "name": "XMLStreamWriter",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_r_OHwH5eEdujQd6ed5A7Ug",
+      "name": "XMLStreamException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sAodAH5eEdujQd6ed5A7Ug",
+      "name": "XMLStreamReader",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_iLtw4H5fEdujQd6ed5A7Ug",
+      "name": "GOMTitleImp",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_r7dpIX5eEdujQd6ed5A7Ug",
+      "name": "String",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_r89d8H5eEdujQd6ed5A7Ug",
+      "name": "RuntimeException",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_r9ELoH5eEdujQd6ed5A7Ug",
+      "name": "Throwable",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sBHlMH5eEdujQd6ed5A7Ug",
+      "name": "System",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sEmXAH5eEdujQd6ed5A7Ug",
+      "name": "Exception",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sAmAwH5eEdujQd6ed5A7Ug",
+      "name": "Stack",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sAnO4H5eEdujQd6ed5A7Ug",
+      "name": "List",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_sBG-IH5eEdujQd6ed5A7Ug",
+      "name": "LinkedList",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_iKUCsH5fEdujQd6ed5A7Ug",
+      "name": "Iterator",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

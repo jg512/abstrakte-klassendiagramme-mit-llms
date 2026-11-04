@@ -1,0 +1,183 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "com.oreon.cerebrum.admission.Admission" as n0
+class "com.oreon.cerebrum.admission.BedStay" as n1
+class "com.oreon.cerebrum.appointment.Appointment" as n2
+class "com.oreon.cerebrum.billing.Invoice" as n3
+class "com.oreon.cerebrum.billing.InvoiceItem" as n4
+class "com.oreon.cerebrum.billing.Service" as n5
+class "com.oreon.cerebrum.charts.AppliedChart" as n6
+class "com.oreon.cerebrum.charts.Chart" as n7
+class "com.oreon.cerebrum.charts.ChartItem" as n8
+class "com.oreon.cerebrum.charts.ChartProcedure" as n9
+class "com.oreon.cerebrum.charts.TimeEnumeration" as n10
+class "com.oreon.cerebrum.codes.AbstractCode" as n11
+class "com.oreon.cerebrum.codes.Chapter" as n12
+class "com.oreon.cerebrum.codes.Code" as n13
+class "com.oreon.cerebrum.codes.Section" as n14
+class "com.oreon.cerebrum.codes.SimpleCode" as n15
+class "com.oreon.cerebrum.ddx.ChronicCondition" as n16
+class "com.oreon.cerebrum.ddx.ConditionCategory" as n17
+class "com.oreon.cerebrum.ddx.ConditionFinding" as n18
+class "com.oreon.cerebrum.ddx.DifferentialDx" as n19
+class "com.oreon.cerebrum.ddx.Disease" as n20
+class "com.oreon.cerebrum.ddx.DxCategory" as n21
+class "com.oreon.cerebrum.ddx.DxTest" as n22
+class "com.oreon.cerebrum.ddx.Finding" as n23
+class "com.oreon.cerebrum.ddx.LabFinding" as n24
+class "com.oreon.cerebrum.ddx.LabFindingType" as n25
+class "com.oreon.cerebrum.ddx.PatientDiffDx" as n26
+class "com.oreon.cerebrum.ddx.PatientFinding" as n27
+class "com.oreon.cerebrum.ddx.PhysicalFinding" as n28
+class "com.oreon.cerebrum.drugs.AtcDrug" as n29
+class "com.oreon.cerebrum.drugs.Drug" as n30
+class "com.oreon.cerebrum.drugs.DrugCategory" as n31
+class "com.oreon.cerebrum.drugs.DrugInteraction" as n32
+class "com.oreon.cerebrum.drugs.InteractionSeverity" as n33
+class "com.oreon.cerebrum.employee.Clerk" as n34
+class "com.oreon.cerebrum.employee.Department" as n35
+class "com.oreon.cerebrum.employee.Employee" as n36
+class "com.oreon.cerebrum.employee.Nurse" as n37
+class "com.oreon.cerebrum.employee.NurseSpecialty" as n38
+class "com.oreon.cerebrum.employee.Physician" as n39
+class "com.oreon.cerebrum.employee.Specialization" as n40
+class "com.oreon.cerebrum.employee.Technician" as n41
+class "com.oreon.cerebrum.encounter.Differential" as n42
+class "com.oreon.cerebrum.encounter.Encounter" as n43
+class "com.oreon.cerebrum.encounter.PrescribedTest" as n44
+class "com.oreon.cerebrum.encounter.Reason" as n45
+class "com.oreon.cerebrum.encounter.TestResults" as n46
+class "com.oreon.cerebrum.encounter.Vitals" as n47
+class "com.oreon.cerebrum.facility.Bed" as n48
+class "com.oreon.cerebrum.facility.Facility" as n49
+class "com.oreon.cerebrum.facility.Room" as n50
+class "com.oreon.cerebrum.facility.RoomType" as n51
+class "com.oreon.cerebrum.facility.Ward" as n52
+class "com.oreon.cerebrum.patient.Address" as n53
+class "com.oreon.cerebrum.patient.Allergy" as n54
+class "com.oreon.cerebrum.patient.AllergySeverity" as n55
+class "com.oreon.cerebrum.patient.ContactDetails" as n56
+class "com.oreon.cerebrum.patient.DischargeCode" as n57
+class "com.oreon.cerebrum.patient.Gender" as n58
+class "com.oreon.cerebrum.patient.History" as n59
+class "com.oreon.cerebrum.patient.Immunization" as n60
+class "com.oreon.cerebrum.patient.Patient" as n61
+class "com.oreon.cerebrum.patient.PatientDocument" as n62
+class "com.oreon.cerebrum.patient.Person" as n63
+class "com.oreon.cerebrum.patient.Title" as n64
+class "com.oreon.cerebrum.patient.TrackedVital" as n65
+class "com.oreon.cerebrum.patient.Vaccine" as n66
+class "com.oreon.cerebrum.patient.VitalValue" as n67
+class "com.oreon.cerebrum.prescription.Frequency" as n68
+class "com.oreon.cerebrum.prescription.Prescription" as n69
+class "com.oreon.cerebrum.prescription.PrescriptionItem" as n70
+class "com.oreon.cerebrum.prescription.PrescriptionItemTemplate" as n71
+class "com.oreon.cerebrum.prescription.PrescriptionTemplate" as n72
+class "com.oreon.cerebrum.prescription.Route" as n73
+class "com.oreon.cerebrum.settings.Setting" as n74
+class "com.oreon.cerebrum.settings.SettingGroup" as n75
+class "com.oreon.cerebrum.settings.SettingName" as n76
+class "com.oreon.cerebrum.settings.Settings" as n77
+class "com.oreon.cerebrum.unusualoccurences.OccurenceType" as n78
+class "com.oreon.cerebrum.unusualoccurences.Severity" as n79
+class "com.oreon.cerebrum.unusualoccurences.TreatmentCategory" as n80
+class "com.oreon.cerebrum.unusualoccurences.UnusualOccurence" as n81
+class "com.oreon.cerebrum.users.AppRole" as n82
+class "com.oreon.cerebrum.users.AppUser" as n83
+n0 -- n1
+n0 -- n3
+n0 -- n57
+n0 -- n61
+n1 -- n48
+n2 -- n39
+n2 -- n61
+n3 -- n4
+n3 -- n61
+n4 -- n5
+n6 -- n7
+n6 -- n61
+n7 -- n8
+n7 -- n16
+n8 -- n9
+n8 -- n10
+n8 -- n65
+n9 -- n61
+n9 -- n67
+n12 --|> n11
+n12 -- n14
+n13 --|> n11
+n13 -- n14
+n13 -- n45
+n14 --|> n11
+n15 -- n43
+n16 -- n61
+n17 -- n20
+n18 -- n20
+n19 -- n21
+n19 -- n23
+n20 -- n20
+n20 -- n58
+n22 -- n44
+n23 -- n27
+n24 --|> n23
+n26 -- n27
+n26 -- n61
+n28 --|> n23
+n29 -- n29
+n29 -- n30
+n30 -- n31
+n30 -- n32
+n30 -- n54
+n30 -- n70
+n30 -- n71
+n32 -- n33
+n34 --|> n36
+n35 -- n36
+n36 -- n43
+n36 -- n49
+n36 --|> n63
+n36 -- n83
+n37 --|> n36
+n37 -- n38
+n39 --|> n36
+n39 -- n40
+n41 --|> n36
+n43 -- n44
+n43 -- n47
+n43 -- n61
+n43 -- n69
+n44 -- n46
+n48 -- n50
+n48 -- n61
+n49 -- n52
+n50 -- n51
+n50 -- n52
+n52 -- n58
+n53 -- n61
+n54 -- n55
+n54 -- n61
+n56 -- n63
+n58 -- n63
+n59 -- n61
+n60 -- n61
+n60 -- n66
+n61 -- n62
+n61 --|> n63
+n61 -- n67
+n61 -- n69
+n61 -- n81
+n63 -- n64
+n65 -- n67
+n68 -- n70
+n68 -- n71
+n69 -- n70
+n70 -- n73
+n71 -- n72
+n71 -- n73
+n74 -- n76
+n75 -- n76
+n78 -- n81
+n79 -- n81
+n80 -- n81
+n82 -- n83
+@enduml

@@ -1,0 +1,163 @@
+{
+  "repo": "zenki2001cn/Erengine",
+  "commit": "f5e38a62d437b4cfde72efe9582db316c57709cc",
+  "model_path": "doc/Design/uml/EasyViewer.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.easyview.ebook.reader.engine.core.EREngine",
+    "com.easyview.ebook.reader.engine.core.IActionCall",
+    "com.easyview.ebook.reader.engine.module.comments.CommentView",
+    "com.easyview.ebook.reader.engine.module.comments.ICommentHandlerCall",
+    "com.easyview.ebook.reader.engine.util.EngineConfig",
+    "com.easyview.ebook.reader.ui.controller.EasyViewer"
+  ],
+  "edges": [
+    [
+      "com.easyview.ebook.reader.engine.core.EREngine",
+      "com.easyview.ebook.reader.ui.controller.EasyViewer",
+      "association"
+    ],
+    [
+      "com.easyview.ebook.reader.engine.core.IActionCall",
+      "com.easyview.ebook.reader.ui.controller.EasyViewer",
+      "association"
+    ],
+    [
+      "com.easyview.ebook.reader.engine.module.comments.CommentView",
+      "com.easyview.ebook.reader.ui.controller.EasyViewer",
+      "association"
+    ],
+    [
+      "com.easyview.ebook.reader.engine.module.comments.ICommentHandlerCall",
+      "com.easyview.ebook.reader.ui.controller.EasyViewer",
+      "association"
+    ]
+  ],
+  "mapping": {
+    "_geRfsIs1EeCHZZoM5jy0Lg": "com.easyview.ebook.reader.ui.controller.EasyViewer",
+    "_gf8TpIs1EeCHZZoM5jy0Lg": "com.easyview.ebook.reader.engine.module.comments.CommentView",
+    "_ggEPcIs1EeCHZZoM5jy0Lg": "com.easyview.ebook.reader.engine.module.comments.ICommentHandlerCall",
+    "_ggBzMos1EeCHZZoM5jy0Lg": "com.easyview.ebook.reader.engine.util.EngineConfig",
+    "_gf9hwYs1EeCHZZoM5jy0Lg": "com.easyview.ebook.reader.engine.core.EREngine",
+    "_ggFdkIs1EeCHZZoM5jy0Lg": "com.easyview.ebook.reader.engine.core.IActionCall"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_gexO8Is1EeCHZZoM5jy0Lg",
+      "name": "IProgressController",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_geydEos1EeCHZZoM5jy0Lg",
+      "name": "ControlPanel",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ge3VkIs1EeCHZZoM5jy0Lg",
+      "name": "ProgressDisplayer",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_gf-I0os1EeCHZZoM5jy0Lg",
+      "name": "Book",
+      "source_candidates": [
+        "com.easyview.ebook.reader.engine.model.Book",
+        "org.geometerplus.fbreader.library.Book"
+      ],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_gf5QUIs1EeCHZZoM5jy0Lg",
+      "name": "Activity",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggJH8Is1EeCHZZoM5jy0Lg",
+      "name": "AlertDialog",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggKWEIs1EeCHZZoM5jy0Lg",
+      "name": "Dialog",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_gf6ecYs1EeCHZZoM5jy0Lg",
+      "name": "ImageView",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_gf7FgIs1EeCHZZoM5jy0Lg",
+      "name": "TextView",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggPOkIs1EeCHZZoM5jy0Lg",
+      "name": "TableLayout",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_gf_-AYs1EeCHZZoM5jy0Lg",
+      "name": "Bundle",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggHSwYs1EeCHZZoM5jy0Lg",
+      "name": "KeyEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggS48Is1EeCHZZoM5jy0Lg",
+      "name": "View",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggZmoIs1EeCHZZoM5jy0Lg",
+      "name": "MotionEvent",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggP1o4s1EeCHZZoM5jy0Lg",
+      "name": "Context",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggRDwIs1EeCHZZoM5jy0Lg",
+      "name": "AttributeSet",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggUHEIs1EeCHZZoM5jy0Lg",
+      "name": "Paint",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggUuIIs1EeCHZZoM5jy0Lg",
+      "name": "RectF",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_ggXxdYs1EeCHZZoM5jy0Lg",
+      "name": "Canvas",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# Konfiguration für ein lokales Ollama. Überschreibt default.yaml,
+# verschachtelte Abschnitte werden dabei zusammengeführt.
+# Aufruf: python -m src /pfad/zum/repo --config configs/ollama.yaml
+
+backend: ollama
+model: qwen2.5:14b
+base_url: http://localhost:11434
+api_key_env: ""
+num_ctx: 32768                 # bei Ollama wichtig, dort ist der Standard 2048
+context_budget: 24000          # lokale Modelle haben wenig Kontext, also früher warnen

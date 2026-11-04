@@ -1,0 +1,16 @@
+# DeepSeek-Konfiguration für das Experiment. Überschreibt default.yaml,
+# verschachtelte Abschnitte werden dabei zusammengeführt.
+# 8 Varianten x 5 Seeds x {schedule, loguru}, mit höheren Budgets und ohne
+# Zeilengrenze bei read_file.
+# Aufruf: python -m src batch.txt --method all --config configs/deepseek_exp.yaml --seeds ...
+
+backend: deepseek
+model: deepseek-chat
+base_url: ""
+api_key_env: DEEPSEEK_API_KEY
+context_budget: 48000          # DeepSeek hat etwa 64K Token Kontext, also vorher warnen
+
+driver:
+  max_tool_calls: 60           # statt 40 aus default.yaml
+  max_tokens: 80000            # statt 60k aus deepseek.yaml (Standard 30k)
+  read_file_max_lines: 0       # 0 = unbegrenzt

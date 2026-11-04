@@ -1,0 +1,59 @@
+# Kurzer Funktionstest mit qwen2:0.5b (352 MB)
+# Das Modell ist winzig, deshalb sind die Budgets und der Zielgraph klein.
+# Gute Diagramme sind nicht zu erwarten. Es geht nur darum, ob alles durchläuft.
+
+backend: ollama
+model: qwen2:0.5b
+base_url: http://localhost:11434
+api_key_env: ""
+temperature: 0
+num_ctx: 2048
+seed: 42
+request_timeout: 90            # auf langsamer CPU früh abbrechen, mit 0.5b sind Timeouts zu erwarten
+
+target_nodes: 8
+node_tolerance: 0.5        # sehr großzügig, das kleine Modell trifft die Zielzahl sowieso nicht
+
+cleanup: false             # Cleanup aus, spart Token
+
+filters:
+  exclude_dirs:
+    - tests
+    - test
+    - .venv
+    - venv
+    - build
+    - dist
+    - __pycache__
+    - .tox
+    - .git
+    - docs
+    - examples
+    - benchmarks
+  exclude_files:
+    - "test_*.py"
+    - "*_test.py"
+    - "conftest.py"
+    - "setup.py"
+
+size_caps:
+  max_loc: 20000
+  max_classes: 300
+
+driver:
+  max_tool_calls: 10
+  max_tokens: 8000
+  read_file_max_lines: 80
+
+clustering:
+  max_cluster_size: 20
+  min_cluster_size: 3
+
+output:
+  dir: runs
+  write_pyreverse: true
+  trace_jsonl: true
+
+dev:
+  cache_dir: .cache
+  verbose: false

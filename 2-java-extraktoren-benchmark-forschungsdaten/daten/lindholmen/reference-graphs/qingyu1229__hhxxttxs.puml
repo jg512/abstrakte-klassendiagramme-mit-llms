@@ -1,0 +1,9 @@
+@startuml
+' Normalized mapped reference scope; associations are undirected.
+class "com.design.pattern.User" as n0
+class "com.design.pattern.UserDao" as n1
+class "com.design.pattern.UserDaoImpl" as n2
+n0 -- n2
+n0 --|> n2
+n2 ..|> n1
+@enduml

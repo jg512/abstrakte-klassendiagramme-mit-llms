@@ -1,0 +1,82 @@
+{
+  "repo": "Abdielja/AsiDriver",
+  "commit": "ed09f0573e98f7fc7078ed40d1c6fc001865f139",
+  "model_path": "asi-driver/model/model.uml",
+  "scope": "unambiguously mapped model classifiers only",
+  "nodes": [
+    "com.asi.driver.AsiDriver",
+    "com.asi.driver.Main",
+    "com.asi.driver.config.AppSettings",
+    "com.asi.driver.encode.EncodeServiceHex",
+    "com.asi.driver.encode.IEncodeService",
+    "com.asi.driver.encryption.IEncryptionService",
+    "com.asi.driver.processor.IResponseProcessor",
+    "com.asi.driver.processor.SpResponseProcessor",
+    "com.asi.driver.utils.TestService"
+  ],
+  "edges": [
+    [
+      "com.asi.driver.AsiDriver",
+      "com.asi.driver.Main",
+      "association"
+    ],
+    [
+      "com.asi.driver.AsiDriver",
+      "com.asi.driver.config.AppSettings",
+      "association"
+    ],
+    [
+      "com.asi.driver.encode.EncodeServiceHex",
+      "com.asi.driver.encode.IEncodeService",
+      "realization"
+    ],
+    [
+      "com.asi.driver.processor.SpResponseProcessor",
+      "com.asi.driver.processor.IResponseProcessor",
+      "realization"
+    ]
+  ],
+  "mapping": {
+    "_1UqnEFCqEeW99N7PiPrPUQ": "com.asi.driver.Main",
+    "_1UqnElCqEeW99N7PiPrPUQ": "com.asi.driver.AsiDriver",
+    "_1UwtulCqEeW99N7PiPrPUQ": "com.asi.driver.config.AppSettings",
+    "_1U20W1CqEeW99N7PiPrPUQ": "com.asi.driver.encode.IEncodeService",
+    "_1U868FCqEeW99N7PiPrPUQ": "com.asi.driver.encode.EncodeServiceHex",
+    "_9b_6kVCqEeW99N7PiPrPUQ": "com.asi.driver.utils.TestService",
+    "_kH0EEFCrEeW99N7PiPrPUQ": "com.asi.driver.processor.IResponseProcessor",
+    "_kH0EF1CrEeW99N7PiPrPUQ": "com.asi.driver.processor.SpResponseProcessor",
+    "_CobtwVCsEeW99N7PiPrPUQ": "com.asi.driver.encryption.IEncryptionService"
+  },
+  "unmapped_model_nodes": [
+    {
+      "model_id": "_1UqnH1CqEeW99N7PiPrPUQ",
+      "name": "Logger",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_1UqnJFCqEeW99N7PiPrPUQ",
+      "name": "GenericXmlApplicationContext",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_1VDBlFCqEeW99N7PiPrPUQ",
+      "name": "SecretKey",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_1UqnF1CqEeW99N7PiPrPUQ",
+      "name": "String",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    },
+    {
+      "model_id": "_kH0EE1CrEeW99N7PiPrPUQ",
+      "name": "LinkedHashMap",
+      "source_candidates": [],
+      "reason": "missing or ambiguous identity"
+    }
+  ]
+}
