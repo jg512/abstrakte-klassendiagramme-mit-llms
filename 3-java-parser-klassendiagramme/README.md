@@ -9,10 +9,10 @@ wenn gewünscht, als Bild. Es ist der Parser aus der LLM-Pipeline, herausgelöst
 als eigenes Werkzeug. Was ein Klassendiagramm, ein Parser oder PlantUML ist,
 erklärt das [Haupt-README](../README.md#begriffe).
 
-Genauer: `javauml` macht aus einem Java-Repo ein Klassendiagramm als PlantUML und JSON,
-auf Wunsch auch gleich als Bild im Format PNG oder SVG. Es liest nur den Quelltext. Das Projekt
-muss also weder gebaut noch kompiliert werden, und fehlende Bibliotheken stören
-nicht.
+Im Einzelnen: `javauml` macht aus einem Java-Repo ein Klassendiagramm als PlantUML
+und JSON, auf Wunsch auch gleich als Bild im Format PNG oder SVG. Es liest nur
+den Quelltext. Das Projekt muss also weder gebaut noch kompiliert werden, und
+fehlende Bibliotheken stören nicht.
 
 Der Parser ist derselbe wie in der LLM-Pipeline in
 [Ordner 1](../1-llm-pipeline-abstrakte-klassendiagramme/README.md)
@@ -34,8 +34,10 @@ python3 -m venv .venv
 
 Danach gibt es den Befehl `.venv/bin/javauml`. Für PNG und SVG wird PlantUML
 gebraucht, entweder als JAR-Datei (dann muss auch Java installiert sein) oder
-als Befehl `plantuml`, den das Terminal findet (im `PATH`). Die JAR aus Ordner 2
-reicht:
+als Befehl `plantuml`, den das Terminal findet (im `PATH`). Im vollständigen
+Projektordner liegt die JAR schon in Ordner 2. Wer nur das GitHub-Repository
+hat, lädt sie wie in [`INSTALLATION.md`](../INSTALLATION.md) beschrieben
+herunter und passt den Pfad an:
 
 ```bash
 export PLANTUML_JAR=../2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/plantuml-1.2025.4.jar
@@ -80,17 +82,19 @@ steht: Klassen mit Attributen und Methoden, Vererbung (`extends`), Realisierung
 (`implements`) und Felder, deren Typ eine Klasse des Projekts ist. Die Art der
 Feldbeziehung (Assoziation, Aggregation, Komposition) und die Kardinalität (wie
 viele Objekte am anderen Ende hängen) werden aus Typ, `final`, Initialisierung
-und JPA-Annotationen (Angaben für Datenbanken wie `@OneToMany`) geschätzt. Externe Obertypen wie `JFrame` bleiben als Knoten
-stehen, weil sie viel über die Rolle einer Klasse sagen.
+und JPA-Annotationen (Angaben für Datenbanken wie `@OneToMany`) geschätzt.
+Externe Obertypen wie `JFrame` bleiben als Knoten stehen, weil sie viel über die
+Rolle einer Klasse sagen.
 
 Der Modus `intellij` bildet das Klassendiagramm der Programmierumgebung IntelliJ
-IDEA nach. Dafür wird auch der Code innerhalb der Methoden gelesen. Jeder Verweis im Code wird eine Abhängigkeit,
-auch über Aufrufketten wie `RaiseMeUp.getCurrentJob().getImpactenergy()`, wo die
-Zielklasse `Job` gar nicht im Text steht. `new X()` wird `«create»`, Felder
-bekommen "1" oder "*", innere Klassen eine eigene Kante. Mit `--classes DATEI`
-(ein voll qualifizierter Name pro Zeile) wählt man wie in IntelliJ die Klassen
-aus, die im Diagramm stehen. Ohne Auswahl kommen alle hinein, was bei großen
-Projekten schnell unübersichtlich wird.
+IDEA nach. Dafür wird auch der Code innerhalb der Methoden gelesen. Jeder
+Verweis im Code wird eine Abhängigkeit, auch über Aufrufketten wie
+`RaiseMeUp.getCurrentJob().getImpactenergy()`, wo die Zielklasse `Job` gar nicht
+im Text steht. `new X()` wird `«create»`, Felder bekommen "1" oder "*", innere
+Klassen eine eigene Kante. Mit `--classes DATEI` (ein voll qualifizierter Name
+pro Zeile) wählt man wie in IntelliJ die Klassen aus, die im Diagramm stehen.
+Ohne Auswahl kommen alle hinein, was bei großen Projekten schnell
+unübersichtlich wird.
 
 Die Regeln des IntelliJ-Modus stammen aus den neun IntelliJ-Diagrammen von
 Zhang/Hebig und sind in Ordner 2 unter
@@ -141,8 +145,12 @@ Die Klassen-IDs sind um das gemeinsame Paketpräfix gekürzt. Aus
 
 ## Wie gut der Parser ist
 
-Gemessen wurde in Ordner 2, mit dem Code aus Ordner 1. Die Ergebnisse gelten
-hier unverändert, siehe "Gleichheit mit Ordner 1" unten.
+Gemessen wurde in [Ordner
+2](../2-java-extraktoren-benchmark-forschungsdaten/README.md), mit dem Code aus
+Ordner 1. Die Ergebnisse gelten hier unverändert, weil beide Kopien auf allen 59
+Projekten aus Ordner 2 in vier Einstellungen Zeichen für Zeichen dieselbe
+Ausgabe liefern (siehe [Phase 6 im
+Haupt-README](../README.md#phase-6-der-parser-als-eigenes-werkzeug-november-2026)).
 
 - Gegen von Menschen gezeichnete Diagramme (30 Lindholmen-Projekte und 9
   Projekte von Zhang/Hebig) liegt der Modus `literal` gleichauf mit javalang und
@@ -161,8 +169,9 @@ hier unverändert, siehe "Gleichheit mit Ordner 1" unten.
 - Ohne Build gibt es keine Informationen aus Bibliotheken. Ein Rückgabetyp aus
   einer Bibliothek beendet eine Aufrufkette, außer bei den gängigen
   JDK-Collections.
-- Überladene Methoden werden nur über die Zahl der Argumente unterschieden.
-  Lambdas ohne Typangabe und schwer bestimmbare `var` beenden eine Aufrufkette.
+- Überladene Methoden (mehrere Methoden mit gleichem Namen) werden nur über die
+  Zahl der Argumente unterschieden. Lambdas (kurze, namenlose Funktionen) ohne
+  Typangabe und schwer bestimmbare `var` beenden eine Aufrufkette.
 - Mehrdeutige Typen werden weggelassen und gemeldet. Das kostet im Zweifel eine
   richtige Kante, vermeidet aber falsche.
 - Der Modus `literal` sieht nur Deklarationen. Dass eine Klasse eine andere
@@ -187,7 +196,8 @@ noch das Erwartete liefert.
 | `tests/test_java_literal_benchmark.py` | die 20 kleinen Projekte aus [`benchmarks/java_literal/`](benchmarks/java_literal/README.md) mit von Hand geprüftem Graphen |
 | `tests/test_cli.py` | Kommandozeile, Ausgabedateien, URL-Erkennung |
 
-Die ersten vier stammen aus Ordner 1 und prüfen dort dasselbe.
+Die ersten drei sind aus Ordner 1 übernommen und an das eigenständige Werkzeug
+angepasst. Den Benchmark mit den 20 kleinen Projekten gibt es nur noch hier.
 
 ## Aufbau
 

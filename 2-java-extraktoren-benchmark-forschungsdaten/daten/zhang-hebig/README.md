@@ -2,11 +2,11 @@
 
 # Kuratierte Suite nach Zhang/Hebig
 
-Die Autoren dieser Studie haben für neun Java-Projekte untersucht, was Menschen
-weglassen, wenn sie ein Klassendiagramm zu vorhandenem Code zeichnen. Ihr
-veröffentlichtes Material (das Replikationspaket) dient in diesem Projekt als
-sorgfältig aufbereitete ("kuratierte") Testsammlung. Fachbegriffe erklärt das
-[Haupt-README](../../../README.md#begriffe).
+Zhang, Zhang, Strüber und Hebig haben 2025 für neun Java-Projekte untersucht,
+was Menschen weglassen, wenn sie ein Klassendiagramm zu vorhandenem Code
+zeichnen. Ihr veröffentlichtes Material (das Replikationspaket) dient in diesem
+Projekt als sorgfältig aufbereitete ("kuratierte") Testsammlung, kurz "Suite".
+Fachbegriffe erklärt das [Haupt-README](../../../README.md#begriffe).
 
 Hier liegt das öffentliche Replikationspaket zu Wenli Zhang, Weixing Zhang,
 Daniel Strüber und Regina Hebig, *An empirical study of manual abstraction
@@ -15,15 +15,17 @@ Modeling, 2025).
 
 - Paper: https://doi.org/10.1007/s10270-025-01289-y
 - Paket: https://osf.io/p4jdr/?view_only=34b153d3b7704f4a84befd661dc9c6a1
-- SHA-256 des Quellarchivs: `11db4e9a45affaf80df627fa6604119e0c56b47aef66e0e1ceae58086a13f85e`
-- Größe des Quellarchivs: 331.030.607 Bytes, 6.268 Java-Dateien in neun Projekten
+- SHA-256 des Quellarchivs:
+  `11db4e9a45affaf80df627fa6604119e0c56b47aef66e0e1ceae58086a13f85e`
+- Größe des Quellarchivs: 331.030.607 Bytes, 6.268 Java-Dateien in neun
+  Projekten
 
 | Pfad | Inhalt |
 | :--- | :--- |
 | `Version(s) of Source Code Used/` | die neun Projekte in der untersuchten Version |
 | `models/original/` | die ursprünglichen Klassendiagramme der Projekte |
-| `models/annotated/` | dieselben Diagramme mit den Annotationen der Autoren (PDF) |
-| `models/reverse/` | mit IntelliJ per Reverse Engineering erzeugte Diagramme (ausgepackt aus `downloads/reverse-models.zip`) |
+| `models/annotated/` | dieselben Diagramme mit den Anmerkungen der Autoren, was im Code wie umgesetzt ist (PDF) |
+| `models/reverse/` | mit IntelliJ automatisch aus dem Code erzeugte Diagramme (Reverse Engineering, ausgepackt aus `downloads/reverse-models.zip`) |
 | `comparisons/` | pro Projekt eine Vergleichstabelle der Autoren (xlsx) |
 | `reference.json` | von Hand abgeschriebene Referenz: 79 Klassen und ihre Beziehungen |
 | `manifest.json` | die 72 Quelldateien, die die Extraktoren als Eingabe bekommen, mit SHA-256 |

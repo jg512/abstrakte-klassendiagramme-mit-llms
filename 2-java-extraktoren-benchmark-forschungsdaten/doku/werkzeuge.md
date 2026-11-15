@@ -73,13 +73,31 @@ es seit Java 9 nicht mehr als Standard-Classloader gibt. Mit dem eigenen Treiber
 `JuanmfRun.java`, der einen `URLClassLoader` übergibt, funktioniert das Werkzeug.
 
 genuml sollte nicht in die virtuelle Umgebung des Benchmarks installiert werden.
-Es braucht `click<8.2` und würde die in `werkzeuge/requirements.lock.txt` festgelegten
-Versionen ändern.
+Es braucht `click<8.2` und würde die in `werkzeuge/requirements.lock.txt`
+festgelegten Versionen ändern.
 
 ## Zusätzliche Bibliotheken für die Projekte
 
-Diese 41 Bibliotheken werden gebraucht, damit sich drei der neun Projekte
-kompilieren lassen (Android, JPA, Hibernate, Hipparchus, Spring, slf4j und deren
-Abhängigkeiten):
+Diese 41 Bibliotheken wurden dazugelegt, damit sich möglichst viele der neun
+Projekte kompilieren lassen (Android, JPA, Hibernate, Hipparchus, Spring, slf4j
+und deren Abhängigkeiten). Gelungen ist das trotzdem nur bei drei Projekten,
+die Gründe stehen in [`ergebnisse-zhang-hebig.md`](ergebnisse-zhang-hebig.md):
 
-`FastInfoset-1.2.15.jar`, `activation-1.1.1.jar`, `android-4.1.1.4.jar`, `antlr-2.7.7.jar`, `byte-buddy-1.12.18.jar`, `classmate-1.5.1.jar`, `commons-codec-1.3.jar`, `commons-logging-1.1.1.jar`, `hibernate-commons-annotations-5.1.2.Final.jar`, `hibernate-core-5.6.15.Final.jar`, `hipparchus-core-3.0.jar`, `hipparchus-filtering-3.0.jar`, `hipparchus-fitting-3.0.jar`, `hipparchus-geometry-3.0.jar`, `hipparchus-ode-3.0.jar`, `hipparchus-optim-3.0.jar`, `hipparchus-stat-3.0.jar`, `httpclient-4.0.1.jar`, `httpcore-4.0.1.jar`, `istack-commons-runtime-3.0.7.jar`, `jandex-2.4.2.Final.jar`, `javax.activation-api-1.2.0.jar`, `javax.persistence-api-2.2.jar`, `jaxb-api-2.3.1.jar`, `jaxb-runtime-2.3.1.jar`, `jboss-logging-3.4.3.Final.jar`, `jboss-transaction-api_1.2_spec-1.1.1.Final.jar`, `json-20080701.jar`, `opengl-api-gl1.1-android-2.1_r1.jar`, `slf4j-api-2.0.16.jar`, `spring-aop-5.3.39.jar`, `spring-beans-5.3.39.jar`, `spring-context-5.3.39.jar`, `spring-core-5.3.39.jar`, `spring-expression-5.3.39.jar`, `spring-jcl-5.3.39.jar`, `spring-tx-5.3.39.jar`, `stax-ex-1.8.jar`, `txw2-2.3.1.jar`, `xmlParserAPIs-2.6.2.jar`, `xpp3-1.1.4c.jar`
+`FastInfoset-1.2.15.jar`, `activation-1.1.1.jar`, `android-4.1.1.4.jar`,
+`antlr-2.7.7.jar`, `byte-buddy-1.12.18.jar`, `classmate-1.5.1.jar`,
+`commons-codec-1.3.jar`, `commons-logging-1.1.1.jar`,
+`hibernate-commons-annotations-5.1.2.Final.jar`,
+`hibernate-core-5.6.15.Final.jar`, `hipparchus-core-3.0.jar`,
+`hipparchus-filtering-3.0.jar`, `hipparchus-fitting-3.0.jar`,
+`hipparchus-geometry-3.0.jar`, `hipparchus-ode-3.0.jar`,
+`hipparchus-optim-3.0.jar`, `hipparchus-stat-3.0.jar`, `httpclient-4.0.1.jar`,
+`httpcore-4.0.1.jar`, `istack-commons-runtime-3.0.7.jar`,
+`jandex-2.4.2.Final.jar`, `javax.activation-api-1.2.0.jar`,
+`javax.persistence-api-2.2.jar`, `jaxb-api-2.3.1.jar`, `jaxb-runtime-2.3.1.jar`,
+`jboss-logging-3.4.3.Final.jar`,
+`jboss-transaction-api_1.2_spec-1.1.1.Final.jar`, `json-20080701.jar`,
+`opengl-api-gl1.1-android-2.1_r1.jar`, `slf4j-api-2.0.16.jar`,
+`spring-aop-5.3.39.jar`, `spring-beans-5.3.39.jar`, `spring-context-5.3.39.jar`,
+`spring-core-5.3.39.jar`, `spring-expression-5.3.39.jar`,
+`spring-jcl-5.3.39.jar`, `spring-tx-5.3.39.jar`, `stax-ex-1.8.jar`,
+`txw2-2.3.1.jar`, `xmlParserAPIs-2.6.2.jar`, `xpp3-1.1.4c.jar`

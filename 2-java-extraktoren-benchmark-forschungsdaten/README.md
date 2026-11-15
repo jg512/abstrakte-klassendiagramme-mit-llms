@@ -36,9 +36,16 @@ wie gut das LLM aus Ordner 1 abstrahiert.
   maschinenlesbarer Form. Mehr dazu in
   [`doku/recherche-datensätze.md`](doku/recherche-datensätze.md).
 - Auf den 30 Lindholmen-Projekten liegen der eigene Extraktor und javalang
-  gleichauf (Micro-F1 0,646), Java2PlantUML (mirajp1) erreicht 0,577. Alle drei
+  gleichauf (Micro-F1 0,646), java2plantuml (mirajp1) erreicht 0,577. Alle drei
   liefen auf allen 30 Projekten. Micro-F1 ist der F1-Wert über alle Linien
-  aller Projekte zusammen.
+  aller Projekte zusammen. Dass der eigene Extraktor und javalang genau
+  dieselben Werte haben, ist zu erwarten: javalang ist nur ein Parser, und der
+  Adapter, der daraus einen Klassengraphen macht, wurde in diesem Projekt
+  geschrieben und wertet dieselben Deklarationen aus. Der eigene Extraktor
+  unterscheidet sich dort, wo diese Projekte ihn nicht fordern: neueres Java,
+  alte Encodings, Fundstellen und der IntelliJ-Modus. Mit "Java2PlantUML" (groß
+  geschrieben) ist in diesem Ordner ein anderes Werkzeug gemeint, das von
+  juanmf stammt und Bytecode liest.
 - Auf den Zhang/Hebig-Projekten wurden sieben Extraktoren verglichen. Die drei
   Werkzeuge, die Quelltext lesen, laufen auf allen neun Projekten (eigener
   Extraktor und javalang F1 0,711, java2plantuml 0,656). Die Bytecode-Werkzeuge

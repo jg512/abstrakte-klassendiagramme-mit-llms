@@ -9,13 +9,13 @@ nicht weiß, was Klassen, Klassendiagramme oder LLMs sind, liest zuerst das
 [Haupt-README](../README.md). Dort sind alle Fachbegriffe unter
 [Begriffe](../README.md#begriffe) erklärt.
 
-Genauer: Die Pipeline liest ein Repository (Python oder Java) ein und lässt ein
-Sprachmodell daraus ein abstraktes Klassendiagramm im Textformat PlantUML
-erstellen. Das Diagramm soll nur die zentralen Klassen zeigen, also
-Fachklassen (die Dinge, um die es in der Software geht, etwa Kunde oder
-Bestellung), Klassen mit steuernder Rolle und wichtige Schnittstellen.
-Hilfsklassen, reine Datenbehälter, Code aus Frameworks (vorgefertigten
-Grundgerüsten, auf denen eine Software aufbaut) und Tests werden weggelassen.
+Im Einzelnen: Die Pipeline liest ein Repository (Python oder Java) ein und lässt
+ein Sprachmodell daraus ein abstraktes Klassendiagramm im Textformat PlantUML
+erstellen. Das Diagramm soll nur die zentralen Klassen zeigen, also Fachklassen
+(die Dinge, um die es in der Software geht, etwa Kunde oder Bestellung), Klassen
+mit steuernder Rolle und wichtige Schnittstellen. Hilfsklassen, reine
+Datenbehälter, Code aus Frameworks (vorgefertigten Grundgerüsten, auf denen eine
+Software aufbaut) und Tests werden weggelassen.
 
 Das Python-Paket heißt `abstract-uml`. Die Vorgeschichte des Projekts steht im
 [Haupt-README](../README.md#verlauf-des-projekts).
@@ -87,9 +87,10 @@ Einige Entscheidungen beim Bau des Parsers:
 
 - Der Parser liest nur Quelltext und keinen Bytecode. Projekte müssen also nicht
   kompilierbar sein. An diesem Punkt sind die Bytecode-Werkzeuge im Vergleich
-  gescheitert (siehe [Ordner 2](../2-java-extraktoren-benchmark-forschungsdaten/README.md)).
-- Das Encoding wird pro Datei bestimmt (UTF-8, dann CP1252, dann Latin-1). Ältere
-  Java-Projekte sind oft nicht in UTF-8 gespeichert.
+  gescheitert (siehe [Ordner
+  2](../2-java-extraktoren-benchmark-forschungsdaten/README.md)).
+- Das Encoding wird pro Datei bestimmt (UTF-8, dann CP1252, dann Latin-1).
+  Ältere Java-Projekte sind oft nicht in UTF-8 gespeichert.
 - Paketnamen werden relativ zum Repo angegeben, der gemeinsame Anfang wird
   entfernt (`de.firma.app.model` wird zu `model`).
 - Externe Oberklassen und Interfaces, also solche aus fremden Bibliotheken,
@@ -112,6 +113,10 @@ Warum ein eigener Parser geschrieben wurde, steht im
 und in Ordner 2.
 
 ### IntelliJ-Modus
+
+Kurz gesagt liest der Parser in diesem Modus auch den Code innerhalb der
+Methoden, und jede dort benutzte Klasse wird eine Abhängigkeit, auch über
+Umwege. Die Einzelheiten:
 
 Mit `--java-relations intellij` (in der Konfiguration `java.relation_style:
 intellij`) erzeugt der Parser das Klassendiagramm nach den Regeln der

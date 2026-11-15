@@ -11,17 +11,21 @@ erklärt das [Haupt-README](../../README.md#begriffe).
 Verglichen wurden sieben Werkzeuge, die aus Java-Code ein UML-Klassendiagramm
 erzeugen, auf den neun Projekten aus dem Replikationspaket von Zhang, Zhang,
 Strüber und Hebig (SoSyM 2025). Als Referenz dienen die von den Autoren von Hand
-abstrahierten Diagramme mit 79 Klassen und 79 Beziehungen (nach Normalisierung).
+abstrahierten Diagramme mit 79 Klassen und 79 Beziehungen (nach der
+Normalisierung, also nachdem die drei "hat"-Beziehungsarten zu einer
+zusammengefasst wurden).
 
 Gemessen wird die Übereinstimmung mit den gezeichneten Diagrammen. Ein niedriger
 Wert bedeutet nicht unbedingt, dass der Parser einen Fehler hat. Die
 Normalisierung, durch die aus den 82 von den Autoren gezählten Beziehungen 79
-werden, beschreibt [`daten/zhang-hebig/README.md`](../daten/zhang-hebig/README.md).
+werden, beschreibt
+[`daten/zhang-hebig/README.md`](../daten/zhang-hebig/README.md).
 
 javalang unterstützt nur Java bis Version 8. Die 72 ausgewerteten Dateien
 enthalten aber keine neueren Sprachmittel (Records, `sealed`, `var`,
-`switch`-Ausdrücke mit Pfeil, Textblöcke), auch nicht in Orekit und Artemis. Dass javalang auf allen neun
-Projekten lief, sagt also nichts darüber aus, ob es mit neuerem Java zurechtkommt.
+`switch`-Ausdrücke mit Pfeil, Textblöcke), auch nicht in Orekit und Artemis.
+Dass javalang auf allen neun Projekten lief, sagt also nichts darüber aus, ob es
+mit neuerem Java zurechtkommt.
 
 ## Gesamtergebnis
 

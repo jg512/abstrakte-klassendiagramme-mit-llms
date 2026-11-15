@@ -93,9 +93,9 @@ was nach den Ausschlüssen übrig bleibt. Das braucht man bei alten Projekten oh
 
 Geparst wird mit tree-sitter, einer verbreiteten Bibliothek zum Zerlegen von
 Code, und ihrer Grammatik (den Sprachregeln) für Java, `tree-sitter-java`.
-tree-sitter liefert auch bei Syntaxfehlern (Tippfehlern im Code) einen Baum, aus dem sich das Brauchbare noch
-herauslesen lässt. Dateien mit Fehlern werden als `partial-parse` gemeldet und
-trotzdem ausgewertet.
+tree-sitter liefert auch bei Syntaxfehlern (Tippfehlern im Code) einen Baum, aus
+dem sich das Brauchbare noch herauslesen lässt. Dateien mit Fehlern werden als
+`partial-parse` gemeldet und trotzdem ausgewertet.
 
 `read_source` liest jede Datei als Bytes und probiert die Encodings UTF-8,
 CP1252 und Latin-1 der Reihe nach. Das Encoding legt fest, wie Buchstaben wie
@@ -146,9 +146,10 @@ der Beziehung:
 Die Spalte "Kardinalität" sagt, wie viele Objekte am anderen Ende hängen können:
 `1` genau eins, `0..1` keins oder eins, `0..*` beliebig viele.
 
-Private Felder (nur innerhalb der Klasse sichtbar) zählen mit. In Java ergibt
-erst das private Feld zusammen mit der öffentlichen Methode, die es abfragt
-(dem Getter, etwa `getTitel()`), die Assoziation.
+Private Felder (nur innerhalb der Klasse sichtbar) zählen mit, denn in Java ist
+das die übliche Form einer Beziehung: Das Feld ist privat, nach außen gibt es
+nur eine Methode, die es abfragt (den Getter, etwa `getTitel()`). Ließe man
+private Felder weg, fehlten fast alle Beziehungen.
 
 `analyze_java` ruft das alles für die ausgewählten Dateien auf und räumt danach
 auf:
@@ -193,8 +194,9 @@ mehrmals gerechnet wird.
 passenden Import, also `javax.swing.JFrame` statt nur `JFrame`.
 
 Der Resolver ist kein Ersatz für einen Compiler. Er kennt keine JARs und keine
-lokalen Variablen (Variablen, die nur innerhalb einer Methode gelten). Für den IntelliJ-Modus, der auch Methodenrümpfe auswertet,
-gibt es deshalb eine eigene Typbestimmung (Abschnitt 5).
+lokalen Variablen (Variablen, die nur innerhalb einer Methode gelten). Für den
+IntelliJ-Modus, der auch Methodenrümpfe auswertet, gibt es deshalb eine eigene
+Typbestimmung (Abschnitt 5).
 
 ## 4. Der wörtliche Graph: `src/parsing/java/graph_builder.py`
 
@@ -306,9 +308,10 @@ Zwei Eingaben steuern das Ergebnis zusätzlich:
   wenn sie ausdrücklich importiert sind. Beide Fälle kommen in den Bildern von
   Zhang/Hebig vor.
 
-Externe Klassen bekommen im IntelliJ-Modus IDs der Form `external.<Kurzname>`.
-Bei Stern-Imports lässt sich der volle Name aus dem Quelltext allein nicht
-bestimmen. Die javac-Ergänzung wird in diesem Modus nicht eingemischt.
+Externe Klassen bekommen im IntelliJ-Modus nur IDs der Form
+`external.<Kurzname>`, weil sich bei Stern-Importen der volle Name aus dem
+Quelltext allein nicht bestimmen lässt. Die javac-Ergänzung wird in diesem Modus
+nicht eingemischt.
 
 Wie die Regeln aus den neun IntelliJ-Bildern abgeleitet und daran geprüft
 wurden, steht in Ordner 2 unter
@@ -363,17 +366,18 @@ Die Optionen stehen in `JavaConfig` (`src/config/models.py`), werden in
 
 `src/parsing/cache.py` speichert den fertigen `CodeGraph` zwischen (ein Cache),
 damit ein zweiter Lauf auf demselben Projekt nicht alles neu lesen muss. Der
-Schlüssel, an dem ein gespeichertes Ergebnis wiedererkannt wird, enthält Pfad, Größe und Änderungszeit jeder Datei, die Java-Optionen
-und eine Versionsnummer des Parsers. Ändert sich der Parser so, dass alte
-Ergebnisse nicht mehr stimmen, wird die Versionsnummer erhöht.
+Schlüssel, an dem ein gespeichertes Ergebnis wiedererkannt wird, enthält Pfad,
+Größe und Änderungszeit jeder Datei, die Java-Optionen und eine Versionsnummer
+des Parsers. Ändert sich der Parser so, dass alte Ergebnisse nicht mehr stimmen,
+wird die Versionsnummer erhöht.
 
 ## 9. Graph-Modell und Ausgabe
 
-`src/schema/graph.py` definiert die Bausteine des Graphen: `AbstractGraph`
-(der ganze Graph), `Node` (Knoten), `Edge` (Kante), `EdgeEvidence` (Fundstelle
-einer Kante) und `Diagnostic` (Meldung). `src/schema/validator.py` prüft Kantenarten und Stereotypen
-und behält bei doppelten Kanten die stärkere. `src/schema/plantuml.py` erzeugt
-daraus PlantUML:
+`src/schema/graph.py` definiert die Bausteine des Graphen: `AbstractGraph` (der
+ganze Graph), `Node` (Knoten), `Edge` (Kante), `EdgeEvidence` (Fundstelle einer
+Kante) und `Diagnostic` (Meldung). `src/schema/validator.py` prüft Kantenarten
+und Stereotypen und behält bei doppelten Kanten die stärkere.
+`src/schema/plantuml.py` erzeugt daraus PlantUML:
 
 | Kantenart | PlantUML |
 | :--- | :--- |

@@ -5,14 +5,14 @@
 Stand 20.09.2026, Erweiterungen am Extraktor vom 21.09.2026.
 
 Hier stehen die Ergebnisse des ersten Vergleichs: Drei Werkzeuge, die aus
-Java-Quelltext ein Klassendiagramm erzeugen, darunter der eigene Parser,
-wurden mit den Diagrammen verglichen, die zu 30 Projekten aus dem
-Lindholmen-Datensatz und zu den neun Projekten von Zhang/Hebig gehören. Die
-neun Projekte von Zhang/Hebig heißen hier "Suite" (eine feste Zusammenstellung
-von Testfällen). Außerdem beschreibt die Datei, welche Fehler im eigenen Parser
-dabei auffielen und behoben wurden. Precision, Recall und F1 erklärt das
-[Haupt-README](../../README.md#begriffe). "Fertig" heißt in den Tabellen, dass das Werkzeug ohne Absturz
-eine Ausgabe geliefert hat.
+Java-Quelltext ein Klassendiagramm erzeugen, darunter der eigene Parser, wurden
+mit den Diagrammen verglichen, die zu 30 Projekten aus dem Lindholmen-Datensatz
+und zu den neun Projekten von Zhang/Hebig gehören. Die neun Projekte von
+Zhang/Hebig heißen hier "Suite" (eine feste Zusammenstellung von Testfällen).
+Außerdem beschreibt die Datei, welche Fehler im eigenen Parser dabei auffielen
+und behoben wurden. Precision, Recall und F1 erklärt das
+[Haupt-README](../../README.md#begriffe). "Fertig" heißt in den Tabellen, dass
+das Werkzeug ohne Absturz eine Ausgabe geliefert hat.
 
 Für den Benchmark wurden 30 Projekte aus dem Lindholmen-Datensatz
 heruntergeladen, jeweils zusammen mit ihrem UML/XMI-Modell aus demselben
@@ -34,19 +34,22 @@ Engineering erzeugte Diagramme und eine Vergleichstabelle pro Projekt. In drei
 Diagrammen gibt es doppelte gerichtete Assoziationen zwischen denselben Klassen.
 Wenn man Assoziationen ungerichtet zählt, bleiben 79 Beziehungen.
 `daten/zhang-hebig/reference.json` ist eine von Hand erstellte Abschrift der
-Diagramme, die Originalbilder, PDFs und Tabellen liegen daneben.
+Diagramme, die Originalbilder, PDFs und Tabellen liegen daneben. Die
+Laufzeiten stammen aus diesem Lauf. Die spätere Messung mit sieben Werkzeugen
+in [`ergebnisse-zhang-hebig.md`](ergebnisse-zhang-hebig.md) ist ein eigener
+Lauf mit leicht anderen Zeiten.
 
 | Extraktor | fertig | Knoten-Recall | Kanten-Precision | Kanten-Recall | Micro-F1 | Zeit |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | eigener Extraktor (korrigiert) | 9/9 | 0,924 | 0,757 | 0,671 | 0,711 | 0,24 s |
 | javalang + Adapter | 9/9 | 0,924 | 0,757 | 0,671 | 0,711 | 0,79 s |
-| Java2PlantUML / JavaParser (mirajp1) | 9/9 | 0,924 | 0,827 | 0,544 | 0,656 | 6,83 s |
+| java2plantuml (mirajp1) | 9/9 | 0,924 | 0,827 | 0,544 | 0,656 | 6,83 s |
 
 Alle drei finden dieselben 73 von 79 Klassen. Die sechs fehlenden Klassen gibt
 es laut den Autoren so nicht im Code: fünf Klassen aus RaiseMeUp, die im Code
 fehlen oder anders umgesetzt sind, und die Klasse `Link` in myblog, die nur im
 Modell vorkommt. Bei den Beziehungen liegen der eigene Extraktor und javalang
-gleichauf. Java2PlantUML hat eine höhere Precision, findet aber weniger
+gleichauf. java2plantuml hat eine höhere Precision, findet aber weniger
 Beziehungen.
 
 Die spätere Messung mit allen sieben Werkzeugen steht in
@@ -63,12 +66,13 @@ Mittelwert der F1-Werte der einzelnen Projekte.
 | eigener Extraktor, vorher | 30/30 | 0,770 | 0,561 | 0,649 | 0,739 | 7,51 s |
 | eigener Extraktor, korrigiert | 30/30 | 0,739 | 0,574 | 0,646 | 0,736 | 8,56 s |
 | javalang + Adapter | 30/30 | 0,739 | 0,574 | 0,646 | 0,736 | 29,00 s |
-| Java2PlantUML / JavaParser | 30/30 | 0,756 | 0,466 | 0,577 | 0,684 | 59,68 s |
+| java2plantuml (mirajp1) | 30/30 | 0,756 | 0,466 | 0,577 | 0,684 | 59,68 s |
 
 Bewertet wurden 470 Klassen und 399 Beziehungen, die sich zwischen Modell und
 Quelltext zuordnen ließen. Insgesamt enthielten die Modelle 1.182 benannte
 Klassen und 829 Beziehungen. Nicht zugeordnete Namen, mehrdeutige Treffer und
-nicht unterstützte Referenzen sind in `daten/lindholmen/manifest.json` festgehalten.
+nicht unterstützte Referenzen sind in `daten/lindholmen/manifest.json`
+festgehalten.
 
 Alle Werkzeuge haben alle zugeordneten Klassen gefunden (Knoten-Recall 1,0). Da
 die Zuordnung selbst mit javalang vorbereitet wurde, sagt das aber wenig über
@@ -84,7 +88,7 @@ schlechter geworden, der Wert zeigt eher den Unterschied zwischen dem, was im
 Code steht, und dem, was im Diagramm dargestellt wurde.
 
 Die Laufzeiten sind einzelne Messungen auf einem Rechner und enthalten das
-Parsen und den Aufbau des Graphen, bei Java2PlantUML auch den Start der JVM und
+Parsen und den Aufbau des Graphen, bei java2plantuml auch den Start der JVM und
 das Umkodieren nach UTF-8. Download und Vorbereitung der Referenzen sind nicht
 enthalten.
 
@@ -94,10 +98,6 @@ Die folgenden Punkte sind eher technisch. Kurz gesagt wurden Fälle behoben, in
 denen der Parser einen Namen der falschen Klasse zugeordnet oder eine
 Beziehung übersehen hat.
 
-- Die Python-Umgebung (`.venv`) des Projekts war beschädigt und wurde neu
-  aufgesetzt.
-- Ein Eintrag `runs/` in `.gitignore` hatte auch das Quellpaket `src/runs/`
-  ausgeschlossen. Der Eintrag wurde auf `/runs/` geändert.
 - Die vollständigen Java-Namen sowie Paket- und Importinformationen bleiben
   erhalten. Explizite Imports werden nicht mehr fälschlich gleichnamigen
   Projektklassen zugeordnet.
@@ -114,6 +114,11 @@ Beziehung übersehen hat.
 - Der Parser-Cache (Zwischenspeicher für schon gelesene Projekte) hat eine
   Versionsnummer bekommen, damit keine veralteten Einträge geladen werden.
 
+Nebenbei wurden zwei Dinge an der Arbeitsumgebung repariert, die mit dem
+Extraktor selbst nichts zu tun haben: Die Python-Umgebung (`.venv`) war
+beschädigt und wurde neu aufgesetzt, und ein Eintrag `runs/` in `.gitignore`
+hatte auch das Quellpaket `src/runs/` ausgeschlossen (jetzt `/runs/`).
+
 Für diese Fälle und für zyklische Vererbung kamen 13 neue Tests dazu. Sieben der
 ersten acht Tests schlugen vor den Änderungen fehl. Der achte (geerbter Typ) lief
 durch Zufall auch mit der alten Version durch und wurde deshalb verschärft.
@@ -125,8 +130,9 @@ Die Pipeline wurde außerdem mit allen acht Varianten als Trockenlauf
 (`--dry-run --no-cleanup`) auf einem Java-Projekt ausgeführt und hat jeweils
 Diagramme und Zusammenfassungen geschrieben. Damit ist nur geprüft, dass die
 einzelnen Teile zusammenarbeiten, nicht die Qualität echter LLM-Diagramme. Der
-Platzhalter für das LLM fügt den prune-Graphen Dummy-Knoten hinzu, daher die
-Warnungen zur Knotengrenze.
+Platzhalter für das LLM erfindet bei den prune-Varianten zusätzliche Klassen,
+deshalb meldet die Pipeline dort, dass das Diagramm zu viele Klassen hat. Das
+ist erwartet und kein Fehler.
 
 ## Erweiterungen am Extraktor
 
@@ -146,14 +152,13 @@ Compiler-API des JDK und einen angegebenen Classpath ergänzt werden. Die
 Ergebnisse aus dem Quelltext haben dabei Vorrang. Standardmäßig läuft der
 Extraktor ohne Build.
 
-Damals lag in Ordner 1, heute in Ordner 3 unter
-[`benchmarks/java_literal/`](../../3-java-parser-klassendiagramme/benchmarks/java_literal/README.md),
-ein eigener Benchmark mit
-20 fest vorgegebenen Fällen in modernem Java (Records, Sealed-Typen,
-verschachtelte Typen, Imports, Generics, Selbstbeziehungen, Kardinalität,
-Komposition, JPA-Annotationen, Methodenabhängigkeiten). Der Extraktor besteht
-alle 20 Fälle. Von den Projekttests laufen 402 erfolgreich durch (1 Netztest
-abgewählt).
+Ein eigener Benchmark mit 20 fest vorgegebenen Fällen in modernem Java (Records,
+Sealed-Typen, verschachtelte Typen, Imports, Generics, Selbstbeziehungen,
+Kardinalität, Komposition, JPA-Annotationen, Methodenabhängigkeiten) lag damals
+in Ordner 1 und liegt heute in Ordner 3 unter
+[`benchmarks/java_literal/`](../../3-java-parser-klassendiagramme/benchmarks/java_literal/README.md).
+Der Extraktor besteht alle 20 Fälle. Von den Projekttests laufen 402 erfolgreich
+durch (1 Netztest abgewählt).
 
 Der erweiterte Extraktor wurde noch einmal auf denselben Eingaben gemessen. Die
 Werte auf den 30 Projekten sind gleich geblieben (Knoten-Recall 1,000,
@@ -189,11 +194,11 @@ ebenfalls (Knoten-F1 0,961, Kanten-F1 0,711). Die Ergebnisse liegen in
   Vererbung und Realisierung mit Richtung und Typ.
 - Der Vergleich mit javalang beruht auf einem eigenen Adapter mit einfacherer
   Typauflösung.
-- Zeitlimits: 120 Sekunden pro Adapter, 90 Sekunden für Java2PlantUML. Alle Läufe
+- Zeitlimits: 120 Sekunden pro Adapter, 90 Sekunden für java2plantuml. Alle Läufe
   wurden innerhalb dieser Zeit fertig.
-- Nicht gemessen wurden die Synthese durch ein LLM, die Bedeutung von
-  Annotationen, die Auflösung über Abhängigkeiten im Classpath und die
-  vollständige semantische Korrektheit.
+- Nicht gemessen wurde, wie gut ein LLM daraus abstrahiert, ob Annotationen
+  richtig gedeutet werden, ob mit vorhandenen Bibliotheken (über den Classpath)
+  mehr gefunden würde und ob jede gefundene Beziehung inhaltlich stimmt.
 
 Zur Kontrolle wurden alle 90 Läufe auf den Lindholmen-Projekten (30 Projekte mal
 3 Werkzeuge) und alle 27 Läufe auf der Zhang/Hebig-Suite (9 mal 3) wiederholt.
@@ -202,25 +207,28 @@ Status, Knoten- und Kantenwerte und Abweichungen waren identisch
 
 ## Dateien
 
-- [`doku/recherche-datensätze.md`](recherche-datensätze.md): Papers,
-  verworfene Alternativen, Regeln der Auswertung
-- `daten/lindholmen/manifest.json`: die 30 festgelegten Paare aus Projekt, Commit, Modell und
-  Quelltext
-- `daten/lindholmen/reference-graphs/`: normalisierte Referenzen in JSON und PlantUML, die
-  Originale liegen unter `daten/lindholmen/corpus/`
-- `ergebnisse/messungen/before/`, `ergebnisse/messungen/final/`, `ergebnisse/messungen/comparison.json`,
-  `ergebnisse/messungen/aggregate.json`: Rohdaten und Ergebnisse
-- `daten/zhang-hebig/` und `ergebnisse/messungen/curated-final/`: Zhang/Hebig-Paket, Abschrift,
-  Prüfsummen und Ergebnisse
-- `daten/lindholmen/discovery.json`, `daten/lindholmen/acquisition.json`, `daten/lindholmen/preparation-exclusions.json`: Auswahl
-  und Fehlschläge
+- [`doku/recherche-datensätze.md`](recherche-datensätze.md): Papers, verworfene
+  Alternativen, Regeln der Auswertung
+- `daten/lindholmen/manifest.json`: die 30 festgelegten Paare aus Projekt,
+  Commit, Modell und Quelltext
+- `daten/lindholmen/reference-graphs/`: normalisierte Referenzen in JSON und
+  PlantUML, die Originale liegen unter `daten/lindholmen/corpus/`
+- `ergebnisse/messungen/before/`, `ergebnisse/messungen/final/`,
+  `ergebnisse/messungen/comparison.json`, `ergebnisse/messungen/aggregate.json`:
+  Rohdaten und Ergebnisse
+- `daten/zhang-hebig/` und `ergebnisse/messungen/curated-final/`:
+  Zhang/Hebig-Paket, Abschrift, Prüfsummen und Ergebnisse
+- `daten/lindholmen/discovery.json`, `daten/lindholmen/acquisition.json`,
+  `daten/lindholmen/preparation-exclusions.json`: Auswahl und Fehlschläge
 - `ergebnisse/protokolle/`: Logs aller Läufe und Tests
-- `daten/lindholmen/syntax-audit.json`, `ergebnisse/pipeline-trockenlauf/`: Syntaxprüfung und Trockenlauf der Pipeline
-- `ergebnisse/messungen/enhanced/`, `ergebnisse/messungen/curated-enhanced/`: Läufe nach den Erweiterungen
+- `daten/lindholmen/syntax-audit.json`, `ergebnisse/pipeline-trockenlauf/`:
+  Syntaxprüfung und Trockenlauf der Pipeline
+- `ergebnisse/messungen/enhanced/`, `ergebnisse/messungen/curated-enhanced/`:
+  Läufe nach den Erweiterungen
 
 ## Übereinstimmung pro Projekt
 
-| Projekt | Java-Dateien | zugeordnete Knoten | Referenzkanten | F1 eigener vorher | F1 eigener korrigiert | F1 javalang | F1 Java2PlantUML |
+| Projekt | Java-Dateien | zugeordnete Knoten | Referenzkanten | F1 eigener vorher | F1 eigener korrigiert | F1 javalang | F1 java2plantuml |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | [qingyu1229/hhxxttxs](https://github.com/qingyu1229/hhxxttxs/tree/fc72e129a8142ff5b221e6902926b4bb3b5b3404) | 58 | 3 | 3 | 0,800 | 0,800 | 0,800 | 0,500 |
 | [greengie/PigRunGame](https://github.com/greengie/PigRunGame/tree/385315d553d498e3482f5ca3e4440c7078703f86) | 9 | 9 | 7 | 1,000 | 1,000 | 1,000 | 0,833 |

@@ -16,7 +16,8 @@ Wege:
   man muss sie nicht einzeln installieren. Das ist der einfachste Weg und unter
   Windows der einzige, auf dem auch Ordner 2 ohne weitere Einrichtung läuft.
 - Direkt installieren: sinnvoll, wenn man am Code arbeiten will. Ordner 1
-  und 3 laufen unter Linux und Windows. Die Messskripte in Ordner 2 setzen ihre
+  und 3 sind für Linux und Windows geschrieben, unter Windows aber nicht
+  ausprobiert (siehe unten). Die Messskripte in Ordner 2 setzen ihre
   Zeitlimits über POSIX-Signale, eine Funktion von Unix-Systemen, und laufen
   deshalb nur unter Linux, macOS oder in WSL (einem Linux innerhalb von
   Windows).
@@ -133,11 +134,12 @@ $env:DEEPSEEK_API_KEY = "..."
 docker compose run --rm app pipeline https://github.com/dbader/schedule --config configs/deepseek_exp.yaml --method all --target-nodes open
 ```
 
-Ohne `--config` nimmt die Pipeline Gemini und braucht dann `GEMINI_API_KEY`.
-Ein lokales Modell läuft kostenlos auf dem eigenen Rechner. Dafür muss Ollama
-auf dem Rechner selbst laufen, nicht im Container (`ollama pull qwen2.5:14b`).
+Ohne `--config` nimmt die Pipeline Gemini und braucht dann `GEMINI_API_KEY`. Ein
+lokales Modell läuft kostenlos auf dem eigenen Rechner. Dafür muss Ollama auf
+dem Rechner selbst laufen, nicht im Container (`ollama pull qwen2.5:14b`).
 Aufgerufen wird es mit `--config configs/ollama_docker.yaml`. Was die Optionen
-bedeuten, steht im [README von Ordner 1](1-llm-pipeline-abstrakte-klassendiagramme/README.md).
+bedeuten, steht im [README von Ordner
+1](1-llm-pipeline-abstrakte-klassendiagramme/README.md).
 
 ### Ordner 2: Messungen wiederholen
 
@@ -174,7 +176,8 @@ Die Ergebnisse stehen danach in `docker-daten/ergebnisse/messungen/<label>/`.
 Zum Vergleich dienen die Tabellen in
 [`ergebnisse-lindholmen.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/ergebnisse-lindholmen.md),
 [`ergebnisse-zhang-hebig.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/ergebnisse-zhang-hebig.md)
-und [`intellij-nachbildung.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/intellij-nachbildung.md).
+und
+[`intellij-nachbildung.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/intellij-nachbildung.md).
 
 Die Messung mit allen sieben Werkzeugen (`curated_tools_benchmark.py`) ist im
 Image nicht vorbereitet. Dafür braucht es Maven (ein Werkzeug zum Bauen von
@@ -270,7 +273,8 @@ uv pip install --python .venv/bin/python --no-deps -e ../1-llm-pipeline-abstrakt
 .venv/bin/python -m pytest -q skripte/test_benchmark.py skripte/test_curated_hebig.py
 ```
 
-Werkzeuge für den Vergleich mit drei Werkzeugen (PlantUML und java2plantuml):
+Für die Messung mit drei Extraktoren braucht man zusätzlich java2plantuml (das
+Werkzeug, das verglichen wird) und PlantUML (zum Zeichnen der Bilder):
 
 ```bash
 cp ~/werkzeuge/plantuml-1.2025.4.jar werkzeuge/
@@ -298,7 +302,8 @@ PYTHONPATH=../1-llm-pipeline-abstrakte-klassendiagramme .venv/bin/python skripte
 
 Mehr Einzelheiten, auch zur Messung mit sieben Werkzeugen, stehen in
 [`reproduzieren.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/reproduzieren.md)
-und [`werkzeuge.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/werkzeuge.md).
+und
+[`werkzeuge.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/werkzeuge.md).
 
 Die Projektauswahl selbst (`discover.py`, `acquire.py`, `benchmark.py --prepare`)
 sollte man nicht neu laufen lassen. Die Repos haben sich seit der Auswahl

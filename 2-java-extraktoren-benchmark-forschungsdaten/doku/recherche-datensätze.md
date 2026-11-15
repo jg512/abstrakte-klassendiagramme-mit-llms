@@ -6,7 +6,8 @@ Um zu prüfen, wie gut ein Werkzeug oder ein LLM Klassendiagramme erzeugt,
 braucht man Vergleichsmaterial: echte Softwareprojekte, zu denen Menschen ein
 Klassendiagramm gezeichnet haben. Diese Datei beschreibt, welche solchen
 Sammlungen (Datensätze) es gibt, welche gewählt wurden und warum, und nach
-welchen Regeln verglichen wird. Fachbegriffe erklärt das [Haupt-README](../../README.md#begriffe).
+welchen Regeln verglichen wird. Fachbegriffe erklärt das
+[Haupt-README](../../README.md#begriffe).
 
 Die Recherche fand am 20.09.2026 statt. Gesucht waren Java-Projekte, zu denen
 ein Klassendiagramm oder Klassengraph existiert. Ziel waren 20 bis 50 Projekte,
@@ -36,10 +37,10 @@ Die Auswahl lässt sich reproduzieren. Die Indexeinträge wurden nach Repo
 gruppiert, dabei wurden nur Repos mit höchstens zehn XML-Modellen berücksichtigt
 und jeweils das Modell mit dem kürzesten Pfad genommen. Die Liste wurde mit dem
 Seed 20260920 zufällig gemischt (der feste Startwert sorgt dafür, dass man
-dieselbe Mischung wieder erhält), und 1.200 Repos wurden geprüft. Übernommen wurden die
-ersten 220 Modelle mit 3 bis 200 Typen und mindestens einer Beziehung. Die
-Downloads waren auf 15 MB pro Archiv, 40 MB entpackt und 3 bis 1.500
-Java-Dateien begrenzt. Durch diese Grenzen sind kleinere Projekte in der
+dieselbe Mischung wieder erhält), und 1.200 Repos wurden geprüft. Übernommen
+wurden die ersten 220 Modelle mit 3 bis 200 Typen und mindestens einer
+Beziehung. Die Downloads waren auf 15 MB pro Archiv, 40 MB entpackt und 3 bis
+1.500 Java-Dateien begrenzt. Durch diese Grenzen sind kleinere Projekte in der
 Auswahl überrepräsentiert. Alle Fehlschläge und Ausschlüsse sind gespeichert.
 
 Für jedes Paar müssen mindestens drei Klassen eindeutig zwischen Modell und
@@ -54,7 +55,8 @@ nie ausgeführt.
 
 Wenli Zhang, Weixing Zhang, Daniel Strüber und Regina Hebig, *An empirical study
 of manual abstraction between class diagrams and code of open-source systems*,
-Software and Systems Modeling 24 (2025), https://doi.org/10.1007/s10270-025-01289-y
+Software and Systems Modeling 24 (2025),
+https://doi.org/10.1007/s10270-025-01289-y
 
 - Replikationspaket:
   https://osf.io/p4jdr/?view_only=34b153d3b7704f4a84befd661dc9c6a1
@@ -109,7 +111,9 @@ Abstraktion durch das LLM zu bewerten.
   werden protokolliert.
 - Die Graphen der Werkzeuge werden auf denselben Umfang wie die Referenz
   beschränkt. Der Knoten-Recall zeigt Fehler bei der Extraktion, die
-  Knoten-Precision ist in diesem eingeschränkten Umfang wenig aussagekräftig.
+  Knoten-Precision ist in diesem eingeschränkten Umfang wenig aussagekräftig,
+  weil die Ausgabe vorher auf die Klassen der Referenz beschränkt wird und
+  falsche Klassen so gar nicht vorkommen können.
   (Knoten sind die Klassen, Kanten die Linien zwischen ihnen.)
 - Fehlgeschlagene Läufe werden gemeldet, auch wenn das Werkzeug Erfolg gemeldet,
   aber keine brauchbare Ausgabe erzeugt hat. Sie gehen mit einer leeren Ausgabe

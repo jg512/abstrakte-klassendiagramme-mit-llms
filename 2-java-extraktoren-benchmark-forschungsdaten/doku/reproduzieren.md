@@ -8,13 +8,13 @@ Wie man den Rechner dafür vorbereitet, steht ausführlicher und auch für
 Windows und Docker in [`INSTALLATION.md`](../../INSTALLATION.md). Fachbegriffe
 erklärt das [Haupt-README](../../README.md#begriffe).
 
-Grundlage ist die festgelegte Projektliste in `daten/lindholmen/manifest.json`. Die Auswahl der
-Projekte sollte für eine Wiederholung nicht neu ausgeführt werden, weil sich
-Branches und Inhalte der Repos seitdem geändert haben können.
+Grundlage ist die festgelegte Projektliste in `daten/lindholmen/manifest.json`.
+Die Auswahl der Projekte sollte für eine Wiederholung nicht neu ausgeführt
+werden, weil sich Branches und Inhalte der Repos seitdem geändert haben können.
 
-Alle Befehle werden in diesem Ordner (`2-java-extraktoren-benchmark-forschungsdaten/`)
-ausgeführt. Die Pipeline mit dem eigenen Extraktor liegt in
-`../1-llm-pipeline-abstrakte-klassendiagramme`.
+Alle Befehle werden in diesem Ordner
+(`2-java-extraktoren-benchmark-forschungsdaten/`) ausgeführt. Die Pipeline mit
+dem eigenen Extraktor liegt in `../1-llm-pipeline-abstrakte-klassendiagramme`.
 
 ## Umgebung
 
@@ -30,7 +30,8 @@ uv pip install --python .venv/bin/python -r werkzeuge/requirements.lock.txt
 uv pip install --python .venv/bin/python --no-deps -e ../1-llm-pipeline-abstrakte-klassendiagramme
 ```
 
-java2plantuml (mirajp1) liegt bereits kompiliert unter `werkzeuge/`. So lässt es sich
+java2plantuml (mirajp1) liegt im vollständigen Projektordner bereits kompiliert
+unter `werkzeuge/`, im GitHub-Repository nicht. So lässt es sich
 neu bauen:
 
 ```bash
@@ -61,10 +62,10 @@ Die vier übrigen Werkzeuge für die Messung mit sieben Werkzeugen sind in
 Vor der Extraktion wird jede Java-Datei anhand ihrer SHA-256-Prüfsumme geprüft.
 `restore.py` prüft auch die Modelle und beim Nachladen die Prüfsumme des
 Archivs. Die Ergebnisse (Rohausgaben, JSON pro Projekt, CSV und Gesamtergebnis)
-werden in `ergebnisse/messungen/rerun/` gespeichert. Jeder Adapter hat ein Zeitlimit von 120
-Sekunden, der Java-Prozess von 90 Sekunden. Das Skript setzt diese Zeitlimits
-über POSIX-Signale, eine Funktion von Unix-Systemen, und läuft daher nur unter
-Linux, macOS oder WSL (Linux unter Windows).
+werden in `ergebnisse/messungen/rerun/` gespeichert. Jeder Adapter hat ein
+Zeitlimit von 120 Sekunden, der Java-Prozess von 90 Sekunden. Das Skript setzt
+diese Zeitlimits über POSIX-Signale, eine Funktion von Unix-Systemen, und läuft
+daher nur unter Linux, macOS oder WSL (Linux unter Windows).
 
 ## Zhang/Hebig (9 Projekte)
 
@@ -96,13 +97,15 @@ PYTHONPATH=../1-llm-pipeline-abstrakte-klassendiagramme \
 ```
 
 Dabei wird jedes Projekt einmal mit `javac` kompiliert, alle sieben Werkzeuge
-werden gemessen, die Ergebnisse landen in `ergebnisse/messungen/curated-alltools/`, und jede
-Ausgabe wird als PlantUML und PNG nach `ergebnisse/diagramme/` geschrieben.
+werden gemessen, die Ergebnisse landen in
+`ergebnisse/messungen/curated-alltools/`, und jede Ausgabe wird als PlantUML und
+PNG nach `ergebnisse/diagramme/` geschrieben.
 
 ## Auswahl der Projekte
 
-`daten/lindholmen/Project_FileTypes_V2.0.csv` und `daten/lindholmen/UMLFiles_List_V2.0.csv` sind die
-Lindholmen-Indizes vom Spiegelserver der Uni Rostock (Link in
+`daten/lindholmen/Project_FileTypes_V2.0.csv` und
+`daten/lindholmen/UMLFiles_List_V2.0.csv` sind die Lindholmen-Indizes vom
+Spiegelserver der Uni Rostock (Link in
 [`recherche-datensätze.md`](recherche-datensätze.md)).
 
 ```bash
@@ -112,21 +115,23 @@ Lindholmen-Indizes vom Spiegelserver der Uni Rostock (Link in
 ```
 
 Diese Befehle wiederholen die Auswahl mit dem heutigen Stand der Repos.
-`daten/lindholmen/eligible-manifest.json` enthält alle geeigneten Paare, davon wurden die ersten
-30 in `daten/lindholmen/manifest.json` übernommen, bevor ein Extraktor gemessen wurde. Die
-ursprüngliche Auswahl ist in `daten/lindholmen/discovery.json`, `daten/lindholmen/acquisition.json`,
-`daten/lindholmen/preparation-exclusions.json` und den Logs in `ergebnisse/protokolle/` dokumentiert.
+`daten/lindholmen/eligible-manifest.json` enthält alle geeigneten Paare, davon
+wurden die ersten 30 in `daten/lindholmen/manifest.json` übernommen, bevor ein
+Extraktor gemessen wurde. Die ursprüngliche Auswahl ist in
+`daten/lindholmen/discovery.json`, `daten/lindholmen/acquisition.json`,
+`daten/lindholmen/preparation-exclusions.json` und den Logs in
+`ergebnisse/protokolle/` dokumentiert.
 
 ## Vorher und nachher
 
-`ergebnisse/messungen/before/` wurde vor den Korrekturen am Extraktor aufgenommen,
-`ergebnisse/messungen/final/` danach. Die anderen Werkzeuge blieben unverändert. `report.py`
-fasst die gespeicherten Ergebnisse zusammen (`.venv/bin/python skripte/report.py`) und
-schreibt dabei eine kurze englische `REPORT.md` nach `ergebnisse/messungen/`. Die
-ausführliche Auswertung steht in
+`ergebnisse/messungen/before/` wurde vor den Korrekturen am Extraktor
+aufgenommen, `ergebnisse/messungen/final/` danach. Die anderen Werkzeuge blieben
+unverändert. `report.py` fasst die gespeicherten Ergebnisse zusammen
+(`.venv/bin/python skripte/report.py`) und schreibt dabei eine kurze englische
+`REPORT.md` nach `ergebnisse/messungen/`. Die ausführliche Auswertung steht in
 [`ergebnisse-lindholmen.md`](ergebnisse-lindholmen.md).
-`ergebnisse/messungen/verification/` enthält einen späteren vollständigen Wiederholungslauf
-mit allen drei Werkzeugen.
+`ergebnisse/messungen/verification/` enthält einen späteren vollständigen
+Wiederholungslauf mit allen drei Werkzeugen.
 
 ## Pipeline prüfen
 
@@ -148,8 +153,9 @@ Aufruf im README dort).
 Der Trockenlauf verwendet statt eines LLM einen Platzhalter mit festen
 Antworten. Er zeigt, dass Parser, Driver und Ausgabe bei allen acht Varianten
 zusammenarbeiten, sagt aber nichts über die Qualität echter Diagramme aus. Die
-prune-Graphen des Platzhalters können über der Knotengrenze liegen und Warnungen
-auslösen.
+Platzhalter erfindet bei den prune-Varianten zusätzliche Klassen, deshalb
+meldet die Pipeline dort, dass das Diagramm zu viele Klassen hat. Das ist
+erwartet.
 
 Nur den aktuellen eigenen Extraktor auf denselben Eingaben messen:
 

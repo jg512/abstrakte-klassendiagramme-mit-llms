@@ -7,7 +7,7 @@ Stand 23.10.2026.
 IntelliJ IDEA ist eine weit verbreitete Programmierumgebung, die aus Java-Code
 automatisch Klassendiagramme zeichnen kann. Diese Datei beschreibt, nach welchen
 Regeln IntelliJ dabei vorgeht, wie der eigene Parser das nachbildet und wie gut
-das gelingt: Bei sieben von neun Projekten ist das Ergebnis Linie für Linie
+das gelingt: Bei sieben von neun Projekten ist das Ergebnis vollständig
 gleich. Fachbegriffe erklärt das [Haupt-README](../../README.md#begriffe).
 
 Kommerzielle UML-Werkzeuge zeigen Verbindungen, die der eigene Extraktor bisher
@@ -65,7 +65,8 @@ Dazu kommen drei Ausnahmen:
   stehen beide Linien.
 
 Welche Klassen im Diagramm stehen, haben die Autoren in IntelliJ ausgewählt.
-Diese Auswahl ist eine Eingabe und steht pro Projekt in `daten/intellij/projekte.json`.
+Diese Auswahl ist eine Eingabe und steht pro Projekt in
+`daten/intellij/projekte.json`.
 
 ## Umgebung pro Projekt
 
@@ -90,7 +91,7 @@ Anfang des Quellcodes ansieht. Zwei Fälle kommen vor:
 | ZooTypers | ja | ja |
 | RaiseMeUp | ja | ja |
 | EAPLI_PL_2NB | nein | ja |
-| FreeDaysIntern | ja | nein |
+| FreeDaysIntern | ja (nicht bestimmbar, siehe unten) | nein |
 | NeurophChanges | ja | ja |
 | PatrickFromTheMOOC | nein | ja |
 | myblog | ja | ja |
@@ -102,10 +103,16 @@ ohnehin nichts aufgelöst wurde.
 
 ## Abgleich
 
-Das Skript `intellij_abgleich.py` baut für jedes Projekt das Diagramm und vergleicht es mit
-den Kanten, die aus dem IntelliJ-Bild abgelesen wurden (`daten/intellij/referenz/`).
-Die Ergebnisse stehen in `ergebnisse/messungen/intellij/`, die Diagramme als PlantUML und PNG
-neben dem IntelliJ-Bild in `ergebnisse/diagramme-intellij/<Projekt>/`.
+Das Skript `intellij_abgleich.py` baut für jedes Projekt das Diagramm und
+vergleicht es mit den Kanten, die aus dem IntelliJ-Bild abgelesen wurden
+(`daten/intellij/referenz/`). Die Ergebnisse stehen in
+`ergebnisse/messungen/intellij/`, die Diagramme als PlantUML und PNG neben dem
+IntelliJ-Bild in `ergebnisse/diagramme-intellij/<Projekt>/`.
+
+Wichtig zum Lesen der Tabelle: Die Abschriften wurden nach der Prüfung im Bild
+aus der Ausgabe des Extraktors übernommen. Die Übereinstimmung ist also das
+Ergebnis der Sichtprüfung, die darunter beschrieben ist. Bei späteren
+Änderungen am Extraktor zeigt der Abgleich, ob sich etwas verschiebt.
 
 | Projekt | Kanten | Abschrift aus dem Bild | Übereinstimmung |
 | --- | ---: | --- | --- |
@@ -116,8 +123,8 @@ neben dem IntelliJ-Bild in `ergebnisse/diagramme-intellij/<Projekt>/`.
 | PatrickFromTheMOOC | 18 | vollständig | 18 von 18, keine zusätzlich |
 | myblog | 12 | vollständig | 12 von 12, keine zusätzlich |
 | Artemis | 19 | vollständig | 19 von 19, keine zusätzlich |
-| Orekit | 35 | teilweise (28 Kanten) | 28 von 28 |
-| NeurophChanges | 103 | teilweise (16 Kanten) | 16 von 16 |
+| Orekit | 35 | teilweise (28 Kanten) | alle 28 geprüften stimmen, 7 ungeprüft |
+| NeurophChanges | 103 | teilweise (16 Kanten) | alle 16 geprüften stimmen, 87 ungeprüft |
 
 Wie die Abschriften entstanden sind:
 
@@ -132,18 +139,15 @@ Wie die Abschriften entstanden sind:
 - Bei Neuroph sind die Feldbeziehungen mit lesbarem Rollennamen und zwei
   `«create»` geprüft. Das Bild hat rund 100 Linien, die sich stark überlagern.
 
-Die Abschriften wurden nach der Prüfung im Bild aus der Ausgabe des Extraktors
-übernommen. Sie halten den geprüften Stand fest und zeigen bei späteren
-Änderungen am Extraktor, ob sich etwas verschiebt.
 
 ## Offene Punkte
 
 - Neuroph ist nur zu einem kleinen Teil gegen das Bild geprüft.
 - In Orekit laufen im Bild mehrere gestrichelte Linien übereinander zu
-  `AbstractPropagator`. Der Extraktor sagt vier Abhängigkeiten von inneren Klassen
-  dorthin voraus, die sich im Bild nicht einzeln trennen lassen. Außerdem sagt er eine
-  Schleife an `AbstractPropagator` voraus, die im Bild nicht zu sehen ist. Sie
-  kann in den überlagerten Linien verborgen sein.
+  `AbstractPropagator`. Der Extraktor sagt vier Abhängigkeiten von inneren
+  Klassen dorthin voraus, die sich im Bild nicht einzeln trennen lassen.
+  Außerdem sagt er eine Schleife an `AbstractPropagator` voraus, die im Bild
+  nicht zu sehen ist. Sie kann in den überlagerten Linien verborgen sein.
 - Die beiden Umgebungsschalter sind aus den Bildern erschlossen. Dass IntelliJ
   bei Artemis ein falsches Source-Root hatte, ist eine Erklärung, die zu allen
   fehlenden Linien passt, aber nicht direkt belegt.
