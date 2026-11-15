@@ -1,4 +1,12 @@
+**Deutsch** · [English](reproduzieren.en.md)
+
 # Messungen wiederholen
+
+Diese Datei listet die Befehle, mit denen man die Messungen aus Ordner 2 auf
+dem eigenen Rechner wiederholen kann. Die Befehle tippt man in ein Terminal.
+Wie man den Rechner dafür vorbereitet, steht ausführlicher und auch für
+Windows und Docker in [`INSTALLATION.md`](../../INSTALLATION.md). Fachbegriffe
+erklärt das [Haupt-README](../../README.md#begriffe).
 
 Grundlage ist die festgelegte Projektliste in `daten/lindholmen/manifest.json`. Die Auswahl der
 Projekte sollte für eine Wiederholung nicht neu ausgeführt werden, weil sich
@@ -10,8 +18,11 @@ ausgeführt. Die Pipeline mit dem eigenen Extraktor liegt in
 
 ## Umgebung
 
-Benötigt werden Python 3.13, ein JDK, `git`, `curl` und `uv`. Die Versionen der
+Benötigt werden Python 3.13, ein JDK, `git` (lädt Repos herunter), `curl` (lädt
+Dateien herunter) und `uv` (richtet Python-Umgebungen ein). Die Versionen der
 Messumgebung und die Prüfsummen der Werkzeuge stehen in `werkzeuge/TOOLS.json`.
+Eine Prüfsumme (hier SHA-256) ist eine Art Fingerabdruck einer Datei. Stimmt
+sie, ist die Datei unverändert.
 
 ```bash
 uv venv .venv --python 3.13
@@ -37,7 +48,7 @@ veraltete Gradle-Wrapper wird nicht benötigt. Die Build-Skripte der untersuchte
 Projekte sollten nicht ausgeführt werden.
 
 Die vier übrigen Werkzeuge für die Messung mit sieben Werkzeugen sind in
-`werkzeuge.md` beschrieben.
+[`werkzeuge.md`](werkzeuge.md) beschrieben.
 
 ## Lindholmen (30 Projekte)
 
@@ -51,8 +62,9 @@ Vor der Extraktion wird jede Java-Datei anhand ihrer SHA-256-Prüfsumme geprüft
 `restore.py` prüft auch die Modelle und beim Nachladen die Prüfsumme des
 Archivs. Die Ergebnisse (Rohausgaben, JSON pro Projekt, CSV und Gesamtergebnis)
 werden in `ergebnisse/messungen/rerun/` gespeichert. Jeder Adapter hat ein Zeitlimit von 120
-Sekunden, der Java-Prozess von 90 Sekunden. Das Skript nutzt POSIX-Signale und
-läuft daher nur unter Linux bzw. macOS.
+Sekunden, der Java-Prozess von 90 Sekunden. Das Skript setzt diese Zeitlimits
+über POSIX-Signale, eine Funktion von Unix-Systemen, und läuft daher nur unter
+Linux, macOS oder WSL (Linux unter Windows).
 
 ## Zhang/Hebig (9 Projekte)
 
@@ -91,7 +103,7 @@ Ausgabe wird als PlantUML und PNG nach `ergebnisse/diagramme/` geschrieben.
 
 `daten/lindholmen/Project_FileTypes_V2.0.csv` und `daten/lindholmen/UMLFiles_List_V2.0.csv` sind die
 Lindholmen-Indizes vom Spiegelserver der Uni Rostock (Link in
-`recherche-datensätze.md`).
+[`recherche-datensätze.md`](recherche-datensätze.md)).
 
 ```bash
 .venv/bin/python skripte/discover.py --limit 1200
@@ -111,7 +123,8 @@ ursprüngliche Auswahl ist in `daten/lindholmen/discovery.json`, `daten/lindholm
 `ergebnisse/messungen/final/` danach. Die anderen Werkzeuge blieben unverändert. `report.py`
 fasst die gespeicherten Ergebnisse zusammen (`.venv/bin/python skripte/report.py`) und
 schreibt dabei eine kurze englische `REPORT.md` nach `ergebnisse/messungen/`. Die
-ausführliche Auswertung steht in `doku/ergebnisse-lindholmen.md`.
+ausführliche Auswertung steht in
+[`ergebnisse-lindholmen.md`](ergebnisse-lindholmen.md).
 `ergebnisse/messungen/verification/` enthält einen späteren vollständigen Wiederholungslauf
 mit allen drei Werkzeugen.
 
@@ -129,8 +142,8 @@ cd ../1-llm-pipeline-abstrakte-klassendiagramme
 ```
 
 Der Benchmark mit 20 kleinen Java-Fällen liegt in Ordner 3
-(`../3-java-parser-klassendiagramme/benchmarks/java_literal/`, Aufruf in der README
-dort).
+([`benchmarks/java_literal/`](../../3-java-parser-klassendiagramme/benchmarks/java_literal/README.md),
+Aufruf im README dort).
 
 Der Trockenlauf verwendet statt eines LLM einen Platzhalter mit festen
 Antworten. Er zeigt, dass Parser, Driver und Ausgabe bei allen acht Varianten

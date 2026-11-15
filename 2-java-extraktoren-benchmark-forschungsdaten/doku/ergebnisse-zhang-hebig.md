@@ -1,4 +1,12 @@
+**Deutsch** · [English](ergebnisse-zhang-hebig.en.md)
+
 # Ergebnisse: sieben Extraktoren auf der Zhang/Hebig-Suite
+
+Kurz: Werkzeuge, die den Quelltext lesen, laufen auf allen neun Projekten und
+erreichen die besten Werte. Werkzeuge, die Bytecode lesen, brauchen ein
+Projekt, das sich vollständig übersetzen (kompilieren) lässt. Das klappte nur
+bei drei von neun Projekten, deshalb fallen sie weit zurück. Fachbegriffe
+erklärt das [Haupt-README](../../README.md#begriffe).
 
 Verglichen wurden sieben Werkzeuge, die aus Java-Code ein UML-Klassendiagramm
 erzeugen, auf den neun Projekten aus dem Replikationspaket von Zhang, Zhang,
@@ -6,11 +14,13 @@ Strüber und Hebig (SoSyM 2025). Als Referenz dienen die von den Autoren von Han
 abstrahierten Diagramme mit 79 Klassen und 79 Beziehungen (nach Normalisierung).
 
 Gemessen wird die Übereinstimmung mit den gezeichneten Diagrammen. Ein niedriger
-Wert bedeutet nicht unbedingt, dass der Parser einen Fehler hat.
+Wert bedeutet nicht unbedingt, dass der Parser einen Fehler hat. Die
+Normalisierung, durch die aus den 82 von den Autoren gezählten Beziehungen 79
+werden, beschreibt [`daten/zhang-hebig/README.md`](../daten/zhang-hebig/README.md).
 
-javalang unterstützt nur Java 8. Die 72 ausgewerteten Dateien enthalten aber
-keine Records, kein `sealed`, kein `var`, keine `switch`-Ausdrücke mit Pfeil und
-keine Textblöcke, auch nicht in Orekit und Artemis. Dass javalang auf allen neun
+javalang unterstützt nur Java bis Version 8. Die 72 ausgewerteten Dateien
+enthalten aber keine neueren Sprachmittel (Records, `sealed`, `var`,
+`switch`-Ausdrücke mit Pfeil, Textblöcke), auch nicht in Orekit und Artemis. Dass javalang auf allen neun
 Projekten lief, sagt also nichts darüber aus, ob es mit neuerem Java zurechtkommt.
 
 ## Gesamtergebnis
@@ -63,7 +73,7 @@ Im Vergleich zu allen neun Projekten:
 Diese Werkzeuge brauchen kompilierten Code, das Replikationspaket enthält aber
 nur Quelltext. Jedes Projekt wurde deshalb einmal mit `javac` kompiliert, mit
 allen JARs aus dem Projekt und 41 zusätzlichen Bibliotheken aus
-`werkzeuge/extra/jars/` (siehe `werkzeuge.md`).
+`werkzeuge/extra/jars/` (siehe [`werkzeuge.md`](werkzeuge.md)).
 
 | Projekt | javac | Quelldateien | class-Dateien | Grund für den Fehler |
 | --- | --- | ---: | ---: | --- |
@@ -84,8 +94,9 @@ Bytecode nicht vergleichbar wäre.
 
 Nur 3 von 9 Projekten lassen sich kompilieren. Auch dann laufen nicht alle
 Werkzeuge: Bei NeurophChanges scheitern beide PlantUML-Generatoren beim Laden der
-Klassen (`NoClassDefFoundError` bei `AbstractMapEntry` bzw. bei einer
-Hibernate-Klasse, die im Projekt fehlt).
+Klassen (`NoClassDefFoundError`, also "Klasse nicht gefunden", bei
+`AbstractMapEntry` bzw. bei einer Klasse der Datenbankbibliothek Hibernate, die
+im Projekt fehlt).
 
 ## Gefundene Beziehungen pro Projekt
 

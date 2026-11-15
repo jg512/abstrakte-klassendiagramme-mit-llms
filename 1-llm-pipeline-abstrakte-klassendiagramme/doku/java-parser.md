@@ -1,12 +1,49 @@
+**Deutsch** · [English](java-parser.en.md)
+
 # Der Java-Parser
 
 Stand 23.10.2026.
 
-Diese Datei beschreibt, wie der eigene Java-Parser aus einem Repository einen
-Klassengraphen macht, welche Datei welchen Schritt übernimmt und wo die Grenzen
-liegen. Der Parser liest nur Quelltext. Das Projekt muss also weder gebaut noch
+Ein Parser ist ein Programm, das Code einliest und seinen Aufbau erkennt. Der
+Java-Parser dieses Projekts liest alle Java-Dateien eines Softwareprojekts und
+schreibt auf, welche Klassen es gibt, was sie enthalten und wie sie
+zusammenhängen. Das Ergebnis ist der vollständige Klassengraph, aus dem später
+das LLM die wichtigen Teile auswählt. Grundbegriffe wie Klasse, Feld, Methode,
+Vererbung oder Kompilieren erklärt das [Haupt-README](../../README.md#begriffe).
+
+Diese Datei beschreibt, wie der Parser aus einem Repository einen Klassengraphen
+macht, welche Programmdatei welchen Schritt übernimmt und wo die Grenzen
+liegen. Sie richtet sich an alle, die den Parser verstehen, prüfen oder ändern
+wollen. Wer lieber an einem konkreten Fall liest, springt zum
+[Beispiel mit zwei Klassen](#beispiel-zwei-klassen-durch-alle-stufen) und kommt
+bei Bedarf zurück.
+
+Der Parser liest nur Quelltext. Das Projekt muss also weder gebaut noch
 kompiliert werden. An diesem Punkt sind die Bytecode-Werkzeuge im Vergleich in
-Ordner 2 gescheitert, weil sich von neun Projekten nur drei kompilieren ließen.
+[Ordner 2](../../2-java-extraktoren-benchmark-forschungsdaten/README.md)
+gescheitert, weil sich von neun Projekten nur drei kompilieren ließen.
+
+## Begriffe aus Java, die hier vorkommen
+
+| Begriff | Bedeutung, mit Beispiel |
+| :--- | :--- |
+| Typ | Oberbegriff für Klassen, Interfaces, Enums, Records und Annotationstypen. Auch `String` (Text) oder `int` (ganze Zahl) sind Typen. |
+| Interface | Beschreibt, was eine Klasse können muss. `Comparable` heißt zum Beispiel "lässt sich mit anderen vergleichen". |
+| Enum | Typ mit einer festen Liste von Werten, etwa `Wochentag` mit `MONTAG` bis `SONNTAG`. |
+| Record | Kurze Schreibweise für eine Klasse, die nur Daten hält (seit Java 16). |
+| Annotation | Zusatzangabe mit `@`, etwa `@OneToMany` ("eins zu vielen") für Datenbanken. |
+| Paket, `package` | Ordner für zusammengehörige Klassen. Der volle Name einer Klasse enthält das Paket: `de.uni.bib.model.Buch`. Das nennt man voll qualifizierter Name. |
+| Import, Stern-Import | Mit `import de.uni.bib.model.Buch;` darf man in einer Datei kurz `Buch` schreiben. `import de.uni.bib.model.*;` (Stern-Import) holt alle Klassen eines Pakets, ohne sie zu nennen. |
+| Obertyp | Klasse, von der geerbt wird (`extends`), oder Interface, das erfüllt wird (`implements`). |
+| verschachtelter Typ, innere Klasse | Klasse, die innerhalb einer anderen Klasse geschrieben steht, etwa `Bestellung.Position`. |
+| Generics, Typparameter | Platzhalter für einen Typ. `List<Buch>` ist eine Liste von Büchern. In `class Box<T>` ist `T` ein Platzhalter, keine echte Klasse. |
+| Collection | Behälter für viele Objekte, etwa `List` (Liste), `Set` (Menge) oder `Map` (Zuordnung von Schlüssel zu Wert). |
+| Methodenrumpf, Signatur | Die Signatur ist die Kopfzeile einer Methode mit Name, Parametern und Rückgabetyp. Der Rumpf ist der Code dazwischen in geschweiften Klammern. |
+| Konstruktor, `new` | `new Buch("Faust")` erzeugt ein neues Objekt der Klasse `Buch`. Der Konstruktor ist der Code, der dabei läuft. |
+| Syntaxbaum | Die zerlegte Struktur einer Datei als Baum: Die Datei enthält Klassen, die Klassen enthalten Felder und Methoden und so weiter. |
+| Maven, Gradle | Zwei verbreitete Werkzeuge, mit denen Java-Projekte gebaut werden. Sie legen auch fest, in welchen Ordnern der Code liegt (üblich: `src/main/java`). |
+| Classpath | Liste der Orte, an denen Java nach Bibliotheken sucht. |
+| JAR | Eine gepackte Datei mit fertig übersetztem Java-Code, meist eine Bibliothek. |
 
 ## Überblick
 
@@ -25,11 +62,13 @@ Repo
   -> src/runs/output_writer.py   javagraph.json, javagraph.puml, Diagnosen
 ```
 
+Jede Zeile ist ein Schritt, rechts steht die Programmdatei, die ihn ausführt.
 Zusammengesetzt werden die Schritte in `src/parsing/code_graph.py`. Das Ergebnis
 ist ein `CodeGraph`, mit dem danach die LLM-Varianten arbeiten.
 
-Wer lieber an einem konkreten Fall liest: Weiter unten läuft ein kleines
-Programm mit zwei Klassen durch alle Stufen.
+Namen wie `collect_source_files` oder `ClassInfo` in den folgenden Abschnitten
+sind die Namen der Funktionen und Datenstrukturen im Code. Man muss sie nicht
+kennen, um den Ablauf zu verstehen, sie helfen aber beim Nachlesen im Code.
 
 ## 1. Dateien auswählen: `src/io/filters.py`
 
@@ -52,13 +91,15 @@ was nach den Ausschlüssen übrig bleibt. Das braucht man bei alten Projekten oh
 
 ## 2. Syntaxbaum lesen: `src/parsing/java/ts_pass.py`
 
-Geparst wird mit tree-sitter und der Grammatik `tree-sitter-java`. tree-sitter
-liefert auch bei Syntaxfehlern einen Baum, aus dem sich das Brauchbare noch
+Geparst wird mit tree-sitter, einer verbreiteten Bibliothek zum Zerlegen von
+Code, und ihrer Grammatik (den Sprachregeln) für Java, `tree-sitter-java`.
+tree-sitter liefert auch bei Syntaxfehlern (Tippfehlern im Code) einen Baum, aus dem sich das Brauchbare noch
 herauslesen lässt. Dateien mit Fehlern werden als `partial-parse` gemeldet und
 trotzdem ausgewertet.
 
 `read_source` liest jede Datei als Bytes und probiert die Encodings UTF-8,
-CP1252 und Latin-1 der Reihe nach. Alter Java-Code ist oft nicht in UTF-8
+CP1252 und Latin-1 der Reihe nach. Das Encoding legt fest, wie Buchstaben wie
+"ä" als Bytes gespeichert sind. Alter Java-Code ist oft nicht in UTF-8
 gespeichert. Werkzeuge, die stur UTF-8 annehmen, verlieren solche Dateien meist,
 ohne etwas zu sagen.
 
@@ -102,8 +143,12 @@ der Beziehung:
 | `@OneToOne`, `@ManyToOne` | Assoziation | `0..1` |
 | `@Embedded`, `@ElementCollection` | Komposition | `1` bzw. `0..*` |
 
-Private Felder zählen mit. In Java ergibt erst das private Feld zusammen mit dem
-öffentlichen Getter die Assoziation.
+Die Spalte "Kardinalität" sagt, wie viele Objekte am anderen Ende hängen können:
+`1` genau eins, `0..1` keins oder eins, `0..*` beliebig viele.
+
+Private Felder (nur innerhalb der Klasse sichtbar) zählen mit. In Java ergibt
+erst das private Feld zusammen mit der öffentlichen Methode, die es abfragt
+(dem Getter, etwa `getTitel()`), die Assoziation.
 
 `analyze_java` ruft das alles für die ausgewählten Dateien auf und räumt danach
 auf:
@@ -141,18 +186,21 @@ Reihenfolge, die ungefähr der Regel des Compilers folgt:
 Gibt es mehrere Kandidaten, wird zuerst im eigenen Build-Modul gesucht. Bleibt
 es mehrdeutig, wird die Beziehung weggelassen und als `ambiguous-type` gemeldet.
 Ein falscher Pfeil wäre schlimmer als ein fehlender. Ergebnisse werden pro
-(Klasse, Name) zwischengespeichert.
+Paar aus Klasse und Name zwischengespeichert, damit dieselbe Frage nicht
+mehrmals gerechnet wird.
 
 `external_name` liefert für Typen außerhalb des Projekts den Namen aus dem
 passenden Import, also `javax.swing.JFrame` statt nur `JFrame`.
 
 Der Resolver ist kein Ersatz für einen Compiler. Er kennt keine JARs und keine
-lokalen Variablen. Für den IntelliJ-Modus, der auch Methodenrümpfe auswertet,
+lokalen Variablen (Variablen, die nur innerhalb einer Methode gelten). Für den IntelliJ-Modus, der auch Methodenrümpfe auswertet,
 gibt es deshalb eine eigene Typbestimmung (Abschnitt 5).
 
 ## 4. Der wörtliche Graph: `src/parsing/java/graph_builder.py`
 
 `build_java_graph` ist der Standard und das Gegenstück zu pyreverse bei Python.
+"Wörtlich" heißt: Der Graph zeigt genau das, was in den Deklarationen steht,
+ohne etwas zu erschließen.
 Diesen Graphen bekommen die `catalog`-Varianten als Kontext, und die
 `prune`-Varianten starten mit ihm. Er enthält alles, was sich aus den
 Deklarationen ablesen lässt. Abstrahiert wird erst später durch das LLM.
@@ -193,7 +241,8 @@ Datei nirgends steht.
 
 `build_intellij_graph` arbeitet in zwei Durchläufen.
 
-Im ersten Durchlauf entsteht eine Symboltabelle. `analyze_java` liefert die
+Im ersten Durchlauf entsteht eine Symboltabelle, ein Nachschlagewerk aller
+Klassen mit ihren Feldern und Methoden und deren Typen. `analyze_java` liefert die
 Klassen, `_collect_bodies` parst die Dateien noch einmal und hält pro Klasse den
 Syntaxknoten, die Felder und Methoden mit ihren Typknoten, Parametern und
 Typparametern sowie die statischen Imports fest. `_Model` bündelt das und bietet:
@@ -231,8 +280,9 @@ festgehalten:
 
 Danach werden die Kanten zusammengesetzt:
 
-1. Vererbung und Realisierung. Steht ein Obertyp nicht im Diagramm, sucht eine
-   Breitensuche weiter oben nach dem nächsten Obertyp, der drinsteht.
+1. Vererbung und Realisierung. Steht ein Obertyp nicht im Diagramm, wird
+   Ebene für Ebene weiter oben nach dem nächsten Obertyp gesucht, der
+   drinsteht (eine sogenannte Breitensuche).
 2. Felder (`_field_relation`). Ein Feld mit einer Klasse aus dem Diagramm als Typ
    wird eine Komposition mit "1" an beiden Enden. Bei Arrays, JDK-Collections und
    Projektklassen, die von einer JDK-Collection erben, steht "*" am Ziel. Maps
@@ -261,11 +311,14 @@ Bei Stern-Imports lässt sich der volle Name aus dem Quelltext allein nicht
 bestimmen. Die javac-Ergänzung wird in diesem Modus nicht eingemischt.
 
 Wie die Regeln aus den neun IntelliJ-Bildern abgeleitet und daran geprüft
-wurden, steht in Ordner 2 unter `doku/intellij-nachbildung.md`.
+wurden, steht in Ordner 2 unter
+[`doku/intellij-nachbildung.md`](../../2-java-extraktoren-benchmark-forschungsdaten/doku/intellij-nachbildung.md).
 
 ## 6. Ergänzung über javac: `src/parsing/java/javac_solver.py`
 
-Mit `symbol_solver: javac` wird zusätzlich der JDK-Compiler gefragt. Das Modul
+Mit `symbol_solver: javac` wird zusätzlich der Java-Compiler `javac` aus dem
+JDK gefragt. Er kennt die Sprachregeln vollständig, braucht dafür aber die
+benutzten Bibliotheken. Das Modul
 schreibt ein kleines Java-Hilfsprogramm in ein temporäres Verzeichnis, übersetzt
 es und lässt es pro Build-Modul über die Quelldateien laufen. Das Programm nutzt
 die öffentliche Compiler-API (`javax.tools`, `com.sun.source`), löst Feldtypen
@@ -308,15 +361,17 @@ Die Optionen stehen in `JavaConfig` (`src/config/models.py`), werden in
 | `ide_jdk` | `--java-ide-no-jdk` | IntelliJ ohne JDK nachbilden |
 | `ide_same_package` | `--java-ide-no-same-package` | IntelliJ mit falschem Source-Root nachbilden |
 
-`src/parsing/cache.py` speichert den fertigen `CodeGraph` zwischen. Der
-Schlüssel enthält Pfad, Größe und Änderungszeit jeder Datei, die Java-Optionen
+`src/parsing/cache.py` speichert den fertigen `CodeGraph` zwischen (ein Cache),
+damit ein zweiter Lauf auf demselben Projekt nicht alles neu lesen muss. Der
+Schlüssel, an dem ein gespeichertes Ergebnis wiedererkannt wird, enthält Pfad, Größe und Änderungszeit jeder Datei, die Java-Optionen
 und eine Versionsnummer des Parsers. Ändert sich der Parser so, dass alte
 Ergebnisse nicht mehr stimmen, wird die Versionsnummer erhöht.
 
 ## 9. Graph-Modell und Ausgabe
 
-`src/schema/graph.py` definiert `AbstractGraph`, `Node`, `Edge`, `EdgeEvidence`
-und `Diagnostic`. `src/schema/validator.py` prüft Kantenarten und Stereotypen
+`src/schema/graph.py` definiert die Bausteine des Graphen: `AbstractGraph`
+(der ganze Graph), `Node` (Knoten), `Edge` (Kante), `EdgeEvidence` (Fundstelle
+einer Kante) und `Diagnostic` (Meldung). `src/schema/validator.py` prüft Kantenarten und Stereotypen
 und behält bei doppelten Kanten die stärkere. `src/schema/plantuml.py` erzeugt
 daraus PlantUML:
 
@@ -345,7 +400,8 @@ die Guillemets sonst verschluckt.
 | `tests/test_java_resolution.py` | Auflösungsreihenfolge, Imports, verschachtelte und geerbte Typen, Mehrdeutigkeit |
 | `tests/test_java_intellij.py` | IntelliJ-Modus: Aufrufketten, Schleifen, Felder mit "1" und "*", Umgebungen, PlantUML |
 
-Gemessen gegen echte Diagramme wurde der Parser in Ordner 2.
+Gemessen gegen echte Diagramme wurde der Parser in
+[Ordner 2](../../2-java-extraktoren-benchmark-forschungsdaten/README.md).
 
 ## Beispiel: zwei Klassen durch alle Stufen
 

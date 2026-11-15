@@ -1,6 +1,14 @@
+**Deutsch** · [English](intellij-nachbildung.en.md)
+
 # Nachbildung der IntelliJ-Klassendiagramme
 
 Stand 23.10.2026.
+
+IntelliJ IDEA ist eine weit verbreitete Programmierumgebung, die aus Java-Code
+automatisch Klassendiagramme zeichnen kann. Diese Datei beschreibt, nach welchen
+Regeln IntelliJ dabei vorgeht, wie der eigene Parser das nachbildet und wie gut
+das gelingt: Bei sieben von neun Projekten ist das Ergebnis Linie für Linie
+gleich. Fachbegriffe erklärt das [Haupt-README](../../README.md#begriffe).
 
 Kommerzielle UML-Werkzeuge zeigen Verbindungen, die der eigene Extraktor bisher
 nicht gesehen hat. Der Extraktor las nur Felder, `extends` und `implements`.
@@ -12,6 +20,8 @@ Als Vorlage dienen die neun Diagramme, die Zhang/Hebig mit IntelliJ per Reverse
 Engineering erzeugt haben (`daten/zhang-hebig/models/reverse/`).
 
 ## Beispiel für eine transitive Verbindung
+
+Transitiv heißt: Die Verbindung läuft über einen Umweg, über eine dritte Klasse.
 
 In RaiseMeUp zeichnet IntelliJ eine Abhängigkeit von `PetObserver` zu `Job`.
 `PetObserver` hat kein Feld vom Typ `Job` und importiert `Job` nicht einmal. Es
@@ -26,7 +36,11 @@ zeichnet die Realisierung direkt dorthin.
 
 ## Regeln
 
-Die Regeln wurden aus den neun Bildern abgeleitet und am Quelltext geprüft.
+Die Regeln wurden aus den neun Bildern abgeleitet und am Quelltext geprüft. Die
+Spalte "Darstellung" beschreibt, wie die Linie im IntelliJ-Bild aussieht. Ein
+Cast ist eine Umwandlung in einen anderen Typ, `instanceof` die Frage "ist
+dieses Objekt vom Typ X?". Eine Schleife ist eine Linie, die von einer Klasse
+zu ihr selbst zurückführt.
 
 | Kante | Wann IntelliJ sie zeichnet | Darstellung |
 | --- | --- | --- |
@@ -56,7 +70,9 @@ Diese Auswahl ist eine Eingabe und steht pro Projekt in `daten/intellij/projekte
 ## Umgebung pro Projekt
 
 IntelliJ zeichnet nur, was es auflösen kann, und das hing davon ab, wie das
-jeweilige Projekt geöffnet war. Zwei Fälle kommen vor:
+jeweilige Projekt geöffnet war. Das JDK ist die Grundausstattung von Java mit
+Standardklassen wie `List`. Das Source-Root ist der Ordner, den IntelliJ als
+Anfang des Quellcodes ansieht. Zwei Fälle kommen vor:
 
 - Kein JDK eingerichtet: IntelliJ kennt dann `List`, `LinkedList` usw. nicht und
   zeichnet für Collection-Felder nur eine Abhängigkeit. Zu erkennen ist das an
@@ -86,7 +102,7 @@ ohnehin nichts aufgelöst wurde.
 
 ## Abgleich
 
-`intellij_abgleich.py` baut für jedes Projekt das Diagramm und vergleicht es mit
+Das Skript `intellij_abgleich.py` baut für jedes Projekt das Diagramm und vergleicht es mit
 den Kanten, die aus dem IntelliJ-Bild abgelesen wurden (`daten/intellij/referenz/`).
 Die Ergebnisse stehen in `ergebnisse/messungen/intellij/`, die Diagramme als PlantUML und PNG
 neben dem IntelliJ-Bild in `ergebnisse/diagramme-intellij/<Projekt>/`.

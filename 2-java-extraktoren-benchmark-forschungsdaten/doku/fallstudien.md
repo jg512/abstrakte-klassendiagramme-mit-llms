@@ -1,4 +1,12 @@
+**Deutsch** · [English](fallstudien.en.md)
+
 # Fallstudien: RaiseMeUp, NeurophChanges, PatrickFromTheMOOC
+
+Wenn ein Werkzeug eine Linie aus dem Referenzdiagramm nicht findet, kann das
+zwei Gründe haben: Das Werkzeug liest den Code falsch, oder das Diagramm zeigt
+etwas, das so gar nicht im Code steht. Für drei Projekte wurde das hier Linie
+für Linie nachgeprüft. Das Ergebnis vorweg: Bei RaiseMeUp, dem Projekt mit dem
+größten Referenzdiagramm, liegen die meisten Abweichungen am Diagramm. Fachbegriffe erklärt das [Haupt-README](../../README.md#begriffe).
 
 Am 05. und 06.10.2026 wurden die Ergebnisse für drei Projekte der
 Zhang/Hebig-Suite einzeln durchgesehen. Es sind die drei Projekte, die sich
@@ -29,11 +37,14 @@ Gründe für die fehlenden Klassen und Kanten:
 
 - Die Klassen Dog, Cat, Fish und Penguin gibt es im Code nicht. Die Tierart wird
   über `Pet.type` und die Felder `Food.valuedog/valuecat/valuefish/valuepenguin`
-  abgebildet.
+  abgebildet. Das Diagramm zeigt also vier Unterklassen von Haustier, der Code
+  speichert die Tierart nur als Wert in einem Feld.
 - ItemDecorator ist im Code als `Slot` mit `LeftUpgradeSlot` und
   `RightUpgradeSlot` umgesetzt (`view/decorator/`). Diese Dateien gehörten nicht
   zu den 12 Eingabedateien.
-- Die Kante `DAO–DAO` steht im Diagramm für das Singleton `instance`. Im Code gibt
+- Die Kante `DAO–DAO` steht im Diagramm für das Singleton `instance` (ein
+  Singleton ist eine Klasse, von der es nur ein einziges Objekt gibt, das sie
+  selbst verwaltet). Im Code gibt
   es stattdessen fünf Maps, die als zusätzliche Kanten DAO–User/Pet/Food/Upgrade/Job
   gezählt werden.
 - `Pet.owner` ist ein `int`, und `User` hat keine Liste von Pets.

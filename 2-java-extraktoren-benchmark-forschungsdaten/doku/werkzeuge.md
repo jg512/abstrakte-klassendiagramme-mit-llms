@@ -1,24 +1,35 @@
+**Deutsch** · [English](werkzeuge.en.md)
+
 # Werkzeuge
 
-Die gebauten Werkzeuge liegen in `werkzeuge/` (zusammen 64 MB). Hier ist
-beschrieben, woher sie stammen und wie sie sich neu bauen lassen.
+In Ordner 2 werden sieben Werkzeuge verglichen, die aus Java-Code ein
+Klassendiagramm erzeugen. Die gebauten Werkzeuge liegen in `werkzeuge/`
+(zusammen 64 MB, nur im vollständigen Projektordner). Hier ist beschrieben,
+woher sie stammen, in welcher Version sie benutzt wurden und wie sie sich neu
+bauen lassen. Das braucht man nur, wenn man die Messung selbst wiederholen
+will. Fachbegriffe erklärt das [Haupt-README](../../README.md#begriffe).
 
 Messumgebung: OpenJDK 25.0.4.1 (2026-08-18), Apache Maven 3.9.12, Python 3.13.15,
-PlantUML mit dem Layout `smetana` (ohne Graphviz).
+PlantUML mit dem eingebauten Layout `smetana`, das ohne das Zusatzprogramm
+Graphviz auskommt.
 
 ## Die sieben Werkzeuge
 
 | Werkzeug | liest | Quelle | Anmerkung |
 | --- | --- | --- | --- |
 | eigener Extraktor | Quelltext | Ordner 1, über `PYTHONPATH` | tree-sitter-java |
-| javalang 0.13.0 + Adapter | Quelltext | PyPI, Adapter in `benchmark.py` | Parser mit einem Adapter von etwa 40 Zeilen |
+| javalang 0.13.0 + Adapter | Quelltext | PyPI, Adapter in `benchmark.py` | reiner Parser, ein eigenes Zusatzprogramm (Adapter) von etwa 40 Zeilen macht daraus einen Klassengraphen |
 | java2plantuml (mirajp1) | Quelltext | github.com/mirajp1/java2plantuml, Commit `cadd0f0` | JavaParser 3.4.0 |
 | jdeps | Bytecode | Teil des JDK | Kanten ohne Typ, keine Vererbung |
 | plantuml-generator 2.3.0 | Bytecode | Maven Central `de.elnarion.util` | classgraph und javassist |
-| Java2PlantUML (juanmf) | Bytecode | github.com/juanmf/Java2PlantUML | arbeitet trotz des Namens mit Reflection |
+| Java2PlantUML (juanmf) | Bytecode | github.com/juanmf/Java2PlantUML | arbeitet trotz des Namens mit Reflection (lädt die übersetzten Klassen und fragt sie nach ihrem Aufbau) |
 | genuml 0.6.1 | Bytecode | PyPI | Wrapper um `javap` |
 
 ## Prüfsummen der JARs
+
+Eine JAR ist eine gepackte Datei mit übersetztem Java-Code. Die Prüfsumme
+(SHA-256, hier gekürzt) ist ihr Fingerabdruck. Wer die Datei neu herunterlädt,
+kann daran sehen, dass es dieselbe ist.
 
 | Werkzeug | Datei | Größe | SHA-256 (gekürzt) |
 | --- | --- | ---: | --- |

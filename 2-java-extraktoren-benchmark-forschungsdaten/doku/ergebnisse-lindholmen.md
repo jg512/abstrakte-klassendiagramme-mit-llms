@@ -1,6 +1,18 @@
+**Deutsch** · [English](ergebnisse-lindholmen.en.md)
+
 # Ergebnisse: Extraktoren auf 30 Lindholmen-Projekten und der Zhang/Hebig-Suite
 
 Stand 20.09.2026, Erweiterungen am Extraktor vom 21.09.2026.
+
+Hier stehen die Ergebnisse des ersten Vergleichs: Drei Werkzeuge, die aus
+Java-Quelltext ein Klassendiagramm erzeugen, darunter der eigene Parser,
+wurden mit den Diagrammen verglichen, die zu 30 Projekten aus dem
+Lindholmen-Datensatz und zu den neun Projekten von Zhang/Hebig gehören. Die
+neun Projekte von Zhang/Hebig heißen hier "Suite" (eine feste Zusammenstellung
+von Testfällen). Außerdem beschreibt die Datei, welche Fehler im eigenen Parser
+dabei auffielen und behoben wurden. Precision, Recall und F1 erklärt das
+[Haupt-README](../../README.md#begriffe). "Fertig" heißt in den Tabellen, dass das Werkzeug ohne Absturz
+eine Ausgabe geliefert hat.
 
 Für den Benchmark wurden 30 Projekte aus dem Lindholmen-Datensatz
 heruntergeladen, jeweils zusammen mit ihrem UML/XMI-Modell aus demselben
@@ -38,10 +50,13 @@ gleichauf. Java2PlantUML hat eine höhere Precision, findet aber weniger
 Beziehungen.
 
 Die spätere Messung mit allen sieben Werkzeugen steht in
-`ergebnisse-zhang-hebig.md`, die genauere Analyse einzelner Projekte in
-`fallstudien.md`.
+[`ergebnisse-zhang-hebig.md`](ergebnisse-zhang-hebig.md), die genauere Analyse
+einzelner Projekte in [`fallstudien.md`](fallstudien.md).
 
 ## Ergebnisse auf den 30 Lindholmen-Projekten
+
+Micro-F1 zählt alle Linien aller Projekte zusammen, Macro-F1 ist der
+Mittelwert der F1-Werte der einzelnen Projekte.
 
 | Extraktor | fertig | Kanten-Precision | Kanten-Recall | Micro-F1 | Macro-F1 | Zeit |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -75,6 +90,10 @@ enthalten.
 
 ## Korrekturen am eigenen Extraktor
 
+Die folgenden Punkte sind eher technisch. Kurz gesagt wurden Fälle behoben, in
+denen der Parser einen Namen der falschen Klasse zugeordnet oder eine
+Beziehung übersehen hat.
+
 - Die Python-Umgebung (`.venv`) des Projekts war beschädigt und wurde neu
   aufgesetzt.
 - Ein Eintrag `runs/` in `.gitignore` hatte auch das Quellpaket `src/runs/`
@@ -92,8 +111,8 @@ enthalten.
   werden erkannt.
 - Selbstassoziationen bleiben erhalten, und Klassen im Standardpaket werden nicht
   mehr mit gleichnamigen Klassen in benannten Paketen verwechselt.
-- Der Parser-Cache hat eine Versionsnummer bekommen, damit keine veralteten
-  Einträge geladen werden.
+- Der Parser-Cache (Zwischenspeicher für schon gelesene Projekte) hat eine
+  Versionsnummer bekommen, damit keine veralteten Einträge geladen werden.
 
 Für diese Fälle und für zyklische Vererbung kamen 13 neue Tests dazu. Sieben der
 ersten acht Tests schlugen vor den Änderungen fehl. Der achte (geerbter Typ) lief
@@ -127,7 +146,9 @@ Compiler-API des JDK und einen angegebenen Classpath ergänzt werden. Die
 Ergebnisse aus dem Quelltext haben dabei Vorrang. Standardmäßig läuft der
 Extraktor ohne Build.
 
-Damals lag in Ordner 1, heute in Ordner 3 unter `benchmarks/java_literal/`, ein eigener Benchmark mit
+Damals lag in Ordner 1, heute in Ordner 3 unter
+[`benchmarks/java_literal/`](../../3-java-parser-klassendiagramme/benchmarks/java_literal/README.md),
+ein eigener Benchmark mit
 20 fest vorgegebenen Fällen in modernem Java (Records, Sealed-Typen,
 verschachtelte Typen, Imports, Generics, Selbstbeziehungen, Kardinalität,
 Komposition, JPA-Annotationen, Methodenabhängigkeiten). Der Extraktor besteht
@@ -181,8 +202,8 @@ Status, Knoten- und Kantenwerte und Abweichungen waren identisch
 
 ## Dateien
 
-- `doku/recherche-datensätze.md`: Papers, verworfene Alternativen, Regeln der
-  Auswertung
+- [`doku/recherche-datensätze.md`](recherche-datensätze.md): Papers,
+  verworfene Alternativen, Regeln der Auswertung
 - `daten/lindholmen/manifest.json`: die 30 festgelegten Paare aus Projekt, Commit, Modell und
   Quelltext
 - `daten/lindholmen/reference-graphs/`: normalisierte Referenzen in JSON und PlantUML, die

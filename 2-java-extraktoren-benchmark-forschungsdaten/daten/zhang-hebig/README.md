@@ -1,4 +1,12 @@
+**Deutsch** · [English](README.en.md)
+
 # Kuratierte Suite nach Zhang/Hebig
+
+Die Autoren dieser Studie haben für neun Java-Projekte untersucht, was Menschen
+weglassen, wenn sie ein Klassendiagramm zu vorhandenem Code zeichnen. Ihr
+veröffentlichtes Material (das Replikationspaket) dient in diesem Projekt als
+sorgfältig aufbereitete ("kuratierte") Testsammlung. Fachbegriffe erklärt das
+[Haupt-README](../../../README.md#begriffe).
 
 Hier liegt das öffentliche Replikationspaket zu Wenli Zhang, Weixing Zhang,
 Daniel Strüber und Regina Hebig, *An empirical study of manual abstraction
@@ -25,6 +33,11 @@ Assoziation, Aggregation und Komposition zu einer ungerichteten Assoziation
 zusammengefasst. Dadurch fallen drei doppelte bzw. gegenläufige Assoziationen
 weg, und es bleiben 79 Beziehungen. Vererbung und Realisierung behalten Richtung
 und Typ.
+
+Das Paket selbst ist zu groß für das Repository und liegt nur im vollständigen
+Projektordner. Wie man es herunterlädt, steht in
+[`INSTALLATION.md`](../../../INSTALLATION.md). Im Repository liegen
+`reference.json` und `manifest.json`.
 
 Aufruf aus dem übergeordneten Ordner:
 

@@ -1,10 +1,21 @@
+**Deutsch** · [English](README.en.md)
+
 # Benchmark der Java-Extraktoren auf Forschungsdaten (September/Oktober 2026)
 
-Mit einer Ground Truth aus dem Bytecode lässt sich prüfen, ob ein Parser den
-Code richtig liest. Für das Projekt ist aber wichtiger, wie gut ein Klassengraph
-zu einem Diagramm passt, das ein Mensch gezeichnet hat. Dafür braucht man
-öffentliche Java-Projekte, zu denen es passende UML-Diagramme gibt. Dieser
-Ordner enthält die Suche nach solchen Daten, die Daten selbst und die Messungen.
+Ein Extraktor ist hier ein Werkzeug, das aus Java-Code automatisch ein
+Klassendiagramm erzeugt. In diesem Ordner werden sieben solche Werkzeuge,
+darunter der eigene Parser des Projekts, an echten Projekten verglichen, zu
+denen Menschen Klassendiagramme gezeichnet haben. Wer die Grundbegriffe
+(Klassendiagramm, Parser, Benchmark, Ground Truth, Precision, Recall, F1) noch
+nicht kennt, findet sie im [Haupt-README](../README.md#begriffe) erklärt.
+
+Warum dieser Vergleich nötig ist: Mit einer Ground Truth aus dem Bytecode lässt
+sich prüfen, ob ein Parser den Code richtig liest. Für das Projekt ist aber
+wichtiger, wie gut ein Klassengraph zu einem Diagramm passt, das ein Mensch
+gezeichnet hat. Dafür braucht man öffentliche Java-Projekte, zu denen es
+passende UML-Diagramme gibt. Dieser Ordner enthält die Suche nach solchen
+Daten, die Daten selbst und die Messungen. Später sollen dieselben Daten zeigen,
+wie gut das LLM aus Ordner 1 abstrahiert.
 
 ## Fragestellung
 
@@ -17,19 +28,24 @@ Ordner enthält die Suche nach solchen Daten, die Daten selbst und die Messungen
 
 ## Ergebnisse
 
-- Daten: Verwendet werden 30 Projekte aus dem Lindholmen-Datensatz (4.040
+- Daten: Verwendet werden 30 Projekte aus dem Lindholmen-Datensatz, einer
+  Sammlung von GitHub-Projekten, die UML-Dateien enthalten (zusammen 4.040
   Java-Dateien, Quelltext und Modell jeweils aus demselben Commit). Dazu kommen
-  die neun Projekte von Zhang/Hebig (2025), deren Diagramme von Hand abstrahiert
-  wurden. Mehr dazu in `doku/recherche-datensätze.md`.
+  die neun Projekte aus der Studie von Zhang/Hebig (2025), deren Diagramme von
+  Hand abstrahiert wurden. "Modell" heißt hier das gezeichnete Diagramm in
+  maschinenlesbarer Form. Mehr dazu in
+  [`doku/recherche-datensätze.md`](doku/recherche-datensätze.md).
 - Auf den 30 Lindholmen-Projekten liegen der eigene Extraktor und javalang
   gleichauf (Micro-F1 0,646), Java2PlantUML (mirajp1) erreicht 0,577. Alle drei
-  liefen auf allen 30 Projekten.
+  liefen auf allen 30 Projekten. Micro-F1 ist der F1-Wert über alle Linien
+  aller Projekte zusammen.
 - Auf den Zhang/Hebig-Projekten wurden sieben Extraktoren verglichen. Die drei
   Werkzeuge, die Quelltext lesen, laufen auf allen neun Projekten (eigener
   Extraktor und javalang F1 0,711, java2plantuml 0,656). Die Bytecode-Werkzeuge
   laufen auf höchstens drei Projekten, weil sich nur drei überhaupt kompilieren
-  lassen. Auf diesen drei liegen sie in einem ähnlichen Bereich. genuml gibt gar keine
-  Beziehungen aus.
+  lassen. Auch auf diesen drei liegen sie mit F1 zwischen 0,41 und 0,53 unter
+  den Quelltext-Werkzeugen (0,63 bis 0,71). genuml gibt gar keine Beziehungen
+  aus.
 - Im eigenen Extraktor wurden mehrere Fehler gefunden und behoben (Imports,
   Stern-Importe, geerbte verschachtelte Typen, Enum-Rümpfe, generische
   Wrapper-Klassen, Selbstassoziationen). Danach kamen weitere Funktionen dazu:
@@ -39,7 +55,8 @@ Ordner enthält die Suche nach solchen Daten, die Daten selbst und die Messungen
   nachbildet, einschließlich der Abhängigkeiten aus Methodenrümpfen und über
   Aufrufketten. Auf sieben der neun Projekte stimmt er vollständig mit dem
   IntelliJ-Diagramm überein, auf den anderen beiden in allen Kanten, die sich im
-  Bild prüfen ließen. Mehr dazu in `doku/intellij-nachbildung.md`.
+  Bild prüfen ließen. Mehr dazu in
+  [`doku/intellij-nachbildung.md`](doku/intellij-nachbildung.md).
 - Die Werte messen nur, wie gut die Ausgabe zu den Diagrammen passt. Ob der
   Code richtig gelesen wurde, zeigen sie nicht. In den Fallstudien stellte sich
   heraus, dass manche Referenzdiagramme einen Entwurf beschreiben, der im Code
@@ -67,21 +84,29 @@ werkzeuge/                gebaute Fremdwerkzeuge, Messumgebung, Python-Abhängig
 
 Die Skripte werden aus diesem Ordner heraus aufgerufen, zum Beispiel
 `.venv/bin/python skripte/intellij_abgleich.py`. Die genauen Befehle stehen in
-`doku/reproduzieren.md`.
+[`doku/reproduzieren.md`](doku/reproduzieren.md). `daten/` und `ergebnisse/`
+sind größtenteils zu groß für GitHub. Im Repository liegen nur die eigenen
+Metadaten (Auswahl, Prüfsummen, Abschriften, Referenzen), alles andere liegt im
+vollständigen Projektordner oder lässt sich nach
+[`INSTALLATION.md`](../INSTALLATION.md) neu laden.
 
 ## Dokumente
 
+Eine sinnvolle Lesereihenfolge ist: Recherche, dann die beiden
+Ergebnisberichte, dann die Fallstudien und die IntelliJ-Nachbildung. Werkzeuge
+und Reproduktion braucht man nur zum Nachmessen.
+
 | Datei | Inhalt |
 | :--- | :--- |
-| `doku/recherche-datensätze.md` | verfügbare Datensätze, Auswahl und Begründung, Regeln der Auswertung |
-| `doku/ergebnisse-lindholmen.md` | 30 Projekte und die Zhang/Hebig-Suite mit drei Extraktoren, behobene Fehler, Tabelle pro Projekt |
-| `doku/ergebnisse-zhang-hebig.md` | alle sieben Extraktoren auf der Zhang/Hebig-Suite, warum die Bytecode-Werkzeuge ausfielen |
-| `doku/fallstudien.md` | RaiseMeUp, NeurophChanges und PatrickFromTheMOOC im Detail |
-| `doku/intellij-nachbildung.md` | Regeln von IntelliJ, Umgebung pro Projekt, Abgleich mit den IntelliJ-Diagrammen |
-| `doku/werkzeuge.md` | Herkunft, Versionen, Prüfsummen und Build der Werkzeuge |
-| `doku/reproduzieren.md` | Befehle zum Nachstellen der Messungen |
-| `daten/zhang-hebig/README.md` | Replikationspaket von Zhang/Hebig |
-| `ergebnisse/diagramme/README.md` | Erklärung der gerenderten Diagramme |
+| [`doku/recherche-datensätze.md`](doku/recherche-datensätze.md) | verfügbare Datensätze, Auswahl und Begründung, Regeln der Auswertung |
+| [`doku/ergebnisse-lindholmen.md`](doku/ergebnisse-lindholmen.md) | 30 Projekte und die Zhang/Hebig-Suite mit drei Extraktoren, behobene Fehler, Tabelle pro Projekt |
+| [`doku/ergebnisse-zhang-hebig.md`](doku/ergebnisse-zhang-hebig.md) | alle sieben Extraktoren auf der Zhang/Hebig-Suite, warum die Bytecode-Werkzeuge ausfielen |
+| [`doku/fallstudien.md`](doku/fallstudien.md) | RaiseMeUp, NeurophChanges und PatrickFromTheMOOC im Detail |
+| [`doku/intellij-nachbildung.md`](doku/intellij-nachbildung.md) | Regeln von IntelliJ, Umgebung pro Projekt, Abgleich mit den IntelliJ-Diagrammen |
+| [`doku/werkzeuge.md`](doku/werkzeuge.md) | Herkunft, Versionen, Prüfsummen und Bau der Werkzeuge |
+| [`doku/reproduzieren.md`](doku/reproduzieren.md) | Befehle zum Nachstellen der Messungen |
+| [`daten/zhang-hebig/README.md`](daten/zhang-hebig/README.md) | Replikationspaket von Zhang/Hebig |
+| [`ergebnisse/diagramme/README.md`](ergebnisse/diagramme/README.md) | Erklärung der gezeichneten Diagramme (nur im vollständigen Projektordner) |
 
 ## Skripte
 

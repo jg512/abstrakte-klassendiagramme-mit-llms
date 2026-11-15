@@ -1,15 +1,25 @@
+**Deutsch** · [English](INSTALLATION.en.md)
+
 # Installation und Wiederholung der Messungen
 
 Hier steht, wie man das Projekt auf einem frischen Rechner zum Laufen bringt
-und die Messungen aus Ordner 2 wiederholt. Es gibt zwei Wege:
+und die Messungen aus Ordner 2 wiederholt. Zum Lesen und Verstehen des Projekts
+braucht man das nicht, das [Haupt-README](README.md) und die verlinkten
+Dokumente reichen dafür.
 
-- Docker: Python, JDK und die Werkzeuge stecken fertig in einem Image. Das
-  ist der einfachste Weg und unter Windows der einzige, auf dem auch Ordner 2
-  ohne weitere Einrichtung läuft.
+Alle Befehle unten tippt man in ein Terminal (unter Windows PowerShell). Zeilen,
+die mit `#` beginnen, sind Kommentare und werden nicht ausgeführt. Es gibt zwei
+Wege:
+
+- Docker: Docker ist ein Programm, das eine fertig eingerichtete Umgebung als
+  Paket (ein Image) liefert. Python, das JDK und die Werkzeuge stecken darin,
+  man muss sie nicht einzeln installieren. Das ist der einfachste Weg und unter
+  Windows der einzige, auf dem auch Ordner 2 ohne weitere Einrichtung läuft.
 - Direkt installieren: sinnvoll, wenn man am Code arbeiten will. Ordner 1
   und 3 laufen unter Linux und Windows. Die Messskripte in Ordner 2 setzen ihre
-  Zeitlimits über POSIX-Signale und laufen deshalb nur unter Linux, macOS oder
-  in WSL.
+  Zeitlimits über POSIX-Signale, eine Funktion von Unix-Systemen, und laufen
+  deshalb nur unter Linux, macOS oder in WSL (einem Linux innerhalb von
+  Windows).
 
 Beides ist unter Ubuntu getestet. Unter Windows ist Docker der sichere Weg, die
 direkte Installation dort ist nicht ausprobiert.
@@ -24,7 +34,8 @@ direkte Installation dort ist nicht ausprobiert.
 - Die Ergebnisse früherer Läufe (`1-…/runs/`, `2-…/ergebnisse/`). Die Zahlen
   daraus stehen in den READMEs und in `2-…/doku/`.
 
-Im Repo liegen dagegen die eigenen Metadaten, die man zum Wiederholen braucht:
+Im Repo liegen dagegen die eigenen Metadaten (Angaben über die Daten), die man
+zum Wiederholen braucht:
 die festgelegte Projektauswahl mit Prüfsummen (`daten/lindholmen/manifest.json`),
 die Referenzgraphen, die Abschrift der Zhang/Hebig-Diagramme
 (`daten/zhang-hebig/reference.json`) und die Angaben zu den IntelliJ-Diagrammen
@@ -56,14 +67,14 @@ Der erste Build dauert einige Minuten. Er lädt das JDK-Image, Python 3.13 und
 die Python-Pakete in denselben Versionen wie bei den Messungen, außerdem
 PlantUML, und baut java2plantuml.
 
-Alle Befehle haben danach die Form
+Ein laufendes Image heißt Container. Alle Befehle haben danach die Form
 
 ```bash
 docker compose run --rm app <befehl> [argumente]
 ```
 
 `docker compose run --rm app` ohne Befehl zeigt die Liste der Kurzbefehle, mit
-`bash` bekommt man eine Shell im Container.
+`bash` bekommt man ein Terminal (eine Shell) im Container.
 
 Was der Container schreibt oder herunterlädt, landet auf dem eigenen Rechner im
 Ordner `docker-daten/`:
@@ -77,10 +88,11 @@ Ordner `docker-daten/`:
 | `docker-daten/zhang-hebig/` | das Paket von Zhang/Hebig, von Hand entpackt |
 | `docker-daten/ergebnisse/` | Messergebnisse und gerenderte Diagramme aus Ordner 2 |
 
-Unter Linux gehören diese Dateien root, weil der Container als root läuft. Mit
-`sudo chown -R $USER docker-daten` holt man sie sich zurück.
+Unter Linux gehören diese Dateien dem Administrator (root), weil der Container
+als root läuft. Mit `sudo chown -R $USER docker-daten` holt man sie sich zurück.
 
-Zuerst die Tests, dann weiß man, dass das Image in Ordnung ist:
+Zuerst die Tests (kleine Prüfprogramme, die kontrollieren, ob alles wie
+erwartet arbeitet), dann weiß man, dass das Image in Ordnung ist:
 
 ```bash
 docker compose run --rm app tests
@@ -95,7 +107,8 @@ docker compose run --rm app javauml https://github.com/jainebri/Super-Simple-Sto
 Das Ergebnis liegt dann unter
 `docker-daten/ausgabe/uml-ausgabe/Super-Simple-Stocks/`. Ein Repo, das schon auf
 dem Rechner liegt, kopiert man nach `docker-daten/repos/` und gibt es als
-`/repos/<name>` an. Die Optionen stehen im README von Ordner 3.
+`/repos/<name>` an. Die Optionen stehen im
+[README von Ordner 3](3-java-parser-klassendiagramme/README.md).
 
 ### Ordner 1: LLM-Pipeline
 
@@ -106,8 +119,10 @@ zusammenspielen:
 docker compose run --rm app pipeline https://github.com/dbader/schedule --method all --dry-run --no-cleanup
 ```
 
-Für einen echten Lauf muss der API-Schlüssel auf dem Rechner gesetzt sein.
-Compose reicht ihn an den Container weiter.
+Für einen echten Lauf muss der API-Schlüssel auf dem Rechner gesetzt sein. Das
+ist das Zugangspasswort, das man beim Anbieter des Modells bekommt (hier
+DeepSeek). Die Läufe kosten dann echtes Geld, bei `schedule` wenige Cent.
+Compose reicht den Schlüssel an den Container weiter.
 
 ```bash
 # Linux / macOS
@@ -119,14 +134,16 @@ docker compose run --rm app pipeline https://github.com/dbader/schedule --config
 ```
 
 Ohne `--config` nimmt die Pipeline Gemini und braucht dann `GEMINI_API_KEY`.
-Für ein lokales Modell läuft Ollama auf dem Rechner selbst, nicht im Container
-(`ollama pull qwen2.5:14b`). Aufgerufen wird es mit
-`--config configs/ollama_docker.yaml`.
+Ein lokales Modell läuft kostenlos auf dem eigenen Rechner. Dafür muss Ollama
+auf dem Rechner selbst laufen, nicht im Container (`ollama pull qwen2.5:14b`).
+Aufgerufen wird es mit `--config configs/ollama_docker.yaml`. Was die Optionen
+bedeuten, steht im [README von Ordner 1](1-llm-pipeline-abstrakte-klassendiagramme/README.md).
 
 ### Ordner 2: Messungen wiederholen
 
 1. Lindholmen-Projekte laden. Das Skript lädt die Archive der festgelegten
-Commits von GitHub und prüft jede Datei gegen ihre Prüfsumme:
+Commits von GitHub und prüft jede Datei gegen ihre Prüfsumme (eine Art
+Fingerabdruck, an dem man sieht, dass die Datei unverändert ist):
 
 ```bash
 docker compose run --rm app restore
@@ -154,12 +171,16 @@ docker compose run --rm app report
 ```
 
 Die Ergebnisse stehen danach in `docker-daten/ergebnisse/messungen/<label>/`.
-Zum Vergleich dienen die Tabellen in `2-…/doku/ergebnisse-lindholmen.md`,
-`ergebnisse-zhang-hebig.md` und `intellij-nachbildung.md`.
+Zum Vergleich dienen die Tabellen in
+[`ergebnisse-lindholmen.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/ergebnisse-lindholmen.md),
+[`ergebnisse-zhang-hebig.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/ergebnisse-zhang-hebig.md)
+und [`intellij-nachbildung.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/intellij-nachbildung.md).
 
 Die Messung mit allen sieben Werkzeugen (`curated_tools_benchmark.py`) ist im
-Image nicht vorbereitet. Dafür braucht es Maven und vier weitere Werkzeuge, die
-man nach `2-…/doku/werkzeuge.md` selbst baut.
+Image nicht vorbereitet. Dafür braucht es Maven (ein Werkzeug zum Bauen von
+Java-Projekten) und vier weitere Werkzeuge, die man nach
+[`werkzeuge.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/werkzeuge.md)
+selbst baut.
 
 
 ## Weg 2: Direkt installieren
@@ -180,9 +201,10 @@ Windows (PowerShell):
 winget install Git.Git Microsoft.OpenJDK.25 astral-sh.uv
 ```
 
-Gemessen wurde mit OpenJDK 25. Ein JDK 21 sollte auch reichen, ist aber nicht
-geprüft. Python muss man nicht selbst installieren, `uv` holt Python 3.13
-automatisch.
+Das installiert `git` (lädt Repos herunter), `curl` (lädt Dateien herunter),
+das JDK (Java) und `uv` (richtet Python-Umgebungen ein). Gemessen wurde mit
+OpenJDK 25. Ein JDK 21 sollte auch reichen, ist aber nicht geprüft. Python muss
+man nicht selbst installieren, `uv` holt Python 3.13 automatisch.
 
 Dann das Repo holen:
 
@@ -200,8 +222,11 @@ curl -fL -o ~/werkzeuge/plantuml-1.2025.4.jar \
   https://repo1.maven.org/maven2/net/sourceforge/plantuml/plantuml/1.2025.4/plantuml-1.2025.4.jar
 ```
 
-Unter Windows steht in allen Befehlen unten `.venv\Scripts\` statt `.venv/bin/`,
-und Umgebungsvariablen setzt man mit `$env:NAME = "wert"` statt mit `export`.
+Jeder Ordner bekommt unten eine eigene Python-Umgebung `.venv`, einen
+Unterordner, in dem die benötigten Python-Pakete liegen, ohne den Rest des
+Rechners zu berühren. Unter Windows steht in allen Befehlen unten
+`.venv\Scripts\` statt `.venv/bin/`, und Umgebungsvariablen setzt man mit
+`$env:NAME = "wert"` statt mit `export`.
 
 ### Ordner 3: javauml
 
@@ -272,7 +297,8 @@ PYTHONPATH=../1-llm-pipeline-abstrakte-klassendiagramme .venv/bin/python skripte
 ```
 
 Mehr Einzelheiten, auch zur Messung mit sieben Werkzeugen, stehen in
-`2-…/doku/reproduzieren.md` und `2-…/doku/werkzeuge.md`.
+[`reproduzieren.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/reproduzieren.md)
+und [`werkzeuge.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/werkzeuge.md).
 
 Die Projektauswahl selbst (`discover.py`, `acquire.py`, `benchmark.py --prepare`)
 sollte man nicht neu laufen lassen. Die Repos haben sich seit der Auswahl

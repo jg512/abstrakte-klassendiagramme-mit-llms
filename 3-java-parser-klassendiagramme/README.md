@@ -1,16 +1,31 @@
+**Deutsch** · [English](README.en.md)
+
 # Java-Parser als eigenes Werkzeug (November 2026)
 
-`javauml` macht aus einem Java-Repo ein Klassendiagramm als PlantUML und JSON,
-auf Wunsch auch gleich als PNG oder SVG. Es liest nur den Quelltext. Das Projekt
+`javauml` ist ein kleines Programm, das für ein beliebiges Java-Projekt ein
+vollständiges Klassendiagramm zeichnet, ohne LLM. Man gibt ihm den Ordner eines
+Projekts oder dessen Adresse auf GitHub und bekommt das Diagramm als Text und,
+wenn gewünscht, als Bild. Es ist der Parser aus der LLM-Pipeline, herausgelöst
+als eigenes Werkzeug. Was ein Klassendiagramm, ein Parser oder PlantUML ist,
+erklärt das [Haupt-README](../README.md#begriffe).
+
+Genauer: `javauml` macht aus einem Java-Repo ein Klassendiagramm als PlantUML und JSON,
+auf Wunsch auch gleich als Bild im Format PNG oder SVG. Es liest nur den Quelltext. Das Projekt
 muss also weder gebaut noch kompiliert werden, und fehlende Bibliotheken stören
 nicht.
 
-Der Parser ist derselbe wie in der LLM-Pipeline in Ordner 1
+Der Parser ist derselbe wie in der LLM-Pipeline in
+[Ordner 1](../1-llm-pipeline-abstrakte-klassendiagramme/README.md)
 (`src/parsing/java/`). Dort ist er nur ein Teil der Pipeline und hängt an deren
 Konfiguration, Cache und LLM-Abhängigkeiten. Hier steht er für sich und braucht
 nur `tree-sitter` und `tree-sitter-java`.
 
 ## Installation
+
+Die Befehle tippt man in ein Terminal, im Ordner `3-java-parser-klassendiagramme`.
+Sie richten eine eigene Python-Umgebung (`.venv`) ein und installieren das
+Werkzeug darin. Eine ausführlichere Anleitung, auch für Windows und Docker,
+steht in [`INSTALLATION.md`](../INSTALLATION.md).
 
 ```bash
 python3 -m venv .venv
@@ -18,8 +33,9 @@ python3 -m venv .venv
 ```
 
 Danach gibt es den Befehl `.venv/bin/javauml`. Für PNG und SVG wird PlantUML
-gebraucht, entweder als JAR (dann auch Java) oder als `plantuml` im `PATH`. Die
-JAR aus Ordner 2 reicht:
+gebraucht, entweder als JAR-Datei (dann muss auch Java installiert sein) oder
+als Befehl `plantuml`, den das Terminal findet (im `PATH`). Die JAR aus Ordner 2
+reicht:
 
 ```bash
 export PLANTUML_JAR=../2-java-extraktoren-benchmark-forschungsdaten/werkzeuge/plantuml-1.2025.4.jar
@@ -41,12 +57,13 @@ javauml repo-a repo-b https://github.com/nutzer/repo-c -o diagramme
 javauml pfad/zum/repo --stdout puml > diagramm.puml
 ```
 
-Git-URLs werden flach in ein temporäres Verzeichnis geklont und danach gelöscht.
+Git-URLs werden flach (nur der neueste Stand, ohne Geschichte) in ein
+temporäres Verzeichnis kopiert (geklont) und danach gelöscht.
 Mit `--keep-clone` bleibt der Klon unter `<ausgabe>/<repo>/quelle` liegen,
 mit `--ref` lässt sich ein Branch oder Tag wählen. Der geklonte Code wird nur
 gelesen und nie ausgeführt.
 
-Als Bibliothek:
+Aus einem eigenen Python-Programm heraus (als Bibliothek):
 
 ```python
 from javauml import Options, extract
@@ -58,15 +75,16 @@ graph = result.graph          # Knoten, Kanten, Fundstellen, Diagnosen
 
 ## Zwei Modi
 
-Der Modus `literal` (Standard) zeigt, was in den Deklarationen steht: Klassen mit
-Attributen und Methoden, `extends`, `implements` und Felder, deren Typ eine
-Klasse des Projekts ist. Die Art der Feldbeziehung (Assoziation, Aggregation,
-Komposition) und die Kardinalität werden aus Typ, `final`, Initialisierung und
-JPA-Annotationen geschätzt. Externe Obertypen wie `JFrame` bleiben als Knoten
+Der Modus `literal` (wörtlich, der Standard) zeigt, was in den Deklarationen
+steht: Klassen mit Attributen und Methoden, Vererbung (`extends`), Realisierung
+(`implements`) und Felder, deren Typ eine Klasse des Projekts ist. Die Art der
+Feldbeziehung (Assoziation, Aggregation, Komposition) und die Kardinalität (wie
+viele Objekte am anderen Ende hängen) werden aus Typ, `final`, Initialisierung
+und JPA-Annotationen (Angaben für Datenbanken wie `@OneToMany`) geschätzt. Externe Obertypen wie `JFrame` bleiben als Knoten
 stehen, weil sie viel über die Rolle einer Klasse sagen.
 
-Der Modus `intellij` bildet das Klassendiagramm von IntelliJ IDEA nach. Dafür werden
-auch die Methodenrümpfe gelesen. Jeder Verweis im Code wird eine Abhängigkeit,
+Der Modus `intellij` bildet das Klassendiagramm der Programmierumgebung IntelliJ
+IDEA nach. Dafür wird auch der Code innerhalb der Methoden gelesen. Jeder Verweis im Code wird eine Abhängigkeit,
 auch über Aufrufketten wie `RaiseMeUp.getCurrentJob().getImpactenergy()`, wo die
 Zielklasse `Job` gar nicht im Text steht. `new X()` wird `«create»`, Felder
 bekommen "1" oder "*", innere Klassen eine eigene Kante. Mit `--classes DATEI`
@@ -75,8 +93,11 @@ aus, die im Diagramm stehen. Ohne Auswahl kommen alle hinein, was bei großen
 Projekten schnell unübersichtlich wird.
 
 Die Regeln des IntelliJ-Modus stammen aus den neun IntelliJ-Diagrammen von
-Zhang/Hebig und sind in Ordner 2 unter `doku/intellij-nachbildung.md`
-beschrieben. Den Aufbau des Parsers beschreibt `doku/java-parser.md` in Ordner 1.
+Zhang/Hebig und sind in Ordner 2 unter
+[`doku/intellij-nachbildung.md`](../2-java-extraktoren-benchmark-forschungsdaten/doku/intellij-nachbildung.md)
+beschrieben. Den Aufbau des Parsers beschreibt
+[`doku/java-parser.md`](../1-llm-pipeline-abstrakte-klassendiagramme/doku/java-parser.md)
+in Ordner 1.
 
 ## Optionen
 
@@ -87,7 +108,7 @@ beschrieben. Den Aufbau des Parsers beschreibt `doku/java-parser.md` in Ordner 1
 | `--name` | Name in der Ausgabe statt Ordner- oder Repo-Name |
 | `--stdout puml\|json` | Ergebnis ausgeben statt Dateien zu schreiben |
 | `-m`, `--mode` | `literal` oder `intellij` |
-| `--members` | Detailgrad der Klassenkästen im Modus `literal`: `structure`, `summary`, `public-api`, `full` |
+| `--members` | wie viel in den Klassenkästen steht, im Modus `literal`: `structure`, `summary` (Standard), `public-api`, `full` |
 | `--source-sets` | `auto` nimmt `src/main/java` bzw. die Verzeichnisse aus `pom.xml` und `build.gradle`, `all` alles |
 | `--include-generated` | generierte Quellen mitlesen |
 | `--exclude-dir`, `--exclude-file` | weitere Muster ausschließen |
@@ -99,6 +120,7 @@ beschrieben. Den Aufbau des Parsers beschreibt `doku/java-parser.md` in Ordner 1
 | `--ide-no-jdk`, `--ide-no-same-package` | IntelliJ ohne JDK bzw. mit falschem Source-Root nachbilden (`intellij`) |
 | `--ref`, `--keep-clone` | beim Klonen |
 | `--plantuml` | PlantUML-JAR für PNG und SVG |
+| `-v`, `--verbose` | Fortschritt und Hinweise ausgeben |
 
 ## Ausgabe
 
@@ -150,6 +172,9 @@ hier unverändert, siehe "Gleichheit mit Ordner 1" unten.
 
 ## Tests
 
+Tests sind kleine Prüfprogramme, die automatisch kontrollieren, ob der Parser
+noch das Erwartete liefert.
+
 ```bash
 .venv/bin/python -m pytest
 ```
@@ -159,7 +184,7 @@ hier unverändert, siehe "Gleichheit mit Ordner 1" unten.
 | `tests/test_java_parsing.py` | Syntaxbaum, Felder und Kardinalitäten, Encodings, Präfix, Module, wörtlicher Graph, javac, Dateiauswahl |
 | `tests/test_java_resolution.py` | Auflösung von Typnamen: Imports, verschachtelte und geerbte Typen, Mehrdeutigkeit |
 | `tests/test_java_intellij.py` | IntelliJ-Modus: Aufrufketten, Schleifen, Felder mit "1" und "*", Umgebungen |
-| `tests/test_java_literal_benchmark.py` | die 20 kleinen Projekte aus `benchmarks/java_literal/` mit von Hand geprüftem Graphen |
+| `tests/test_java_literal_benchmark.py` | die 20 kleinen Projekte aus [`benchmarks/java_literal/`](benchmarks/java_literal/README.md) mit von Hand geprüftem Graphen |
 | `tests/test_cli.py` | Kommandozeile, Ausgabedateien, URL-Erkennung |
 
 Die ersten vier stammen aus Ordner 1 und prüfen dort dasselbe.

@@ -1,4 +1,12 @@
+**Deutsch** · [English](recherche-datensätze.en.md)
+
 # Recherche: Datensätze mit Java-Code und passenden Klassendiagrammen
+
+Um zu prüfen, wie gut ein Werkzeug oder ein LLM Klassendiagramme erzeugt,
+braucht man Vergleichsmaterial: echte Softwareprojekte, zu denen Menschen ein
+Klassendiagramm gezeichnet haben. Diese Datei beschreibt, welche solchen
+Sammlungen (Datensätze) es gibt, welche gewählt wurden und warum, und nach
+welchen Regeln verglichen wird. Fachbegriffe erklärt das [Haupt-README](../../README.md#begriffe).
 
 Die Recherche fand am 20.09.2026 statt. Gesucht waren Java-Projekte, zu denen
 ein Klassendiagramm oder Klassengraph existiert. Ziel waren 20 bis 50 Projekte,
@@ -16,8 +24,9 @@ Source Projects that Use UML: Mining GitHub*, MODELS 2016.
 - Der Index umfasst über 93.000 UML-Dateien in über 24.000 Repos. Davon sind
   nicht alle Java-Projekte oder Klassendiagramme, und manche Repos sind nicht
   mehr erreichbar.
-- Verwendet wurden nur maschinenlesbare `.uml`- und `.xmi`-Dateien. Quelltext und
-  Diagramm stammen jeweils aus demselben Commit.
+- Verwendet wurden nur maschinenlesbare `.uml`- und `.xmi`-Dateien (Diagramme,
+  die als Text gespeichert sind, nicht als Bild). Quelltext und Diagramm stammen
+  jeweils aus demselben Commit.
 - Die 30 Projekte sind eine eigene Auswahl aus diesem Datensatz und kein
   veröffentlichter Goldstandard. Die Modelle können von Hand entworfen, per
   Reverse Engineering oder zusammen mit dem Code erzeugt worden sein, und sie
@@ -26,7 +35,8 @@ Source Projects that Use UML: Mining GitHub*, MODELS 2016.
 Die Auswahl lässt sich reproduzieren. Die Indexeinträge wurden nach Repo
 gruppiert, dabei wurden nur Repos mit höchstens zehn XML-Modellen berücksichtigt
 und jeweils das Modell mit dem kürzesten Pfad genommen. Die Liste wurde mit dem
-Seed 20260920 gemischt und 1.200 Repos wurden geprüft. Übernommen wurden die
+Seed 20260920 zufällig gemischt (der feste Startwert sorgt dafür, dass man
+dieselbe Mischung wieder erhält), und 1.200 Repos wurden geprüft. Übernommen wurden die
 ersten 220 Modelle mit 3 bis 200 Typen und mindestens einer Beziehung. Die
 Downloads waren auf 15 MB pro Archiv, 40 MB entpackt und 3 bis 1.500
 Java-Dateien begrenzt. Durch diese Grenzen sind kleinere Projekte in der
@@ -91,14 +101,16 @@ Abstraktion durch das LLM zu bewerten.
   trotzdem gespeichert.
 - Vererbung und Realisierung werden getrennt und mit Richtung verglichen.
   Assoziation, Aggregation und Komposition werden zu einer ungerichteten
-  Assoziation zusammengefasst. Multiplizität, Rollennamen und Besitz werden nicht
-  bewertet.
+  Assoziation zusammengefasst, weil Menschen und Werkzeuge diese drei sehr
+  unterschiedlich verwenden. Multiplizität (die Angabe "1" oder "0..*" am
+  Linienende), Rollennamen und Besitz werden nicht bewertet.
 - Attribute, deren Typ eine Klasse aus dem Modell ist, zählen als Assoziation.
   Doppelte Beziehungen werden nur einmal gezählt. Nicht unterstützte Beziehungen
   werden protokolliert.
 - Die Graphen der Werkzeuge werden auf denselben Umfang wie die Referenz
   beschränkt. Der Knoten-Recall zeigt Fehler bei der Extraktion, die
   Knoten-Precision ist in diesem eingeschränkten Umfang wenig aussagekräftig.
+  (Knoten sind die Klassen, Kanten die Linien zwischen ihnen.)
 - Fehlgeschlagene Läufe werden gemeldet, auch wenn das Werkzeug Erfolg gemeldet,
   aber keine brauchbare Ausgabe erzeugt hat. Sie gehen mit einer leeren Ausgabe
   in die Gesamtwerte ein.
