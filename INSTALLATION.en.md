@@ -8,7 +8,7 @@ read and understand the project; the [main README](README.en.md) and the
 documents it links to are enough for that.
 
 You type all the commands below into a terminal (PowerShell on Windows). Lines
-starting with `#` are comments and are not run. There are two ways to go:
+starting with `#` are comments and are not run. There are two routes:
 
 - Docker: Docker is a program that delivers a ready-made environment as a
   package (an image). Python, the JDK and all the tools are already inside, so
@@ -134,8 +134,8 @@ docker compose run --rm app pipeline https://github.com/dbader/schedule --config
 
 Without `--config` the pipeline uses Gemini and then needs `GEMINI_API_KEY`. A
 local model runs for free on your own machine. For that, Ollama has to run on
-the machine itself, not inside the container (`ollama pull qwen2.5:14b`). You
-call it with `--config configs/ollama_docker.yaml`. What the options mean is
+the host machine, not inside the container (`ollama pull qwen2.5:14b`). You call
+it with `--config configs/ollama_docker.yaml`. What the options mean is
 explained in the [folder 1
 README](1-llm-pipeline-abstrakte-klassendiagramme/README.en.md).
 
@@ -153,9 +153,9 @@ docker compose run --rm app restore
 <https://osf.io/p4jdr/?view_only=34b153d3b7704f4a84befd661dc9c6a1>. You need
 two folders from the package:
 
-- `Version(s) of Source Code Used/` goes to
+- copy `Version(s) of Source Code Used/` to
   `docker-daten/zhang-hebig/Version(s) of Source Code Used/`
-- the models go to `docker-daten/zhang-hebig/models/`, with the IntelliJ
+- put the models in `docker-daten/zhang-hebig/models/`, with the IntelliJ
   diagrams from `reverse-models.zip` unpacked into
   `docker-daten/zhang-hebig/models/reverse/`
 
@@ -203,7 +203,7 @@ winget install Git.Git Microsoft.OpenJDK.25 astral-sh.uv
 
 This installs `git` (downloads repos), `curl` (downloads files), the JDK (Java)
 and `uv` (sets up Python environments). The measurements were made with version
-25 of OpenJDK. A JDK 21 should do as well but has not been checked. You do not
+25 of OpenJDK. JDK 21 should also work but has not been tested. You do not
 need to install Python yourself; `uv` fetches Python 3.13 automatically.
 
 Then fetch the repository:
@@ -271,7 +271,7 @@ uv pip install --python .venv/bin/python --no-deps -e ../1-llm-pipeline-abstrakt
 .venv/bin/python -m pytest -q skripte/test_benchmark.py skripte/test_curated_hebig.py
 ```
 
-The measurement with three extractors also needs java2plantuml (the tool being
+The measurement with three extractors also needs java2plantuml (one of the tools
 compared) and PlantUML (for drawing the pictures):
 
 ```bash

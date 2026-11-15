@@ -52,7 +52,7 @@ public class Library {
 Classes depend on each other. A library contains books, a novel is a special
 kind of book, a loan refers to a book and to a person. A **class diagram**
 draws these connections: every class is a box and every relationship is a
-line. The **UML** (Unified Modeling Language) is the standard set of drawing
+line. **UML** (Unified Modeling Language) is the standard set of drawing
 rules for software that says what the boxes and lines look like. A diamond at
 the end of a line means "has as a part", a triangle means "is a special kind
 of".
@@ -69,10 +69,10 @@ of".
                              └──────────┘
 ```
 
-Read aloud: a library has any number (`0..*`) of books, and a novel is a book.
-This project writes diagrams in **PlantUML**, a text format that a program
-turns into a picture. The line `Library o-- "0..*" Book : books` produces the
-upper connection.
+In words: a library has any number (`0..*`) of books, and a novel is a book.
+This project writes diagrams in **PlantUML**, a text format that a program turns
+into a picture. The line `Library o-- "0..*" Book : books` produces the
+connection at the top.
 
 A diagram like this is quick to draw for two classes. Real programs, though,
 have hundreds or thousands of classes, and a diagram that shows all of them is
@@ -88,20 +88,18 @@ The goal of the project is to produce diagrams like that automatically.
 ## Why it is useful
 
 - Anyone who joins a software project first has to work out how it is put
-  together. A good overview diagram saves days of
-  reading.
-- Hand-drawn diagrams go stale because the
-  code keeps changing and nobody updates the picture. A diagram you can
-  regenerate at any time stays current. How far drawn diagrams drift from the
-  code showed up in this project too (see the [case
+  together. A good overview diagram saves days of reading.
+- Hand-drawn diagrams go stale because the code keeps changing and nobody
+  updates the picture. A diagram you can regenerate at any time stays current.
+  This project, too, found that drawn diagrams can drift a long way from the
+  code (see the [case
   studies](2-java-extraktoren-benchmark-forschungsdaten/doku/fallstudien.en.md)).
-- Many companies run software that was written
-  years ago by people who have long since left. You have to understand such a
-  system before you can change or replace it.
-- For research and teaching, it is interesting how people abstract when they
-  draw, what they leave out and what they keep. This is still poorly
-  understood. A tool that imitates
-  those choices makes them measurable.
+- Many companies run software that was written years ago by people who have long
+  since left. You have to understand such a system before you can change or
+  replace it.
+- Research and teaching are interested in how people abstract when they draw:
+  what they leave out and what they keep. This is still poorly understood. A
+  tool that imitates those choices makes them measurable.
 
 ## Why a language model
 
@@ -113,12 +111,12 @@ What it cannot do is judge which of them matter for understanding the system.
 Nothing in the code says that `Library` is central and `DateFormatter` is a
 side issue.
 
-That judgement is the LLM's job. An **LLM** (large language model) is a
-program trained on huge amounts of text, including a lot of source code, so it
-can read code and answer questions about it. GPT, Gemini and DeepSeek are well
-known examples. In this project the model does not get the raw code. It gets
-what the parser found and picks from that. So the work is split: the parser
-supplies exactly what is in the code, and the LLM makes the selection.
+That judgement is the LLM's job. An **LLM** (large language model) is a program
+trained on huge amounts of text, including a lot of source code, so it can read
+code and answer questions about it. GPT, Gemini and DeepSeek are well-known
+examples. In this project the model does not get the raw code. It gets what the
+parser found and picks from that. So the work is split: the parser supplies
+exactly what is in the code, and the LLM makes the selection.
 
 ## How it works
 
@@ -145,18 +143,18 @@ this is called a **pipeline**.
    every request sent to the model with its cost and duration.
 
 There are eight ways to set up how the model works (the **variants**). It can
-start from a blank page and add the important classes, or it can be handed
-the complete diagram and cross out what does not matter (the project calls
-this `prune`). At the start it sees either an overview of the **packages**
-(folders that hold classes belonging together), groups of closely connected
-classes, or the full list of all classes. And it is either allowed to look at
-the source code itself or not (`peek`). Not every combination makes sense: a
-model that gets the complete diagram to cross things out already sees every
-class. That leaves six variants that start empty and two that cross out,
-eight in all. All
-variants share the same instructions and the same budget, so they can be
-compared fairly. The details are in the
-[folder 1 README](1-llm-pipeline-abstrakte-klassendiagramme/README.en.md).
+start from a blank page and add the important classes, or it can be handed the
+complete diagram and cross out what does not matter (the project calls this
+`prune`). At the start it sees either an overview of the **packages** (folders
+that hold classes belonging together), groups of closely connected classes, or
+the full list of all classes. And it is either allowed to look at the source
+code itself or not (`peek`). Not every combination makes sense. A model that is
+handed the complete diagram already sees every class, so for it the choice of
+starting overview falls away and only `peek` remains. That gives six variants
+that start empty (three kinds of overview, each with and without `peek`) and two
+that cross out, eight in all. All variants share the same instructions and the
+same budget, so they can be compared fairly. The details are in the [folder 1
+README](1-llm-pipeline-abstrakte-klassendiagramme/README.en.md).
 
 The pipeline handles two programming languages, **Python** and **Java**. For
 Java we wrote our own parser because the existing tools were not good enough
@@ -213,7 +211,7 @@ folder 2 show this with real projects.
   projects with drawn diagrams from two research datasets: 30 projects from the
   Lindholmen dataset and 9 from a study by Zhang, Zhang, Strüber and Hebig
   (Zhang/Hebig for short). There it scores exactly the same as javalang, the
-  best of the other tools we tested. That is to be expected, since both read
+  best of the other tools we tested. That is no surprise, since both read
   the same information from the code and are scored by the same rules. Its
   advantages lie elsewhere: it understands newer versions of Java, copes with
   old file formats, works even when a project cannot be built, and records for
@@ -245,11 +243,11 @@ name with `.en` added, so `README.en.md` sits next to `README.md`.
 
 The project comes in two forms. The **repository on GitHub**
 (`jg512/abstrakte-klassendiagramme-mit-llms`) holds the code, the documents and
-our own metadata, but no large data. The **full project folder**, as handed
-over to the university, also contains the downloaded datasets, the built
-third-party tools and all stored runs and measurement results (just under
-1 GB in total). Wherever it says "only in the full project folder" below, the
-file is missing on GitHub. How to download the data yourself is described in
+our own metadata, but no large data. The **full project folder**, as handed over
+to the university, also contains the downloaded datasets, the built third-party
+tools and all stored runs and measurement results (just under 1 GB in total).
+Wherever it says "only in the full project folder" below, that file is not in
+the GitHub repository. How to download the data yourself is described in
 [`INSTALLATION.en.md`](INSTALLATION.en.md).
 
 ### General
@@ -346,14 +344,14 @@ behind one interface. The test subjects were three Python repos:
 `schedule` (about 1,000 lines of code), and `loguru` and `transitions` (about
 5,000 lines each).
 
-Running locally through a program called Ollama, an open-source model
-(`qwen2.5:14b`) was tried again first. The problems from phase 0 came back but
-were easier to deal with. Ollama's context window defaults to 2,048
-**tokens** (a token is a piece of a word, about four letters in English; text
-size, limits and prices are all counted in tokens), and we raised it to
-32,768. When a model returns invalid JSON, the request is repeated once with a
-hint about what to fix. Very small models such as `qwen2:0.5b` were only good
-for checking that the plumbing worked.
+First we tried an open-source model again (`qwen2.5:14b`), run locally through a
+program called Ollama. The problems from phase 0 came back but were easier to
+deal with. Ollama's context window defaults to 2,048 **tokens** (a token is a
+piece of a word, about four letters in English; text size, limits and prices are
+all counted in tokens), and we raised it to 32,768. When a model returns invalid
+JSON, the request is repeated once with a hint about what to fix. Very small
+models such as `qwen2:0.5b` were only good for checking that the plumbing
+worked.
 
 After that we tried Gemini (`gemini-2.5-pro`, runs on 22 and 29 May) and later
 DeepSeek (`deepseek-chat`) through their **APIs**, that is, over the internet
@@ -409,11 +407,11 @@ So the pipeline was extended to Java. Everything after the static analysis
 stays the same; only the parser is different.
 
 First we tested existing open-source tools. As the reference we used a ground
-truth taken from the **bytecode** (the material from this first comparison is
-not kept in this project, only its result): before Java code runs, a **compiler**
+truth taken from the **bytecode**. Before Java code runs, a **compiler**
 translates it into a lower-level form (this is called compiling), and the
-relationships can be read off that bytecode exactly. None of the tools was up
-to the job:
+relationships can be read off that bytecode exactly. (The material from this
+first comparison is not kept in this project, only its result.) None of the
+tools was up to the job:
 
 - The tools that read bytecode (plantuml-generator, Java2PlantUML by juanmf,
   genuml) need
@@ -473,12 +471,12 @@ the search for that kind of data and the measurements:
 ### Phase 5: indirect connections, the way IntelliJ draws them (October 2026)
 
 Commercial UML tools show connections the parser did not see, because it only
-read the **declarations**, meaning the places where classes, fields and methods
-are announced: fields, `extends` ("inherits from") and `implements` ("fulfils
-the interface"). It did not read the code inside the methods. IntelliJ also
-reads what is inside the methods. In the RaiseMeUp project this means
-`PetObserver` depends on `Job` even though the word `Job` never appears in it.
-The connection runs through a third class, via the call
+read the **declarations**, the places where classes, fields and methods are
+announced. That means it looked at the fields and at `extends` ("inherits from")
+and `implements` ("fulfils the interface"), but not at the code inside the
+methods. IntelliJ also reads what is inside the methods. In the RaiseMeUp
+project this means `PetObserver` depends on `Job` even though the word `Job`
+never appears in it. The connection runs through a third class, via the call
 `RaiseMeUp.getCurrentJob().getImpactenergy()`: the class `RaiseMeUp` hands back
 a `Job`, and a value is read from that job. Connections that take a detour like
 this are called **transitive**.
@@ -500,7 +498,7 @@ not every line can be traced. There, every line that could be checked in the
 picture matches. The details are in
 [`intellij-nachbildung.en.md`](2-java-extraktoren-benchmark-forschungsdaten/doku/intellij-nachbildung.en.md).
 
-### Phase 6: the parser as a tool of its own (November 2026)
+### Phase 6: the parser as a standalone tool (November 2026)
 
 The Java parser is useful without the LLM pipeline too, for example to get a
 complete class diagram of any Java project in a hurry. Folder 3 therefore
@@ -530,7 +528,7 @@ IntelliJ comparison gives the same lines when run through the new tool.
 - The Java parser can reproduce IntelliJ's class diagrams. On seven of the nine
   projects this has been checked completely against IntelliJ's pictures, for
   Orekit and Neuroph only in part.
-- The parser is also available as a tool of its own in folder 3. It lives
+- The parser is also available as a standalone tool in folder 3. It lives
   there as a copy, so any change to the parser has to be made in both folder 1
   and folder 3.
 - There are four presentations on the project: on the Python pipeline with
@@ -595,7 +593,7 @@ In alphabetical order. The other documents link here.
 | Extractor | In folder 2, the general term for tools that produce a class diagram from code. Our own parser is one of them. |
 | F1, micro F1, macro F1 | A single score between 0 and 1 that combines precision and recall. Micro F1 adds up the hits of all projects; macro F1 averages the scores of the individual projects. See [how to tell whether a diagram is good](#how-to-tell-whether-a-diagram-is-good). |
 | Fine-tuning | Extra training of a finished model on examples for a particular task. |
-| Graph, node, edge | A graph is made of points (nodes) and connections (edges). In the class graph the classes are the nodes and the relationships are the edges. |
+| Graph, node, edge | A graph is made of points (nodes) and connections (edges). In the class graph the classes are the nodes and the relationships are the edges. In a drawn diagram an edge appears as a line; the documents use both words for the same thing. |
 | Ground truth, reference | The answer assumed to be correct, which results are compared against. |
 | Harness | The program around a language model that gives it tasks and tools and checks its answers. |
 | Import graph | Who uses whom, at the level of files or packages. |
@@ -609,7 +607,9 @@ In alphabetical order. The other documents link here.
 | Lambda | A short, nameless function written right where it is needed. |
 | Library (in programming) | Ready-made third-party code a project uses, for example for windows or databases. |
 | LLM | Large language model. A program trained on vast amounts of text that understands and produces text. |
+| Model | Two meanings. In folder 1, the language model. In folder 2, the drawn class diagram in machine-readable form, as the research datasets call it. |
 | Module (build module) | A subproject within a larger Java project that is built on its own. Two modules can contain classes with the same name. |
+| Multiplicity | The "1", "0..1" or "0..*" at the end of a line, saying how many objects can be at that end. |
 | Normalisation | Making data uniform before comparing it. Here mainly: association, aggregation and composition are merged into one kind of relationship, because people and tools use them very differently. |
 | Open source | Software whose code is freely available. |
 | Package | A folder that holds classes that belong together. |
@@ -617,7 +617,7 @@ In alphabetical order. The other documents link here.
 | Parser | A program that reads text in a fixed language (here, program code) and works out its structure. |
 | Pipeline | A chain of processing steps in which each step works on the result of the one before. |
 | PlantUML | A text format for diagrams and the program that turns it into pictures (PNG, SVG). |
-| Precision, recall | Precision: the share of what a tool output that is correct. Recall: the share of the correct items that it found. |
+| Precision, recall | Precision: the share of a tool's output that is correct. Recall: the share of the correct items that it found. |
 | Prompt | The instruction or question you send to a language model. |
 | Render | Turn a diagram written as text (PlantUML) into a picture. |
 | Replication package | Data and material that a study's authors publish so others can check their results. |

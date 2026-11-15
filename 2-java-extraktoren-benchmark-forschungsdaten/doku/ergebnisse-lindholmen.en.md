@@ -5,14 +5,14 @@
 As of 20 September 2026, with extensions to the extractor from 21 September 2026.
 
 This file holds the results of the first comparison. Three tools that produce a
-class diagram from Java source code, our own parser among them, were compared
-with the diagrams that belong to 30 projects from the Lindholmen dataset and to
-the nine Zhang/Hebig projects. The nine Zhang/Hebig projects are called the
-"suite" here (a fixed collection of test cases). The file also describes which
-bugs in our parser came to light along the way and were fixed. The
-[main README](../../README.en.md#glossary) explains precision, recall and F1.
-In the tables, "completed" means that the tool produced output without
-crashing.
+class diagram from Java source code, among them our extractor (the parser from
+folder 1), were compared with the diagrams that belong to 30 projects from the
+Lindholmen dataset and to the nine Zhang/Hebig projects. The nine Zhang/Hebig
+projects are called the "suite" here (a fixed collection of test cases). The
+file also describes which bugs in our extractor came to light along the way and
+were fixed. The [main README](../../README.en.md#glossary) explains precision,
+recall and F1. In the tables, "completed" means that the tool produced output
+without crashing.
 
 For the benchmark, 30 projects were downloaded from the Lindholmen dataset,
 each together with its UML/XMI model from the same Git commit. Together that is
@@ -25,16 +25,16 @@ abstracted, generated or out of date, so they are not a checked ground truth.
 
 ## Zhang/Hebig suite with three extractors
 
-We also downloaded and measured the replication package of the study by Zhang,
-Zhang, Strüber and Hebig (2025). It contains nine Java projects in the version
-that was studied, 79 classes in the models, 82 relationships as counted by the
-authors, the original diagrams, the authors' annotations, diagrams produced by
-reverse engineering, and one comparison table per project. Three diagrams
-contain duplicate directed associations between the same classes. If
-associations are counted without direction, 79 relationships remain.
+We also downloaded the replication package of the study by Zhang, Zhang, Strüber
+and Hebig (2025) and ran the measurement on it. It contains nine Java projects
+in the version that was studied, 79 classes in the models, 82 relationships as
+counted by the authors, the original diagrams, the authors' annotations,
+diagrams produced by reverse engineering, and one comparison table per project.
+Three diagrams contain duplicate directed associations between the same classes.
+If associations are counted without direction, 79 relationships remain.
 `daten/zhang-hebig/reference.json` is a transcription of the diagrams made by
-hand; the original pictures, PDFs and tables are next to it. The run times
-come from this run. The later measurement with seven tools in
+hand; the original pictures, PDFs and tables are next to it. The run times come
+from this run. The later measurement with seven tools in
 [`ergebnisse-zhang-hebig.en.md`](ergebnisse-zhang-hebig.en.md) is a separate run
 with slightly different times.
 
@@ -79,12 +79,12 @@ they are on nodes. Classes from the model that could not be matched were
 excluded. Classes in the source code that do not appear in the diagram do not
 count as errors.
 
-The fixed extractor finds five more reference relationships (229 instead of
-224 out of 399). At the same time it outputs 14 extra relationships that do
-exist in the source code but are not in the diagram (81 instead of 67). As a
-result, micro F1 drops slightly from 0.649 to 0.646. The extraction has not got
-worse. The score rather reflects the difference between what is in the code
-and what was drawn in the diagram.
+The fixed extractor finds five more reference relationships (229 instead of 224
+out of 399). At the same time it outputs 14 extra relationships that do exist in
+the source code but are not in the diagram (81 instead of 67). As a result,
+micro F1 drops slightly from 0.649 to 0.646. The extraction has not got worse;
+rather, the score reflects the gap between what is in the code and what was
+drawn in the diagram.
 
 The run times are single measurements on one computer. They include parsing
 and building the graph, and for java2plantuml also starting the JVM and
@@ -94,7 +94,7 @@ included.
 ## Fixes to our extractor
 
 The following points are fairly technical. In short, we fixed cases in which
-the parser assigned a name to the wrong class or missed a relationship.
+the extractor assigned a name to the wrong class or missed a relationship.
 
 - Full Java names as well as package and import information are kept.
   Explicit imports are no longer wrongly assigned to project classes with the
@@ -149,7 +149,7 @@ a given classpath. Results from the source code take precedence. By default
 the extractor runs without a build.
 
 A benchmark of our own with 20 fixed cases in modern Java (records, sealed
-types, nested types, imports, generics, self-relationships, multiplicity,
+types, nested types, imports, generics, self-associations, multiplicity,
 composition, JPA annotations, method dependencies) used to live in folder 1 and
 is now in folder 3 under
 [`benchmarks/java_literal/`](../../3-java-parser-klassendiagramme/benchmarks/java_literal/README.en.md).
@@ -169,7 +169,7 @@ recall 0.574, F1 0.646), and so did those on the Zhang/Hebig suite (node F1
   refers to the enum itself.
 - `jainebri/Super-Simple-Stocks`: hits go up from 10 to 11. The interface
   `SimpleStockServicesFactory` declares its own singleton `INSTANCE`.
-- `Neseek77/gwt-ent`: hits go up from 2 to 3, through self-relationships in a
+- `Neseek77/gwt-ent`: hits go up from 2 to 3, through self-associations in a
   reflection API.
 - `shadeven/cerebrumehr`: no tool finds any of the 96 edges. In the source
   code the relationships mostly sit on generated `*Base` classes, while the
@@ -183,18 +183,18 @@ recall 0.574, F1 0.646), and so did those on the Zhang/Hebig suite (node F1
 
 - The 30 projects are our own selection from a published dataset, not a gold
   standard checked by people.
-- The selection favours small, reachable projects with XML models that can be
-  parsed as Java 8. Only one model per repo was used.
+- The selection favours small projects that are still available online with XML
+  models that can be parsed as Java 8. Only one model per repo was used.
 - Associations are compared without direction, multiplicity or ownership;
   inheritance and realization with direction and type.
-- The comparison with javalang relies on an adapter of our own with simpler
-  type resolution.
+- The comparison with javalang relies on an adapter of our own with simpler type
+  resolution.
 - Time limits: 120 seconds per adapter, 90 seconds for java2plantuml. All runs
   finished within this time.
 - Not measured: how well an LLM abstracts from this, whether annotations are
   interpreted correctly, whether more would be found with the libraries
-  available (on the classpath), and whether every relationship found is right
-  in substance.
+  available (on the classpath), and whether every relationship found is right in
+  substance.
 
 As a check, all 90 runs on the Lindholmen projects (30 projects times 3 tools)
 and all 27 runs on the Zhang/Hebig suite (9 times 3) were repeated. Status,

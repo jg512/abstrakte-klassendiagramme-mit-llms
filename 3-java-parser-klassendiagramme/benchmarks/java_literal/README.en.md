@@ -12,10 +12,10 @@ comparison is with what is provably in the code.
 
 The suite consists of 20 small, independent projects, each only a few lines of
 code and each testing one particular case. Together they cover plain fields,
-arrays, standard and home-made generics, `Optional`, maps, records, sealed
-types, nested types, imports, inheritance between interfaces, realization,
-self-references, composition, multiplicities taken from JPA annotations and
-the optional method dependencies.
+arrays, standard generics and the project's own generic classes, `Optional`,
+maps, records, sealed types, nested types, imports, inheritance between
+interfaces, realization, self-associations, composition, multiplicities taken
+from JPA annotations and the optional method dependencies.
 
 The expected graphs in `manifest.json` were checked by hand against the code
 samples. The general terms are explained in the [main

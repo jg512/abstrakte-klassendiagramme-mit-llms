@@ -5,7 +5,7 @@
 When a tool does not find a line from the reference diagram, there can be two
 reasons: the tool reads the code wrongly, or the diagram shows something that
 is not in the code in that form. For three projects we checked this line by
-line. The result up front: for RaiseMeUp, the project with the largest
+line. In short: for RaiseMeUp, the project with the largest
 reference diagram, most of the differences come from the diagram. The
 [main README](../../README.en.md#glossary) explains the technical terms.
 
@@ -22,7 +22,7 @@ reference diagram differing from the code.
 ## RaiseMeUp
 
 The reference contains 17 classes and 22 relationships (after normalisation).
-All tools that read out the structure find the same 12 classes. Dog, Cat,
+All tools that extract the structure find the same 12 classes. Dog, Cat,
 Fish, Penguin and ItemDecorator are missing. Edges found: our extractor,
 javalang and plantuml-generator 8 each, jdeps 9, java2plantuml and juanmf 6
 each, genuml 0.
@@ -86,14 +86,14 @@ Diagram and code come from the same commit `848a3aa`. The diagram has 10
 classes and 9 relationships and shows no attributes or methods.
 
 - Our extractor and javalang find all 9 edges, plus the edge
-  `NeuralNetwork–Neuron` (`NeurophArrayList<Neuron> inputNeurons`). According
-  to the authors, this edge exists in the code but was left out of the
-  diagram.
-- java2plantuml misses only `TrainingSet–TrainingElement`, because the field
-  has the type `List<DataSetRow>`. The renamings `TrainingSet`/`DataSet` and
+  `NeuralNetwork–Neuron` (`NeurophArrayList<Neuron> inputNeurons`). According to
+  the authors, this edge exists in the code but was left out of the diagram.
+- java2plantuml misses only `TrainingSet–TrainingElement`, because the field has
+  the type `List<DataSetRow>`. The renamings `TrainingSet`/`DataSet` and
   `TrainingElement`/`DataSetRow` are recorded as aliases.
-- plantuml-generator and juanmf stop while loading the classes.
-- jdeps finds all 9 edges, plus six edges from the use of classes.
+- plantuml-generator and juanmf crash while loading the classes.
+- jdeps finds all 9 edges, plus six extra edges where one class merely uses
+  another.
 
 ## PatrickFromTheMOOC
 
@@ -113,10 +113,10 @@ The diagram comes from commit `e2b99c7` (27 April 2015), the code from
 
 ## Conclusions
 
-For the two smaller projects, the extractors working from fields find almost
-all edges in the diagram. The remaining differences come from generics, an
-edge left out of the diagram, extra edges from jdeps, and bytecode tools that
-stopped. For RaiseMeUp, the problem lies mainly with the diagram.
+For the two smaller projects, the extractors working from fields find almost all
+edges in the diagram. The remaining differences come from generics, an edge left
+out of the diagram, extra edges from jdeps, and bytecode tools that crashed. For
+RaiseMeUp, the problem lies mainly with the diagram.
 
 So a reference diagram taken from a repo is not necessarily a good yardstick.
 Before a diagram produced by the LLM is compared with such a reference, we

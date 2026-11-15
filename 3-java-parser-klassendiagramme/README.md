@@ -122,7 +122,7 @@ in Ordner 1.
 | `--javac`, `--classpath` | Typen zusätzlich über den JDK-Compiler auflösen (`literal`) |
 | `--classes` | Klassenauswahl (`intellij`) |
 | `--ide-no-jdk`, `--ide-no-same-package` | IntelliJ ohne JDK bzw. mit falschem Source-Root nachbilden (`intellij`) |
-| `--ref`, `--keep-clone` | beim Klonen |
+| `--ref`, `--keep-clone` | Branch oder Tag wählen, Klon behalten |
 | `--plantuml` | PlantUML-JAR für PNG und SVG |
 | `-v`, `--verbose` | Fortschritt und Hinweise ausgeben |
 

@@ -41,7 +41,7 @@ project folder. How to download it is described in
 [`INSTALLATION.en.md`](../../../INSTALLATION.en.md). The repository contains
 `reference.json` and `manifest.json`.
 
-To run it from the parent folder:
+To run the benchmark from the parent folder:
 
 ```bash
 .venv/bin/python -m pytest -q skripte/test_benchmark.py skripte/test_curated_hebig.py

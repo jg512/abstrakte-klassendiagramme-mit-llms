@@ -10,7 +10,7 @@ detail in [`INSTALLATION.en.md`](../../INSTALLATION.en.md). The
 
 The basis is the fixed list of projects in `daten/lindholmen/manifest.json`.
 Do not rerun the selection of projects for a repetition, because the repos'
-branches and contents may have changed since.
+branches and contents may have changed since then.
 
 All commands are run in this folder
 (`2-java-extraktoren-benchmark-forschungsdaten/`). The pipeline with our
@@ -97,7 +97,7 @@ PYTHONPATH=../1-llm-pipeline-abstrakte-klassendiagramme \
 ```
 
 Here `/pfad/zum/` means "/path/to/". The command compiles each project once
-with `javac` and measures all seven tools. The results go to
+with `javac` and measures all seven tools. The results are written to
 `ergebnisse/messungen/curated-alltools/`, and every output is written to
 `ergebnisse/diagramme/` as PlantUML and PNG.
 

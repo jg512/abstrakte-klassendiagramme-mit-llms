@@ -1,6 +1,6 @@
 [Deutsch](recherche-datensätze.md) · **English**
 
-# Research: datasets with Java code and matching class diagrams
+# Finding datasets with Java code and matching class diagrams
 
 To check how well a tool or an LLM produces class diagrams, you need something
 to compare against: real software projects for which people have drawn a
@@ -8,7 +8,7 @@ class diagram. This file describes which such collections (datasets) exist,
 which ones were chosen and why, and by which rules the comparison is made. The
 [main README](../../README.en.md#glossary) explains the technical terms.
 
-The research was done on 20 September 2026. We were looking for Java projects
+The search was carried out on 20 September 2026. We were looking for Java projects
 for which a class diagram or class graph exists. The aim was 20 to 50
 projects, and at least 20 usable pairs of code and diagram.
 

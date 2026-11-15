@@ -149,18 +149,19 @@ nennt man **Pipeline**.
 
 Wie das Modell arbeitet, lässt sich auf acht Arten einstellen (die
 **Varianten**). Es kann mit einem leeren Blatt anfangen und wichtige Klassen
-eintragen, oder es bekommt das vollständige Diagramm und streicht das
-Unwichtige (das heißt im Projekt `prune`, englisch für "zurückschneiden"). Es
-bekommt zu Beginn eine Übersicht der **Pakete** (Ordner, in denen
-zusammengehörige Klassen liegen), Gruppen eng verbundener Klassen oder die
-vollständige Liste aller Klassen zu sehen. Und es darf den Quellcode selbst
-nachlesen oder nicht (`peek`, "hineinschauen"). Nicht jede Kombination ist
-sinnvoll: Wer das vollständige Diagramm zum Streichen bekommt, sieht ohnehin
-schon alle Klassen. So ergeben sich sechs Varianten, die leer beginnen, und
-zwei, die streichen, zusammen acht. Alle Varianten
-benutzen dieselben Anweisungen und dasselbe Budget, damit man sie fair
-vergleichen kann. Die genaue Beschreibung steht im
-[README von Ordner 1](1-llm-pipeline-abstrakte-klassendiagramme/README.md).
+eintragen, oder es bekommt das vollständige Diagramm und streicht das Unwichtige
+(das heißt im Projekt `prune`, englisch für "zurückschneiden"). Es bekommt zu
+Beginn eine Übersicht der **Pakete** (Ordner, in denen zusammengehörige Klassen
+liegen), Gruppen eng verbundener Klassen oder die vollständige Liste aller
+Klassen zu sehen. Und es darf den Quellcode selbst nachlesen oder nicht (`peek`,
+"hineinschauen"). Nicht jede Kombination ist sinnvoll. Wer das vollständige
+Diagramm zum Streichen bekommt, sieht ohnehin schon alle Klassen. Für diese
+Varianten fällt die Wahl der Übersicht weg, nur `peek` bleibt. So ergeben sich
+sechs Varianten, die leer beginnen (drei Arten von Übersicht, jeweils mit und
+ohne `peek`), und zwei, die streichen, zusammen acht. Alle Varianten benutzen
+dieselben Anweisungen und dasselbe Budget, damit man sie fair vergleichen kann.
+Die genaue Beschreibung steht im [README von Ordner
+1](1-llm-pipeline-abstrakte-klassendiagramme/README.md).
 
 Die Pipeline funktioniert für zwei Programmiersprachen, **Python** und
 **Java**. Für Java wurde ein eigener Parser geschrieben, weil die vorhandenen
@@ -602,7 +603,7 @@ Zum Nachschlagen, alphabetisch. Die anderen Dokumente verweisen hierher.
 | Extraktor | In Ordner 2 der Oberbegriff für Werkzeuge, die aus Code ein Klassendiagramm erzeugen. Der eigene Parser ist einer davon. |
 | F1, Micro-F1, Macro-F1 | Gemeinsamer Wert aus Precision und Recall zwischen 0 und 1. Micro-F1 zählt alle Treffer aller Projekte zusammen, Macro-F1 mittelt die Werte der einzelnen Projekte. Siehe [Wie man prüft](#wie-man-prüft-ob-ein-diagramm-gut-ist). |
 | Feintuning | Zusätzliches Training eines fertigen Modells mit Beispielen für eine bestimmte Aufgabe. |
-| Graph, Knoten, Kante | Ein Graph besteht aus Punkten (Knoten) und Verbindungen (Kanten). Im Klassengraphen sind die Klassen die Knoten und die Beziehungen die Kanten. |
+| Graph, Knoten, Kante | Ein Graph besteht aus Punkten (Knoten) und Verbindungen (Kanten). Im Klassengraphen sind die Klassen die Knoten und die Beziehungen die Kanten. Im gezeichneten Diagramm ist eine Kante eine Linie, die Dokumente benutzen beide Wörter für dasselbe. |
 | Ground Truth, Referenz | Die als richtig angenommene Lösung, mit der verglichen wird. |
 | Harness | Das Programm um ein Sprachmodell herum, das ihm Aufgaben stellt, Werkzeuge gibt und seine Antworten prüft. |
 | Importgraph | Wer benutzt wen auf der Ebene von Dateien oder Paketen. |
@@ -620,7 +621,9 @@ Zum Nachschlagen, alphabetisch. Die anderen Dokumente verweisen hierher.
 | Korpus | Die Sammlung von Projekten, auf der gemessen wird. |
 | Lambda | Eine kurze, namenlose Funktion, die direkt an der Stelle steht, wo sie gebraucht wird. |
 | LLM | Large Language Model, großes Sprachmodell. Ein mit sehr viel Text trainiertes Programm, das Text versteht und erzeugt. |
+| Modell | Zwei Bedeutungen. In Ordner 1 das Sprachmodell. In Ordner 2 das gezeichnete Klassendiagramm in maschinenlesbarer Form, so wie die Forschungsdatensätze es nennen. |
 | Modul (Build-Modul) | Ein Teilprojekt in einem größeren Java-Projekt, das für sich gebaut wird. Zwei Module können Klassen mit gleichem Namen haben. |
+| Multiplizität, Kardinalität | Die Angabe "1", "0..1" oder "0..*" am Ende einer Linie: wie viele Objekte an diesem Ende hängen können. |
 | Normalisierung | Das Angleichen von Daten vor dem Vergleich. Hier vor allem: Assoziation, Aggregation und Komposition werden zu einer Beziehungsart zusammengefasst, weil Menschen und Werkzeuge sie sehr unterschiedlich verwenden. |
 | Open Source | Software, deren Code frei verfügbar ist. |
 | Paket | Ordner, in dem zusammengehörige Klassen liegen. |

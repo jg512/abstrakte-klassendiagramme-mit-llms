@@ -28,8 +28,8 @@ without the add-on program Graphviz.
 ## Checksums of the JARs
 
 A JAR is a packed file of compiled Java code. The checksum (SHA-256, shortened
-here) is its fingerprint. If you download the file again, it tells you that
-you have the same file.
+here) is its fingerprint. If you download the file again and the checksum
+matches, you have the same file.
 
 | Tool | file | size | SHA-256 (shortened) |
 | --- | --- | ---: | --- |
@@ -54,7 +54,7 @@ mvn -f juanmf/pom.xml -DskipTests package
 mvn -f juanmf/pom.xml dependency:build-classpath -Dmdep.outputFile=cp.txt
 javac -cp "juanmf/target/java2PlantUML-maven-plugin-1.0.1.jar:$(cat juanmf/cp.txt)" -d juanmf/driver juanmf/JuanmfRun.java
 
-# genuml in a virtual environment of its own, because it needs click<8.2
+# genuml in its own virtual environment, because it needs click<8.2
 python3 -m venv /tmp/genumlvenv
 /tmp/genumlvenv/bin/pip install genuml 'click<8.2'
 

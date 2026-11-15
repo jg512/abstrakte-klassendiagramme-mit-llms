@@ -10,9 +10,10 @@ projects, so they fall far behind. The
 
 We compared seven tools that produce a UML class diagram from Java code, on the
 nine projects from the replication package of Zhang, Zhang, Strüber and Hebig
-(SoSyM 2025). The reference is the set of diagrams the authors abstracted by
-hand, with 79 classes and 79 relationships (after normalisation, that is,
-after the three kinds of "has a" relationship were merged into one).
+(Software and Systems Modeling, 2025). The reference is the set of diagrams the
+authors abstracted by hand, with 79 classes and 79 relationships (after
+normalisation, that is, after the three kinds of "has a" relationship were
+merged into one).
 
 What is measured is agreement with the drawn diagrams. A low score does not
 necessarily mean the parser has a bug. The normalisation that turns the 82
@@ -69,7 +70,7 @@ Compared with all nine projects:
   projects that compile are not easier for them than the others.
 - genuml stays at 0.000, because it never outputs any relationships.
 
-## Why the bytecode tools hardly run
+## Why the bytecode tools mostly fail to run
 
 These tools need compiled code, but the replication package only contains
 source code. So each project was compiled once with `javac`, using all JARs
@@ -95,9 +96,9 @@ comparable.
 
 Only 3 of 9 projects can be compiled. Even then, not every tool runs: for
 NeurophChanges both PlantUML generators fail while loading the classes
-(`NoClassDefFoundError`, meaning "class not found", for `AbstractMapEntry` and
-for a class of the database library Hibernate that is missing from the
-project, respectively).
+(`NoClassDefFoundError`, meaning "class not found": plantuml-generator for
+`AbstractMapEntry`, Java2PlantUML for a class from the database library
+Hibernate that is missing from the project).
 
 ## Relationships found per project
 

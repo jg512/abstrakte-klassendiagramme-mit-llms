@@ -3,10 +3,11 @@
 # Benchmarking Java extractors on research data (September/October 2026)
 
 An extractor, in this folder, is a tool that automatically turns Java code into
-a class diagram. Here seven such tools, our own parser among them, are compared
-on real projects for which people have drawn class diagrams. If the basic terms
-(class diagram, parser, benchmark, ground truth, precision, recall, F1) are new
-to you, the [main README](../README.en.md#glossary) explains them.
+a class diagram. Here seven such tools are compared, among them our extractor
+(the parser from folder 1), on real projects for which people have drawn class
+diagrams. If the basic terms (class diagram, parser, benchmark, ground truth,
+precision, recall, F1) are new to you, the [main
+README](../README.en.md#glossary) explains them.
 
 Why this comparison is needed: a ground truth taken from bytecode tells you
 whether a parser reads the code correctly. For this project, though, what
@@ -20,7 +21,7 @@ folder 1 abstracts.
 
 1. Is there a research dataset of Java projects with matching class diagrams
    that contains at least 20 usable pairs?
-2. How does our own extractor (folder 1, `src/parsing/java/`) do on this data
+2. How does our extractor (folder 1, `src/parsing/java/`) do on this data
    compared with other tools?
 3. Which bugs in our extractor come to light along the way, and can they be
    fixed and covered by tests?
@@ -36,7 +37,7 @@ folder 1 abstracts.
 - On the 30 Lindholmen projects, our extractor and javalang tie (micro F1
   0.646), and java2plantuml (mirajp1) reaches 0.577. All three ran on all 30
   projects. Micro F1 is the F1 score over all lines of all projects together.
-  That our extractor and javalang score exactly the same is to be expected:
+  It is no surprise that our extractor and javalang score exactly the same:
   javalang is only a parser, and the adapter that turns its output into a class
   graph was written in this project and looks at the same declarations. Our
   extractor differs where these projects do not test it: newer Java, old
@@ -68,7 +69,7 @@ folder 1 abstracts.
 
 ```
 README.md
-doku/                     reports on the research, the results and the case studies
+doku/                     reports on the dataset search, the results and the case studies
 skripte/                  all Python scripts and their tests
 daten/
   lindholmen/             the 30 Lindholmen projects and everything about how they were chosen
@@ -98,7 +99,7 @@ is in the full project folder or can be downloaded again by following
 
 ## Documents
 
-A sensible reading order is: the dataset research, then the two results
+A sensible reading order is: the dataset search, then the two results
 reports, then the case studies and the IntelliJ reproduction. You only need the
 tools and reproduction documents if you want to rerun the measurements.
 

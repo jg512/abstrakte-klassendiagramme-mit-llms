@@ -11,12 +11,12 @@ connected. The result is the full class graph, from which the LLM later picks
 the important parts. Basic terms such as class, field, method, inheritance and
 compiling are explained in the [main README](../../README.en.md#glossary).
 
-This file describes how the parser turns a repository into a class graph,
-which program file handles which step, and where the limits are. It is meant
-for anyone who wants to understand, check or change the parser. If you would
-rather read about a concrete case, skip to the
-[example with two classes](#example-two-classes-through-every-stage) and come
-back when you need to.
+This file describes how the parser turns a repository into a class graph, which
+program file handles which step, and where the limits are. It is meant for
+anyone who wants to understand, check or change the parser. If you would rather
+start with a worked example, skip to the [example with two
+classes](#example-two-classes-through-every-stage) and come back when you need
+to.
 
 The parser reads source code only. The project does not have to be built or
 compiled. This is exactly where the bytecode tools in the comparison in
@@ -77,7 +77,7 @@ code.
 from `configs/default.yaml`. Test folders, build output such as `target/`,
 `bin/` and `out/`, and files such as `*Test.java` are left out.
 
-For Java, `_select_java_source_sets` comes on top of that. If you search
+For Java, `_select_java_source_sets` is applied as well. If you search
 recursively for `*.java`, many projects turn up old or generated copies of the
 same classes alongside `src/main/java`. With `source_sets: auto` (the default),
 the main folders following the Maven/Gradle convention are therefore preferred.
@@ -101,7 +101,7 @@ from which the usable parts can be read. Files with errors are reported as
 `read_source` reads each file as bytes and tries the encodings UTF-8, CP1252
 and Latin-1 in that order. The encoding decides how letters such as "ä" are
 stored as bytes. Old Java code is often not saved as UTF-8. Tools that
-insist on UTF-8 usually lose such files without saying anything.
+insist on UTF-8 usually skip such files without any warning.
 
 `_parse_file` first takes the `package` line and all imports from each file.
 Static imports are stored like normal imports. Then `visit` walks through the
@@ -170,7 +170,7 @@ The code usually just says `Kunde`, but what is needed is the class that name
 refers to. `JavaTypeResolver.resolve(name, source)` searches in this order,
 which roughly follows the compiler's rule:
 
-1. The class's type parameters. A `T` is not a class and gives nothing.
+1. The class's type parameters. A `T` is not a class and resolves to nothing.
 2. The class itself and the types around it, from the inside out, including
    nested types inherited from a superclass.
 3. Explicit imports. An import applies even when it points to a library class
@@ -207,17 +207,18 @@ read from the declarations. Abstraction only happens later, through the LLM.
 - `extends` gives an inheritance, `implements` a realization.
 - Supertypes outside the project are kept as nodes in the package `external`.
   Inheriting from `JFrame` says a lot about a class's role. Fields with external
-  types such as `String` or `Timer`, on the other hand, do not give an edge;
+  types such as `String` or `Timer`, on the other hand, do not produce an edge;
   otherwise the architecture would get lost among library nodes.
 - Every `FieldRef` whose type resolves to a project class becomes an edge, with
   the kind and multiplicity from step 2 and the field name as its role. Two
-  fields pointing to the same target (`primary` and `history`) stay two edges.
+  fields pointing to the same target (`primary` and `history`) remain two
+  separate edges.
 - With `include_method_dependencies`, dependencies from method signatures are
   added. This is off by default.
 - Edges from javac mode are merged in. If the relationship already exists from
   the source code, it only gets the extra evidence. The kind of relationship
-  from the source code stays, because javac knows nothing about ownership in
-  the UML sense.
+  from the source code stays, because javac knows nothing about ownership in the
+  UML sense.
 
 Every edge carries `EdgeEvidence` with the field or method, the type as
 written, the file and the line. This means every arrow in the diagram can be
@@ -271,17 +272,17 @@ reference along the way is recorded with `note`:
 - `this(...)` and `super(...)` in a constructor count for the class itself or
   for the superclass.
 - Field access does not count.
-- Nested classes are skipped; they get a pass of their own.
+- Nested classes are skipped; they get their own pass.
 
 Then the edges are put together:
 
 1. Inheritance and realization. If a supertype is not in the diagram, the
    parser looks further up, one level at a time, for the nearest supertype
-   that is (a so-called breadth-first search).
+   that is (known as a breadth-first search).
 2. Fields (`_field_relation`). A field whose type is a class in the diagram
    becomes a composition with "1" at both ends. For arrays, JDK collections and
    project classes that inherit from a JDK collection, the target end gets "*".
-   Maps give nothing.
+   Maps produce nothing.
 3. Nesting. An inner class gets a `nesting` edge from its outer class.
 4. Dependencies from the second pass. A plain dependency is dropped if there
    is already an inheritance, realization or field relationship in the same
@@ -302,8 +303,8 @@ Two further inputs shape the result:
 
 In IntelliJ mode, external classes only get IDs of the form
 `external.<Kurzname>` (short name), because with wildcard imports the full name
-cannot be worked out from the source code alone. The javac extra resolution is
-not mixed in in this mode.
+cannot be worked out from the source code alone. Results from the javac mode are
+not merged in here.
 
 How the rules were derived from the nine IntelliJ pictures and checked against
 them is described in folder 2 under
@@ -312,16 +313,15 @@ them is described in folder 2 under
 ## 6. Extra resolution through javac: `src/parsing/java/javac_solver.py`
 
 With `symbol_solver: javac`, the Java compiler `javac` from the JDK is asked as
-well. It knows the language rules completely, but in return it needs the
-libraries the code uses. The module writes a small Java helper program into a
-temporary folder, compiles it and runs it over the source files of each build
-module. The program uses the public compiler API (`javax.tools`,
-`com.sun.source`), resolves field types and supertypes and prints one line for
-each finding. Missing libraries only lead to a diagnostic
-(`javac-partial-resolution`). Whatever javac could still match to a project
-class comes back as an edge with `resolver="javac"`. JARs can be passed in
-through `classpath`. Without an installed JDK, there is the diagnostic
-`javac-unavailable` and no other change.
+well. It knows the language rules completely, but it does need the libraries the
+code uses. The module writes a small Java helper program into a temporary
+folder, compiles it and runs it over the source files of each build module. The
+program uses the public compiler API (`javax.tools`, `com.sun.source`), resolves
+field types and supertypes and prints one line for each finding. Missing
+libraries only lead to a diagnostic (`javac-partial-resolution`). Whatever javac
+could still match to a project class comes back as an edge with
+`resolver="javac"`. JARs can be passed in through `classpath`. Without an
+installed JDK, there is the diagnostic `javac-unavailable` and no other change.
 
 ## 7. Package dependencies: `src/parsing/java/import_graph.py`
 
@@ -350,7 +350,7 @@ The options are in `JavaConfig` (`src/config/models.py`), are checked in
 | `member_profile` | `--java-member-profile` | `structure`, `summary`, `public-api` or `full` |
 | `include_external_supertypes` | `--no-java-external-supertypes` | keep external supertypes as nodes (default), or leave them out with the flag |
 | `include_method_dependencies` | `--java-method-dependencies` | dependencies from method signatures |
-| `symbol_solver`, `classpath` | `--java-symbol-solver`, `--java-classpath` | javac extra resolution |
+| `symbol_solver`, `classpath` | `--java-symbol-solver`, `--java-classpath` | javac mode (extra resolution through javac) |
 | `relation_style` | `--java-relations` | `literal` or `intellij` |
 | `diagram_classes` | `--java-diagram-classes FILE` | class selection for IntelliJ mode |
 | `ide_jdk` | `--java-ide-no-jdk` | reproduce IntelliJ without a JDK |
@@ -516,7 +516,7 @@ Edge  realization  model.Buch -> external.Comparable
 ```
 
 `Comparable` stays as an external node because it is a supertype. The field
-`titel` of type `String` gives no edge. The package graph from
+`titel` of type `String` produces no edge. The package graph from
 `import_graph.py` is `{'': ['model']}`: the top-level package depends on
 `model`.
 

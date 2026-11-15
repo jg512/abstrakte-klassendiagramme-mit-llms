@@ -6,18 +6,18 @@ As of 23 October 2026.
 
 IntelliJ IDEA is a widely used programming environment that can draw class
 diagrams from Java code automatically. This file describes the rules IntelliJ
-follows when it does this, how our parser reproduces them, and how well that
+follows when it does this, how our extractor reproduces them, and how well that
 works: for seven of nine projects the result is completely the same. The
 [main README](../../README.en.md#glossary) explains the technical terms.
 
-Commercial UML tools show connections that our extractor did not see until
-now. The extractor only read fields, `extends` and `implements`. IntelliJ also
-reads the method bodies, and so it also shows connections that run through a
-third class. The aim was for the extractor to produce the same diagram as
-IntelliJ for the same classes.
+Commercial UML tools show connections that our extractor used to miss. The
+extractor only read fields, `extends` and `implements`. IntelliJ also reads the
+method bodies, and so it also shows connections that run through a third class.
+The aim was for the extractor to produce the same diagram as IntelliJ for the
+same classes.
 
-The templates are the nine diagrams that Zhang/Hebig produced with IntelliJ by
-reverse engineering (`daten/zhang-hebig/models/reverse/`).
+The reference pictures are the nine diagrams that Zhang/Hebig produced with
+IntelliJ by reverse engineering (`daten/zhang-hebig/models/reverse/`).
 
 ## Example of a transitive connection
 
@@ -111,7 +111,7 @@ compares it with the edges read off the IntelliJ picture
 next to the IntelliJ picture in `ergebnisse/diagramme-intellij/<Projekt>/`.
 
 One thing to know before reading the table: after they had been checked in the
-picture, the transcriptions were taken over from the extractor's output. The
+picture, the transcriptions were copied from the extractor's output. The
 agreement is therefore the result of the visual check described below it. When
 the extractor is changed later, the comparison shows whether anything shifts.
 
@@ -151,9 +151,9 @@ How the transcriptions were made:
   classes to it, which cannot be told apart in the picture. It also predicts a
   self-loop on `AbstractPropagator` that cannot be seen in the picture. It may
   be hidden among the overlapping lines.
-- The two environment switches were inferred from the pictures. That IntelliJ
-  had a wrong source root for Artemis is an explanation that fits all the
-  missing lines, but it is not directly proven.
+- The two environment switches were inferred from the pictures. A wrong source
+  root in IntelliJ would explain every missing line in Artemis, but this has not
+  been proven directly.
 - Overloaded methods are told apart only by the number of arguments. Lambdas
   without a type, `var` with a type that is hard to work out, and methods from
   libraries other than the common JDK collections end a call chain.

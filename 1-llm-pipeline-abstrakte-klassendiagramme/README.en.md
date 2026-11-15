@@ -8,13 +8,13 @@ class diagram from them. If you are not sure yet what classes, class diagrams
 or LLMs are, start with the [main README](../README.en.md); its
 [glossary](../README.en.md#glossary) explains all the technical terms.
 
-Step by step, the pipeline reads a repository (Python or Java) and has a
+More precisely, the pipeline reads a repository (Python or Java) and has a
 language model turn it into an abstract class diagram in the PlantUML text
 format. The diagram should show only the central classes, meaning the domain
 classes (the things the software is about, such as a customer or an order),
-classes that steer the program, and important interfaces. Helper classes,
-plain data containers, framework code (the ready-made scaffolding a piece of
-software is built on) and tests are left out.
+classes that control the flow of the program, and important interfaces. Helper
+classes, plain data containers, framework code (the ready-made scaffolding a
+piece of software is built on) and tests are left out.
 
 The Python package is called `abstract-uml`. The history of the project is in
 the [main README](../README.en.md#how-the-project-developed).
@@ -22,8 +22,7 @@ the [main README](../README.en.md#how-the-project-developed).
 ## Status
 
 - The pipeline runs end to end for Python and Java.
-- All ways of working go through one shared control program (the driver),
-  with eight variants.
+- All eight variants run through one shared control program (the driver).
 - The most recent runs with a real LLM were in July 2026, using
   `deepseek-chat` on the Python repos `schedule` and `loguru`.
 - The Java side is tested and has been measured on research data, but so far
@@ -101,11 +100,11 @@ Some of the decisions behind the parser:
   reported and left out.
 - Every relationship records where it was found (field or method, type, file,
   line). Ambiguities, duplicate declarations and files that could not be read
-  cleanly go into `javagraph.diagnostics.json`.
+  cleanly are written to `javagraph.diagnostics.json`.
 - You can set how much of each class is shown (`--java-member-profile
   structure|summary|public-api|full`), whether dependencies from method
-  signatures are added (`--java-method-dependencies`) and whether javac helps
-  with resolution (`--java-symbol-solver javac` with `--java-classpath`).
+  signatures are added (`--java-method-dependencies`) and whether the javac mode
+  adds extra resolution (`--java-symbol-solver javac` with `--java-classpath`).
 
 Why we wrote a parser of our own is explained in the [main
 README](../README.en.md#phase-3-switching-to-java-and-choosing-a-parser-august-2026)
@@ -220,16 +219,16 @@ runs/experiment_20260707T033256/ground_truth.json
 runs/experiment_20260707T033256/seed_<N>/schedule`.
 
 `prune`, `prune-peek` and `catalog` found both classes in every repetition and
-added nothing else. The other variants find them too but also take in extra
+added nothing else. The other variants find them too but also pull in extra
 classes. For the best variants, reading the code (peek) made no measurable
 difference. The 24 runs together cost about 0.15 US dollars.
 
 Stability on `schedule` and `loguru` (July 2026, 8 variants with 5 seeds each,
-`runs/experiment_20260713T214319/experiment_summary.md`): on `loguru`, a
-library for writing log files, the average number of classes in the diagram
-lies between about 9 and 19 depending on the variant. The standard deviation,
-a measure of how much that number varies from run to run, lies between 1.5
-and 4.7 classes. There is no ground truth for `loguru`.
+`runs/experiment_20260713T214319/experiment_summary.md`): on `loguru`, a library
+for writing log files, the average number of classes in the diagram is between
+about 9 and 19 depending on the variant. The standard deviation, a measure of
+how much that number varies from run to run, is between 1.5 and 4.7 classes.
+There is no ground truth for `loguru`.
 
 `schedule` is very small, and results on two classes hardly carry over to
 larger systems. That is what prompted the search for a bigger dataset with
@@ -238,9 +237,10 @@ real diagrams, which in turn led to the switch to Java.
 ## Installing and running
 
 Type the following commands into a terminal, inside the folder
-`1-llm-pipeline-abstrakte-klassendiagramme`. They set up a Python environment
-of its own (`.venv`), install the package and run the tests. A fuller guide,
-including Windows and Docker, is in [`INSTALLATION.en.md`](../INSTALLATION.en.md).
+`1-llm-pipeline-abstrakte-klassendiagramme`. They create a separate Python
+environment (`.venv`) for this folder, install the package and run the tests. A
+fuller guide, including Windows and Docker, is in
+[`INSTALLATION.en.md`](../INSTALLATION.en.md).
 
 ```bash
 python -m venv .venv
@@ -277,7 +277,7 @@ the other files override individual values:
 | `default.yaml` | defaults, with Gemini as the model |
 | `deepseek.yaml`, `deepseek_exp.yaml` | DeepSeek; the second one uses the budgets of the July experiments |
 | `ollama.yaml` | a local model through Ollama (`qwen2.5:14b`) |
-| `ollama_docker.yaml` | the same, for when the pipeline runs in the Docker container and Ollama on the machine itself |
+| `ollama_docker.yaml` | the same, for when the pipeline runs in the Docker container and Ollama on the host |
 | `gemini.yaml` | Gemini with a slightly higher temperature (more randomness in the answers) |
 | `smoke_*.yaml` | quick functional checks (Gemini or `qwen2:0.5b`) |
 

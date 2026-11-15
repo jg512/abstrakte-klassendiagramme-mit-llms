@@ -1,13 +1,13 @@
 [Deutsch](README.md) · **English**
 
-# The Java parser as a tool of its own (November 2026)
+# The Java parser as a standalone tool (November 2026)
 
 `javauml` is a small program that draws a complete class diagram of any Java
 project, without an LLM. You give it a project's folder or its address on
-GitHub, and you get the diagram back as text and, if you like, as a picture.
-It is the parser from the LLM pipeline, lifted out into a tool of its own. What
-a class diagram, a parser or PlantUML is, is explained in the
-[main README](../README.en.md#glossary).
+GitHub, and you get the diagram back as text and, if you like, as a picture. It
+is the parser from the LLM pipeline, lifted out into a standalone tool. The
+[main README](../README.en.md#glossary) explains what a class diagram, a parser
+and PlantUML are.
 
 Specifically, `javauml` turns a Java repo into a class diagram as PlantUML
 and JSON, and optionally straight into a PNG or SVG picture. It reads only the
@@ -23,9 +23,10 @@ own and needs nothing but `tree-sitter` and `tree-sitter-java`.
 ## Installing
 
 Type these commands into a terminal, inside the folder
-`3-java-parser-klassendiagramme`. They set up a Python environment of its own
-(`.venv`) and install the tool into it. A fuller guide, including Windows and
-Docker, is in [`INSTALLATION.en.md`](../INSTALLATION.en.md).
+`3-java-parser-klassendiagramme`. They create a separate Python environment
+(`.venv`) for this folder and install the tool into it. A fuller guide,
+including Windows and Docker, is in
+[`INSTALLATION.en.md`](../INSTALLATION.en.md).
 
 ```bash
 python3 -m venv .venv
@@ -118,13 +119,13 @@ in folder 1.
 | `--source-sets` | `auto` takes `src/main/java` or the folders named in `pom.xml` and `build.gradle`; `all` takes everything |
 | `--include-generated` | read generated sources too |
 | `--exclude-dir`, `--exclude-file` | exclude further patterns |
-| `--no-default-excludes` | read test folders, `target/`, `*Test.java` and so on after all |
+| `--no-default-excludes` | do not skip test folders, `target/`, `*Test.java` and so on |
 | `--no-external-supertypes` | leave out external supertypes (`literal`) |
 | `--method-dependencies` | dependencies from method signatures (`literal`) |
 | `--javac`, `--classpath` | also resolve types through the JDK compiler (`literal`) |
 | `--classes` | class selection (`intellij`) |
 | `--ide-no-jdk`, `--ide-no-same-package` | imitate IntelliJ without a JDK or with a wrong source root (`intellij`) |
-| `--ref`, `--keep-clone` | when cloning |
+| `--ref`, `--keep-clone` | pick a branch or tag; keep the cloned copy |
 | `--plantuml` | PlantUML JAR for PNG and SVG |
 | `-v`, `--verbose` | print progress and hints |
 
@@ -151,7 +152,7 @@ The measurements were made in [folder
 from folder 1. The results apply here unchanged, because the two copies give
 character-for-character identical output on all 59 projects from folder 2 in
 four configurations (see [phase 6 in the main
-README](../README.en.md#phase-6-the-parser-as-a-tool-of-its-own-november-2026)).
+README](../README.en.md#phase-6-the-parser-as-a-standalone-tool-november-2026)).
 
 - Against diagrams drawn by people (30 Lindholmen projects and 9 Zhang/Hebig
   projects), the `literal` mode ties with javalang and is ahead of the other
@@ -166,15 +167,15 @@ README](../README.en.md#phase-6-the-parser-as-a-tool-of-its-own-november-2026)).
 
 ## Limits
 
-- Without a build there is no information from libraries. A return type from
-  a library ends a chain of calls, except for the common JDK collections.
-- Overloaded methods (several methods with the same name) are told apart only
-  by the number of arguments. Lambdas (short, nameless functions) without a
+- Without a build there is no information from libraries. A return type from a
+  library ends a chain of calls, except for the common JDK collections.
+- Overloaded methods (several methods with the same name) are told apart only by
+  the number of arguments. Lambdas (short, nameless functions) without a
   declared type and hard-to-infer `var` declarations also end a chain of calls.
-- Ambiguous types are left out and reported. When in doubt that costs a
-  correct edge, but it avoids wrong ones.
-- The `literal` mode only sees declarations. That one class creates or calls
-  another only shows up in the `intellij` mode.
+- Ambiguous types are left out and reported. When in doubt that costs a correct
+  edge, but it avoids wrong ones.
+- The `literal` mode only sees declarations. The fact that one class creates or
+  calls another only shows up in `intellij` mode.
 - Whether a field is a composition, aggregation or association in UML terms is
   not written in the code. The `literal` mode estimates it.
 
@@ -195,7 +196,7 @@ delivers what it should.
 | `tests/test_java_literal_benchmark.py` | the 20 small projects in [`benchmarks/java_literal/`](benchmarks/java_literal/README.en.md), each with a hand-checked graph |
 | `tests/test_cli.py` | command line, output files, recognising URLs |
 
-The first three were taken over from folder 1 and adapted to the standalone
+The first three were copied from folder 1 and adapted to the standalone
 tool. The benchmark with the 20 small projects now only exists here.
 
 ## Layout
@@ -211,7 +212,7 @@ tool. The benchmark with the 20 small projects now only exists here.
 | `javauml/java/graph_builder.py` | `literal` mode |
 | `javauml/java/intellij.py` | `intellij` mode |
 | `javauml/java/javac_solver.py` | extra resolution through the JDK compiler |
-| `javauml/java/import_graph.py` | package dependencies, only used by the tests taken over from folder 1 |
+| `javauml/java/import_graph.py` | package dependencies, only used by the tests copied from folder 1 |
 | `javauml/model.py` | data classes for classes and fields |
 | `javauml/schema/` | graph model, JSON, PlantUML |
 | `javauml/render.py` | PNG and SVG through PlantUML |
